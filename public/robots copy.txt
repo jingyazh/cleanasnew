@@ -1,0 +1,9 @@
+# Allow indexing of everything
+User-agent: *
+Disallow: 
+
+# Allow twitter bot
+User-agent: Twitterbot
+Disallow:/
+
+
