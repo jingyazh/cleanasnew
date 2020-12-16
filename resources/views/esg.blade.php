@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">Home</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
         <meta itemprop="position" content="1">
         </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name"> ESG</span>
         <meta itemprop="position" content="2">
@@ -210,7 +210,7 @@ alt="A modern, illuminated refinery is visible at dusk. "/> </div>
 <script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script> 
 <script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
 <script>$('.dropdown').dropdown();</script>
-  <script>
+  <!-- <script>
     if ('loading' in HTMLImageElement.prototype) {
       const images = document.querySelectorAll("img.lazyload");
       images.forEach(img => {
@@ -224,5 +224,5 @@ alt="A modern, illuminated refinery is visible at dusk. "/> </div>
         "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
       document.body.appendChild(script);
     }
-  </script>
+  </script> -->
 @endsection

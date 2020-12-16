@@ -362,7 +362,7 @@
 <script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script> 
 <script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
 <script>$('.dropdown').dropdown();</script>
-  <script>
+  <!-- <script>
     if ('loading' in HTMLImageElement.prototype) {
       const images = document.querySelectorAll("img.lazyload");
       images.forEach(img => {
@@ -376,5 +376,5 @@
         "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
       document.body.appendChild(script);
     }
-  </script>
+  </script> -->
 @endsection

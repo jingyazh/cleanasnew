@@ -10,9 +10,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">Home</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name"> Privacy Policy</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name"> {{__("Privacy Policy")}}</span>
         <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -21,7 +21,7 @@
     <div class="container contentbg">
       <div class="row">
         <div class="col-8 padding30">
-          <h1>Privacy Policy </h1>
+          <h1>{{__("Privacy Policy")}} </h1>
           <p>This Privacy Policy (“Privacy Policy”) governs the manner in which Clean As New Gulf Coast, LLC (“CANGC”, “us”, “our”, and “we”) collects, uses, maintains and discloses information collected from users (each, a "User", “you” or “your”) of the <a href="https://cleanasnew.com/">www.cleanasnew.com</a> website ("Site" or “Website”). This Privacy Policy applies to the Site and all products and services offered by CANGC. Our Privacy Policy is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our services.</p>
           <p>By using this Site, you signify your acceptance of this Privacy Policy. If you do not agree to this Private Policy, please do not use our Site. Your continued use of the Site following the posting of changes to this Private Policy will be deemed your acceptance of those changes. By accepting our Privacy Policy and Terms of Use (found here: located at <a href="terms-of-use">https://cleanasnew.com/terms-of-use</a>), you consent to our collection, storage, use and disclosure of your personal information as described in this Privacy Policy.</p>
           <hr>
@@ -114,7 +114,7 @@
 <script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script> 
 <script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
 <script>$('.dropdown').dropdown();</script> 
-<script>
+<!-- <script>
     if ('loading' in HTMLImageElement.prototype) {
       const images = document.querySelectorAll("img.lazyload");
       images.forEach(img => {
@@ -128,5 +128,5 @@
         "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
       document.body.appendChild(script);
     }
-  </script>
+  </script> -->
 @endsection

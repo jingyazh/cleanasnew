@@ -40,18 +40,13 @@
                   <div class="card-inner2">
                     <div class="scroll">
                       <h2 class="heading1">{{__("CLEANER")}}</h2>
-                      <h4>What if Clean meant Like New?</h4>
-                      <p>Tech Sonic’s patented and proprietary technology cleans heat exchangers and parts to a like new condition. </p>
+                      <h4>{{__("What if Clean meant Like New?")}}</h4>
+                      <p>{{__("Tech Sonic’s patented and proprietary technology cleans heat exchangers and parts to a like new condition.")}} </p>
                       <div>
                         <ul class="listing">
-                          <li>With the addition of Tech Sonic, heat exchangers and 
-                            parts are cleaned and returned to service at 95% or 
-                            better of the original design performance. </li>
-                          <li>Better cleaning means less energy consumption, improved 
-                            production and longer maintenance intervals – great for a plant’s 
-                            bottom line. </li>
-                          <li>When we say <span id="tagyes">YES WE CAN</span>, we mean it - If we can’t clean it, you don’t pay!
-                            Who else in the industry offers that guarantee? </li>
+                          <li>{{__("With the addition of Tech Sonic, heat exchangers and parts are cleaned and returned to service at 95% or better of the original design performance.")}} </li>
+                          <li>{{__("Better cleaning means less energy consumption, improved production and longer maintenance intervals – great for a plant’s bottom line.")}} </li>
+                          <li>{{__("When we say")}} <span id="tagyes">{{__("YES WE CAN")}}</span>, {{__("we mean it - If we can’t clean it, you don’t pay! Who else in the industry offers that guarantee?")}} </li>
                         </ul>
                       </div>
                     </div>
@@ -68,18 +63,15 @@
                   <div class="card-inner2">
                     <div class="scroll">
                       <h2 class="heading2">{{__("FASTER")}}</h2>
-                      <h4>What if your exchangers could be cleaned in half the time? </h4>
-                      <p>Every hour that a plant is shut down costs a pile of money. </p>
+                      <h4>{{__("What if your exchangers could be cleaned in half the time?")}} </h4>
+                      <p>{{__("Every hour that a plant is shut down costs a pile of money.")}} </p>
                       <div>
                         <ul class="listing">
-                          <li> The faster maintenance can be done, the faster the
-                            plant can get back up and running. </li>
-                          <li> The <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> process will clean heat exchangers twice as fast
-                            as hydroblasting on your own washpad. </li>
-                          <li>According to Shell’s Moerdijk Netherlands plant, with the addition of Tech Sonic, <br>
-                            cleaning is “Twice as fast, at half the cost”. </li>
-                          <li>We schedule and track everything we clean and if you deliver on time,
-                            we return on time. </li>
+                          <li> {{__("The faster maintenance can be done, the faster the plant can get back up and running.")}} </li>
+                          <li> {{__("The")}} <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> {{__("process will clean heat exchangers twice as fast as hydroblasting on your own washpad.")}} </li>
+                          <li>{{__("According to Shell’s Moerdijk Netherlands plant, with the addition of Tech Sonic")}} <br>
+                            {{__("cleaning is “Twice as fast, at half the cost”.")}} </li>
+                          <li>{{__("We schedule and track everything we clean and if you deliver on time, we return on time.")}} </li>
                         </ul>
                       </div>
                     </div>
@@ -96,10 +88,8 @@
                   <div class="card-inner2">
                     <div class="scroll">
                       <h2 class="heading3">{{__("SAFER")}}</h2>
-                      <h4>What if you could reduce the potential for injury or death?</h4>
-                      <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> reduces the need
-                        for hydroblasting by over 75%, reducing the
-                        labor and associated risk. </p>
+                      <h4>{{__("What if you could reduce the potential for injury or death?")}}</h4>
+                      <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> {{__("reduces the need for hydroblasting by over 75%, reducing the labor and associated risk.")}} </p>
                       <div>
                         <ul class="listing">
                           <li> Hydroblasting is part of the <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> cleaning process, 
