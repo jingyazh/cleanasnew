@@ -13,11 +13,11 @@
       <p>
 		  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 		  <a href="https://cleanasnew.com/"  itemprop="item">
-			  <span itemprop="name">Home</span></a>
+			  <span itemprop="name">{{__('Home')}}</span></a>
 			  <meta itemprop="position" content="1">
 		  </span> &#8250; 
 		  <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-			  <span itemprop="name">How We Compare</span> 
+			  <span itemprop="name">{{__('How We Compare')}}</span> 
 			  <meta itemprop="position" content="2">
 		  </span>
 	 </p>
@@ -33,28 +33,28 @@
         <div class="columns">
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/cleaning-cost"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/wash-pad-cost1.jpg?v=20200927" class="img-fluid desktopNone lazyload"  alt="Understanding the Cleaning Cost."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/comparison/wash-pad-cost.jpg?v=20200928" class="lazyload img-fluid mobileNone"  alt="Understanding the Cleaning Cost."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/cleaning-cost">Cleaning Cost</a></p>
+              <p class="text-center"><a href="/comparisons/cleaning-cost">{{__('Cleaning Cost')}}</a></p>
             </div>
           </div>
         </div>
         <div class="columns">
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="comparisons/heat-exchanger-performance"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/clean-as-new-employee-at-facility1.jpg?v=20200927" class="img-fluid desktopNone lazyload"  alt="Clean As New® employee lowering heat exchanger into Tech Sonic bath."/> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/comparison/clean-as-new-employee-at-facility.jpg?v=20200928" class="lazyload img-fluid mobileNone"  alt="Clean As New® Heat Exchanger Performance Monitoring."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/heat-exchanger-performance">Heat Exchanger Performance</a></p>
+              <p class="text-center"><a href="/comparisons/heat-exchanger-performance">{{__('Heat Exchanger Performance')}}</a></p>
             </div>
           </div>
         </div>
         <div class="columns">
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/parts-cleaning"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/parts-cleaning1.jpg" class="desktopNone img-fluid lazyload" alt="Cleaned rotating equipment."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/parts-cleaning.jpg" class="lazyload img-fluid mobileNone" alt="Cleaned rotating equipment by Clean As New®."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/parts-cleaning">Parts Cleaning</a></p>
+              <p class="text-center"><a href="/comparisons/parts-cleaning">{{__('Parts Cleaning')}}</a></p>
             </div>
           </div>
         </div>
         <div class="columns">
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/facility"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/clean-as-new-facility-drawing1.jpg?v=20200927" class="desktopNone img-fluid lazyload" alt="Facility drawing by Clean As New®!"/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/clean-as-new-facility-drawing.jpg?v=20200928" class="lazyload img-fluid mobileNone" alt="Facility drawing by Clean As New®!"/></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/facility">Facility</a></p>
+              <p class="text-center"><a href="/comparisons/facility">{{__('Facility')}}</a></p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/esg-sustainability"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/comparison/esg-father-son1.jpg?v=20200927" class="desktopNone img-fluid lazyload" alt="Everything You Need To Know About ESG Sustainability."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/comparison/esg-father-son.jpg?v=20200928" class="lazyload img-fluid mobileNone" alt="
 Thinking About ESG? About ESG Sustainability?"/></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/esg-sustainability">ESG</a></p>
+              <p class="text-center"><a href="/comparisons/esg-sustainability">{{__('ESG')}}</a></p>
             </div>
           </div>
         </div>

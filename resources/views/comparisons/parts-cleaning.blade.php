@@ -10,9 +10,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="how-we-compare" itemprop="item"> <span itemprop="name">How We Compare</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="how-we-compare" itemprop="item"> <span itemprop="name">{{__("How We Compare")}}</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name"> Parts Cleaning </span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name"> {{__("Parts Cleaning")}} </span>
         <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -35,46 +35,46 @@
  <table class="col-12 mt-5 ml-5 mb-5 table-hover">
             <thead>
               <tr>
-                <th>Hydroblasting</th>
-                <th><span class="heading4">Parts Cleaning</span></th>
+                <th>{{__("Hydroblasting")}}</th>
+                <th><span class="heading4">{{__("Parts Cleaning")}}</span></th>
                 <th><span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td>Critical Rotating Equipment</td>
+                <td>{{__("Critical Rotating Equipment")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td>Column Internals, Trays, Packing, etc.</td>
+                <td>{{__("Column Internals, Trays, Packing, etc.")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td>Demister Pads</td>
+                <td>{{__("Demister Pads")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload"  alt="X icon."/></td>
-                <td>Filters</td>
+                <td>{{__("Filters")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td>Piping Components</td>
+                <td>{{__("Piping Components")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td>Fragile Components</td>
+                <td>{{__("Fragile Components")}}</td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
             </tbody>
           </table>
 			<br>
-			<p> Click here to learn <a href="/services/by-the-basket">more</a>.</p>
+			<p> {{__("Click here to learn")}} <a href="/services/by-the-basket">{{__("more")}}</a>.</p>
         </div>
 		  </div>
 		  	  <div class="col-1">&nbsp;</div>

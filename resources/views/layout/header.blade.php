@@ -1,40 +1,88 @@
 <div class="navbar-dark fixed-top bg-white">
-    <div class="ui dropdown" style="float:right; padding:1%">
-      <div class="text">English </div>
-      <i class="dropdown icon"></i>
-      <ul class="menu">
-        <li class="item"><a href="index.html">English </a></li>
-        <li class="item"><a href="es-us/index.html">Español (US)</a></li>
-        <li class="item"><a href="mx/index.html">Español (MX)</a></li>
-        <li class="item"><a href="es/index.html">Español (ES)</a></li>
-        <li class="item"><a href="fr/index.html">Français (FR)</a></li>
-        <li class="item"><a href="pt-br/index.html">Português (BR)</a></li>
-        <li class="item"><a href="de/index.html">Deutsch (DE)</a></li>
-        <li class="item"><a href="ru/index.html">Русский (RU)</a></li>
-        <li class="item"><a href="hi-in/index.html">Hindi (IN)</a></li>
-        <li class="item"><a href="pa-pk/index.html">Punjabi (PK)</a></li>
-        <li class="item"><a href="cn/index.html">中文 (CN)</a></li>
-        <li class="item"><a href="jp/index.html">日本語 (JP)</a></li>
-        <li class="item"><a href="th/index.html">Thai (TH)</a></li>
-        <li class="item"><a href="ml/index.html">Malay (ML)</a></li>
+  <div class="ui dropdown" style="float:right; padding:1%">
+    @if (Session::get('locale') != null)
+    <div class="text">{{ Config::get('app.locales')[Session::get('locale')]}} </div>
+    @else
+    <div class="text">English </div>
+    @endif
+    <i class="dropdown icon"></i>
+    <ul class="menu">
+      <li class="item"><a href="/lang/en">English </a></li>
+      <li class="item"><a href="/lang/fr">Français (FR)</a></li>
+      <li class="item"><a href="/lang/es">Español (ES)</a></li>
+      <li class="item"><a href="/choose-language">Others...</a></li>
+      <!-- <li class="item"><a href="/lang/mx">Español (MX)</a></li>
+      <li class="item"><a href="/lang/pt-br">Português (BR)</a></li>
+      <li class="item"><a href="/lang/de">Deutsch (DE)</a></li>
+      <li class="item"><a href="/lang/ru">Русский (RU)</a></li>
+      <li class="item"><a href="/lang/hi-in">Hindi (IN)</a></li>
+      <li class="item"><a href="/lang/pa-pk">Punjabi (PK)</a></li>
+      <li class="item"><a href="/lang/cn">中文 (CN)</a></li>
+      <li class="item"><a href="/lang/jp">日本語 (JP)</a></li>
+      <li class="item"><a href="/lang/th">Thai (TH)</a></li>
+      <li class="item"><a href="/lang/ml">Malay (ML)</a></li> -->
+    </ul>
+  </div>
+  <nav class="navbar navbar-expand-md"> <a class="navbar-brand" href="#"> <img src="/assets/img/Clean-As-New-logo.png" class="img-fluid lazyload" alt="Clean As New Powered By Tech Sonic®." /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        @if (Request::path() == '/')
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
+        @endif
+        @if (strpos('/how-we-compare', Request::path()) != false || Request::is('comparisons/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
+        @endif
+        @if (strpos('/what-we-clean', Request::path()) != false)
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
+        @endif
+        @if (strpos('/our-services', Request::path()) != false || Request::is('services/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
+        @endif
+        @if (strpos('/how-we-do-it', Request::path()) != false)
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
+        @endif
+        @if (strpos('/our-value-to-you', Request::path()) != false)
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
+        @endif
+        @if (strpos('/faq', Request::path()) != false)
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
+        @endif
+        @if (strpos('/testimonials', Request::path()) != false || Request::is('testimonials/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
+        @endif
+        @if (strpos('/esg', Request::path()) != false || Request::is('esg/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
+        @endif
+        @if (strpos('/about-us', Request::path()) != false || Request::is('about-us/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
+        @endif
+        @if (strpos('/contact', Request::path()) != false || Request::is('contact/*'))
+        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
+        @else
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
+        @endif
       </ul>
     </div>
-    <nav class="navbar navbar-expand-md"> <a class="navbar-brand" href="#"> <img src="https://cleanasnew.com/assets/img/Clean-As-New-logo.png" class="img-fluid lazyload" alt="Clean As New Powered By Tech Sonic®." /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-          <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/">Home <span class="sr-only">(current)</span></a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">How We Compare</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">What We Clean</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">Our Services</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">How We Do It </a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">Our Value To You</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">FAQ</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">Testimonials</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">ESG</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">About Us</a> </li>
-          <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">Contact</a> </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  </nav>
+</div>

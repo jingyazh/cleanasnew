@@ -25,7 +25,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                Watch Our Intro Video </a> </div>
+                                {{__("Watch Our Intro Video")}} </a> </div>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                <span>Book Your Free Measured Cleaning Trial</span> </a> </div>
+                                <span>{{__("Book Your Free Measured Cleaning Trial")}}</span> </a> </div>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                <span>Comparing An Apple To An Apple</span> </a> </div>
+                                <span>{{__("Comparing An Apple To An Apple")}}</span> </a> </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                <span>Improve Your ESG Score</span> </a> </div>
+                                <span>{{__("Improve Your ESG Score")}}</span> </a> </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                <span>The Highest Performing Refineries</span> </a> </div>
+                                <span>{{__("The Highest Performing Refineries")}}</span> </a> </div>
                     </div>
                 </div>
             </div>
@@ -84,9 +84,9 @@
         <div class="row">
             <div class="col-3">
                 <div class="text-center counter">
-                    <p><b>Gallons of water saved for clients</b> <br>
+                    <p><b>{{__('Gallons of water saved for clients')}}</b> <br>
                         <span id="loader"> <span class="loader"></span> <span class="bgloader"></span> </span> <span id="odometer" class="odometer"></span></p>
-                    since September 2019
+                    {{__('since September 2019')}}
                 </div>
             </div>
             <div class="col-7">

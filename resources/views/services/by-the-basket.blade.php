@@ -10,10 +10,10 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="our-services" itemprop="item"> <span itemprop="name">Our Services</span></a>
-        <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">By The Basket</span>
-        <meta itemprop="position" content="2">
+      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="our-services" itemprop="item"> <span itemprop="name">{{__("Our Services")}}</span></a>
+          <meta itemprop="position" content="1">
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{{__("By The Basket")}}</span>
+          <meta itemprop="position" content="2">
         </span></p>
     </div>
   </div>
@@ -29,11 +29,11 @@
             Click here to <a href="/comparisons/parts-cleaning">compare parts cleaning with hydroblasting</a> to <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span>.<sup>®</sup></p>
           <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> will:</p>
           <ul class="listing list-unstyled">
-            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!"/> Work with you to determine the right size basket for your needs. </li>
-            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!"/> Drop a basket on your wash pad and you can fill it with your parts. </li>
-            <li><img src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!"/> Pick up that basket when it’s full or you need the cleaning done. </li>
-            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!"/> Clean your parts for a guaranteed, fixed price. </li>
-            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!"/> Return your basket of clean parts the next day! </li>
+            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!" /> Work with you to determine the right size basket for your needs. </li>
+            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!" /> Drop a basket on your wash pad and you can fill it with your parts. </li>
+            <li><img src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!" /> Pick up that basket when it’s full or you need the cleaning done. </li>
+            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!" /> Clean your parts for a guaranteed, fixed price. </li>
+            <li><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark!" /> Return your basket of clean parts the next day! </li>
           </ul>
           <p> Check out our <a href="/posts/basket-of-parts">“By The Basket” services video</a> and give us a call today to arrange a “By The Basket” service for your wash pad. </p>
         </div>
@@ -47,10 +47,26 @@
 
 @section('page-script')
 <script>
- var giftofspeed2=document.createElement('link');giftofspeed2.rel='stylesheet';giftofspeed2.href='https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap';giftofspeed2.type='text/css';var godefer2=document.getElementsByTagName('link')[0];godefer2.parentNode.insertBefore(giftofspeed2,godefer2);var giftofspeed3=document.createElement('link');giftofspeed3.rel='stylesheet';giftofspeed3.href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';giftofspeed3.type='text/css';var godefer3=document.getElementsByTagName('link')[0];godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
-</script> 
-<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script> 
-<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
-<script>$('.dropdown').dropdown();</script> 
+  var giftofspeed2 = document.createElement('link');
+  giftofspeed2.rel = 'stylesheet';
+  giftofspeed2.href = 'https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap';
+  giftofspeed2.type = 'text/css';
+  var godefer2 = document.getElementsByTagName('link')[0];
+  godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+  var giftofspeed3 = document.createElement('link');
+  giftofspeed3.rel = 'stylesheet';
+  giftofspeed3.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+  giftofspeed3.type = 'text/css';
+  var godefer3 = document.getElementsByTagName('link')[0];
+  godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
+</script>
+<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')
+</script>
+<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script>
+<script>
+  $('.dropdown').dropdown();
+</script>
 <script src="https://cleanasnew.com/assets/js/lazysizes.min.js" async></script>
 @endsection

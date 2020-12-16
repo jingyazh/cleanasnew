@@ -13,11 +13,11 @@
       <p>
 		  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 			 <a href="how-we-compare" itemprop="item">
-				 <span itemprop="name">How We Compare</span></a>
+				 <span itemprop="name">{{__('How We Compare')}}</span></a>
        			 <meta itemprop="position" content="1">
         		</span> &#8250; 
 		    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-			  <span itemprop="name">Cleaning Cost</span>
+			  <span itemprop="name">{{__('Cleaning Cost')}}</span>
               <meta itemprop="position" content="2">
              </span> 
 		</p>
@@ -37,66 +37,66 @@
  <table class="col-12 mt-5 ml-5 mb-5 table-hover">
             <thead>
               <tr>
-                <th>26 Days</th>
+                <th>26 {{__('Days')}}</th>
                 <th>&nbsp;</th>
-                <th>100 Exchangers TAR Proposal</th>
-                <th>13 Days</th>
+                <th>100 {{__('Exchangers TAR Proposal')}}</th>
+                <th>13 {{__('Days')}}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Wash Pad</td>
-                <td>Cost/ Day</td>
-                <td>Item Description</td>
+                <td>{{__('Cost/ Day')}}</td>
+                <td>{{__("Item Description")}}</td>
                 <td><span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>Ultrasonic Equipment</td>
-                <td>Included</td>
+                <td>{{__("Ultrasonic Equipment")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$265,460</td>
                 <td class="colorblue">$10,250</td>
-                <td>Bundle Blaster’s & Pumps (2)</td>
-                <td>Included</td>
+                <td>{{__("Bundle Blaster’s & Pumps (2)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$484,380</td>
                 <td class="colorblue">$18,630</td>
-                <td>IBC’s & Pumps (3)</td>
-                <td>Included</td>
+                <td>{{__("IBC’s & Pumps (3)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$119,600</td>
                 <td class="colorblue">$4,600</td>
-                <td>Mini-Arm, Wands & Pumps (3)</td>
-                <td>Included</td>
+                <td>{{__("Mini-Arm, Wands & Pumps (3)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$115,736</td>
                 <td class="colorblue">$4,451</td>
                 <td>Consumable (Tips, PPE, etc.)</td>
-                <td>Included</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$447,824</td>
                 <td class="colorblue">$17,224</td>
-                <td>Hydroblasting Operators (19)</td>
-                <td>Included</td>
+                <td>{{__("Hydroblasting Operators (19)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$57,728</td>
                 <td class="colorblue">$2,220</td>
-                <td>Hydroblasting Supervisors & PM’s (2)</td>
-                <td>Included</td>
+                <td>{{__("Hydroblasting Supervisors & PM’s (2)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$31,500</td>
                 <td class="colorblue">$1,211</td>
-                <td>Hydroblasting Safety (1)</td>
-                <td>Included</td>
+                <td>{{__('Hydroblasting Safety (1)')}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue"><div class="menu-cost"><span class="menu__link menu__link--active">$1,522,228
@@ -104,69 +104,69 @@
                       <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
                     </svg>
                     </span></div></td>
-                <td><p class="mobileNone redText">Hydroblasting Estimate</p></td>
+                <td><p class="mobileNone redText">{{__("Hydroblasting Estimate")}}</p></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
                 <td class="colorblue">$105,248</td>
                 <td class="colorblue">$4,048</td>
-                <td>Plant Personnel (4)</td>
-                <td>Included</td>
+                <td>{{__("Plant Personnel (4)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$162,448</td>
                 <td class="colorblue">$6,248</td>
-                <td>Riggers (8)</td>
-                <td>Included</td>
+                <td>{{__("Riggers (8)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$353,600</td>
                 <td class="colorblue">$13,600</td>
-                <td>Crane (1)</td>
-                <td>Included</td>
+                <td>{{__("Crane (1)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$133,286</td>
                 <td class="colorblue">$5,126</td>
-                <td>Water Supply</td>
-                <td>Included</td>
+                <td>{{__("Water Supply")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$399,859</td>
                 <td class="colorblue">$15,379</td>
-                <td>Wastewater Treatment</td>
-                <td>Included</td>
+                <td>{{__("Wastewater Treatment")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$182,000</td>
                 <td class="colorblue">$4,800</td>
-                <td>Solid Waste Disposal</td>
-                <td>Included</td>
+                <td>{{__("Solid Waste Disposal")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$200,200</td>
                 <td class="colorblue">$7,700</td>
-                <td>Vac Trucks (7)</td>
-                <td>Included</td>
+                <td>{{__("Vac Trucks (7)")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$162,500</td>
                 <td class="colorblue">$6,250</td>
-                <td>Power & Fuel</td>
-                <td>Included</td>
+                <td>{{__("Power & Fuel")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
                 <td class="colorblue">$39,000</td>
                 <td class="colorblue">$1,500</td>
-                <td>Misc. Costs</td>
-                <td>Included</td>
+                <td>{{__("Misc. Costs")}}</td>
+                <td>{{__('Included')}}</td>
               </tr>
               <tr>
-                <td><b>Total Cost</b></td>
+                <td><b>{{__("Total Cost")}}</b></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><b>Guaranteed Fixed Price</b></td>
+                <td><b>{{__("Guaranteed Fixed Price")}}</b></td>
               </tr>
               <tr>
                 <td class="colorblue"><div class="menu-totalcost"><span class="menu__link menu__link--active">$3,260,369
@@ -189,7 +189,7 @@
         </div>
         <div id="parent-div">
           <div id="child-div">
-            <p class="desktopNone">Hydroblasting Estimate</p>
+            <p class="desktopNone">{{__("Hydroblasting Estimate")}}</p>
           </div>
         </div>
 		   <div class="col-1">&nbsp;</div>

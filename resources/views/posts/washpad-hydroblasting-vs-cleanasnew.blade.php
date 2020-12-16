@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline">        &nbsp;
-      <p><a href="https://cleanasnew.com/">Home</a> &#8250; Comparing An Apple To An Apple </p>
+      <p><a href="https://cleanasnew.com/">{{__("Home")}}</a> &#8250; {{__("Comparing An Apple To An Apple")}} </p>
     </div>
   </div>
   <div class="album bg-light">
@@ -28,7 +28,7 @@
 			  <p> Learn more about <a href="/posts/book-your-free-measured-cleaning-trial-today">booking a Free Measured Trial.  </a></p>
 		
 			</div>
-        <div class="col-6 padding30"> <img src="https://cleanasnew.com/https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/washpad-hydroblasting-clean-as-new.jpg?v=20200922" class="img-fluid polaroid lazyload" alt="Wash Pad Hydroblasting VS Clean As New®!"/> </div>
+        <div class="col-6 padding30"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/washpad-hydroblasting-clean-as-new.jpg?v=20200922" class="img-fluid polaroid lazyload" alt="Wash Pad Hydroblasting VS Clean As New®!"/> </div>
       </div>
     </div>
   </div>

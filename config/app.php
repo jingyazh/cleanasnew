@@ -82,6 +82,23 @@ return [
 
     'locale' => 'en',
 
+    'locales' => [
+        'en' => 'English', 
+        'es-us' => 'Español (US)', 
+        'mx' => 'Español (MX)', 
+        'es' => 'Español (ES)', 
+        'fr' => 'Français (FR)',
+        'pt-br' => 'Português (BR)',
+        'de' => 'Deutsch (DE)',
+        'ru' => 'Русский (RU)',
+        'hi-in' => 'Hindi (IN)',
+        'pa-pk' => 'Punjabi (PK)',
+        'cn' => '中文 (CN)',
+        'jp' => '日本語 (JP)',
+        'th' => 'Thai (TH)',
+        'ml' => 'Malay (ML)'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

@@ -10,9 +10,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList">&nbsp;
-      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://cleanasnew.com/"  itemprop="item"><span itemprop="name">Home</span></a>
+      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://cleanasnew.com/"  itemprop="item"><span itemprop="name">{{__("Home")}}</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"> Improve Your ESG Score</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"> {{__("Improve Your ESG Score")}}</span>
         <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -42,7 +42,7 @@ Finally, by cleaning terminally fouled equipment that would historically be disp
 	<p> 			<a href="/esg">Learn more → </a> </p>
  
         </div>
-   <div class="col-6 padding30"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/esg-performance.jpg" loading="lazy" class="img-fluid polaroid lazyload" alt="To help our refinery and petrochemical clients improve their ES&G performance." /> 
+   <div class="col-6 padding30"> <img src="/assets/img/1px.png" data-src="/assets/img/esg-performance.jpg" loading="lazy" class="img-fluid polaroid lazyload" alt="To help our refinery and petrochemical clients improve their ES&G performance." /> 
 	  </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="how-we-compare" itemprop="item"> <span itemprop="name">How We Compare</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="how-we-compare" itemprop="item"> <span itemprop="name">{{__("How We Compare")}}</span></a>
         <meta itemprop="position" content="1">
         </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">ESG</span>
         <meta itemprop="position" content="2">
@@ -34,39 +34,39 @@
             <thead>
               <tr>
                 <th>Wash Pad Hydroblasting</th>
-                <th><span class="heading4">ESG Benefit</span></th>
+                <th><span class="heading4">ESG {{__("Benefit")}}</span></th>
                 <th><span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td><strong>Safety </strong><br>
-                  100% Elimination of Hazards </td>
+                <td><strong>{{__("Safety")}} </strong><br>
+                  100% {{__("Elimination of Hazards")}} </td>
                 <td><img src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="Red X icon."/></td>
-                <td><strong>Energy Efficiency</strong><br>
-                  Reduced GHG Emissions </td>
+                <td><strong>{{__("Energy Efficiency")}}</strong><br>
+                  {{__("Reduced GHG Emissions")}} </td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td><strong>Water Consumption</strong><br>
-                  95% Reduction </td>
+                <td><strong>{{__("Water Consumption")}}</strong><br>
+                  95% {{__("Reduction")}} </td>
                 <td><img src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td><strong>Wastewater Creation</strong><br>
-                  95% Reduction </td>
+                <td><strong>{{__("Wastewater Creation")}}</strong><br>
+                  95% {{__("Reduction")}} </td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
               <tr>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-red-x2.png" class="img-fluid lazyload" alt="X icon."/></td>
-                <td><strong>Reuse/ Recycle</strong><br>
-                  Eliminate Disposal of Uncleanable Parts </td>
+                <td><strong>{{__("Reuse/ Recycle")}}</strong><br>
+                  {{__("Eliminate Disposal of Uncleanable Parts")}} </td>
                 <td><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/service-green-checkmark2.png" class="img-fluid lazyload" alt="Checkmark icon."/></td>
               </tr>
             </tbody>

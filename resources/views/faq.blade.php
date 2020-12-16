@@ -13,7 +13,7 @@
       <p>
 		  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 		  <a href="https://cleanasnew.com/"  itemprop="item">
-			  <span itemprop="name">Home</span></a>
+			  <span itemprop="name">{{__("Home")}}</span></a>
 			  <meta itemprop="position" content="1">
 		  </span> &#8250; 
 		  <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">

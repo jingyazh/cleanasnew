@@ -13,11 +13,11 @@
       <p>
 		  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 		  <a href="https://cleanasnew.com/"  itemprop="item">
-			  <span itemprop="name">Home</span></a>
+			  <span itemprop="name">{{__("Home")}}</span></a>
 			  <meta itemprop="position" content="1">
 		  </span> &#8250; 
 		  <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-			  <span itemprop="name">Our Value To You</span> 
+			  <span itemprop="name">{{__("Our Value To You")}}</span> 
 			  <meta itemprop="position" content="2">
 		  </span>
 	 </p>
@@ -28,10 +28,10 @@
     <div class="container">
       <div class="row">
         <ul class="tabs desktopNone">
-          <li><a href="#" id="tab1">CLEANER</a></li>
-          <li><a href="#" id="tab2">FASTER</a></li>
-          <li><a href="#" id="tab3">SAFER</a></li>
-          <li><a href="#" id="tab4">GREENER</a></li>
+          <li><a href="#" id="tab1">{{__("CLEANER")}}</a></li>
+          <li><a href="#" id="tab2">{{__("FASTER")}}</a></li>
+          <li><a href="#" id="tab3">{{__("SAFER")}}</a></li>
+          <li><a href="#" id="tab4">{{__("GREENER")}}</a></li>
         </ul>
         <div class="content  desktopNone">
           <div class="tab1">
@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading1">CLEANER</h2>
+                      <h2 class="heading1">{{__("CLEANER")}}</h2>
                       <h4>Energy Savings</h4>
                       <p>A cleaner  heat exchanger means better energy efficiency. Restoring as-built performance by improving cleaning results by 20% or more can turn into even greater energy savings. </p>
                       <h4> Improved Production </h4>
@@ -60,7 +60,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading2">FASTER</h2>
+                      <h2 class="heading2">{{__("FASTER")}}</h2>
                       <h4>Shorter Shutdowns Means Higher Profits</h4>
                       <h4>Less Risk To Your Schedule</h4>
                       <p>The <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> process is much faster than hydroblasting alone, and that means less risk to your shutdown schedule and more time for inspection and repair. </p>
@@ -79,7 +79,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading3">SAFER</h2>
+                      <h2 class="heading3">{{__("SAFER")}}</h2>
                       <h4>Less Risk Of Injury</h4>
                       <h4> Offsite Risk</h4>
                       <p>Sending your parts to <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> for cleaning completely eliminates the cleaning risks from your site.</p>
@@ -99,7 +99,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading4">GREENER</h2>
+                      <h2 class="heading4">{{__("GREENER")}}</h2>
                       <h4>Reduced Environmental Impact </h4>
                       <h4>Smaller Carbon Footprint </h4>
                       <p>By cleaning your heat exchangers to like-new condition, your energy consumption is reduced, and your efficiency is improved, and your carbon footprint gets smaller. </p>
@@ -128,7 +128,7 @@
       data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                  <h2 class="heading1">CLEANER</h2>
+                  <h2 class="heading1">{{__("CLEANER")}}</h2>
                   <h4>Energy Savings</h4>
                   <p>A cleaner  heat exchanger means better energy efficiency. Restoring as-built performance by improving cleaning results by 20% or more can turn into even greater energy savings. </p>
                   <h4> Improved Production </h4>
@@ -150,7 +150,7 @@
       data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                  <h2 class="heading2">FASTER</h2>
+                  <h2 class="heading2">{{__("FASTER")}}</h2>
                   <h4>Shorter Shutdowns Means Higher Profits</h4>
                   <h4>Less Risk To Your Schedule</h4>
                   <p>The <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> process is much faster than hydroblasting alone, and that means less risk to your shutdown schedule and more time for inspection and repair. </p>
@@ -171,7 +171,7 @@
       data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                  <h2 class="heading3">SAFER</h2>
+                  <h2 class="heading3">{{__("SAFER")}}</h2>
                   <h4>Less Risk Of Injury</h4>
                   <h4> Off-Site Risk</h4>
                   <p>Sending your parts to <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> for cleaning completely eliminates the cleaning risks from your site.</p>
@@ -192,7 +192,7 @@
       data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                  <h2 class="heading4">GREENER</h2>
+                  <h2 class="heading4">{{__("GREENER")}}</h2>
                   <h4>Reduced Environmental Impact </h4>
                   <h4>Smaller Carbon Footprint </h4>
                   <p>By cleaning your heat exchangers to like-new condition, your energy consumption is reduced, and your efficiency is improved, and your carbon footprint gets smaller. </p>

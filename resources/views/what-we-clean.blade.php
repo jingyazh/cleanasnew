@@ -10,9 +10,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/" itemprop="item"> <span itemprop="name">Home</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/" itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
           <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">What We Clean</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">{{__("What We Clean")}}</span>
           <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -22,38 +22,38 @@
       <div class="row">
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item"> <a class="nav-link active" id="refinery-tab" data-toggle="tab" href="#refinery" role="tab" aria-controls="refinery" aria-selected="true">Refineries </a>
+            <li class="nav-item"> <a class="nav-link active" id="refinery-tab" data-toggle="tab" href="#refinery" role="tab" aria-controls="refinery" aria-selected="true">{{__("Refineries")}} </a>
               <hr>
             </li>
-            <li class="nav-item"> <a class="nav-link" id="petrochemical-tab" data-toggle="tab" href="#petrochemical" role="tab" aria-controls="petrochemical" aria-selected="true">Petrochemical Plants</a>
+            <li class="nav-item"> <a class="nav-link" id="petrochemical-tab" data-toggle="tab" href="#petrochemical" role="tab" aria-controls="petrochemical" aria-selected="true">{{__("Petrochemical Plants")}}</a>
               <hr>
             </li>
-            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Heat Exchangers <span class="caret"></span></a>
+            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{__("Heat Exchangers")}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="nav-link  active" id="straight-tab" data-toggle="tab" href="#straight" role="tab" aria-controls="straight" aria-selected="true">Straight Tube </a></li>
-                <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">U-Tube </a></li>
-                <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">Triangular Pitch </a></li>
-                <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">Twisted Tube </a></li>
-                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">Welded Plate-and-Frame </a></li>
+                <li class="nav-item"><a class="nav-link  active" id="straight-tab" data-toggle="tab" href="#straight" role="tab" aria-controls="straight" aria-selected="true">{{__("Straight Tube")}} </a></li>
+                <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
+                <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">{{__("Triangular Pitch")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">{{__("Twisted Tube")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li>
               </ul>
               <hr>
             </li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Parts <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{__("Parts")}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="nav-link active" id="valves-tab" data-toggle="tab" href="#valves" role="tab" aria-controls="valves" aria-selected="true">Valves </a></li>
-                <li class="nav-item"><a class="nav-link" id="filters-tab" data-toggle="tab" href="#filters" role="tab" aria-controls="filters" aria-selected="true">Filters </a></li>
-                <li class="nav-item"><a class="nav-link" id="structured-tab" data-toggle="tab" href="#structured" role="tab" aria-controls="structured" aria-selected="true">Structured Packing</a></li>
-                <li class="nav-item"><a class="nav-link" id="unstructured-tab" data-toggle="tab" href="#unstructured" role="tab" aria-controls="unstructured" aria-selected="true">Unstructured Packing </a></li>
-                <li class="nav-item"><a class="nav-link" id="rotating-tab" data-toggle="tab" href="#rotating" role="tab" aria-controls="rotating" aria-selected="true">Rotating Equipment </a></li>
-                <li class="nav-item"><a class="nav-link" id="scaffolding-tab" data-toggle="tab" href="#scaffolding" role="tab" aria-controls="scaffolding" aria-selected="true"> Scaffolding </a></li>
-                <li class="nav-item"><a class="nav-link" id="trays-tab" data-toggle="tab" href="#trays" role="tab" aria-controls="trays" aria-selected="true"> Column Trays </a></li>
-                <li class="nav-item"><a class="nav-link" id="pots-tab" data-toggle="tab" href="#pots" role="tab" aria-controls="pots" aria-selected="true"> Seal Pots </a></li>
-                <li class="nav-item"><a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="parts" aria-selected="true"> Many other parts</a></li>
+                <li class="nav-item"><a class="nav-link active" id="valves-tab" data-toggle="tab" href="#valves" role="tab" aria-controls="valves" aria-selected="true">{{__("Valves")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="filters-tab" data-toggle="tab" href="#filters" role="tab" aria-controls="filters" aria-selected="true">{{__("Filters")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="structured-tab" data-toggle="tab" href="#structured" role="tab" aria-controls="structured" aria-selected="true">{{__("Structured Packing")}}</a></li>
+                <li class="nav-item"><a class="nav-link" id="unstructured-tab" data-toggle="tab" href="#unstructured" role="tab" aria-controls="unstructured" aria-selected="true">{{__("Unstructured Packing")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="rotating-tab" data-toggle="tab" href="#rotating" role="tab" aria-controls="rotating" aria-selected="true">{{__("Rotating Equipment")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="scaffolding-tab" data-toggle="tab" href="#scaffolding" role="tab" aria-controls="scaffolding" aria-selected="true"> {{__("Scaffolding")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="trays-tab" data-toggle="tab" href="#trays" role="tab" aria-controls="trays" aria-selected="true"> {{__("Column Trays")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="pots-tab" data-toggle="tab" href="#pots" role="tab" aria-controls="pots" aria-selected="true"> {{__("Seal Pots")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="parts" aria-selected="true"> {{__("Many other parts")}}</a></li>
               </ul>
               <hr>
             </li>
           </ul>
-          <h3 class="bigTitle text-center">If We Can’t Clean It, You Don’t Pay!</h3>
+          <h3 class="bigTitle text-center">{{__("If We Can’t Clean It, You Don’t Pay!")}}</h3>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 desktopNone">

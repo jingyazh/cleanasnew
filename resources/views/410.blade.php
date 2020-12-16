@@ -8,10 +8,12 @@
 <title>Page Not Found | Clean As New®</title>
 <link href="/assets/css/bootstrap.min-cg.css?v=20201030" rel="stylesheet">
 <link href="/assets/css/styles09.css?v=20201201" rel="stylesheet">
+<link href="https://cleanasnew.com/404.shtml" rel="canonical">
 <meta content="https://www.facebook.com/cangc01/" property="fb:profile_id">
 <meta content="en_US" property="og:locale"/>
 <meta content=" Clean As New Powered by Tech Sonic®" property="og:site_name" />
 <meta content="website" property="og:type"/>
+<meta content="https://cleanasnew.com/404.shtml" property="og:url"/>
 <meta content="Page Not Found | Clean As New®" property="og:title"/>
 <meta content="We're very sorry, but the page you requested cannot be found. It may have been moved or deleted." property="og:description"/>
 <meta content="https://cleanasnew.com/assets/img/fb-heat-exchanger-cleaned.jpg" property="og:image"/>
@@ -19,21 +21,6 @@
 <meta content="630" property="og:image:height"/>
 <meta name="twitter:card" content="summary"/>
 <meta property="fb:app_id" content="2544690392489034"/>
-<!--
-<link rel="alternate" href="https://cleanasnew.com/404.shtml" hreflang="en-us"/>
-<link rel="alternate" href="https://cleanasnew.com/mx/404.shtml" hreflang="es-mx"/>
-<link rel="alternate" href="https://cleanasnew.com/es/404.shtml" hreflang="es-es"/>
-<link rel="alternate" href="https://cleanasnew.com/es-us/404.shtml" hreflang="es-us"/>
-<link rel="alternate" href="https://cleanasnew.com/pt-br/404.shtml" hreflang="pt-br"/>
-<link rel="alternate" href="https://cleanasnew.com/de/404.shtml" hreflang="de-de"/>
-<link rel="alternate" href="https://cleanasnew.com/fr/404.shtml" hreflang="fr-fr"/>
-<link rel="alternate" href="https://cleanasnew.com/jp/404.shtml" hreflang="ja-jp"/>
-<link rel="alternate" href="https://cleanasnew.com/th/404.shtml" hreflang="th-th"/>
-<link rel="alternate" href="https://cleanasnew.com/ml/404.shtml" hreflang="ms-my"/>
-<link rel="alternate" href="https://cleanasnew.com/ru/404.shtml" hreflang="ru-ru"/>
-<link rel="alternate" href="https://cleanasnew.com/cn/404.shtml" hreflang="zh-cn"/>
-<link rel="alternate" href="https://cleanasnew.com/hi-in/404.shtml" hreflang="hi-in"/>
-<link rel="alternate" href="https://cleanasnew.com/pa-pk/404.shtml" hreflang="pa-pk"/>-->
 <link href="https://cleanasnew.com/assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="https://cleanasnew.com/assets/img/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
 <link href="https://cleanasnew.com/assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
@@ -75,7 +62,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{__("Home")}} <span class="sr-only">(current)</span></a> </li>
+        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="index">{{__("Home")}} <span class="sr-only">(current)</span></a> </li>
         <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="how-we-compare">{{__("How We Compare")}}</a> </li>
         <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="what-we-clean">{{__("What We Clean")}}</a> </li>
         <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="our-services">{{__("Our Services")}}</a> </li>
@@ -93,9 +80,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">Home</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">{{__("404")}}</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">410 Gone</span>
         <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -104,11 +91,8 @@
     <div class="container">
       <div class="row">
         <div class="col-10">
-          <h1>Oops! We lost that page. </h1>
-          <blockquote>
-            <p class="quotation"> We're very sorry, but the page you requested cannot be found. It may have been moved or deleted. <br>
-              For more information, please visit our site and check out great content such as <a href="/testimonials/case-studies">Tech Sonic Case Studies</a>, <a href="faq">Heat Exchanger FAQs</a> and <a href="/testimonials/referred-journal-publications">Journal Publications</a>. </p>
-            -<span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup></blockquote>
+          <h1>410 Gone </h1>
+          <p> We're very sorry, but the page you requested was permanently deleted. </p>
         </div>
       </div>
     </div>

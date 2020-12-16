@@ -13,11 +13,11 @@
       <p>
 		  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 		  <a href="https://cleanasnew.com/"  itemprop="item">
-			  <span itemprop="name">Home</span></a>
+			  <span itemprop="name">{{__("Home")}}</span></a>
 			  <meta itemprop="position" content="1">
 		  </span> &#8250; 
 		  <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-			  <span itemprop="name">How We Do It</span> 
+			  <span itemprop="name">{{__("How We Do It")}}</span> 
 			  <meta itemprop="position" content="2">
 		  </span>
 	 </p>
@@ -27,10 +27,10 @@
     <div class="container">
       <div class="row">
         <ul class="tabs desktopNone">
-          <li><a href="#" id="tab1">CLEANER</a></li>
-          <li><a href="#" id="tab2">FASTER</a></li>
-          <li><a href="#" id="tab3">SAFER</a></li>
-          <li><a href="#" id="tab4">GREENER</a></li>
+          <li><a href="#" id="tab1">{{__("CLEANER")}}</a></li>
+          <li><a href="#" id="tab2">{{__("FASTER")}}</a></li>
+          <li><a href="#" id="tab3">{{__("SAFER")}}</a></li>
+          <li><a href="#" id="tab4">{{__("GREENER")}}</a></li>
         </ul>
         <div class="content desktopNone">
           <div class="tab1">
@@ -39,7 +39,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading1">CLEANER</h2>
+                      <h2 class="heading1">{{__("CLEANER")}}</h2>
                       <h4>What if Clean meant Like New?</h4>
                       <p>Tech Sonic’s patented and proprietary technology cleans heat exchangers and parts to a like new condition. </p>
                       <div>
@@ -67,7 +67,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading2">FASTER</h2>
+                      <h2 class="heading2">{{__("FASTER")}}</h2>
                       <h4>What if your exchangers could be cleaned in half the time? </h4>
                       <p>Every hour that a plant is shut down costs a pile of money. </p>
                       <div>
@@ -95,7 +95,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading3">SAFER</h2>
+                      <h2 class="heading3">{{__("SAFER")}}</h2>
                       <h4>What if you could reduce the potential for injury or death?</h4>
                       <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> reduces the need
                         for hydroblasting by over 75%, reducing the
@@ -123,7 +123,7 @@
                 <div class="card-body">
                   <div class="card-inner2">
                     <div class="scroll">
-                      <h2 class="heading4">GREENER</h2>
+                      <h2 class="heading4">{{__("GREENER")}}</h2>
                       <h4>What if being greener also
                         meant being more profitable?</h4>
                       <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> technology helps our clients 

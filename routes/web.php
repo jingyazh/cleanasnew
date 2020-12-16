@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/lang/{locale}', function ($locale) {
+    if (array_key_exists($locale, config('app.locales'))) {
+        session(['locale' => $locale]);
+    }
+    return back()->withInput();
+    
+    // App::setLocale($locale);
+    //
+    // phpinfo();
+    // return redirect()->route('home');
+
+})->name('changelocale');
+
+Route::view('choose-language', 'choose-language')->name('choose-language');
 
 Route::view('how-we-compare', 'how-we-compare')->name('how_we_compare');
 
@@ -95,3 +109,5 @@ Route::view('posts/the-highest-performing-refineries', 'posts.the-highest-perfor
 Route::view('posts/ultrasonic-cleaning-webinar', 'posts.ultrasonic-cleaning-webinar')->name('ultrasonic-cleaning-webinar');
 
 Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydroblasting-vs-cleanasnew')->name('washpad-hydroblasting-vs-cleanasnew');
+
+// Route::view('/{any}', '404')->name('404ErrorPage');

@@ -10,9 +10,9 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">Home</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/"  itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">Testimonials</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">{{__("Testimonials")}}</span>
         <meta itemprop="position" content="2">
         </span> </p>
     </div>
@@ -23,21 +23,21 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm"> <a class="img-hover-zoom imgblur" href="testimonials/case-studies"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/lowering-heat-exchanger.jpg" class="img-fluid desktopNone  lazyload" alt=" An Exchanger is lowered into an ultrasonic bath by crane."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/lowering-heat-exchanger-sm.jpg" class="img-fluid mobileNone  lazyload" alt="An Exchanger is lowered into an ultrasonic bath by crane."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="testimonials/case-studies">Case Studies</a></p>
+              <p class="text-center"><a href="testimonials/case-studies">{{__("Case Studies")}}</a></p>
             </div>
           </div>
         </div>
         <div class="col-md-4 gap">
           <div class="card mb-4 shadow-sm"> <a class="img-hover-zoom imgblur" href="testimonials/feedback"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/heat-exchanger.jpg?v=20201001" class="img-fluid desktopNone  lazyload" alt="Exchanger after cleaning."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/heat-exchanger-sm2.jpg?v=20201001" class="img-fluid mobileNone  lazyload" alt="Exchanger after cleaning."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="testimonials/feedback">Feedback</a></p>
+              <p class="text-center"><a href="testimonials/feedback">{{__("Feedback")}}</a></p>
             </div>
           </div>
         </div>
         <div class="col-md-4 gap">
           <div class="card mb-4 shadow-sm"> <a class="img-hover-zoom imgblur" href="testimonials/referred-journal-publications"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/tech-sonic-vessel.jpg" class="img-fluid desktopNone  lazyload" alt="Tech Sonic vessel."/><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/tech-sonic-vessel-sm.jpg" class="img-fluid mobileNone  lazyload" alt="Tech Sonic vessel."/></a>
             <div class="card-body">
-              <p class="text-center"><a href="testimonials/referred-journal-publications">Referred Journal Publications</a></p>
+              <p class="text-center"><a href="testimonials/referred-journal-publications">{{__("Referred Journal Publications")}}</a></p>
             </div>
           </div>
         </div>
