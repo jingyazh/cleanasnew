@@ -83,6 +83,8 @@ return [
     'locale' => 'en',
 
     'locales' => [
+        'en-ad' => 'English', 
+        'fr-ad' => 'Français',
         'en' => 'English', 
         'es-us' => 'Español (US)', 
         'mx' => 'Español (MX)', 
@@ -191,6 +193,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //...Mews\Captcha\CaptchaServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
     ],
 

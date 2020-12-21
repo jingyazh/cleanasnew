@@ -1,0 +1,286 @@
+td.valign-middle {
+  vertical-align: middle !important;
+}
+
+label.error-msg{
+  color:#dc3545;
+  width:100%;
+  text-align: center;
+}
+
+label.success-msg{
+  color:#28a745;
+  width:100%;
+  text-align: center;
+}
+
+
+/*=============================   School Layer   ==================================*/
+.cusmodal-content{
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+.cusmodal-content .cusmodal-logo{
+  display: block;
+  height: 100px;
+  width: auto;
+}
+.cusmodal-content .cusmodal-title{
+  margin-top:15px; color: #666666; 
+  font-size: 14px;
+}
+.cusmodal-content .cusmodal-text{
+  margin-top:20px; color: #ABABAB; 
+  font-size: 12px; 
+  line-height: 20px; width:460px;
+}
+
+.cusmodal-content .table-label{
+  font-family: '思源黑体 CN';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #333333;
+  text-align: right;
+  width: 40%;
+}
+.cusmodal-content .photo{
+  display:block; height:111px; width:auto; float:left;
+  margin-right: 5px;
+}
+.img-aspect-ratio-width{
+  display:block;
+  height:auto;
+  width: 135px;
+}
+
+.school-phoneno, .school-telno, .school-adminname{
+  font-family: '思源黑体 CN Light', '思源黑体 CN Regular', '思源黑体 CN';
+  font-weight: 300;  
+  font-size: 12px;
+  color: #666666;
+}
+
+/*====================    Table Center Middle Font    ===================*/
+.custable-center{
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-weight: 400;
+  color: #666666;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 28px;
+
+}
+.custable-center tr th{
+  font-weight: 650;  
+  font-size: 14px;
+}
+
+/*====================  Login Page  ========================*/
+.cuslogin-block{
+  width:100%;  
+  background-color: rgba(0, 0, 0, 0.5); 
+  margin-top:40px;  
+}
+.cuslogin-block .login-box{
+  margin-top:350px;
+  padding:40px 0px;
+  width: 800px;
+}
+
+.cuslogin-block .card{
+  background: transparent;
+  border: none; 
+  box-shadow:none; 
+}
+.cuslogin-block input.form-control {
+  line-height: 40px;
+  height: 40px;
+}
+
+.cuslogin-block .login-logo{
+  font-family: 'PingFangSC-Semibold', 'PingFang SC Semibold', 'PingFang SC';
+  font-weight: 650;  
+  line-height: 48px;
+  font-size: 48px;
+  color: #FFFFFF;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.cuslogin-block .btn-default{
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.cuslogin-block .fa-arrow-circle-o-right{
+  font-size: 40px;
+  color: white;
+}
+.cuslogin-block .cuslogin-feedback{
+  font-family: '微软雅黑';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #FFA847;
+  margin-left: 16px;
+}
+
+/*==========================    Simplization SideBar Menu   ====================================*/
+
+.sidebar-dark-primary .nav-sidebar .nav-item .nav-link.active{
+  /* color: #fff;
+  background-color: #007bff; */
+
+  color: #fff;
+  background-color: rgba(255,255,255,.1) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar ul.nav-treeview .nav-item .nav-link.active {
+  color: #fff;
+  background-color: rgba(255,255,255,.5) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar ul.nav-treeview .nav-item .nav-link:hover {
+  color: #fff;
+  background-color: rgba(255,255,255,0) !important;
+}
+.nav-sidebar ul.nav-treeview .nav-item p{
+  margin-left:8px !important;
+}
+.nav-sidebar  ul.nav-treeview .nav-item p.bullet-point{
+  margin-left:15px !important;
+}
+
+.content-wrapper, .main-footer, .main-header {
+  margin-left: 160px !important;  
+}
+.main-sidebar, .main-sidebar:before {
+  width: 160px;  
+}
+
+table.table-bordered tr  th, table.table-bordered tr  td {
+  color: #666;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-style: normal;
+  /* padding-left: 3px !important; */
+}
+table.table-bordered tr th{
+  font-size: 14px !important;
+}
+table.table-bordered tr td{  
+  font-size: 12px !important;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+table.table-bordered tr td a{
+  font-size: 12px !important;
+  padding-left: 4px;
+  padding-right: 4px;
+
+}
+
+
+.nav-item{
+  /* height: 30px !important; */
+  line-height: 13px !important;
+  font-size:13px; 
+  /* border: 1px solid red; */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.content-header h1{
+  font-size:20px;
+}
+.content-header .breadcrumb{
+  font-size: 13px;
+}
+
+h3.card-title{
+  font-size:18px !important;
+}
+
+div.dataTables_length, div.dataTables_filter, div.dataTables_info, .paginate_button {
+  font-size:14px !important;
+}
+
+
+/*=========== Custome Upload File ===========*/
+
+.cus-upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.cus-btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cus-upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.cus-pointer { cursor:pointer !important }
+
+
+.flex-div{
+  display: flex; 
+  line-height:36px;
+}
+
+.custemple-item{
+  width:100%; height:112px; margin-top:5px; background-color:#fafafa;
+}
+.grey{
+  background-color:#d6d7d9;
+}
+.custemple-item .detail{
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 25px;
+  /* border:1px solid red; */
+}
+
+.custemple-item .detail label, .custemple-comment{
+  margin-left: 15px;
+  font-size: 12px;
+  color: #999;
+}
+.custemple-item .detail input, .custemple-item .detail select{
+  width: 60px; height:38px;
+  border-radius: 5px;
+  border-color: 1px solid #d3d2d7;
+  text-align:center;
+  font-size:18px;
+}
+
+.item-label{
+  width:120px; 
+  text-align:right; 
+  font-size: 14px;
+  line-height: 32px;
+  color: #666; 
+  padding-right:15px;
+}
+
+.item-label span:first-child{
+  color:#F04844;
+}

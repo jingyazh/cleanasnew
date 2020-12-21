@@ -1,0 +1,34 @@
+
+
+div.card-header {
+  background-color: #dc3545 !important;
+}
+
+/* .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #ffc107!important;
+} */
+
+[class*=sidebar-light-] {
+  background-color: #ffc107!important;
+}
+
+.cangc {
+	font-size: 1.3em!important;
+	font-weight: 100;
+	color: #227cbe!important;
+	font-family: Impact
+}
+.cangc2 {
+	font-size: 1.1em!important;
+	font-weight: 100;
+	color: #227cbe;
+	font-family: Impact
+}
+
+sup {
+  color: #227cbe;
+  font-size: .65em;
+  font-weight: 900;
+  top: 0!important;
+  position: relative;
+}

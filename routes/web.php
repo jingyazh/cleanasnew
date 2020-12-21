@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -111,3 +112,54 @@ Route::view('posts/ultrasonic-cleaning-webinar', 'posts.ultrasonic-cleaning-webi
 Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydroblasting-vs-cleanasnew')->name('washpad-hydroblasting-vs-cleanasnew');
 
 // Route::view('/{any}', '404')->name('404ErrorPage');
+
+
+
+// Auth::routes();
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/admin/dashboard', 'HomeController@home')->name('home');
+    //... ========= For Customers ========
+    Route::get('/admin/clients/clients_data', 'ClientController@clients_data')->name('clients.clients_data');
+    Route::post('/admin/clients/change_status', 'ClientController@change_status')->name('clients.change_status');
+    Route::resource('/admin/clients', 'ClientController');
+    //... ========= For Reseller ========
+    Route::get('/admin/users/users_data', 'UsersController@users_data')->name('users.users_data');
+    Route::post('/admin/users/change_status', 'UsersController@change_status')->name('users.change_status');
+    Route::resource('/admin/users', 'UsersController');
+    //... ========= For Orders ========
+    Route::get('/admin/tickets/list_data', 'TicketController@list_data')->name('tickets.list_data');
+    Route::get('/admin/tickets/create/{cid}', 'TicketController@createex')->name('tickets.createex');
+    Route::resource('/admin/tickets', 'TicketController');
+    //... ========= For Requests ========
+    Route::get('/admin/crequests/open', 'CrequestController@open')->name('crequests.open');
+    Route::get('/admin/crequests/createex/{cid}', 'CrequestController@createex')->name('crequests.createex');
+    Route::get('/admin/crequests/openlist_data', 'CrequestController@openlist_data')->name('crequests.openlist_data');
+    Route::get('/admin/crequests/crequests_data', 'CrequestController@crequests_data')->name('crequests.crequests_data');  
+
+    Route::resource('/admin/crequests', 'CrequestController');
+
+    Route::resource('/admin/messages', 'MessageController')->only([
+        'index', 'store', 'destroy'
+    ]);
+
+    Route::get('/admin/statistics/log_data', 'StatisticController@log_data')->name('statistics.log_data');
+    Route::resource('/admin/statistics', 'StatisticController');
+
+
+
+    Route::get('/admin/myprofile', 'HomeController@myprofile')->name('myprofile');
+    Route::put('/admin/masterupdate', 'UsersController@masterupdate')->name('users.masterupdate');
+
+
+});
+
+Route::get('/admin', function () {    
+    return redirect()->route('home');
+});
+Route::get('/admin/{any}', function () {    
+    return redirect()->route('home');
+});
+
