@@ -145,7 +145,7 @@ return [
 
     'dashboard_url' => 'admin/home',
 
-    'logout_url' => 'admin/logout',
+    'logout_url' => 'logout',
 
     'login_url' => 'login',
 

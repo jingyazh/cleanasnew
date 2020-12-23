@@ -115,7 +115,7 @@ Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydrobla
 
 
 
-// Auth::routes();
+Auth::routes();
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -157,6 +157,9 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/admin', function () {    
+    return redirect()->route('home');
+});
+Route::get('/home', function () {    
     return redirect()->route('home');
 });
 Route::get('/admin/{any}', function () {    
