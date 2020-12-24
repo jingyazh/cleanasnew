@@ -185,7 +185,7 @@ return [
 
         ['header' => '___Panel'],
         [
-            'text' => '___Reseller',
+            'text' => 'My Profile',
             'route'  => 'myprofile',
             'icon' => 'fas fa-fw fa-user-cog',
         ],
@@ -195,6 +195,19 @@ return [
             'route'  => 'home',
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ], 
+
+        ['header' => 'How We Compare'],
+        [
+            'text' => 'Add New Item',
+            'route'  => 'comparisons.create',
+            'icon' => 'fas fa-fw fa-user-secret',
+        ],        
+        [
+            'text' => 'Comparison List',
+            'route'  => 'comparisons.index',
+            'icon' => 'fas fa-fw fa-user-secret',
+        ],
+
         ['header' => 'Customer'],
         [
             'text' => 'Add Customer',
@@ -390,6 +403,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Pace',
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js',
                 ],
             ],
         ],

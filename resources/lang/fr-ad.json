@@ -183,6 +183,13 @@
     "Commercial Name":         "Nom commercial",
     "Old address":      "Ancienne adresse",
     "New address":      "Nouvelle adresse",
-    "Master Answer":    "Maître Répondre"
+    "Master Answer":    "Maître Répondre",
+    "Comparisons": "Comparaisons",
+    "Comparison List": "Liste de comparaison",
+    "Title": "Titre",
+    "Image": "Image",
+    "Language": "Langue",
+    "Modify": "Modifier",
+    "Modify Data": "Modifier les données"
 
 }

@@ -121,6 +121,11 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/dashboard', 'HomeController@home')->name('home');
+
+    //... ========= For Comparison ========
+    Route::get('/admin/comparisons/comparisons_data', 'ComparisonController@comparisons_data')->name('comparisons.comparisons_data');
+    Route::resource('/admin/comparisons', 'ComparisonController');
+
     //... ========= For Customers ========
     Route::get('/admin/clients/clients_data', 'ClientController@clients_data')->name('clients.clients_data');
     Route::post('/admin/clients/change_status', 'ClientController@change_status')->name('clients.change_status');
