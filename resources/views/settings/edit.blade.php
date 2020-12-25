@@ -17,12 +17,21 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ route('comparisons.update', $comparison->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('contacts.update', $value->id) }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Modify Data')}} </h3>
+          <div class="card-tools">
+          <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+            @foreach (Config::get('app.locales') as $key => $lang)
+            @if($key != 'en-ad' && $key != 'fr-ad')
+            <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+            @endif
+            @endforeach
+          </select>
+        </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -38,20 +47,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $comparison->title) }}" placeholder="{{__('Title')}}" />
+              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $value->title) }}" placeholder="{{__('Title')}}" />
             </div>
           </div>
-          <!-- <div class="form-group">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
-            <div style="display: flex; flex-direction: row" class="dropzone" id="image_landing_1">
-              <div id="preview-template" style="display: none;"></div>
-            </div>
-          </div> -->
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>{{__('Image')}}<code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" name="image_landing_1" class="custom-file-input" id="inputGroupFile01">
+                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
                   file</label>
               </div>
@@ -61,26 +64,10 @@
             </div>
 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/comparison_image_1.jpg" target="_blank">here</a> | Current Image <a href="/{{ $comparison->image_landing_1 }}" target="_blank">here</a>
+              View example <a href="/assets/examples/values.jpg" target="_blank">here</a> | Current Image <a href="/{{ $value->image }}" target="_blank">here</a>
             </small>
           </div>
-          <div class="form-group col-md-12">
-            <label>{{__('Image')}} 2 <code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image_landing_2" class="custom-file-input" id="inputGroupFile02">
-                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
-                  file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
-            </div>
 
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/comparison_image_2.jpg" target="_blank">here</a> | Current Image <a href="/{{ $comparison->image_landing_2 }}" target="_blank">here</a>
-            </small>
-          </div>
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">
@@ -138,10 +125,9 @@
 @section('js')
 <script>
   function cancel() {
-    location.href = "{{ route('comparisons.index') }}";
+    location.href = "{{ route('values.index') }}";
   }
 </script>
-
 <!-- tinymce editor -->
 <script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
 <script>
@@ -152,7 +138,7 @@
     height: 500,
     setup: function(editor) {
       editor.on('init', function(e) {
-        editor.setContent("{{ $comparison->embed }}");
+        editor.setContent("{{ $value->embed }}");
       });
     }
   });
@@ -187,8 +173,8 @@
   //     console.log('DocType:', text);
   //   }
   // }, schema);
-  // parser.parse("{{$comparison->embed}}");
-  // tinymce.activeEditor.setContent("{{$comparison->embed}}");
+  // parser.parse("{{$value->embed}}");
+  // tinymce.activeEditor.setContent("{{$value->embed}}");
 </script>
 <!-- tinymce editor -->
 
@@ -273,7 +259,7 @@
     if (confirm("{{__('Would you delete this Client ?')}}") == false)
       return false;
     $.ajax({
-      url: "{{ route('comparisons.destroy', $comparison->id) }}",
+      url: "{{ route('values.destroy', $value->id) }}",
       headers: {
         'X-CSRF-TOKEN': '{{ csrf_token() }}'
       },
@@ -281,10 +267,10 @@
       dataType: "JSON",
       data: {
         "_token": "{{ csrf_token() }}",
-        "id": "{{$comparison->id}}" // method and token not needed in data
+        "id": "{{$value->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('comparisons.index') }}";
+        location.href = "{{ route('values.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

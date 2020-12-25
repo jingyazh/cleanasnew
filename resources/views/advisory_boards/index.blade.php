@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Comparisons')}}</h1>
+<h1 class="m-0 text-dark">{{__('Advisory Boards')}}</h1>
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
   <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">{{__('Comparison List')}} </h3>
+        <h3 class="card-title">{{__('Advisory Boards')}} </h3>
 
         <div class="card-tools">
           <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
@@ -30,7 +30,7 @@
             @endif
             @endforeach
           </select>
-          <a href="{!! route('comparisons.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
+          <a href="{!! route('advisory_boards.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
 
       </div>
@@ -45,9 +45,8 @@
           <thead>
             <tr>
               <th></th>
-              <th>{{__('Title')}}</th>
-              <th>{{__('Image 1')}}</th>
-              <th>{{__('Image 2')}}</th>
+              <th>{{__('Name')}}</th>
+              <th>{{__('Image')}}</th>
               <th>{{__('Language')}}</th>
               <th>{{__('Action')}}</th>
             </tr>
@@ -70,7 +69,7 @@
     oTable = $("#listtable").DataTable({
       processing: true,
       serverSide: true,
-      ajax: "{{ route('comparisons.comparisons_data', ['locale' => str_replace('_', '-', app()->getLocale())]) }}",
+      ajax: "{{ route('advisory_boards.data', ['locale' => str_replace('_', '-', app()->getLocale())]) }}",
 
       columnDefs: [{
           className: "text-center valign-middle",
@@ -83,20 +82,16 @@
         },
       ],
       columns: [{
-          data: 'compareid',
-          name: 'compareid'
+          data: 'memberid',
+          name: 'memberid'
         },
         {
-          data: 'title',
-          name: 'title'
+          data: 'name',
+          name: 'name'
         },
         {
-          data: 'image1',
-          name: 'image1'
-        },
-        {
-          data: 'image2',
-          name: 'image2'
+          data: 'image',
+          name: 'image'
         },
         {
           data: 'locale',
