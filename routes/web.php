@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@view')->name('landing');
 
 Route::get('/lang/{locale}', function ($locale) {
     if (array_key_exists($locale, config('app.locales'))) {
         session(['locale' => $locale]);
     }
     return back()->withInput();
-    
+
     // App::setLocale($locale);
     //
     // phpinfo();
@@ -33,7 +31,8 @@ Route::get('/lang/{locale}', function ($locale) {
 
 Route::view('choose-language', 'choose-language')->name('choose-language');
 
-Route::view('how-we-compare', 'how-we-compare')->name('how_we_compare');
+// Route::view('how-we-compare', 'how-we-compare')->name('how_we_compare');
+Route::get('how-we-compare', 'ComparisonController@view')->name('how_we_compare');
 
 Route::view('what-we-clean', 'what-we-clean')->name('what_we_clean');
 
@@ -126,48 +125,95 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/comparisons/comparisons_data', 'ComparisonController@comparisons_data')->name('comparisons.comparisons_data');
     Route::resource('/admin/comparisons', 'ComparisonController');
 
-    //... ========= For Customers ========
-    Route::get('/admin/clients/clients_data', 'ClientController@clients_data')->name('clients.clients_data');
-    Route::post('/admin/clients/change_status', 'ClientController@change_status')->name('clients.change_status');
-    Route::resource('/admin/clients', 'ClientController');
+    //... ========= For Posts ========
+    Route::get('/admin/posts/data', 'PostController@data')->name('posts.data');
+    Route::resource('/admin/posts', 'PostController');
+
+    //... ========= For Cleans ========
+    Route::get('/admin/cleans/data', 'WhatWeCleanController@data')->name('cleans.data');
+    Route::resource('/admin/cleans', 'WhatWeCleanController');
+
+    //... ========= For Services ========
+    Route::get('/admin/services/data', 'ServiceController@data')->name('services.data');
+    Route::resource('/admin/services', 'ServiceController');
+
+    //... ========= For Todos ========
+    Route::get('/admin/todos/data', 'TodoController@data')->name('todos.data');
+    Route::resource('/admin/todos', 'TodoController');
+
+    //... ========= For Values ========
+    Route::get('/admin/values/data', 'OurValueController@data')->name('values.data');
+    Route::resource('/admin/values', 'OurValueController');
+
+    //... ========= For Faqs ========
+    Route::get('/admin/faqs/data', 'FaqController@data')->name('faqs.data');
+    Route::resource('/admin/faqs', 'FaqController');
+
+    //... ========= For Faqs ========
+    Route::get('/admin/testimonials/data', 'TestimonialController@data')->name('testimonials.data');
+    Route::resource('/admin/testimonials', 'TestimonialController');
+
+    //... ========= For Case Studies ========
+    Route::get('/admin/casestudies/data', 'StudyController@data')->name('casestudies.data');
+    Route::resource('/admin/casestudies', 'StudyController');
+
+    //... ========= For Feedback ========
+    Route::get('/admin/feedbacks/data', 'FeedbackController@data')->name('feedbacks.data');
+    Route::resource('/admin/feedbacks', 'FeedbackController');
+
+    //... ========= For Publications ========
+    Route::get('/admin/publications/data', 'PublicationController@data')->name('publications.data');
+    Route::resource('/admin/publications', 'PublicationController');
+
+    //... ========= For ESG ========
+    Route::get('/admin/esgs/data', 'ESGController@data')->name('esgs.data');
+    Route::resource('/admin/esgs', 'ESGController');
+
+    //... ========= For About US ========
+    Route::get('/admin/aboutus/data', 'AboutUsController@data')->name('aboutus.data');
+    Route::resource('/admin/aboutus', 'AboutUsController');
+
+    //... ========= For About Company ========
+    Route::get('/admin/aboutcompany/data', 'AboutCompanyController@data')->name('aboutcompany.data');
+    Route::resource('/admin/aboutcompany', 'AboutCompanyController');
+
+    //... ========= For Advisory Boards ========
+    Route::get('/admin/advisory_boards/data', 'AdvisoryBoardController@data')->name('advisory_boards.data');
+    Route::resource('/admin/advisory_boards', 'AdvisoryBoardController');
+
+    //... ========= For News and Events ========
+    Route::get('/admin/news_events/data', 'NewsEventController@data')->name('news_events.data');
+    Route::resource('/admin/news_events', 'NewsEventController');
+
+    //... ========= For Contacts ========
+    Route::get('/admin/contacts/data', 'ContactController@data')->name('contacts.data');
+    Route::resource('/admin/contacts', 'ContactController');
+
+    //... ========= For General Settings ========
+    Route::get('/admin/settings/data', 'SiteSettingController@data')->name('settings.data');
+    Route::resource('/admin/settings', 'SiteSettingController');
+
+
     //... ========= For Reseller ========
     Route::get('/admin/users/users_data', 'UsersController@users_data')->name('users.users_data');
     Route::post('/admin/users/change_status', 'UsersController@change_status')->name('users.change_status');
     Route::resource('/admin/users', 'UsersController');
-    //... ========= For Orders ========
-    Route::get('/admin/tickets/list_data', 'TicketController@list_data')->name('tickets.list_data');
-    Route::get('/admin/tickets/create/{cid}', 'TicketController@createex')->name('tickets.createex');
-    Route::resource('/admin/tickets', 'TicketController');
-    //... ========= For Requests ========
-    Route::get('/admin/crequests/open', 'CrequestController@open')->name('crequests.open');
-    Route::get('/admin/crequests/createex/{cid}', 'CrequestController@createex')->name('crequests.createex');
-    Route::get('/admin/crequests/openlist_data', 'CrequestController@openlist_data')->name('crequests.openlist_data');
-    Route::get('/admin/crequests/crequests_data', 'CrequestController@crequests_data')->name('crequests.crequests_data');  
-
-    Route::resource('/admin/crequests', 'CrequestController');
 
     Route::resource('/admin/messages', 'MessageController')->only([
         'index', 'store', 'destroy'
     ]);
 
-    Route::get('/admin/statistics/log_data', 'StatisticController@log_data')->name('statistics.log_data');
-    Route::resource('/admin/statistics', 'StatisticController');
-
-
 
     Route::get('/admin/myprofile', 'HomeController@myprofile')->name('myprofile');
     Route::put('/admin/masterupdate', 'UsersController@masterupdate')->name('users.masterupdate');
-
-
 });
 
-Route::get('/admin', function () {    
+Route::get('/admin', function () {
     return redirect()->route('home');
 });
-Route::get('/home', function () {    
+Route::get('/home', function () {
     return redirect()->route('home');
 });
-Route::get('/admin/{any}', function () {    
+Route::get('/admin/{any}', function () {
     return redirect()->route('home');
 });
-
