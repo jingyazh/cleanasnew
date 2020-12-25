@@ -4,12 +4,15 @@ div.card-header {
   background-color: #dc3545 !important;
 }
 
-/* .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
-  background-color: #ffc107!important;
-} */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #110e367a!important;
+}
 
 [class*=sidebar-light-] {
-  background-color: #ffc107!important;
+  /* background-color: #ffc107!important; */
+  background-image: url('./../assets/img/background.jpg');
+  background-size: cover;
+  /* background-blend-mode: color-burn; */
 }
 
 .cangc {
