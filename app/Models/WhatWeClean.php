@@ -9,6 +9,6 @@ class WhatWeClean extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'compareid', 'title', 'image_landing_1', 'image_landing_2', 'embed', 'image_article', 'locale'
+        'cleanid', 'title', 'image', 'type', 'embed', 'locale'
     ];
 }

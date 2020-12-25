@@ -13,10 +13,10 @@ class Contact extends Model
         'offsite_cleaning_facility_town',
         'offsite_cleaning_facility_tel',
         'offsite_cleaning_facility_email',
-        'offies_address',
-        'offies_town',
-        'offies_tel',
-        'offies_email',
+        'offices_address',
+        'offices_town',
+        'offices_tel',
+        'offices_email',
         'embed',
         'locale'
     ];
