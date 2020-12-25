@@ -53,7 +53,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
 
@@ -183,7 +183,7 @@ return [
 
     'menu' => [
 
-        ['header' => '___Panel'],
+        ['header' => ''],
         [
             'text' => 'My Profile',
             'route'  => 'myprofile',
@@ -196,102 +196,117 @@ return [
             'icon' => 'fas fa-fw fa-tachometer-alt',
         ], 
 
-        ['header' => 'How We Compare'],
+        ['header' => 'Content Management'],
         [
-            'text' => 'Add New Item',
-            'route'  => 'comparisons.create',
-            'icon' => 'fas fa-fw fa-user-secret',
+            'text' => 'Posts',
+            'route'  => 'posts.index',
+            'icon' => 'fas fa-fw fa-mail-bulk',
+            'active'=>['admin/posts', 'admin/posts/*'],
         ],        
         [
             'text' => 'Comparison List',
             'route'  => 'comparisons.index',
-            'icon' => 'fas fa-fw fa-user-secret',
+            'icon' => 'fas fa-fw fa-greater-than-equal',
+            'active'=>['admin/comparisons', 'admin/comparisons/*'],
         ],
-
-        ['header' => 'Customer'],
         [
-            'text' => 'Add Customer',
-            'route'  => 'clients.create',
-            'icon' => 'fas fa-fw fa-user-secret',
+            'text' => 'Cleans List',
+            'route'  => 'cleans.index',
+            'icon' => 'fas fa-fw fa-snowplow',
+            'active'=>['admin/cleans', 'admin/cleans/*'],
+        ],
+        [
+            'text' => 'Service List',
+            'route'  => 'services.index',
+            'icon' => 'fas fa-fw fa-taxi',
+            'active'=>['admin/services', 'admin/services/*'],
+        ],
+        [
+            'text' => 'How We Do It',
+            'route'  => 'todos.index',
+            'icon' => 'fas fa-fw fa-th-list',
+            'active'=>['admin/todos', 'admin/todos/*'],
+        ],
+        [
+            'text' => 'Our Value To You',
+            'route'  => 'values.index',
+            'icon' => 'fas fa-fw fa-praying-hands',
+            'active'=>['admin/values', 'admin/values/*'],
+        ],
+        [
+            'text' => 'FAQ',
+            'route'  => 'faqs.index',
+            'icon' => 'fas fa-fw fa-question-circle',
+            'active'=>['admin/faqs', 'admin/faqs/*'],
+        ],
+        [
+            'text' => 'Testimonials',
+            'route'  => 'testimonials.index',
+            'icon' => 'fas fa-fw fa-quote-right',
+            'active'=>['admin/testimonials', 'admin/testimonials/*'],
+        ],
+        [
+            'text' => 'Case Studies',
+            'route'  => 'casestudies.index',
+            'icon' => 'fas fa-fw fa-university',
+            'active'=>['admin/casestudies', 'admin/casestudies/*'],
         ],        
         [
-            'text' => 'Customer List',
-            'route'  => 'clients.index',
-            'icon' => 'fas fa-fw fa-user-secret',
-        ],
-
-
-        [   'header' => 'Reseller',
-            'notrole' => User::ROLE_REGULAR,
-        ],
-        [
-            'text' => 'Add Reseller',
-            'route'  => 'users.create',
-            'icon' => 'fas fa-fw fa-user',
-            'notrole' => User::ROLE_REGULAR,
+            'text' => 'Feedbacks',
+            'route'  => 'feedbacks.index',
+            'icon' => 'fas fa-fw fa-comment-dots',
+            'active'=>['admin/feedbacks', 'admin/feedbacks/*'],
         ],        
         [
-            'text' => 'Reseller List',
-            'route'  => 'users.index',
+            'text' => 'Journal Publications',
+            'route'  => 'publications.index',
+            'icon' => 'fas fa-fw fa-dolly',
+            'active'=>['admin/publications', 'admin/publications/*'],
+        ],
+        [
+            'text' => 'ESG',
+            'route'  => 'esgs.index',
             'icon' => 'fas fa-fw fa-users',
-            'notrole' => User::ROLE_REGULAR,
-        ],
-
-
-        ['header' => 'Order'],
-        [
-            'text' => 'Add Order',
-            'route'  => 'tickets.create',
-            'icon' => 'fas fa-fw fa-tachometer-alt',
-        ],        
-        [
-            'text' => 'Order List',
-            'route'  => 'tickets.index',
-            'icon' => 'fas fa-fw fa-tachometer-alt',
-        ],
-        
-        
-        ['header' => 'Request'],
-        [
-            'text' => 'Open Request',
-            'route'  => 'crequests.open',
-            'icon' => 'fas fa-fw fa-edit',
-        ],        
-        [
-            'text' => 'Request List',
-            'route'  => 'crequests.index',
-            'icon' => 'fas fa-fw fa-mail-bulk',
+            'active'=>['admin/esgs', 'admin/esgs/*'],
         ],
         [
-            'text' => 'Statistics',
-            'route'  => 'statistics.index',
-            'icon' => 'fas fa-fw fa-chart-line',
-            'active'=>['statistics', 'statistics/*'],
-        ],          
-
-        // ['header' => 'Our Services'],
-        // [
-        //     'text' => 'Speed',
-        //     'icon' => 'fas fa-fw fa-tachometer-alt',
-        // ],        
-        // [
-        //     'text' => 'Modems',
-        //     'icon' => 'fas fa-fw fa-newspaper',
-        // ],
-        // [
-        //     'text' => 'Box',
-        //     'icon' => 'fas fa-fw fa-coins',
-        // ],  
-        [   'header' => 'Message',
-            'notrole' => User::ROLE_REGULAR,
-        ],              
+            'text' => 'About US',
+            'route'  => 'aboutus.index',
+            'icon' => 'fas fa-fw fa-info-circle',
+            'active'=>['admin/aboutus', 'admin/aboutus/*'],
+        ],
         [
-            'text' => 'Create',
-            'route'  => 'messages.index',
-            'icon' => 'fas fa-fw fa-newspaper',
-            'active'=>['messages', 'messages/*'],
-            'canrole' => User::ROLE_MASTER,
-        ],  
+            'text' => 'Company Information',
+            'route'  => 'aboutcompany.index',
+            'icon' => 'fas fa-fw fa-building',
+            'active'=>['admin/aboutcompany', 'admin/aboutcompany/*'],
+        ],
+        [
+            'text' => 'Advisory Board',
+            'route'  => 'advisory_boards.index',
+            'icon' => 'fas fa-fw fa-comment-medical',
+            'active'=>['admin/advisory_boards', 'admin/advisory_boards/*'],
+        ],
+        [
+            'text' => 'News & Events',
+            'route'  => 'news_events.index',
+            'icon' => 'fas fa-fw fa-calendar-plus',
+            'active'=>['admin/news_events', 'admin/news_events/*'],
+        ],
+        [
+            'text' => 'Contacts',
+            'route'  => 'contacts.index',
+            'icon' => 'fas fa-fw fa-user-secret',
+            'active'=>['admin/contacts', 'admin/contacts/*'],
+        ],
+        [
+            'text' => 'General Settings',
+            'route'  => 'settings.index',
+            'icon' => 'fas fa-fw fa-cogs',
+            'active'=>['admin/settings', 'admin/settings/*'],
+        ],
+        ['header' => ''],
+
     ],
 
     /*
