@@ -20,10 +20,10 @@ class CreateContactsTable extends Migration
             $table->string('offsite_cleaning_facility_tel');
             $table->string('offsite_cleaning_facility_email');
             $table->string('offices_address');
-            $table->string('offcies_town');
-            $table->string('offcies_tel');
-            $table->string('offcies_email');
-            $table->string('embed');
+            $table->string('offices_town');
+            $table->string('offices_tel');
+            $table->string('offices_email');
+            $table->longText('embed');
             $table->string('locale');
             $table->timestamps();
         });

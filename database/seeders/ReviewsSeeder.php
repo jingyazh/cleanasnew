@@ -23,6 +23,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>The use of ultrasonic technology for cleaning refinery and chemical plant components has been undertaken by Tech Sonic since 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'en',
         ]);
 
@@ -33,6 +34,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>自2003年以来，Tech Sonic便开始使用超声波技术清洁炼油厂和化工厂的部件。</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'cn',
         ]);
 
@@ -43,6 +45,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>Tech Sonic gebruikt sinds 2003 ultrasone technologie voor het reinigen van onderdelen van raffinaderijen en chemische fabrieken.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'de',
         ]);
 
@@ -53,6 +56,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>El uso de tecnología ultrasónica para la limpieza de componentes de plantas químicas y refinerías ha sido realizado por Tech Sonic desde 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'es-us',
         ]);
 
@@ -63,6 +67,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>El uso de tecnología ultrasónica para la limpieza de componentes de plantas químicas y refinerías ha sido realizado por Tech Sonic desde 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'es',
         ]);
 
@@ -73,6 +78,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>L\'utilisation de la technologie ultrasonique pour le nettoyage des composants des raffineries et des usines chimiques est entreprise par Tech Sonic depuis 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'fr',
         ]);
 
@@ -83,6 +89,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>रिफाइनरी और रासायनिक संयंत्र घटकों की सफाई के लिए अल्ट्रासोनिक तकनीक का उपयोग टेक सोनिक द्वारा 2003 से किया गया है।</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'hi-in',
         ]);
 
@@ -93,6 +100,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>製油所および化学プラントのコンポーネントを洗浄するための超音波技術の使用は、2003年からTechSonicによって行われています。</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'jp',
         ]);
 
@@ -103,6 +111,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>Penggunaan teknologi ultrasonik untuk membersihkan kilang dan komponen kilang kimia telah dilakukan oleh Tech Sonic sejak tahun 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'ml',
         ]);
 
@@ -113,6 +122,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>El uso de tecnología ultrasónica para la limpieza de componentes de plantas químicas y refinerías ha sido realizado por Tech Sonic desde 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'mx',
         ]);
 
@@ -123,6 +133,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>ਰਿਫਾਇਨਰੀ ਅਤੇ ਰਸਾਇਣਕ ਪਲਾਂਟ ਦੇ ਹਿੱਸਿਆਂ ਦੀ ਸਫਾਈ ਲਈ ਅਲਟਰਾਸੋਨਿਕ ਤਕਨਾਲੋਜੀ ਦੀ ਵਰਤੋਂ ਟੈਕ ਸੋਨਿਕ ਦੁਆਰਾ 2003 ਤੋਂ ਕੀਤੀ ਗਈ ਹੈ.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'pa-pk',
         ]);
 
@@ -133,6 +144,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>O uso de tecnologia ultrassônica para limpeza de componentes de refinarias e fábricas de produtos químicos foi realizado pela Tech Sonic desde 2003.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'pt-br',
         ]);
 
@@ -143,6 +155,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>Использование ультразвуковой технологии для очистки компонентов нефтеперерабатывающих и химических заводов используется Tech Sonic с 2003 года.</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'ru',
         ]);
 
@@ -153,6 +166,7 @@ class ReviewsSeeder extends Seeder
             'embed' => '<h2><img style="height: auto;" src="https://cleanasnew.com/assets/img/fouling.jpg" alt="A sample of the FeCO3fouling removed from the tube side of the heat exchanger." data-src="https://cleanasnew.com/assets/img/fouling.jpg" /></h2>
             <p>Tech Sonic ใช้เทคโนโลยีอัลตราโซนิกในการทำความสะอาดโรงกลั่นและส่วนประกอบของโรงงานเคมีตั้งแต่ปี 2546 เป็นต้นมา</p>',
             'image' => '',
+            'type' => 'Case Studies',
             'locale' => 'th',
         ]);
 
@@ -164,7 +178,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>I thought everything you guys did was awesome and have already been spreading recommendations to continue using you guys whenever we can!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Turnaround Manager',            
+            'type' => 'Feedback',
+            'role' => 'Turnaround Manager',
             'locale' => 'en',
         ]);
 
@@ -174,7 +189,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>我认为你们所做的一切都很棒，并且已经在散布建议，以便我们尽可能继续使用你们！</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => '周转经理',            
+            'type' => 'Feedback',
+            'role' => '周转经理',
             'locale' => 'cn',
         ]);
 
@@ -184,7 +200,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>Ik dacht dat alles wat jullie deden geweldig was en ik heb al aanbevelingen verspreid om jullie te blijven gebruiken wanneer we maar kunnen!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Turnaround Manager',            
+            'type' => 'Feedback',
+            'role' => 'Turnaround Manager',
             'locale' => 'de',
         ]);
 
@@ -194,7 +211,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>¡Pensé que todo lo que hicieron fue increíble y ya he estado difundiendo recomendaciones para seguir usándolos siempre que podamos!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Gerente de Turnaround',            
+            'type' => 'Feedback',
+            'role' => 'Gerente de Turnaround',
             'locale' => 'es-us',
         ]);
 
@@ -204,7 +222,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>¡Pensé que todo lo que hicieron fue increíble y ya he estado difundiendo recomendaciones para seguir usándolos siempre que podamos!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Gerente de Turnaround',            
+            'type' => 'Feedback',
+            'role' => 'Gerente de Turnaround',
             'locale' => 'es',
         ]);
 
@@ -214,7 +233,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>Je pensais que tout ce que vous faisiez était génial et j\'ai déjà diffusé des recommandations pour continuer à vous utiliser chaque fois que nous le pouvons!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Gestionnaire de redressement',            
+            'type' => 'Feedback',
+            'role' => 'Gestionnaire de redressement',
             'locale' => 'fr',
         ]);
 
@@ -224,7 +244,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>मुझे लगा कि आप लोगों ने जो कुछ भी किया वह भयानक था और जब भी हम कर सकते हैं आप लोगों का उपयोग जारी रखने के लिए पहले से ही सिफारिशें फैला रहे हैं!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'टर्नअराउंड मैनेजर',            
+            'type' => 'Feedback',
+            'role' => 'टर्नअराउंड मैनेजर',
             'locale' => 'hi-in',
         ]);
 
@@ -234,7 +255,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>私はあなたたちがしたことはすべて素晴らしいと思いました、そして私たちができるときはいつでもあなたたちを使い続けるための推奨事項をすでに広めています！</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'ターンアラウンドマネージャー',            
+            'type' => 'Feedback',
+            'role' => 'ターンアラウンドマネージャー',
             'locale' => 'jp',
         ]);
 
@@ -244,7 +266,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>Saya rasa semua yang anda lakukan adalah hebat dan telah menyebarkan cadangan untuk terus menggunakan anda setiap kali kami boleh!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Pengurus Giliran',            
+            'type' => 'Feedback',
+            'role' => 'Pengurus Giliran',
             'locale' => 'ml',
         ]);
 
@@ -254,7 +277,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>¡Pensé que todo lo que hicieron fue increíble y ya he estado difundiendo recomendaciones para seguir usándolos siempre que podamos!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Gerente de Turnaround',            
+            'type' => 'Feedback',
+            'role' => 'Gerente de Turnaround',
             'locale' => 'mx',
         ]);
 
@@ -264,7 +288,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>ਮੈਂ ਸੋਚਿਆ ਕਿ ਤੁਹਾਡੇ ਦੁਆਰਾ ਕੀਤਾ ਸਭ ਕੁਝ ਸ਼ਾਨਦਾਰ ਸੀ ਅਤੇ ਪਹਿਲਾਂ ਹੀ ਸਿਫਾਰਸ਼ਾਂ ਫੈਲਾ ਰਿਹਾ ਹੈ ਕਿ ਤੁਸੀਂ ਮੁੰਡਿਆਂ ਨੂੰ ਵਰਤਣਾ ਜਾਰੀ ਰੱਖੋ ਜਦੋਂ ਵੀ ਅਸੀਂ ਕਰ ਸਕਦੇ ਹਾਂ!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'ਮੋੜ ਪ੍ਰਬੰਧਕ',            
+            'type' => 'Feedback',
+            'role' => 'ਮੋੜ ਪ੍ਰਬੰਧਕ',
             'locale' => 'pa-pk',
         ]);
 
@@ -274,7 +299,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>Achei incrível tudo o que vocês fizeram e já estou espalhando recomendações para continuar usando vocês sempre que pudermos!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Gerente de Turnaround',            
+            'type' => 'Feedback',
+            'role' => 'Gerente de Turnaround',
             'locale' => 'pt-br',
         ]);
 
@@ -284,7 +310,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>Я думал, что все, что вы, ребята, делали, было круто, и я уже распространял рекомендации продолжать использовать вас, ребята, когда это возможно!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'Менеджер по обороту',            
+            'type' => 'Feedback',
+            'role' => 'Менеджер по обороту',
             'locale' => 'ru',
         ]);
 
@@ -294,7 +321,8 @@ class ReviewsSeeder extends Seeder
             'title' => 'Shell Deer Park',
             'embed' => '<p>ฉันคิดว่าทุกสิ่งที่พวกคุณทำนั้นยอดเยี่ยมมากและได้เผยแพร่คำแนะนำเพื่อใช้กับพวกคุณต่อไปทุกเมื่อที่ทำได้!</p>',
             'image' => '/assets/img/feedback/Shell-Deer-Park.jpg',
-            'role' => 'ผู้จัดการเทิร์นอะราวด์',            
+            'type' => 'Feedback',
+            'role' => 'ผู้จัดการเทิร์นอะราวด์',
             'locale' => 'th',
         ]);
 
@@ -308,7 +336,8 @@ class ReviewsSeeder extends Seeder
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><img style="height: auto;" src="https://cleanasnew.com/assets/img/before-and-after-bundle-tubs-cleaned.jpg" alt="Tube Exchanger before and after cleaning." data-src="https://cleanasnew.com/assets/img/before-and-after-bundle-tubs-cleaned.jpg" /></a></p>
             <p>The cleaning of fouled heat exchangers often presents a significant challenge to the maintenance and operation of chemical, petroleum and food processes.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Read more</span> &rarr;</a></p>',
-            'image' => '',
+            'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'en',
         ]);
 
@@ -321,6 +350,7 @@ class ReviewsSeeder extends Seeder
             <p>积垢的热交换器的清洁通常对化学，石油和食品加工的维护和操作提出了重大挑战。</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">了解详情</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'cn',
         ]);
 
@@ -333,6 +363,7 @@ class ReviewsSeeder extends Seeder
             <p>Het reinigen van vervuilde warmtewisselaars vormt vaak een aanzienlijke uitdaging voor het onderhoud en de werking van chemische, petroleum- en voedselprocessen.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Lees meer</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'de',
         ]);
 
@@ -345,6 +376,7 @@ class ReviewsSeeder extends Seeder
             <p>La limpieza de intercambiadores de calor sucios a menudo presenta un desafío significativo para el mantenimiento y operación de procesos químicos, petroleros y alimentarios.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Leer más</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'es-us',
         ]);
 
@@ -357,6 +389,7 @@ class ReviewsSeeder extends Seeder
             <p>La limpieza de intercambiadores de calor sucios a menudo presenta un desafío significativo para el mantenimiento y operación de procesos químicos, petroleros y alimentarios.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Leer más</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'es',
         ]);
 
@@ -369,6 +402,7 @@ class ReviewsSeeder extends Seeder
             <p>Le nettoyage des échangeurs de chaleur encrassés présente souvent un défi important pour l\'entretien et le fonctionnement des procédés chimiques, pétroliers et alimentaires.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">En savoir plus</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'fr',
         ]);
 
@@ -381,6 +415,7 @@ class ReviewsSeeder extends Seeder
             <p>फाउल्ड हीट एक्सचेंजर्स की सफाई अक्सर रासायनिक, पेट्रोलियम और खाद्य प्रक्रियाओं के रखरखाव और संचालन के लिए एक महत्वपूर्ण चुनौती प्रस्तुत करती है।</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">और पढ़ें</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'hi-in',
         ]);
 
@@ -393,6 +428,7 @@ class ReviewsSeeder extends Seeder
             <p>汚れた熱交換器の洗浄は、化学、石油、食品プロセスの保守と運用に重大な課題をもたらすことがよくあります。</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">続きを読む</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'jp',
         ]);
 
@@ -405,6 +441,7 @@ class ReviewsSeeder extends Seeder
             <p>Pembersihan penukar haba yang tercemar sering kali memberikan cabaran yang besar bagi penyelenggaraan dan pengendalian proses kimia, petroleum dan makanan.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Baca lebih lanjut/span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'ml',
         ]);
 
@@ -417,6 +454,7 @@ class ReviewsSeeder extends Seeder
             <p>La limpieza de intercambiadores de calor sucios a menudo presenta un desafío significativo para el mantenimiento y operación de procesos químicos, petroleros y alimentarios.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Leer más</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'mx',
         ]);
 
@@ -429,6 +467,7 @@ class ReviewsSeeder extends Seeder
             <p>ਫਿledਲਡ ਹੀਟ ਐਕਸਚੇਂਜਰਾਂ ਦੀ ਸਫਾਈ ਅਕਸਰ ਰਸਾਇਣਕ, ਪੈਟਰੋਲੀਅਮ ਅਤੇ ਭੋਜਨ ਪ੍ਰਕਿਰਿਆਵਾਂ ਦੀ ਦੇਖਭਾਲ ਅਤੇ ਸੰਚਾਲਨ ਲਈ ਮਹੱਤਵਪੂਰਣ ਚੁਣੌਤੀ ਪੇਸ਼ ਕਰਦੀ ਹੈ.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">ਹੋਰ ਪੜ੍ਹੋ</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'pa-pk',
         ]);
 
@@ -441,6 +480,7 @@ class ReviewsSeeder extends Seeder
             <p>A limpeza de trocadores de calor sujos frequentemente apresenta um desafio significativo para a manutenção e operação de processos químicos, petrolíferos e alimentícios.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Leia mais</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'pt-br',
         ]);
 
@@ -453,6 +493,7 @@ class ReviewsSeeder extends Seeder
             <p>Очистка загрязненных теплообменников часто представляет собой серьезную проблему для обслуживания и эксплуатации химических, нефтяных и пищевых производств.</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">Узнать больше</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'ru',
         ]);
 
@@ -465,6 +506,7 @@ class ReviewsSeeder extends Seeder
             <p>การทำความสะอาดเครื่องแลกเปลี่ยนความร้อนที่เปรอะเปื้อนมักเป็นความท้าทายที่สำคัญในการบำรุงรักษาและการดำเนินการของกระบวนการทางเคมีปิโตรเลียมและอาหาร</p>
             <p><a href="http://www.heatexchanger-fouling.com/papers/papers2011/48_Kieser_F.pdf" target="_blank" rel="noopener noreferrer nofollow"><span style="color: #3598db;">อ่านเพิ่มเติม</span> &rarr;</a></p>',
             'image' => 'assets/img/tech-sonic-vessel-sm.jpg',
+            'type' => 'Referred Journal Publications',
             'locale' => 'th',
         ]);
     }

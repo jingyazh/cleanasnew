@@ -35,11 +35,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(OurValuesSeeder::class);
         // $this->call(FaqsSeeder::class);
         // $this->call(TestimonialsSeeder::class);
-        // $this->call(ReviewsSeeder::class);
+        $this->call(ReviewsSeeder::class);
         // $this->call(ESGSeeder::class);
-        $this->call(AboutUsSeeder::class);
-        $this->call(AboutCompanySeeder::class);
-        $this->call(AdvisoryBoardSeeder::class);
-        $this->call(NewsEventsSeeder::class);
+        // $this->call(AboutUsSeeder::class);
+        // $this->call(AboutCompanySeeder::class);
+        // $this->call(AdvisoryBoardSeeder::class);
+        // $this->call(NewsEventsSeeder::class);
     }
 }

@@ -28,7 +28,7 @@ class OurValuesSeeder extends Seeder
     <li>When we say&nbsp;<span id="tagyes" style="color: #3598db;">YES WE CAN</span>, we mean it - If we can&rsquo;t clean it, you don&rsquo;t pay! Who else in the industry offers that guarantee?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'en',
         ]);
 
@@ -45,7 +45,7 @@ class OurValuesSeeder extends Seeder
     <li>当我们说&nbsp;<span id="tagyes" style="color: #3598db;">是的，我们可以</span>时, 是指-如果我们无法清洁，则您无需付款！ 行业中还有谁可以提供保证？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'cn',
         ]);
 
@@ -62,7 +62,7 @@ class OurValuesSeeder extends Seeder
     <li>Als we zeggen&nbsp;<span id="tagyes" style="color: #3598db;">JA KUNNEN</span>, bedoelen we het: als we het niet kunnen schoonmaken, betaalt u niet! Wie biedt nog meer in de branche die garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'de',
         ]);
 
@@ -79,7 +79,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'es-us',
         ]);
 
@@ -96,7 +96,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'es',
         ]);
 
@@ -113,7 +113,7 @@ class OurValuesSeeder extends Seeder
     <li>Quand nous disons&nbsp;<span id="tagyes" style="color: #3598db;">OUI, NOUS POUVONS</span>, nous le pensons - Si nous ne pouvons pas le nettoyer, vous ne payez pas! Qui d\'autre dans l\'industrie offre cette garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'fr',
         ]);
 
@@ -130,7 +130,7 @@ class OurValuesSeeder extends Seeder
     <li>जब हम कहते हैं&nbsp;<span id="tagyes" style="color: #3598db;">हाँ, हम कर सकते हैं</span>, तो हमारा मतलब है - यदि हम इसे साफ नहीं कर सकते, तो आप भुगतान नहीं करेंगे! उद्योग में और कौन गारंटी देता है?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'hi-in',
         ]);
 
@@ -147,7 +147,7 @@ class OurValuesSeeder extends Seeder
     <li>私たちが&nbsp;<span id="tagyes" style="color: #3598db;">はい、できます</span>と言うとき, それはそれを意味します-私たちがそれをきれいにすることができないならば、あなたは支払いません！ 業界の他の誰がその保証を提供していますか？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'jp',
         ]);
 
@@ -164,7 +164,7 @@ class OurValuesSeeder extends Seeder
     <li>Apabila kita mengatakan&nbsp;<span id="tagyes" style="color: #3598db;">Ya, kita boleh</span>, kita bermaksud - Sekiranya kita tidak dapat membersihkannya, anda tidak membayar! Siapa lagi</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'ml',
         ]);
 
@@ -181,7 +181,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'mx',
         ]);
 
@@ -198,7 +198,7 @@ class OurValuesSeeder extends Seeder
     <li>ਜਦੋਂ ਅਸੀਂ ਕਹਿੰਦੇ ਹਾਂ&nbsp;<span id="tagyes" style="color: #3598db;">ਹਾਂ, ਅਸੀਂ ਕਰ ਸਕਦੇ ਹਾਂ</span>, ਸਾਡਾ ਮਤਲਬ ਹੈ - ਜੇ ਅਸੀਂ ਇਸਨੂੰ ਸਾਫ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀਂ ਹੁੰਦਾ! ਉਦਯੋਗ ਵਿੱਚ ਹੋਰ ਕੌਣ ਉਸ ਗਰੰਟੀ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'pa-pk',
         ]);
 
@@ -215,7 +215,7 @@ class OurValuesSeeder extends Seeder
     <li>Quando dizemos&nbsp;<span id="tagyes" style="color: #3598db;">Sim, nós podemos</span>, estamos falando sério - Se não podemos limpar, você não paga! Quem mais na indústria oferece essa garantia?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'pt-br',
         ]);
 
@@ -232,7 +232,7 @@ class OurValuesSeeder extends Seeder
     <li>Когда мы говорим:&nbsp;<span id="tagyes" style="color: #3598db;">Да, мы можем</span>, мы имеем в виду это - Если мы не можем его почистить, вы не платите! Кто еще в отрасли предлагает такую гарантию?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'ru',
         ]);
 
@@ -249,7 +249,7 @@ class OurValuesSeeder extends Seeder
     <li>เมื่อเราพูดว่า&nbsp;<span id="tagyes" style="color: #3598db;">ด้เราทำได้</span>, เราก็หมายความตามนั้น - ถ้าเราทำความสะอาดไม่ได้คุณก็ไม่ต้องจ่าย! มีใครอีกบ้างในอุตสาหกรรมนี้ที่ให้การรับประกัน?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/cleaner1.jpg"',
+            'image' => 'assets/img/values/cleaner1.jpg',
             'locale' => 'th',
         ]);
 
@@ -267,7 +267,7 @@ class OurValuesSeeder extends Seeder
 <li>When we say&nbsp;<span id="tagyes" style="color: #3598db;">YES WE CAN</span>, we mean it - If we can&rsquo;t clean it, you don&rsquo;t pay! Who else in the industry offers that guarantee?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'en',
         ]);
 
@@ -285,7 +285,7 @@ class OurValuesSeeder extends Seeder
     <li>我们安排并跟踪我们清洁的所有物品，如果您按时交货，我们将按时退货。</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'cn',
         ]);
 
@@ -302,7 +302,7 @@ class OurValuesSeeder extends Seeder
 <li>Als we zeggen&nbsp;<span id="tagyes" style="color: #3598db;">JA KUNNEN</span>, bedoelen we het: als we het niet kunnen schoonmaken, betaalt u niet! Wie biedt nog meer in de branche die garantie?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'de',
         ]);
 
@@ -319,7 +319,7 @@ class OurValuesSeeder extends Seeder
 <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'es-us',
         ]);
 
@@ -336,7 +336,7 @@ class OurValuesSeeder extends Seeder
 <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'es',
         ]);
 
@@ -353,7 +353,7 @@ class OurValuesSeeder extends Seeder
 <li>Quand nous disons&nbsp;<span id="tagyes" style="color: #3598db;">OUI, NOUS POUVONS</span>, nous le pensons - Si nous ne pouvons pas le nettoyer, vous ne payez pas! Qui d\'autre dans l\'industrie offre cette garantie?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'fr',
         ]);
 
@@ -370,7 +370,7 @@ class OurValuesSeeder extends Seeder
 <li>जब हम कहते हैं&nbsp;<span id="tagyes" style="color: #3598db;">हाँ, हम कर सकते हैं</span>, तो हमारा मतलब है - यदि हम इसे साफ नहीं कर सकते, तो आप भुगतान नहीं करेंगे! उद्योग में और कौन गारंटी देता है?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'hi-in',
         ]);
 
@@ -387,7 +387,7 @@ class OurValuesSeeder extends Seeder
 <li>私たちが&nbsp;<span id="tagyes" style="color: #3598db;">はい、できます</span>と言うとき, それはそれを意味します-私たちがそれをきれいにすることができないならば、あなたは支払いません！ 業界の他の誰がその保証を提供していますか？</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'jp',
         ]);
 
@@ -404,7 +404,7 @@ class OurValuesSeeder extends Seeder
 <li>Apabila kita mengatakan&nbsp;<span id="tagyes" style="color: #3598db;">Ya, kita boleh</span>, kita bermaksud - Sekiranya kita tidak dapat membersihkannya, anda tidak membayar! Siapa lagi</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'ml',
         ]);
 
@@ -421,7 +421,7 @@ class OurValuesSeeder extends Seeder
 <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'mx',
         ]);
 
@@ -438,7 +438,7 @@ class OurValuesSeeder extends Seeder
 <li>ਜਦੋਂ ਅਸੀਂ ਕਹਿੰਦੇ ਹਾਂ&nbsp;<span id="tagyes" style="color: #3598db;">ਹਾਂ, ਅਸੀਂ ਕਰ ਸਕਦੇ ਹਾਂ</span>, ਸਾਡਾ ਮਤਲਬ ਹੈ - ਜੇ ਅਸੀਂ ਇਸਨੂੰ ਸਾਫ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀਂ ਹੁੰਦਾ! ਉਦਯੋਗ ਵਿੱਚ ਹੋਰ ਕੌਣ ਉਸ ਗਰੰਟੀ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'pa-pk',
         ]);
 
@@ -455,7 +455,7 @@ class OurValuesSeeder extends Seeder
 <li>Quando dizemos&nbsp;<span id="tagyes" style="color: #3598db;">Sim, nós podemos</span>, estamos falando sério - Se não podemos limpar, você não paga! Quem mais na indústria oferece essa garantia?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'pt-br',
         ]);
 
@@ -472,7 +472,7 @@ class OurValuesSeeder extends Seeder
 <li>Когда мы говорим:&nbsp;<span id="tagyes" style="color: #3598db;">Да, мы можем</span>, мы имеем в виду это - Если мы не можем его почистить, вы не платите! Кто еще в отрасли предлагает такую гарантию?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'ru',
         ]);
 
@@ -489,7 +489,7 @@ class OurValuesSeeder extends Seeder
 <li>เมื่อเราพูดว่า&nbsp;<span id="tagyes" style="color: #3598db;">ด้เราทำได้</span>, เราก็หมายความตามนั้น - ถ้าเราทำความสะอาดไม่ได้คุณก็ไม่ต้องจ่าย! มีใครอีกบ้างในอุตสาหกรรมนี้ที่ให้การรับประกัน?</li>
 </ul>
 </div>',
-            'image' => 'assets/img/values/faster2.jpg"',
+            'image' => 'assets/img/values/faster2.jpg',
             'locale' => 'th',
         ]);
         // Safer
@@ -506,7 +506,7 @@ class OurValuesSeeder extends Seeder
     <li>When we say&nbsp;<span id="tagyes" style="color: #3598db;">YES WE CAN</span>, we mean it - If we can&rsquo;t clean it, you don&rsquo;t pay! Who else in the industry offers that guarantee?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'en',
         ]);
 
@@ -523,7 +523,7 @@ class OurValuesSeeder extends Seeder
     <li>当我们说&nbsp;<span id="tagyes" style="color: #3598db;">是的，我们可以</span>时, 是指-如果我们无法清洁，则您无需付款！ 行业中还有谁可以提供保证？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'cn',
         ]);
 
@@ -540,7 +540,7 @@ class OurValuesSeeder extends Seeder
     <li>Als we zeggen&nbsp;<span id="tagyes" style="color: #3598db;">JA KUNNEN</span>, bedoelen we het: als we het niet kunnen schoonmaken, betaalt u niet! Wie biedt nog meer in de branche die garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'de',
         ]);
 
@@ -557,7 +557,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'es-us',
         ]);
 
@@ -574,7 +574,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'es',
         ]);
 
@@ -591,7 +591,7 @@ class OurValuesSeeder extends Seeder
     <li>Quand nous disons&nbsp;<span id="tagyes" style="color: #3598db;">OUI, NOUS POUVONS</span>, nous le pensons - Si nous ne pouvons pas le nettoyer, vous ne payez pas! Qui d\'autre dans l\'industrie offre cette garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'fr',
         ]);
 
@@ -608,7 +608,7 @@ class OurValuesSeeder extends Seeder
     <li>जब हम कहते हैं&nbsp;<span id="tagyes" style="color: #3598db;">हाँ, हम कर सकते हैं</span>, तो हमारा मतलब है - यदि हम इसे साफ नहीं कर सकते, तो आप भुगतान नहीं करेंगे! उद्योग में और कौन गारंटी देता है?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'hi-in',
         ]);
 
@@ -625,7 +625,7 @@ class OurValuesSeeder extends Seeder
     <li>私たちが&nbsp;<span id="tagyes" style="color: #3598db;">はい、できます</span>と言うとき, それはそれを意味します-私たちがそれをきれいにすることができないならば、あなたは支払いません！ 業界の他の誰がその保証を提供していますか？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'jp',
         ]);
 
@@ -642,7 +642,7 @@ class OurValuesSeeder extends Seeder
     <li>Apabila kita mengatakan&nbsp;<span id="tagyes" style="color: #3598db;">Ya, kita boleh</span>, kita bermaksud - Sekiranya kita tidak dapat membersihkannya, anda tidak membayar! Siapa lagi</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'ml',
         ]);
 
@@ -659,7 +659,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'mx',
         ]);
 
@@ -676,7 +676,7 @@ class OurValuesSeeder extends Seeder
     <li>ਜਦੋਂ ਅਸੀਂ ਕਹਿੰਦੇ ਹਾਂ&nbsp;<span id="tagyes" style="color: #3598db;">ਹਾਂ, ਅਸੀਂ ਕਰ ਸਕਦੇ ਹਾਂ</span>, ਸਾਡਾ ਮਤਲਬ ਹੈ - ਜੇ ਅਸੀਂ ਇਸਨੂੰ ਸਾਫ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀਂ ਹੁੰਦਾ! ਉਦਯੋਗ ਵਿੱਚ ਹੋਰ ਕੌਣ ਉਸ ਗਰੰਟੀ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'pa-pk',
         ]);
 
@@ -693,7 +693,7 @@ class OurValuesSeeder extends Seeder
     <li>Quando dizemos&nbsp;<span id="tagyes" style="color: #3598db;">Sim, nós podemos</span>, estamos falando sério - Se não podemos limpar, você não paga! Quem mais na indústria oferece essa garantia?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'pt-br',
         ]);
 
@@ -710,7 +710,7 @@ class OurValuesSeeder extends Seeder
     <li>Когда мы говорим:&nbsp;<span id="tagyes" style="color: #3598db;">Да, мы можем</span>, мы имеем в виду это - Если мы не можем его почистить, вы не платите! Кто еще в отрасли предлагает такую гарантию?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'ru',
         ]);
 
@@ -727,7 +727,7 @@ class OurValuesSeeder extends Seeder
     <li>เมื่อเราพูดว่า&nbsp;<span id="tagyes" style="color: #3598db;">ด้เราทำได้</span>, เราก็หมายความตามนั้น - ถ้าเราทำความสะอาดไม่ได้คุณก็ไม่ต้องจ่าย! มีใครอีกบ้างในอุตสาหกรรมนี้ที่ให้การรับประกัน?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/safer3.jpg"',
+            'image' => 'assets/img/values/safer3.jpg',
             'locale' => 'th',
         ]);
         // Greener
@@ -744,7 +744,7 @@ class OurValuesSeeder extends Seeder
     <li>When we say&nbsp;<span id="tagyes" style="color: #3598db;">YES WE CAN</span>, we mean it - If we can&rsquo;t clean it, you don&rsquo;t pay! Who else in the industry offers that guarantee?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'en',
         ]);
 
@@ -761,7 +761,7 @@ class OurValuesSeeder extends Seeder
     <li>当我们说&nbsp;<span id="tagyes" style="color: #3598db;">是的，我们可以</span>时, 是指-如果我们无法清洁，则您无需付款！ 行业中还有谁可以提供保证？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'cn',
         ]);
 
@@ -778,7 +778,7 @@ class OurValuesSeeder extends Seeder
     <li>Als we zeggen&nbsp;<span id="tagyes" style="color: #3598db;">JA KUNNEN</span>, bedoelen we het: als we het niet kunnen schoonmaken, betaalt u niet! Wie biedt nog meer in de branche die garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'de',
         ]);
 
@@ -795,7 +795,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'es-us',
         ]);
 
@@ -812,7 +812,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'es',
         ]);
 
@@ -829,7 +829,7 @@ class OurValuesSeeder extends Seeder
     <li>Quand nous disons&nbsp;<span id="tagyes" style="color: #3598db;">OUI, NOUS POUVONS</span>, nous le pensons - Si nous ne pouvons pas le nettoyer, vous ne payez pas! Qui d\'autre dans l\'industrie offre cette garantie?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'fr',
         ]);
 
@@ -846,7 +846,7 @@ class OurValuesSeeder extends Seeder
     <li>जब हम कहते हैं&nbsp;<span id="tagyes" style="color: #3598db;">हाँ, हम कर सकते हैं</span>, तो हमारा मतलब है - यदि हम इसे साफ नहीं कर सकते, तो आप भुगतान नहीं करेंगे! उद्योग में और कौन गारंटी देता है?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'hi-in',
         ]);
 
@@ -863,7 +863,7 @@ class OurValuesSeeder extends Seeder
     <li>私たちが&nbsp;<span id="tagyes" style="color: #3598db;">はい、できます</span>と言うとき, それはそれを意味します-私たちがそれをきれいにすることができないならば、あなたは支払いません！ 業界の他の誰がその保証を提供していますか？</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'jp',
         ]);
 
@@ -880,7 +880,7 @@ class OurValuesSeeder extends Seeder
     <li>Apabila kita mengatakan&nbsp;<span id="tagyes" style="color: #3598db;">Ya, kita boleh</span>, kita bermaksud - Sekiranya kita tidak dapat membersihkannya, anda tidak membayar! Siapa lagi</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'ml',
         ]);
 
@@ -897,7 +897,7 @@ class OurValuesSeeder extends Seeder
     <li>Cuando decimos&nbsp;<span id="tagyes" style="color: #3598db;">SÍ, PODEMOS</span>, lo decimos en serio: si no podemos limpiarlo, ¡no paga! ¿Quién más en la industria ofrece esa garantía?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'mx',
         ]);
 
@@ -914,7 +914,7 @@ class OurValuesSeeder extends Seeder
     <li>ਜਦੋਂ ਅਸੀਂ ਕਹਿੰਦੇ ਹਾਂ&nbsp;<span id="tagyes" style="color: #3598db;">ਹਾਂ, ਅਸੀਂ ਕਰ ਸਕਦੇ ਹਾਂ</span>, ਸਾਡਾ ਮਤਲਬ ਹੈ - ਜੇ ਅਸੀਂ ਇਸਨੂੰ ਸਾਫ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀਂ ਹੁੰਦਾ! ਉਦਯੋਗ ਵਿੱਚ ਹੋਰ ਕੌਣ ਉਸ ਗਰੰਟੀ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'pa-pk',
         ]);
 
@@ -931,7 +931,7 @@ class OurValuesSeeder extends Seeder
     <li>Quando dizemos&nbsp;<span id="tagyes" style="color: #3598db;">Sim, nós podemos</span>, estamos falando sério - Se não podemos limpar, você não paga! Quem mais na indústria oferece essa garantia?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'pt-br',
         ]);
 
@@ -948,7 +948,7 @@ class OurValuesSeeder extends Seeder
     <li>Когда мы говорим:&nbsp;<span id="tagyes" style="color: #3598db;">Да, мы можем</span>, мы имеем в виду это - Если мы не можем его почистить, вы не платите! Кто еще в отрасли предлагает такую гарантию?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'ru',
         ]);
 
@@ -965,7 +965,7 @@ class OurValuesSeeder extends Seeder
     <li>เมื่อเราพูดว่า&nbsp;<span id="tagyes" style="color: #3598db;">ด้เราทำได้</span>, เราก็หมายความตามนั้น - ถ้าเราทำความสะอาดไม่ได้คุณก็ไม่ต้องจ่าย! มีใครอีกบ้างในอุตสาหกรรมนี้ที่ให้การรับประกัน?</li>
     </ul>
     </div>',
-            'image' => 'assets/img/values/greener4.jpg"',
+            'image' => 'assets/img/values/greener4.jpg',
             'locale' => 'th',
         ]);
     }

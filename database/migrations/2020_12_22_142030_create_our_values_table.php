@@ -17,7 +17,7 @@ class CreateOurValuesTable extends Migration
             $table->id();
             $table->string('valueid');
             $table->string('title');
-            $table->longText('embed');
+            $table->longText('embed')->nullable();
             $table->string('image')->nullable();
             $table->string('locale');
             $table->timestamps();

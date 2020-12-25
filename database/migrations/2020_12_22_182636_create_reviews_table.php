@@ -21,6 +21,7 @@ class CreateReviewsTable extends Migration
             $table->longText('embed');
             $table->string('image');
             $table->string('role')->nullable();
+            $table->string('type');
             $table->string('locale');
             $table->timestamps();
         });
