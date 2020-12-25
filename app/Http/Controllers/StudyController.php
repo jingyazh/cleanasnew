@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
+use App\Models\Review;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -10,7 +10,7 @@ use Datatables;
 use Validator;
 use Illuminate\Support\Facades\Config;
 
-class FaqController extends Controller
+class StudyController extends Controller
 {
 
     protected $user;
@@ -32,7 +32,7 @@ class FaqController extends Controller
     {
         //... At first , check expire clients and do process.
 
-        return view('faqs.index', ['listtype' => 'mine']);
+        return view('casestudies.index', ['listtype' => 'mine']);
     }
 
     //... for DataTable Data
@@ -40,24 +40,18 @@ class FaqController extends Controller
     {
 
         $locale = $request->locale;
-        $list = Faq::where('locale', $locale)->get();
+        $list = Review::where('locale', $locale)->where('type', 'Case Studies')->get();
 
         return Datatables::of($list)
 
             ->addColumn('title', function ($item) {
-                $options = array(
-                    'ignore_errors' => true,
-                    'drop_links' => true,
-                    // other options go here
-                );
-                $text = \Soundasleep\Html2Text::convert($item->title, $options);
-                return $text;
+                return $item->title;
             })
             ->addColumn('locale', function ($item) {
                 return Config::get('app.locales')[$item->locale];
             })
             ->addColumn('action', function ($item) {
-                $url1 = route('faqs.edit', $item->id);
+                $url1 = route('casestudies.edit', $item->id);
                 $modifyurl = " <a href='{$url1}'> " . __('Detail') . " </a> ";
                 return $modifyurl;
             })
@@ -68,14 +62,14 @@ class FaqController extends Controller
     public function create()
     {
 
-        $faqs = Faq::where('locale', 'en')->get();
-        foreach ($faqs as $key => $item) {
-            $_faqs = Faq::where('faqid', $item->faqid)->get();
-            if (count($_faqs) == 14)
-                unset($faqs[$key]);
+        $casestudies = Review::where('locale', 'en')->get();
+        foreach ($casestudies as $key => $item) {
+            $_casestudies = Review::where('reviewid', $item->reviewid)->get();
+            if (count($_casestudies) == 14)
+                unset($casestudies[$key]);
         }
 
-        return view("faqs.create", ['faqs' => $faqs]);
+        return view("casestudies.create", ['casestudies' => $casestudies]);
     }
 
     public function store(Request $request)
@@ -89,38 +83,38 @@ class FaqController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        if (isset($_POST['faqid']) && $_POST['faqid'] != NULL && trim($_POST['faqid']) != "") {
-            $checking = Faq::where('faqid', $request->faqid)->where('locale', $request->locale)->get();
+        if (isset($_POST['reviewid']) && $_POST['reviewid'] != NULL && trim($_POST['reviewid']) != "") {
+            $checking = Review::where('reviewid', $request->reviewid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
-                return redirect()->route('faqs.index', ['errors' => ['English version exists already.']]);
+                return redirect()->route('casestudies.index', ['errors' => ['English version exists already.']]);
             }
-            $faqid = $request->input('faqid');
-            $one = Faq::where('faqid', $faqid)->where('locale', 'en')->first();
+            $reviewid = $request->input('reviewid');
+            $one = Review::where('reviewid', $reviewid)->where('locale', 'en')->first();
             $type = $one->type;
         } else {
-            $faqid = substr(str_shuffle(self::$characters), 0, 10);
-            $type = '';
+            $reviewid = substr(str_shuffle(self::$characters), 0, 10);
+            $type = 'Case Studies';
         }
 
-        $input['faqid'] = $faqid;
+        $input['reviewid'] = $reviewid;
         $input['type'] = $type;
 
-        $faq = Faq::create($input);
+        $casestudy = Review::create($input);
 
-        return redirect()->route('faqs.index');
+        return redirect()->route('casestudies.index');
     }
 
-    public function show(Faq $faq)
+    public function show(Review $casestudy)
     {
         //
     }
 
-    public function edit(Faq $faq)
+    public function edit(Review $casestudy)
     {
-        return view('faqs.edit', ['faq' => $faq]);
+        return view('casestudies.edit', ['casestudy' => $casestudy]);
     }
 
-    public function update(Request $request, Faq $faq)
+    public function update(Request $request, Review $casestudy)
     {
         //
         $input = $request->all();
@@ -130,17 +124,17 @@ class FaqController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $faq->fill($input);
+        $casestudy->fill($input);
 
-        $faq->save();
+        $casestudy->save();
 
-        return redirect()->route('faqs.index');
+        return redirect()->route('casestudies.index');
     }
 
-    public function destroy(Faq $faq)
+    public function destroy(Review $casestudy)
     {
         //
-        Faq::destroy($faq->id);
+        Review::destroy($casestudy->id);
 
         return response()->json([
             'success' => __('Client deleted successfully!')

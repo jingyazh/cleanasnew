@@ -3,83 +3,159 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
+use App\User;
 use Illuminate\Http\Request;
+use Auth;
+use Datatables;
+use Validator;
+use Illuminate\Support\Facades\Config;
 
 class AboutCompanyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    protected $user;
+    static $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+
+            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+
+            return $next($request);
+        });
+    }
+
     public function index()
     {
-        //
+        //... At first , check expire clients and do process.
+
+        return view('aboutcompany.index', ['listtype' => 'mine']);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //... for DataTable Data
+    public function data(Request $request)
+    {
+
+        $locale = $request->locale;
+        $list = AboutCompany::where('locale', $locale)->get();
+
+        return Datatables::of($list)
+
+            ->addColumn('title', function ($item) {
+                return $item->title;
+            })
+            ->addColumn('image', function ($item) {
+                return " <a href='{$item->image}' target='_blank'> " . "<img style='height: 50px;' src='{$item->image}' />" . " </a> ";
+            })
+            ->addColumn('locale', function ($item) {
+                return Config::get('app.locales')[$item->locale];
+            })
+            ->addColumn('action', function ($item) {
+                $url1 = route('aboutcompany.edit', $item->id);
+                $modifyurl = " <a href='{$url1}'> " . __('Detail') . " </a> ";
+                return $modifyurl;
+            })
+            ->rawColumns(['action', 'image'])
+            ->make(true);
+    }
+
     public function create()
     {
-        //
+
+        $aboutcompany = AboutCompany::where('locale', 'en')->get();
+        
+        foreach ($aboutcompany as $key => $item) {
+            $_aboutcompany = AboutCompany::where('articleid', $item->articleid)->get();
+            if (count($_aboutcompany) == 14)
+                unset($aboutcompany[$key]);
+        }
+        // dd($aboutcompany);
+        // exit;
+        return view("aboutcompany.create", ['aboutcompany' => $aboutcompany]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'locale' => 'required',
+            'embed' => 'required',
+        ])->validate();
+
+        if (isset($_POST['articleid']) && $_POST['articleid'] != NULL && trim($_POST['articleid']) != "") {
+            $checking = AboutCompany::where('articleid', $request->articleid)->where('locale', $request->locale)->get();
+            if (count($checking) > 0) {
+                return redirect()->route('aboutcompany.index', ['errors' => ['English version exists already.']]);
+            }
+            $articleid = $request->input('articleid');
+            $one = AboutCompany::where('articleid', $articleid)->where('locale', 'en')->first();
+        }else {
+            $articleid = substr(str_shuffle(self::$characters), 0, 10);
+        }
+
+        $input['articleid'] = $articleid;
+
+        $aboutcompany = AboutCompany::create($input);
+
+        $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $request->image->move(public_path('images/upload'), $image);
+        $aboutcompany->fill(['image' => 'images/upload/' . $image]);
+
+        $aboutcompany->save();
+
+        return redirect()->route('aboutcompany.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AboutCompany  $aboutCompany
-     * @return \Illuminate\Http\Response
-     */
-    public function show(AboutCompany $aboutCompany)
+    public function show(AboutCompany $aboutcompany)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AboutCompany  $aboutCompany
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AboutCompany $aboutCompany)
+    public function edit(AboutCompany $aboutcompany)
     {
-        //
+        return view('aboutcompany.edit', ['aboutcompany' => $aboutcompany]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AboutCompany  $aboutCompany
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, AboutCompany $aboutCompany)
+    public function update(Request $request, AboutCompany $aboutcompany)
     {
         //
+        $input = $request->all();
+
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'embed' => 'required',
+        ])->validate();
+
+        $aboutcompany->fill($input);
+
+        if ($request->image != null) {
+            $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            if (strpos($aboutcompany->image, 'upload') != false && is_file($aboutcompany->image))
+                unlink($aboutcompany->image);
+            $request->image->move(public_path('images/upload'), $image);
+            $aboutcompany->fill(['image' => 'images/upload/' . $image]);
+        }
+
+        $aboutcompany->save();
+
+        return redirect()->route('aboutcompany.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AboutCompany  $aboutCompany
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(AboutCompany $aboutCompany)
+    public function destroy(AboutCompany $aboutcompany)
     {
         //
+        AboutCompany::destroy($aboutcompany->id);
+
+        return response()->json([
+            'success' => __('Client deleted successfully!')
+        ]);
     }
 }

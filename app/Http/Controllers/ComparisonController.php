@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comparison;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -43,8 +44,8 @@ class ComparisonController extends Controller
     //... for DataTable Data
     public function comparisons_data(Request $request)
     {
-
-        $list = Comparison::all();
+        $locale = $request->locale;
+        $list = Comparison::where('locale', $locale)->get();
 
         return Datatables::of($list)
 
@@ -76,7 +77,14 @@ class ComparisonController extends Controller
     public function create()
     {
 
-        return view("comparison_setting.create", []);
+        $comparisons = Comparison::where('locale', 'en')->get();
+        foreach ($comparisons as $key => $item) {
+            $_comparisons = Comparison::where('compareid', $item->compareid)->get();
+            if (count($_comparisons) == 14)
+                unset($comparisons[$key]);
+        }
+
+        return view("comparison_setting.create", ['comparisons' => $comparisons]);
     }
 
     /**
@@ -98,24 +106,27 @@ class ComparisonController extends Controller
             'locale' => 'required'
         ])->validate();
 
-        $comparison = Comparison::create([
-            'compareid' => substr(str_shuffle(self::$characters), 0, 10),
-            'title' => '',
-            'image_landing_1' => '',
-            'image_landing_2' => '',
-            'embed' => '',
-            'article_image' => '',
-            'locale' => '',
-        ]);
+        if (isset($_POST['compareid']) && $_POST['compareid'] != NULL && trim($_POST['compareid']) != "") {
+            $checking = Comparison::where('compareid', $request->compareid)->where('locale', $request->locale)->get();
+            if (count($checking) > 0) {
+                return redirect()->route('comparisons.index', ['errors' => ['English version exists already.']]);
+            }
+            $compareid = $request->input('compareid');
+        }else {
+            $compareid = substr(str_shuffle(self::$characters), 0, 10);
+        }
 
-        $comparison->fill($input);
+        $input['compareid'] = $compareid;
+      
+        
+        $comparison = Comparison::create($input); 
 
         $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
         if (strpos($comparison->image_landing_1, 'upload') != false && is_file($comparison->image_landing_1))
             unlink($comparison->image_landing_1);
         $request->image_landing_1->move(public_path('images/upload'), $image1);
         $comparison->fill(['image_landing_1' => 'images/upload/' . $image1]);
-        
+
         $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
         if (strpos($comparison->image_landing_2, 'upload') != false && is_file($comparison->image_landing_2))
             unlink($comparison->image_landing_2);
@@ -191,6 +202,16 @@ class ComparisonController extends Controller
         return redirect()->route('comparisons.index');
     }
 
+    public function view(Request $request)
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $comparisons = Comparison::where('locale', $locale)->get();
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting]);
+    }
     /**
      * Remove the specified resource from storage.
      *
