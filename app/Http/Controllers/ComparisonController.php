@@ -212,6 +212,12 @@ class ComparisonController extends Controller
         // dd($locale);
         return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting]);
     }
+
+    public function detail(Request $request)
+    {
+        $comparison = Comparison::where('id', $request->id)->first();
+        return view('comparisons.index', ['comparison' => $comparison]);
+    }
     /**
      * Remove the specified resource from storage.
      *

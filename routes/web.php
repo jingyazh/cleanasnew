@@ -31,10 +31,10 @@ Route::get('/lang/{locale}', function ($locale) {
 
 Route::view('choose-language', 'choose-language')->name('choose-language');
 
-// Route::view('how-we-compare', 'how-we-compare')->name('how_we_compare');
-Route::get('how-we-compare', 'ComparisonController@view')->name('how_we_compare');
+Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-clean');
 
-Route::view('what-we-clean', 'what-we-clean')->name('what_we_clean');
+// Route::view('what-we-clean', 'what-we-clean')->name('what_we_clean');
+Route::get('what-we-clean', 'WhatWeCleanController@view')->name('what-we-clean');
 
 Route::view('our-services', 'our-services')->name('our_services');
 
@@ -50,15 +50,7 @@ Route::view('how-we-do-it', 'how-we-do-it')->name('how-we-do-it');
 
 Route::view('our-value-to-you', 'our-value-to-you')->name('our-value-to-you');
 
-Route::view('comparisons/cleaning-cost', 'comparisons.cleaning-cost')->name('cleaning-cost');
-
-Route::view('comparisons/esg-sustainability', 'comparisons.esg-sustainability')->name('esg-sustainability');
-
-Route::view('comparisons/facility', 'comparisons.facility')->name('facility');
-
-Route::view('comparisons/heat-exchanger-performance', 'comparisons.heat-exchanger-performance')->name('heat-exchanger-performance');
-
-Route::view('comparisons/parts-cleaning', 'comparisons.parts-cleaning')->name('parts-cleaning');
+Route::get('comparisons/{id}', 'ComparisonController@detail')->name('comparisonDetail');
 
 Route::view('faq', 'faq')->name('faq');
 

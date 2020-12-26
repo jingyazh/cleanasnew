@@ -22,23 +22,49 @@
       <div class="row">
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item"> <a class="nav-link active" id="refinery-tab" data-toggle="tab" href="#refinery" role="tab" aria-controls="refinery" aria-selected="true">{{__("Refineries")}} </a>
+            @if(isset($data) && $data != null)
+            @foreach($data as $key => $value)
+            @if($value->type == '')
+            <li class="nav-item"> <a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value)}}" aria-selected="true">{{$value->title}} </a>
               <hr>
             </li>
-            <li class="nav-item"> <a class="nav-link" id="petrochemical-tab" data-toggle="tab" href="#petrochemical" role="tab" aria-controls="petrochemical" aria-selected="true">{{__("Petrochemical Plants")}}</a>
-              <hr>
-            </li>
+            @endif
+            @endforeach
+            @endif
+            @if(isset($data) && $data != null)
             <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{__("Heat Exchangers")}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="nav-link  active" id="straight-tab" data-toggle="tab" href="#straight" role="tab" aria-controls="straight" aria-selected="true">{{__("Straight Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
+                @foreach($data as $key => $value)
+                @if($value->type == 'Heat Exchangers')
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value)}}" aria-selected="true">{{ $value->title }} </a></li>
+                @endif
+                @endforeach
+                <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
                 <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">{{__("Triangular Pitch")}} </a></li>
                 <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">{{__("Twisted Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li> -->
               </ul>
               <hr>
             </li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{__("Parts")}} <span class="caret"></span></a>
+            @endif
+            @if(isset($data) && $data != null)
+            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{__("Parts")}} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                @foreach($data as $key => $value)
+                @if($value->type == 'Parts')
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value->title)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value->title)}}" aria-selected="true">{{ $value->title }} </a></li>
+                @endif
+                @endforeach
+                <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
+                <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">{{__("Triangular Pitch")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">{{__("Twisted Tube")}} </a></li>
+                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li> -->
+              </ul>
+              <hr>
+            </li>
+            @endif
+
+            <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{__("Parts")}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li class="nav-item"><a class="nav-link active" id="valves-tab" data-toggle="tab" href="#valves" role="tab" aria-controls="valves" aria-selected="true">{{__("Valves")}} </a></li>
                 <li class="nav-item"><a class="nav-link" id="filters-tab" data-toggle="tab" href="#filters" role="tab" aria-controls="filters" aria-selected="true">{{__("Filters")}} </a></li>
@@ -51,14 +77,23 @@
                 <li class="nav-item"><a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="parts" aria-selected="true"> {{__("Many other parts")}}</a></li>
               </ul>
               <hr>
-            </li>
+            </li> -->
           </ul>
           <h3 class="bigTitle text-center">{{__("If We Can’t Clean It, You Don’t Pay!")}}</h3>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 desktopNone">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="refinery" role="tabpanel" aria-labelledby="refinery-tab">
+            @if(isset($data) && $data != null)
+            @foreach($data as $key => $value)
+            <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
+              <h2>{{ $value->title }}</h2>
+              {!! $value->embed !!}
+              <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+            </div>
+            @endforeach
+            @endif
+            <!-- <div class="tab-pane fade show active" id="refinery" role="tabpanel" aria-labelledby="refinery-tab">
               <h2>Refineries</h2>
               <h4>Hydrocarbons and Inorganic Scale</h4>
               <p>Distillation Condensers, Crude/Coker Preheat Trains, FC/Steam/Hydro-Crackers, Reforming, Hydrotreating, Water/Steam Scale, and much more.</p>
@@ -137,7 +172,7 @@
             <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
               <p>Our clients are finding new ways to use Tech Sonic Cleaning every day. </p>
               <img data-src="assets/img/before-after/before-after-cleaning-collage.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Quick turnaround time. Safe, Effective cleaning." />
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- /.col-md-8 -->
@@ -263,7 +298,7 @@
 </script> -->
 <script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"></script>
 <script src="https://cleanasnew.com/js/vendor/popper.min.js" defer></script>
-<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
+<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script>
 <script>
   $('.dropdown').dropdown();
 </script>
