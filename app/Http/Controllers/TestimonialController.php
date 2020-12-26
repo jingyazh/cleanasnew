@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use App\User;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -19,13 +20,13 @@ class TestimonialController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
+        // $this->middleware(function ($request, $next) {
+        //     $this->user = Auth::user();
 
-            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+        //     date_default_timezone_set('America/Toronto');        //..."Europe/London"
 
-            return $next($request);
-        });
+        //     return $next($request);
+        // });
     }
 
     /**
@@ -214,5 +215,20 @@ class TestimonialController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function view(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $testimonials = Testimonial::where('locale', $locale)->get();
+        if (empty($testimonials)) {
+            $testimonials = Testimonial::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting]);
     }
 }

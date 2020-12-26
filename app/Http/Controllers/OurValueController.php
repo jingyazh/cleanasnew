@@ -173,6 +173,6 @@ class OurValueController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);
-        return view('how-we-do-it', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting]);
+        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting]);
     }
 }

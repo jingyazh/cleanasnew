@@ -29,7 +29,7 @@
         <ul class="tabs desktopNone">
         @if(isset($todos) && $todos != null)
         @foreach($todos as $key => $value)
-        <li><a href="#" id="tab{{ $key }}">{{ $value->title }}</a></li> 
+        <li><a href="#" id="tab{{ $key+1 }}">{{ $value->title }}</a></li> 
         @endforeach
         @endif
           <!-- <li><a href="#" id="tab1">{{__("CLEANER")}}</a></li>
@@ -41,7 +41,7 @@
 
           @if(isset($todos) && $todos != null)
           @foreach($todos as $key => $value)
-          <div class="tab{{ $key }}">
+          <div class="tab{{ $key+1 }}">
             <div class="col-md-8 float-left">
               <div class="card card-container">
                 <div class="card-body">
@@ -165,13 +165,33 @@
         <!-- /.col-md-8 -->
         
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
+          @if(isset($todos) && $todos != null)
+          @foreach($todos as $key => $value)
           <div class="card">
+            <div class="card-header" role="tab" id="headingOne{{$key+1}}"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{$key+1}}" aria-expanded="true"
+                aria-controls="collapseOne{{$key+1}}">
+              {!! $value->title !!}
+              </a> </div>
+            <div id="collapseOne{{$key+1}}" class="collapse {{$key==0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="headingOne{{$key+1}}"
+                data-parent="#accordionEx">
+              <div class="card-body">
+                <div class="col-md-12">
+                  {!! $value->embed !!}
+                  <img src="{{ $value->image }}"  alt="If we can’t clean it, you don’t pay!" loading="lazy" class="img-fluid" /> </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+          @endif
+
+
+          <!-- <div class="card">
             <div class="card-header" role="tab" id="headingOne1"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
-        aria-controls="collapseOne1">
+                aria-controls="collapseOne1">
               <h5 class="mb-0">CLEANER</h5>
               </a> </div>
             <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
-      data-parent="#accordionEx">
+                data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   <h2 class="heading1">CLEANER</h2>
@@ -191,15 +211,15 @@
               </div>
             </div>
           </div>
-          <!-- 2 -->
+        
           
           <div class="card">
             <div class="card-header" role="tab" id="headingTwo2"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-        aria-expanded="false" aria-controls="collapseTwo2">
+               aria-expanded="false" aria-controls="collapseTwo2">
               <h5 class="mb-0"> FASTER </h5>
               </a> </div>
             <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-      data-parent="#accordionEx">
+               data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   <h2 class="heading2">FASTER</h2>
@@ -220,14 +240,14 @@
             </div>
           </div>
           
-          <!-- 3 -->
+        
           <div class="card">
             <div class="card-header" role="tab" id="headingThree3a"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3a"
-        aria-expanded="false" aria-controls="collapseThree3a">
+              aria-expanded="false" aria-controls="collapseThree3a">
               <h5 class="mb-0">SAFER</h5>
               </a> </div>
             <div id="collapseThree3a" class="collapse" role="tabpanel" aria-labelledby="headingThree3a"
-      data-parent="#accordionEx">
+              data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   <h2 class="heading3">SAFER</h2>
@@ -247,14 +267,14 @@
               </div>
             </div>
           </div>
-          <!-- 4 -->
+         
           <div class="card">
             <div class="card-header" role="tab" id="headingThree4"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
-        aria-expanded="false" aria-controls="collapseThree4">
+               aria-expanded="false" aria-controls="collapseThree4">
               <h5 class="mb-0">GREENER</h5>
               </a> </div>
             <div id="collapseThree4" class="collapse" role="tabpanel" aria-labelledby="headingThree4"
-      data-parent="#accordionEx">
+                data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   <h2 class="heading4">GREENER</h2>
@@ -276,7 +296,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <br>
         <br>

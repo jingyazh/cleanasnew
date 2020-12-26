@@ -40,6 +40,9 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="title" name="title">
+                @if($faq)
+                {!! $faq->title !!}
+                @endif
                 </textarea>
               </div>
             </div>
@@ -49,6 +52,9 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
+                @if($faq)
+                {!! $faq->embed !!}
+                @endif
                 </textarea>
               </div>
             </div>
@@ -111,57 +117,14 @@
     selector: '#title',
     plugins: ['table', 'code'],
     width: "100%",
-    height: 200,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $faq->title }}");
-      });
-    }
+    height: 200
   });
   tinymce.init({
     selector: '#embed',
     plugins: ['table', 'code'],
     width: "100%",
-    height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $faq->embed }}");
-      });
-    }
+    height: 500
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$faq->embed}}");
-  // tinymce.activeEditor.setContent("{{$faq->embed}}");
 </script>
 <!-- tinymce editor -->
 

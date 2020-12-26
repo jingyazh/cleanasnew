@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use App\User;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -145,5 +146,21 @@ class FaqController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    //  added by 0603 ///
+    public function view(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $faqs = Faq::where('locale', $locale)->get();
+        if (empty($faqs)) {
+            $faqs = Faq::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting]);
     }
 }

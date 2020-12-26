@@ -60,15 +60,18 @@ Route::get('our-value-to-you', 'OurValueController@view')->name('our-value-to-yo
 
 Route::get('comparisons/{id}', 'ComparisonController@detail')->name('comparisonDetail');
 
-Route::view('faq', 'faq')->name('faq');
+// Route::view('faq', 'faq')->name('faq');
+Route::get('faq', 'FaqController@view')->name('faq');
 
-Route::view('testimonials', 'testimonials')->name('testimonials');
+// Route::view('testimonials', 'testimonials')->name('testimonials');
+Route::get('testimonials', 'testimonialController@view')->name('testimonials');
 
-Route::view('testimonials/case-studies', 'testimonials.case-studies')->name('case-studies');
+Route::get('testimonials/{id}', 'ComparisonController@detail')->name('comparisonDetail'); //////////////////// in here working.
+// Route::view('testimonials/case-studies', 'testimonials.case-studies')->name('case-studies');
 
-Route::view('testimonials/feedback', 'testimonials.feedback')->name('feedback');
+// Route::view('testimonials/feedback', 'testimonials.feedback')->name('feedback');
 
-Route::view('testimonials/referred-journal-publications', 'testimonials.referred-journal-publications')->name('referred-journal-publications');
+// Route::view('testimonials/referred-journal-publications', 'testimonials.referred-journal-publications')->name('referred-journal-publications');
 
 Route::view('esg', 'esg')->name('esg');
 
