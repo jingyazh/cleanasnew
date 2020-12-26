@@ -67,38 +67,21 @@
             </select>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Page Name')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="page_name" v-model="locale">
-              <option value="Home Page" label="Home Page"></option>
-              <option value="Post Page" label="Post Page"></option>
-              <option value="Comparison Landing Page" label="Comparison Landing Page"></option>
-              <option value="Comparison Detail Page" label="Comparison Detail Page"></option>
-              <option value="Clean Page" label="Clean Page"></option>
-              <option value="Service Landing Page" label="Service Landing Page"></option>
-              <option value="Service Detail Page" label="Service Detail Page"></option>
-              <option value="How We Do Page" label="How We Do Page"></option>
-              <option value="Our Value Page" label="Our Value Page"></option>
-              <option value="Testimonial Landing Page" label="Testimonial Landing Page"></option>
-              <option value="Testimonial Detail Page" label="Testimonial Detail Page"></option>
-              <option value="ESG Landing Page" label="ESG Landing Page"></option>
-              <option value="ESG Detail Page" label="ESG Detail Page"></option>
-              <option value="About Us Landing Page" label="About Us Landing Page"></option>
-              <option value="About Us Company Page" label="About Us Company Page"></option>
-              <option value="About Us News & Events Page" label="About Us News & Events Page"></option>
-              <option value="Contact Page" label="Contact Page"></option>
-            </select>
-          </div>
-          <div class="form-group col-md-12">
-            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <label>{{__('Meta Name')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="meta_title" class="form-control col-sm-12" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="name" class="form-control col-sm-12" placeholder="{{__('Meta Name')}}" />
             </div>
           </div>
-
           <div class="form-group col-md-12">
-            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <label>{{__('Meta Content')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="meta_description" class="form-control col-sm-12" required placeholder="{{__('Meta Description')}}" />
+              <input type="text" name="content" class="form-control col-sm-12" placeholder="{{__('Meta Content')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Property')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="property" class="form-control col-sm-12" placeholder="{{__('Meta Property')}}" />
             </div>
           </div>
         </div>

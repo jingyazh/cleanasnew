@@ -35,3 +35,11 @@ sup {
   top: 0!important;
   position: relative;
 }
+
+.edit-metatag {
+  cursor: pointer;
+}
+.edit-metatag>.input-group-text:hover {
+  background-color: #227cbe;
+  color: aliceblue;
+}

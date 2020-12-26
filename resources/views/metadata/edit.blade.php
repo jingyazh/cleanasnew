@@ -35,61 +35,49 @@
             </ul>
           </div>
           @endif
+          @if(isset($message) && $message != null)
+          <div class="alert alert-danger">
+            {{ $message }}
+          </div>
+          @endif
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="locale" value="{{$metadata->locale}}" disabled v-model="locale">
+            <select class="form-control col-sm-12" name="locale" v-model="locale">
               @foreach (Config::get('app.locales') as $key => $lang)
               @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" label="{{ $lang }}"></option>
+              <option value="{{ $key }}" "{{ $key == $metadata->locale ? 'active' : ''}}" label="{{ $lang }}"></option>
               @endif
               @endforeach
             </select>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Page Name')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="page_name" value="{{$metadata->page_name}}" disabled v-model="locale">
-              <option value="Home Page" label="Home Page"></option>
-              <option value="Post Page" label="Post Page"></option>
-              <option value="Comparison Landing Page" label="Comparison Landing Page"></option>
-              <option value="Comparison Detail Page" label="Comparison Detail Page"></option>
-              <option value="Clean Page" label="Clean Page"></option>
-              <option value="Service Landing Page" label="Service Landing Page"></option>
-              <option value="Service Detail Page" label="Service Detail Page"></option>
-              <option value="How We Do Page" label="How We Do Page"></option>
-              <option value="Our Value Page" label="Our Value Page"></option>
-              <option value="Testimonial Landing Page" label="Testimonial Landing Page"></option>
-              <option value="Testimonial Detail Page" label="Testimonial Detail Page"></option>
-              <option value="ESG Landing Page" label="ESG Landing Page"></option>
-              <option value="ESG Detail Page" label="ESG Detail Page"></option>
-              <option value="About Us Landing Page" label="About Us Landing Page"></option>
-              <option value="About Us Company Page" label="About Us Company Page"></option>
-              <option value="About Us News & Events Page" label="About Us News & Events Page"></option>
-              <option value="Contact Page" label="Contact Page"></option>
-            </select>
+            <label>{{__('Meta Name')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="name" class="form-control col-sm-12" value="{{$metadata->name}}" placeholder="{{__('Meta Name')}}" />
+            </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <label>{{__('Meta Content')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{$metadata->meta_title}}" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="content" class="form-control col-sm-12" value="{{$metadata->content}}" placeholder="{{__('Meta Content')}}" />
             </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Property')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="property" class="form-control col-sm-12" value="{{$metadata->property}}" placeholder="{{__('Meta Property')}}" />
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+            @if (Auth::user()->roleno == $User::ROLE_MASTER)
+            <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
+            @endif
+            <!-- <button class="btn btn-secondary" onclick="cancel()">{{__('Cancel')}}</button> -->
           </div>
 
-          <div class="form-group col-md-12">
-            <label>{{__('Meta Description')}} <code>*</code> </label>
-            <div style="display: flex; flex-direction: row">
-              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{$metadata->meta_description}}" required placeholder="{{__('Meta Description')}}" />
-            </div>
-          </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
-          @if (Auth::user()->roleno == $User::ROLE_MASTER)
-          <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
-          @endif
-          <!-- <button class="btn btn-secondary" onclick="cancel()">{{__('Cancel')}}</button> -->
         </div>
-
-      </div>
     </form>
     <!-- /.card -->
   </div>
@@ -216,7 +204,7 @@
         "id": "{{$metadata->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('metadata.index') }}";
+        location.href = "{{ route('settings.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

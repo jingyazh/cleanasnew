@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Metadata;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -19,21 +20,25 @@ class MetadataController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
+        // $this->middleware('auth');
+        // $this->middleware(function ($request, $next) {
+        //     $this->user = Auth::user();
 
-            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+        //     date_default_timezone_set('America/Toronto');        //..."Europe/London"
 
-            return $next($request);
-        });
+        //     return $next($request);
+        // });
     }
 
     public function index()
     {
         //... At first , check expire clients and do process.
-
-        return view('metadata.index', ['listtype' => 'mine']);
+        $this->middleware('auth');
+        $locale = session('locale');
+        if ($locale != null)
+            $locale = 'en';
+        $metadata = Metadata::where('locale', $locale)->get();
+        return view('metadata.index', ['listtype' => 'mine', 'metadata' => $metadata]);
     }
 
     //... for DataTable Data
@@ -61,11 +66,13 @@ class MetadataController extends Controller
     public function create()
     {
 
-        $new = new Metadata;
-        Metadata::create($new);
-        $metadata = Metadata::all();
-
-        return view("setting.index", ['metadata' => $metadata]);
+        $metadata = SiteSetting::where('locale', 'en')->get();
+        foreach ($metadata as $key => $item) {
+            $_metadata = SiteSetting::where('id', $item->id)->get();
+            if (count($_metadata) == 14)
+                unset($metadata[$key]);
+        }
+        return view("metadata.create", ['metadata' => $metadata]);
     }
 
     public function store(Request $request)
@@ -81,7 +88,7 @@ class MetadataController extends Controller
         ])->validate();
 
         $metadata = Metadata::where('locale', $request->locale)->where('page_name', $request->page_name)->get();
-        if (count($metadata) != 0){
+        if (count($metadata) != 0) {
             return back();
         }
         $metadata = Metadata::create($input);
@@ -94,8 +101,9 @@ class MetadataController extends Controller
         //
     }
 
-    public function edit(Metadata $metadata)
+    public function edit(Request $request, Metadata $metadata)
     {
+        // dd($metadata);
         return view('metadata.edit', ['metadata' => $metadata]);
     }
 
@@ -104,11 +112,9 @@ class MetadataController extends Controller
         //
         $input = $request->all();
 
-        Validator::make($request->all(), [
-            'title' => 'required',
-            'embed' => 'required',
-        ])->validate();
-
+        if ($request->name == '' && $request->content == '' && $request->property == '') {
+            return view('metadata.edit', ['message' => 'Please fill two fields at least.', 'metadata' => $metadata]);
+        }
         $metadata->fill($input);
 
         $metadata->save();

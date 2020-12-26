@@ -42,37 +42,38 @@
           @endif
 
           <div class="form-group col-md-12">
+            @if(isset($metadata) && $metadata != null)
+            @foreach($metadata as $key => $value)
             <div style="display: flex; flex-direction: row; justify-content: space-between">
-              @if(isset($metadata) && $metadata != null)
-              @foreach($metadata as $key => $value)
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3">{{ __('<meta name="') }}</span>
+                  <span class="input-group-text">{{ __('<meta name="') }}</span>
                 </div>
-                <input type="text" class="form-control col-sm-2" name="name[]" aria-describedby="basic-addon3">
+                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->name ? $value->name : ''}}" aria-describedby="basic-addon3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3">{{ __('" content="') }}</span>
+                  <span class="input-group-text">{{ __('" content="') }}</span>
                 </div>
-                <input type="text" class="form-control col-sm-2" id="basic-url" aria-describedby="basic-addon3">
+                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->content ? $value->content : ''}}" aria-describedby="basic-addon3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3">{{ __('" property="') }}</span>
+                  <span class="input-group-text">{{ __('" property="') }}</span>
                 </div>
-                <input type="text" class="form-control col-sm-2" id="basic-url" aria-describedby="basic-addon3">
+                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->property ? $value->property : ''}}" aria-describedby="basic-addon3">
                 <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">"></span>
+                  <span class="input-group-text">"></span>
                 </div>
+                <a href="{{ route('metadata.edit', $value->id)}}">
+                  <div class="input-group-append edit-metatag" >
+                    <span class="input-group-text">Edit</span>
+                  </div>
+                </a>
               </div>
-              @endforeach
-              @endif
             </div>
+            @endforeach
+            @endif
           </div>
 
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
-        </div>
-
       </div>
     </form>
     <!-- /.card -->

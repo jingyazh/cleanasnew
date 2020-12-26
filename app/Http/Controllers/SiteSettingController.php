@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Metadata;
 use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
@@ -39,10 +40,13 @@ class SiteSettingController extends Controller
         // if ($setting == null)
         //     $setting = SiteSetting::where('locale', 'en')->first();
         $locale = session('locale');
+        if ($locale != null)
+            $locale = 'en';
+        $metadata = Metadata::where('locale', $locale)->get();
         $setting = SiteSetting::where('locale', $locale)->first();
         // dd($setting);
         // exit;
-        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting]);
+        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting, 'metadata' => $metadata]);
     }
 
     //... for DataTable Data
