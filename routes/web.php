@@ -66,7 +66,7 @@ Route::get('faq', 'FaqController@view')->name('faq');
 // Route::view('testimonials', 'testimonials')->name('testimonials');
 Route::get('testimonials', 'testimonialController@view')->name('testimonials');
 
-Route::get('testimonials/{id}', 'ComparisonController@detail')->name('comparisonDetail'); //////////////////// in here working.
+Route::get('testimonials/{id}', 'testimonialController@detail')->name('testimonialsDetail'); //////////////////// in here working.
 // Route::view('testimonials/case-studies', 'testimonials.case-studies')->name('case-studies');
 
 // Route::view('testimonials/feedback', 'testimonials.feedback')->name('feedback');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
+use App\Models\Review;
 use App\User;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
@@ -230,5 +231,20 @@ class TestimonialController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);
         return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting]);
+    }
+
+    public function detail(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $reviews = Review::where('locale', $locale)->where('testimonialid', $request->id)->get();
+        if (empty($reviews)) {
+            $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);s
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting]);
     }
 }
