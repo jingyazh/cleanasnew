@@ -147,7 +147,7 @@
 </script>
 <script>
   function cancel() {
-    location.href = "{{ route('advisory_boards.index') }}";
+    location.href = "{{ route('aboutus.index') }}";
   }
   function handleChange() {
     var ele = document.getElementById('checkbox');

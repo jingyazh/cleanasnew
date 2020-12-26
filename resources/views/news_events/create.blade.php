@@ -123,7 +123,7 @@
 </script>
 <script>
   function cancel() {
-    location.href = "{{ route('news_events.index') }}";
+    location.href = "{{ route('aboutus.index') }}";
   }
 
   function handleChange() {

@@ -24,7 +24,7 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-  <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       <div class="card card-info">
         <div class="card-header">

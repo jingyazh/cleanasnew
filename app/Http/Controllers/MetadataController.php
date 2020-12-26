@@ -9,6 +9,7 @@ use Auth;
 use Datatables;
 use Validator;
 use Illuminate\Support\Facades\Config;
+use PhpOffice\PhpSpreadsheet\Writer\Ods\Meta;
 
 class MetadataController extends Controller
 {
@@ -60,14 +61,11 @@ class MetadataController extends Controller
     public function create()
     {
 
-        $metadata = Metadata::where('locale', 'en')->get();
-        foreach ($metadata as $key => $item) {
-            $_faqs = Metadata::where('page_name', $item->page_name)->get();
-            if (count($_faqs) == 14)
-                unset($metadata[$key]);
-        }
+        $new = new Metadata;
+        Metadata::create($new);
+        $metadata = Metadata::all();
 
-        return view("metadata.create", ['metadata' => $metadata]);
+        return view("setting.index", ['metadata' => $metadata]);
     }
 
     public function store(Request $request)

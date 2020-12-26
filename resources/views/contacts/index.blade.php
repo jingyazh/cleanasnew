@@ -3,7 +3,16 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Contact')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('Contact')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    @if($key != 'en-ad' && $key != 'fr-ad')
+    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    @endif
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -16,21 +25,42 @@
 
 <!-- Main Tables -->
 <div class="row">
+<div class="col-12">
+    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+      {{ method_field('PUT') }}
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Page Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="contact_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->contact_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="contact_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->contact_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
   <div class="col-12">
     <form method="POST" action="{{ $contact ? route('contacts.update', $contact->id) : route('contacts.store') }}">
       @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Contact Data')}} </h3>
-          <div class="card-tools">
-          <select class="btn btn-tool" id="locale" v-model="locale">
-            @foreach (Config::get('app.locales') as $key => $lang)
-            @if($key != 'en-ad' && $key != 'fr-ad')
-            <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-            @endif
-            @endforeach
-          </select>
-        </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -94,7 +124,7 @@
               <input type="email" name="offices_email" class="form-control col-sm-12" required value="{{ $contact ? old('offices_email', $contact->offices_email) : '' }}" placeholder="{{__('Email')}}" />
             </div>
           </div>
-          
+
 
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>

@@ -73,6 +73,22 @@
             </small>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Footer Text')}} <code>*</code> </label>
+            <div class="col-md-12 mb-4">
+              <div class="mx-auto col-md-12">
+                <textarea id="footer_txt" required name="footer_txt">
+                @if(isset($setting) && $setting != null)
+                  {!! $setting->footer_txt !!}
+                  @endif
+                </textarea>
+              </div>
+            </div>
+            <small class="ul-form__text form-text ">
+              View example <a href="/assets/examples/footer_txt.jpg" target="_blank">here</a>
+            </small>
+          </div>
+
+          <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="home_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->home_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
@@ -136,6 +152,10 @@
 <script>
   tinymce.init({
     selector: '#home_embed',
+    plugins: ['table', 'code'],
+  });
+  tinymce.init({
+    selector: '#footer_txt',
     plugins: ['table', 'code'],
   });
 </script>

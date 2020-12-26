@@ -1,7 +1,16 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('FAQs')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('FAQ')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    @if($key != 'en-ad' && $key != 'fr-ad')
+    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    @endif
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -15,21 +24,41 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
+    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+      {{ method_field('PUT') }}
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Page Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="faq_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->faq_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
 
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="faq_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->faq_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+        </div>
+      </div>
+    </form>
   </div>
   <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">{{__('FAQs')}} </h3>
+        <h3 class="card-title">{{__('FAQ List')}} </h3>
 
         <div class="card-tools">
-          <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
-            @foreach (Config::get('app.locales') as $key => $lang)
-            @if($key != 'en-ad' && $key != 'fr-ad')
-            <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-            @endif
-            @endforeach
-          </select>
           <a href="{!! route('faqs.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
 

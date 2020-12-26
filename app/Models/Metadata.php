@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Metadata extends Model
 {
     use HasFactory;
-    protected $fillable = ['page_name', 'meta_title', 'meta_description', 'locale'];
+    protected $fillable = ['name', 'content', 'property', 'locale'];
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -42,7 +43,8 @@ class ContactController extends Controller
         $contact = Contact::where('locale', $locale)->first();
         // dd($locale);
         // exit;
-        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact]);
+        $setting = SiteSetting::where('locale', $locale)->first();
+        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact, 'setting' => $setting]);
     }
 
     //... for DataTable Data
@@ -136,8 +138,8 @@ class ContactController extends Controller
             'offices_email' => 'required',
             'embed' => 'required',
         ])->validate();
-        dd($input);
-        exit;
+        // dd($input);
+        // exit;
 
         $contact->fill($input);
         $contact->save();

@@ -114,7 +114,7 @@
 </script>
 <script>
   function cancel() {
-    location.href = "{{ route('publications.index') }}";
+    location.href = "{{ route('testimonials.index') }}";
   }
   function handleChange() {
     var ele = document.getElementById('checkbox');

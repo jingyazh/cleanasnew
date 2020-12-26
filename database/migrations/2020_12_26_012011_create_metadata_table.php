@@ -15,10 +15,10 @@ class CreateMetadataTable extends Migration
     {
         Schema::create('metadata', function (Blueprint $table) {
             $table->id();
-            $table->string('page_name');
-            $table->string('meta_title');
-            $table->string('meta_description');
-            $table->string('locale');
+            $table->string('name');
+            $table->string('content');
+            $table->string('property');
+            $table->string('locale')->nullable();
             $table->timestamps();
         });
     }
