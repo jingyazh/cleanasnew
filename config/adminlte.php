@@ -305,6 +305,13 @@ return [
             'icon' => 'fas fa-fw fa-cogs',
             'active' => ['admin/settings', 'admin/settings/*'],
         ],
+        [
+            'text' => 'Meta Data Management',
+            'route'  => 'metadata.index',
+            'icon' => 'fas fa-fw fa-medal',
+            'active' => ['admin/metadata', 'admin/metadata/*'],
+        ],
+        
         ['header' => ''],
         [
             'header' => 'User',

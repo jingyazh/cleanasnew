@@ -185,6 +185,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/settings/data', 'SiteSettingController@data')->name('settings.data');
     Route::resource('/admin/settings', 'SiteSettingController');
 
+    //... ========= For Metadata management ========
+    Route::get('/admin/metadata/data', 'MetadataController@data')->name('metadata.data');
+    Route::resource('/admin/metadata', 'MetadataController');
+
 
     //... ========= For Reseller ========
     Route::get('/admin/users/users_data', 'UsersController@users_data')->name('users.users_data');
