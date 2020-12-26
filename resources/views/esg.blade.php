@@ -30,7 +30,17 @@
         </a>
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item" itemprop="name"> <a class="nav-link active" id="header1-tab" data-toggle="tab" href="#header1" role="tab" aria-controls="header1" aria-selected="true"> Our Commitment To The Environmental </a>
+          @if(isset($esges) && $esges != null)
+          @foreach($esges as $key => $value)
+          <li class="nav-item" itemprop="name"> 
+            <a class="nav-link {{$key==0 ? 'active' : ''}}" id="header-tab{{$key+1}}" data-toggle="tab" href="#header{{$key+1}}" role="tab" aria-controls="header{{$key+1}}" aria-selected="{{ $key==0 ?  'true' : 'false' }}"> 
+            {{$value->title}}
+            </a>
+              <hr>
+          </li>
+          @endforeach
+          @endif
+            <!-- <li class="nav-item" itemprop="name"> <a class="nav-link active" id="header1-tab" data-toggle="tab" href="#header1" role="tab" aria-controls="header1" aria-selected="true"> Our Commitment To The Environmental </a>
               <hr>
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" id="header2-tab" data-toggle="tab" href="#header2" role="tab" aria-controls="header2" aria-selected="false"> Improved Sustainability Through Better Cleaning</a>
@@ -44,14 +54,21 @@
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" id="header5-tab" data-toggle="tab" href="#header5" role="tab" aria-controls="header5" aria-selected="false">CHWMEG Facility Review</a>
               <hr>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="col-md-8 float-left desktopNone">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="header1" role="tabpanel" aria-labelledby="header1-tab">
+          @if(isset($esges) && $esges != null)
+          @foreach($esges as $key => $value)
+          <div class="tab-pane fade {{$key==0 ? 'show active' : ''}}" id="header{{$key+1}}" role="tabpanel" aria-labelledby="header-tab{{$key+1}}">
+            {!! $value->embed !!}    
+          </div>
+          @endforeach
+          @endif
+            <!-- <div class="tab-pane fade show active" id="header1" role="tabpanel" aria-labelledby="header1-tab">
               <div class="col-4 float-left"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/waterfall.jpg" class="img-fluid polaroid lazyload" 
-alt="Waterfall in the forest."/> </div>
+                alt="Waterfall in the forest."/> </div>
               <div class="col-8 float-left pre-scrollable">
                 <h2 class="text-capitalize">Our Green Approach To Cleaning Can Help You Meet Your Environmental Targets</h2>
                 <h4>Water:</h4>
@@ -64,7 +81,7 @@ alt="Waterfall in the forest."/> </div>
             </div>
             <div class="tab-pane fade" id="header2" role="tabpanel" aria-labelledby="header2-tab">
               <div class="col-4 float-left"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/refinery.jpg" class="img-fluid polaroid lazyload" 
-alt="A modern, illuminated refinery is visible at dusk. "/> </div>
+              alt="A modern, illuminated refinery is visible at dusk. "/> </div>
               <div class="col-8 float-left">
                 <h2 class="text-capitalize">Implementation Of New Green Technology</h2>
                 <p>Switching to <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> is a demonstration of a commitment to environmental sustainability. By adopting a better cleaning process, plants can not only save $100’s M USD in energy costs, but can simultaneously claim the benefits of a lower carbon footprint.</p>
@@ -98,11 +115,27 @@ alt="A modern, illuminated refinery is visible at dusk. "/> </div>
                 <p> As a part of our support of the program we have completed a facility review under the 2020 CHWMEG Facility Review Program. </p>
                 <p> For more information <a href="https://chwmeg.org/index.asp" target="_blank">https://chwmeg.org/index.asp</a>. </p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
+        @if(isset($esges) && $esges != null)
+          @foreach($esges as $key => $value)
           <div class="card">
+            <div class="card-header" role="tab" id="headingOne{{$key+1}}"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{$key+1}}" aria-expanded="{{$key==0 ? 'true' : 'false'}}" aria-controls="collapseOne{{$key+1}}">
+              <h5 class="mb-0"> {{$value->title}} </h5>
+              </a> </div>
+            <div id="collapseOne{{$key+1}}" class="collapse {{$key==0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="headingOne{{$key+1}}" data-parent="#accordionEx">
+              <div class="card-body">
+                <div class="col-md-12"> 
+                  {!! $value->embed !!}
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+          @endif
+          <!-- <div class="card">
             <div class="card-header" role="tab" id="headingOne13"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne13" aria-expanded="true" aria-controls="collapseOne13">
               <h5 class="mb-0">ESG - Sustainability </h5>
               </a> </div>
@@ -192,7 +225,7 @@ alt="A modern, illuminated refinery is visible at dusk. "/> </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <br>
         <br>

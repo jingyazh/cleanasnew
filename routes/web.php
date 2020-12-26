@@ -73,7 +73,8 @@ Route::get('testimonials/{id}', 'testimonialController@detail')->name('testimoni
 
 // Route::view('testimonials/referred-journal-publications', 'testimonials.referred-journal-publications')->name('referred-journal-publications');
 
-Route::view('esg', 'esg')->name('esg');
+// Route::view('esg', 'esg')->name('esg');
+Route::get('esg', 'ESGController@view')->name('esg');
 
 Route::view('esg/how-better-cleaning-can-help', 'esg.how-better-cleaning-can-help')->name('how-better-cleaning-can-help');
 

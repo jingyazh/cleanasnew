@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ESG;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -19,13 +20,13 @@ class ESGController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
+        // $this->middleware(function ($request, $next) {
+        //     $this->user = Auth::user();
 
-            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+        //     date_default_timezone_set('America/Toronto');        //..."Europe/London"
 
-            return $next($request);
-        });
+        //     return $next($request);
+        // });
     }
 
     public function index()
@@ -145,5 +146,22 @@ class ESGController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+
+    public function view(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $esges = ESG::where('locale', $locale)->get();
+        if (empty($esges)) {
+            $esges = ESG::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting]);
+
     }
 }
