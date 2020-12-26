@@ -55,9 +55,9 @@ class UsersController extends Controller
                 $color=$item->roleno == User::ROLE_SUPER ? 'red': '#007bff';
                 return "<a style='color:{$color}' href='".route('users.edit', $item->id)."'>{$item->username}</a>";
             })  
-            ->addColumn('clientscount', function ($item) {
-                return $item->myclientscount(). " / ". $item->myclientsactivecount();
-            })          
+            // ->addColumn('clientscount', function ($item) {
+            //     return $item->myclientscount(). " / ". $item->myclientsactivecount();
+            // })          
             // ->addColumn('status', function ($item) {
             //     return ($item->is_disabled) ? 'Disabled' : 'Active';
             // })

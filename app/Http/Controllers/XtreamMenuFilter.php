@@ -10,7 +10,7 @@ use Auth;
 
 class XtreamMenuFilter implements FilterInterface
 {
-    public function transform($item, Builder $builder)
+    public function transform($item)
     {
         $curuser =  Auth::user(); 
         $rolestrArr = array("MASTER", "SUPER", "RESELLER");
