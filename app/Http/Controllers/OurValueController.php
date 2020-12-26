@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OurValue;
 use App\User;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -158,5 +159,20 @@ class OurValueController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function view(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $ourvalues = OurValue::where('locale', $locale)->get();
+        if (empty($ourvalues)) {
+            $ourvalues = OurValue::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('how-we-do-it', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting]);
     }
 }

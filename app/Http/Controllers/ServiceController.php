@@ -209,6 +209,9 @@ class ServiceController extends Controller
         if ($locale == null)
             $locale = 'en';
         $services = Service::where('locale', $locale)->get();
+        if (empty($services)) {
+            $services = Service::where('locale', 'en')->get();
+        }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);
         return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting]);
@@ -227,5 +230,16 @@ class ServiceController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function detail(Request $request)
+    {
+        $service = Service::where('id', $request->id)->first();
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        return view('services.detail', ['service' => $service, 'siteSetting' => $siteSetting]);
+        # code...
     }
 }

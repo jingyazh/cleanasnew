@@ -39,17 +39,24 @@ Route::get('what-we-clean', 'WhatWeCleanController@view')->name('what-we-clean')
 // Route::view('our-services', 'our-services')->name('our_services');
 Route::get('our-services', 'ServiceController@view')->name('our-services');
 
-Route::view('services/by-the-basket', 'services.by-the-basket')->name('by-the-basket');
+// Route::view('services/by-the-basket', 'services.by-the-basket')->name('by-the-basket');
 
-Route::view('services/offsite-facility', 'services.offsite-facility')->name('offsite-facility');
+// Route::view('services/offsite-facility', 'services.offsite-facility')->name('offsite-facility');
 
-Route::view('services/replace-your-wash-pad', 'services.replace-your-wash-pad')->name('replace-your-wash-pad');
+// Route::view('services/replace-your-wash-pad', 'services.replace-your-wash-pad')->name('replace-your-wash-pad');
 
-Route::view('services/washpad-services', 'services.washpad-services')->name('washpad-services');
+// Route::view('services/washpad-services', 'services.washpad-services')->name('washpad-services');
 
-Route::view('how-we-do-it', 'how-we-do-it')->name('how-we-do-it');
+// get the service detail page
+Route::get('services/{id}', 'ServiceController@detail')->name('serviceDetail');
 
-Route::view('our-value-to-you', 'our-value-to-you')->name('our-value-to-you');
+/// ---- how we do it ---- ///
+// Route::view('how-we-do-it', 'how-we-do-it')->name('how-we-do-it');
+Route::get('how-we-do-it', 'TodoController@view')->name('how-we-do-it');
+/// ----- ---///
+
+// Route::view('our-value-to-you', 'our-value-to-you')->name('our-value-to-you');
+Route::get('our-value-to-you', 'OurValueController@view')->name('our-value-to-you');
 
 Route::get('comparisons/{id}', 'ComparisonController@detail')->name('comparisonDetail');
 

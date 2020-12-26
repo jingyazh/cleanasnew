@@ -19,7 +19,8 @@
   </div>
   <div class="album bg-light">
     <div class="container">
-      <div class="row"> <a href="#" data-toggle="modal" data-target="#myModal">
+      <div class="row"> 
+        <a href="#" data-toggle="modal" data-target="#myModal">
           <div class="front-picture"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/calculating-profits.jpg" class="img-fluid desktopNone lazyload" alt="Calculating profits." /> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/clean-as-new-services.jpg?v=20200917" class="mobileNone img-fluid  lazyload" alt="Calculating profits." />
             <div class="des">
               <p><i class="fa fa-line-chart padding15" aria-hidden="true"></i>{{__(" Compare The Benefits Of Our Different Service Options With Traditional Wash Pad Hydroblasting ")}}</p>

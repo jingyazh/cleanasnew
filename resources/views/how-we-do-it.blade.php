@@ -27,12 +27,37 @@
     <div class="container">
       <div class="row">
         <ul class="tabs desktopNone">
-          <li><a href="#" id="tab1">{{__("CLEANER")}}</a></li>
+        @if(isset($todos) && $todos != null)
+        @foreach($todos as $key => $value)
+        <li><a href="#" id="tab{{ $key }}">{{ $value->title }}</a></li> 
+        @endforeach
+        @endif
+          <!-- <li><a href="#" id="tab1">{{__("CLEANER")}}</a></li>
           <li><a href="#" id="tab2">{{__("FASTER")}}</a></li>
           <li><a href="#" id="tab3">{{__("SAFER")}}</a></li>
-          <li><a href="#" id="tab4">{{__("GREENER")}}</a></li>
+          <li><a href="#" id="tab4">{{__("GREENER")}}</a></li> -->
         </ul>
         <div class="content desktopNone">
+
+          @if(isset($todos) && $todos != null)
+          @foreach($todos as $key => $value)
+          <div class="tab{{ $key }}">
+            <div class="col-md-8 float-left">
+              <div class="card card-container">
+                <div class="card-body">
+                  <div class="card-inner2">
+                    <div class="scroll">
+                      {!! $value->embed !!}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 float-left margin"> <img src="{{ $value->image }}" loading="lazy" alt="If we can’t clean it, you don’t pay!" /> </div>
+          </div>
+          @endforeach
+          @endif
+<!-- 
           <div class="tab1">
             <div class="col-md-8 float-left">
               <div class="card card-container">
@@ -135,7 +160,7 @@
               </div>
             </div>
             <div class="col-md-3 float-left margin"> <img src="https://cleanasnew.com/assets/img/values/greener4.jpg" loading="lazy" alt="Smaller Carbon Footprint."/> </div>
-          </div>
+          </div> -->
         </div>
         <!-- /.col-md-8 -->
         

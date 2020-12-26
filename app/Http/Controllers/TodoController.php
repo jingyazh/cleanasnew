@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use App\User;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -158,5 +159,20 @@ class TodoController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+
+    public function view(Request $request)
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $todos = Todo::where('locale', $locale)->get();
+        if (empty($todos)) {
+            $todos = Todo::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting]);
     }
 }
