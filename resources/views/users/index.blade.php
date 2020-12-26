@@ -63,7 +63,7 @@ var oTable = null;
           { data: 'username', name: 'username' },            
           { data: 'name', name: 'name' },  
           { data: 'email', name: 'email' },                              
-          { data: 'clientscount', name: 'clientscount', searchable:false },            
+          // { data: 'clientscount', name: 'clientscount', searchable:false },            
           // { data: 'lastip', name: 'lastip' },
           // { data: 'lastlogintime', name: 'lastlogintime' },
           // { data: 'status', name: 'status' },
