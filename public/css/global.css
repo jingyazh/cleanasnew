@@ -36,10 +36,14 @@ sup {
   position: relative;
 }
 
-.edit-metatag {
+.edit-metatag, .delete-metatag {
   cursor: pointer;
 }
 .edit-metatag>.input-group-text:hover {
   background-color: #227cbe;
+  color: aliceblue;
+}
+.delete-metatag>.input-group-text:hover {
+  background-color: #d43c21d0;
   color: aliceblue;
 }

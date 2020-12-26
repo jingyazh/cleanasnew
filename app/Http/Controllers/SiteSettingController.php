@@ -40,7 +40,7 @@ class SiteSettingController extends Controller
         // if ($setting == null)
         //     $setting = SiteSetting::where('locale', 'en')->first();
         $locale = session('locale');
-        if ($locale != null)
+        if ($locale == null)
             $locale = 'en';
         $metadata = Metadata::where('locale', $locale)->get();
         $setting = SiteSetting::where('locale', $locale)->first();

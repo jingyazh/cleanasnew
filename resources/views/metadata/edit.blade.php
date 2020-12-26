@@ -42,13 +42,9 @@
           @endif
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="locale" v-model="locale">
-              @foreach (Config::get('app.locales') as $key => $lang)
-              @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" "{{ $key == $metadata->locale ? 'active' : ''}}" label="{{ $lang }}"></option>
-              @endif
-              @endforeach
-            </select>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="name" disabled class="form-control col-sm-12" value="{{ Config::get('app.locales')[$metadata->locale]}}" />
+            </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Meta Name')}} <code>*</code> </label>

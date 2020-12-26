@@ -72,7 +72,7 @@
                 </div>
                 <a href="{{ route('metadata.edit', $value->id)}}">
                   <div class="input-group-append edit-metatag">
-                    <span class="input-group-text">Edit</span>
+                    <span class="input-group-text">Detail</span>
                   </div>
                 </a>
               </div>

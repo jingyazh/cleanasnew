@@ -35,7 +35,7 @@ class MetadataController extends Controller
         //... At first , check expire clients and do process.
         $this->middleware('auth');
         $locale = session('locale');
-        if ($locale != null)
+        if ($locale == null)
             $locale = 'en';
         $metadata = Metadata::where('locale', $locale)->get();
         return view('metadata.index', ['listtype' => 'mine', 'metadata' => $metadata]);
@@ -81,19 +81,18 @@ class MetadataController extends Controller
         $input = $request->all();
 
         Validator::make($request->all(), [
-            'page_name' => 'required',
-            'meta_title' => 'required',
-            'meta_description' => 'required',
-            'locale' => 'required',
+            'content' => 'required',
         ])->validate();
 
-        $metadata = Metadata::where('locale', $request->locale)->where('page_name', $request->page_name)->get();
+        // dd($input);
+        $metadata = Metadata::where('locale', $request->locale)->where('content', $request->content)->get();
         if (count($metadata) != 0) {
             return back();
         }
-        $metadata = Metadata::create($input);
+        Metadata::create($input);
+        $metadata = Metadata::all();
 
-        return redirect()->route('metadata.index');
+        return redirect()->route('settings.index', ['metadata' => $metadata]);
     }
 
     public function show(Metadata $metadata)
@@ -112,6 +111,10 @@ class MetadataController extends Controller
         //
         $input = $request->all();
 
+        Validator::make($request->all(), [
+            'content' => 'required',
+        ])->validate();
+
         if ($request->name == '' && $request->content == '' && $request->property == '') {
             return view('metadata.edit', ['message' => 'Please fill two fields at least.', 'metadata' => $metadata]);
         }
@@ -119,7 +122,7 @@ class MetadataController extends Controller
 
         $metadata->save();
 
-        return redirect()->route('metadata.index');
+        return redirect()->route('settings.index');
     }
 
     public function destroy(Metadata $metadata)

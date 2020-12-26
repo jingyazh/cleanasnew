@@ -75,7 +75,7 @@
           <div class="form-group col-md-12">
             <label>{{__('Meta Content')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="content" class="form-control col-sm-12" placeholder="{{__('Meta Content')}}" />
+              <input type="text" name="content" required class="form-control col-sm-12" placeholder="{{__('Meta Content')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
