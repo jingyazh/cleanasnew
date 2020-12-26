@@ -190,6 +190,7 @@
 <script>
   function cancel() {
     location.href = "{{ route('contacts.index') }}";
+    return false;
   }
 </script>
 <!-- tinymce editor -->

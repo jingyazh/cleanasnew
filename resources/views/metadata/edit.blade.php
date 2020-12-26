@@ -74,7 +74,7 @@
             @if (Auth::user()->roleno == $User::ROLE_MASTER)
             <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
             @endif
-            <!-- <button class="btn btn-secondary" onclick="cancel()">{{__('Cancel')}}</button> -->
+            <!-- <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button> -->
           </div>
 
         </div>
@@ -116,6 +116,7 @@
 <script>
   function cancel() {
     location.href = "{{ route('metadata.index') }}";
+    return false;
   }
 </script>
 <!-- dropzone -->

@@ -3,7 +3,16 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Site Settings')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('Site Settings')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    @if($key != 'en-ad' && $key != 'fr-ad')
+    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    @endif
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -62,7 +71,7 @@
                   <span class="input-group-text">"></span>
                 </div>
                 <a href="{{ route('metadata.edit', $value->id)}}">
-                  <div class="input-group-append edit-metatag" >
+                  <div class="input-group-append edit-metatag">
                     <span class="input-group-text">Edit</span>
                   </div>
                 </a>
@@ -113,6 +122,7 @@
 <script>
   function cancel() {
     location.href = "{{ route('settings.index') }}";
+    return false;
   }
 </script>
 <script>
