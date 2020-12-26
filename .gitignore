@@ -4,10 +4,6 @@
 /public/images/upload
 /storage/*.key
 /vendor
-<<<<<<< HEAD
-=======
-
->>>>>>> 429128888025c92463620626c8358c8e29749dec
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
