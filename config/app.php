@@ -198,6 +198,7 @@ return [
         // DataTable
         Yajra\DataTables\DataTablesServiceProvider::class,
 
+
     ],
 
     /*
