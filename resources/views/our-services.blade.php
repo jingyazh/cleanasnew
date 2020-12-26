@@ -26,7 +26,18 @@
             </div>
           </div>
         </a>
+        @if(isset($services) && $services != null)
+        @foreach($services as $key => $value)
         <div class="col-3">
+          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/{{ $value->id }}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_1}}" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_2}}" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
+            <div class="card-body">
+              <p class="text-center"><a href="services/{{ $value->id }}">{{__($value->title)}}</a></p>
+            </div>
+          </div>
+        </div>
+        @endforeach
+        @endif
+        <!-- <div class="col-3">
           <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/offsite-facility"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/baytown-cleaning-facility.jpg" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/services/baytown-cleaning-facility-sm.jpg" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
             <div class="card-body">
               <p class="text-center"><a href="services/offsite-facility">{{__("Offsite Cleaning")}}</a></p>
@@ -53,7 +64,7 @@
               <p class="text-center"><a href="services/replace-your-wash-pad">{{__("Replace Your Wash Pad")}}</a></p>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- end-->
 

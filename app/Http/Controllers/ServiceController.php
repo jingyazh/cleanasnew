@@ -19,7 +19,7 @@ class ServiceController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             $this->user = Auth::user();
 
@@ -207,6 +207,16 @@ class ServiceController extends Controller
         return redirect()->route('services.index');
     }
 
+    public function view(Request $request)
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $services = Service::where('locale', $locale)->get();
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting]);
+    }
     /**
      * Remove the specified resource from storage.
      *

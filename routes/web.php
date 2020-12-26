@@ -36,7 +36,8 @@ Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-clean');
 // Route::view('what-we-clean', 'what-we-clean')->name('what_we_clean');
 Route::get('what-we-clean', 'WhatWeCleanController@view')->name('what-we-clean');
 
-Route::view('our-services', 'our-services')->name('our_services');
+// Route::view('our-services', 'our-services')->name('our_services');
+Route::get('our-services', 'ServiceController@view')->name('our-services');
 
 Route::view('services/by-the-basket', 'services.by-the-basket')->name('by-the-basket');
 

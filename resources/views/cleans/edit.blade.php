@@ -72,6 +72,9 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
+                @if(isset($clean) && $clean != null)
+                {!! $clean->embed !!}
+                @endif
                 </textarea>
               </div>
             </div>
@@ -135,11 +138,6 @@
     plugins: ['table', 'code'],
     width: "100%",
     height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $clean->embed }}");
-      });
-    }
   });
   // var parser = new tinymce.html.SaxParser({
   //   validate: true,
