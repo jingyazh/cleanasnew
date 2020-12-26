@@ -1,7 +1,16 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Our Services')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('Our Services')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    @if($key != 'en-ad' && $key != 'fr-ad')
+    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    @endif
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -15,21 +24,89 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
+  <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+      {{ method_field('PUT') }}
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Page Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+        <div class="form-group col-md-12">
+            <label>{{__('Service Page Image')}} <code>*</code> </label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" name="service_image" class="custom-file-input" id="serviceImage">
+                <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">Choose
+                  file</label>
+              </div>
+            </div>
+            <small class="ul-form__text form-text ">
+              View example <a href="/assets/examples/service_image.jpg" target="_blank">here</a>
+              @if($setting)
+              | Current Image <a href="/{{ $setting->service_image }}" target="_blank">here</a>
+              @endif
+            </small>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Service Page Text')}} <code>*</code> </label>
+            <div class="col-md-12 mb-4">
+              <div class="mx-auto col-md-12">
+                <textarea id="service_txt" required name="service_txt">
+                @if(isset($setting) && $setting != null)
+                  {!! $setting->service_txt !!}
+                  @endif
+                </textarea>
+              </div>
+            </div>
+            <small class="ul-form__text form-text ">
+              View example <a href="/assets/examples/service_txt.jpg" target="_blank">here</a>
+            </small>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Service Checklist Image')}} <code>*</code> </label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" name="service_list_image" class="custom-file-input" id="serviceChecklistImage">
+                <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">Choose
+                  file</label>
+              </div>
+            </div>
+            <small class="ul-form__text form-text ">
+              View example <a href="/assets/examples/service_list_image.jpg" target="_blank">here</a>
+              @if($setting)
+              | Current Image <a href="/{{ $setting->service_list_image }}" target="_blank">here</a>
+              @endif
+            </small>
+          </div>
 
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="service_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->service_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="service_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->service_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+        </div>
+      </div>
+    </form>
   </div>
   <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">{{__('Our Services')}} </h3>
+        <h3 class="card-title">{{__('Services List')}} </h3>
 
-        <div class="card-tools">
-          <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
-            @foreach (Config::get('app.locales') as $key => $lang)
-            @if($key != 'en-ad' && $key != 'fr-ad')
-            <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-            @endif
-            @endforeach
-          </select>
+        <div class="card-tools">          
           <a href="{!! route('services.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
 
@@ -63,6 +140,13 @@
 @stop
 
 @section('js')
+<script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
+<script>
+  tinymce.init({
+    selector: '#service_txt',
+    plugins: ['table', 'code'],
+  });
+</script>
 <script>
   var oTable = null;
   $(function() {

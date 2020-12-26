@@ -33,7 +33,12 @@ class WhatWeCleanController extends Controller
     {
         //... At first , check expire clients and do process.
 
-        return view('cleans.index', ['listtype' => 'mine']);
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $setting = SiteSetting::where('locale', $locale)->first();
+
+        return view('cleans.index', ['listtype' => 'mine', 'setting' => $setting]);
     }
 
     //... for DataTable Data

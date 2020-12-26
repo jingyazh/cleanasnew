@@ -171,7 +171,10 @@ class SiteSettingController extends Controller
         $setting->fill($input);
 
         // dd($input);
-
+        $checking = SiteSetting::where('id', $request->id)->where('locale', $request->locale)->get();
+        if (count($checking) > 0) {
+            return back();
+        }
         // $setting = SiteSetting::create($input);
         if ($request->home_esg_image != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->home_esg_image->extension();

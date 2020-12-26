@@ -1,7 +1,16 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('What We Clean')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('What We Clean')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    @if($key != 'en-ad' && $key != 'fr-ad')
+    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    @endif
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -15,21 +24,51 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
+    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+      {{ method_field('PUT') }}
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Page Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="form-group col-md-12">
+            <label>{{__('Clean Page Slogan')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="clean_slogan" class="form-control col-sm-12" required value="{{ $setting ? old('clean_slogan', $setting->clean_slogan) : '' }}" placeholder="{{__('If We Can’t Clean It, You Don’t Pay!')}}" />
+            </div>
+            <small class="ul-form__text form-text ">
+              View example <a href="/assets/examples/clean_slogan.jpg" target="_blank">here</a>
+            </small>
+          </div>
 
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="clean_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->clean_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="clean_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->clean_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+        </div>
+      </div>
+    </form>
   </div>
   <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">{{__('What We Clean')}} </h3>
+        <h3 class="card-title">{{__('Cleaning List')}} </h3>
 
         <div class="card-tools">
-        <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
-            @foreach (Config::get('app.locales') as $key => $lang)
-            @if($key != 'en-ad' && $key != 'fr-ad')
-            <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-            @endif
-            @endforeach
-          </select>
           <a href="{!! route('cleans.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
 
@@ -63,6 +102,7 @@
 @stop
 
 @section('js')
+
 <script>
   var oTable = null;
   $(function() {

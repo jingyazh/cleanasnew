@@ -117,8 +117,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/comparisons/comparisons_data', 'ComparisonController@comparisons_data')->name('comparisons.comparisons_data');
     Route::resource('/admin/comparisons', 'ComparisonController');
 
-    //... ========= For Posts ========
+    //... ========= For Home Page ========
     Route::get('/admin/posts/data', 'PostController@data')->name('posts.data');
+    Route::get('/admin/posts/pageSetting', 'PostController@pageSetting')->name('posts.pageSetting');
     Route::resource('/admin/posts', 'PostController');
 
     //... ========= For Cleans ========

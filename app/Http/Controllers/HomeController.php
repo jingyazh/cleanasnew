@@ -44,12 +44,7 @@ class HomeController extends Controller
     {
         $user =  Auth::user();
         $roleno = $user->roleno;
-
-
         $master_messages = Message::all()->sortByDesc('created_at')->take(5);
-
-
-
 
         return view('dashboard.master', [
             'master_messages' => $master_messages,
