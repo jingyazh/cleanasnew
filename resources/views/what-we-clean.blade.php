@@ -25,7 +25,7 @@
             @if(isset($data) && $data != null)
             @foreach($data as $key => $value)
             @if($value->type == '')
-            <li class="nav-item"> <a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value)}}" aria-selected="true">{{$value->title}} </a>
+            <li class="nav-item"> <a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{$value->title}} </a>
               <hr>
             </li>
             @endif
@@ -36,7 +36,7 @@
               <ul class="dropdown-menu">
                 @foreach($data as $key => $value)
                 @if($value->type == 'Heat Exchangers')
-                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value)}}" aria-selected="true">{{ $value->title }} </a></li>
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ $value->title }} </a></li>
                 @endif
                 @endforeach
                 <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
@@ -52,7 +52,7 @@
               <ul class="dropdown-menu">
                 @foreach($data as $key => $value)
                 @if($value->type == 'Parts')
-                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" data-toggle="tab" href="#{{str_replace(' ', '-', $value->title)}}" role="tab" aria-controls="{{str_replace(' ', '-', $value->title)}}" aria-selected="true">{{ $value->title }} </a></li>
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ $value->title }} </a></li>
                 @endif
                 @endforeach
                 <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
@@ -86,7 +86,7 @@
           <div class="tab-content" id="myTabContent">
             @if(isset($data) && $data != null)
             @foreach($data as $key => $value)
-            <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
+            <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab">
               <h2>{{ $value->title }}</h2>
               {!! $value->embed !!}
               <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
@@ -179,11 +179,39 @@
 
         <!--Accordion wrapper-->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
-          <div class="card">
-            <div class="card-header" role="tab" id="headingOne16"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne16" aria-expanded="true" aria-controls="collapseOne16">
+          @if(isset($data) && $data != null)
+            @foreach($data as $key => $value)
+            <!-- <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
+              <h2>{{ $value->title }}</h2>
+              {!! $value->embed !!}
+              <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+            </div> -->
+
+
+            <div class="card">
+              <div class="card-header" role="tab" id="{{lcfirst(str_replace(' ', '-', $value->title))}}12"> 
+                <a data-toggle="collapse" data-parent="#accordionEx" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-expanded="{{ $key == 0 ? 'true' : 'false'}}" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="{{$key == 0 ? '' : 'collapsed'}}">
+                  <h5 class="mb-0">{{ $value->title }}</h5>
+                </a> </div>
+              <div id="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="collapse {{ $key == 0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}12" data-parent="#accordionEx">
+                <div class="card-body">
+                  <div class="col-md-12">
+                  {!! $value->embed !!}
+                    
+                  <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          @endif
+          
+          <!-- <div class="card">
+            <div class="card-header" role="tab" id="refineries12"> 
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#refineries" aria-expanded="true" aria-controls="refineries">
                 <h5 class="mb-0">Refineries</h5>
               </a> </div>
-            <div id="collapseOne16" class="collapse show" role="tabpanel" aria-labelledby="headingOne16" data-parent="#accordionEx">
+            <div id="refineries" class="collapse show" role="tabpanel" aria-labelledby="refineries12" data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   <h4>Hydrocarbons and Inorganic Scale</h4>
@@ -192,8 +220,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card">
+          </div> -->
+          <!-- <div class="card">
             <div class="card-header" role="tab" id="headingOne15"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne15" aria-expanded="true" aria-controls="collapseOne15">
                 <h5 class="mb-0">Petrochemical Plants</h5>
               </a> </div>
@@ -265,7 +293,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <h3 class="bigTitle text-center">If We Can’t Clean It, You Don’t Pay!</h3>
         </div>
         <!-- Accordion wrapper -->
@@ -297,7 +325,7 @@
   window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')
 </script> -->
 <script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"></script>
-<script src="https://cleanasnew.com/js/vendor/popper.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js"></script>
 <script src="https://cleanasnew.com/js/bootstrap.min2.js"></script>
 <script>
   $('.dropdown').dropdown();
