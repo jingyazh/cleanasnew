@@ -61,7 +61,7 @@
             </div>
 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/aboutus.jpg" target="_blank">here</a> | Current Image <a href="/{{ $aboutus->image }}" target="_blank">here</a>
+              View example <a href="/assets/examples/aboutus.jpg" target="_blank">here</a> | Current Image <a href="{{ $aboutus->image }}" target="_blank">here</a>
             </small>
           </div>
         </div>
