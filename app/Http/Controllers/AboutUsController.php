@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -213,7 +214,8 @@ class AboutUsController extends Controller
             $abouts = AboutUs::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us', ['abouts' => $abouts, 'siteSetting' => $siteSetting]);
+        return view('about-us', ['abouts' => $abouts, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

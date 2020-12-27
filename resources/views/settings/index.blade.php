@@ -27,6 +27,36 @@
 <div class="row">
   <div class="col-12">
     <div class="card card-info">
+      <form method="POST" action="{{ route('mainSetting.pageVisibleSetting') }}" enctype="multipart/form-data">
+        @csrf
+        <div class="card-header">
+          <h3 class="card-title">{{__('Page Visible Setting')}} </h3>
+        </div>
+        <div class="card-body">
+          @if(isset($menuSetting) && $menuSetting != null)
+          @foreach($menuSetting as $key => $value)
+          <label class="checkbox checkbox-primary" style="width: 200px;">
+            <input type="checkbox" name="{{ $value->key }}" value="{{ $value->value }}" {{ $value->value == '1' ? 'checked' : '' }}>
+            <span>{{ Config::get('app.pages')[$value->key] }} Page</span>
+            <span class="checkmark"></span>
+          </label>
+          @endforeach
+          @endif
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="mc-footer">
+            <div class="row">
+              <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary m-1">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card card-info">
       <div class="card-header">
         <h3 class="card-title">{{__('Meta Tags Setting')}} </h3>
         <div class="card-tools">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Metadata;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;

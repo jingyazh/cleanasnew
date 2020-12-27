@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AdvisoryBoard;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -172,8 +173,9 @@ class AdvisoryBoardController extends Controller
             $boards = AdvisoryBoard::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting]);
+        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 
     public function detail(Request $request)
@@ -184,8 +186,9 @@ class AdvisoryBoardController extends Controller
             $locale = 'en';
         $board = AdvisoryBoard::where('id', $request->id)->first();
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.advisory-board-members.profile', ['board' => $board, 'siteSetting' => $siteSetting]);
+        return view('about-us.advisory-board-members.profile', ['board' => $board, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 
 

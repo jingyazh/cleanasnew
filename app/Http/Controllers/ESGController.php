@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ESG;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -163,8 +164,24 @@ class ESGController extends Controller
             $esges = ESG::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting]);
+        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
 
+    }
+
+    public function esgHelp()
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        // $esges = ESG::where('locale', $locale)->get();
+        // if (empty($esges)) {
+        //     $esges = ESG::where('locale', 'en')->get();
+        // }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
+        // dd($locale);
+        return view('esg.how-better-cleaning-can-help', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

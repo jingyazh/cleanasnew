@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -177,8 +178,9 @@ class ContactController extends Controller
             $contact = Contact::where('locale', 'en')->first();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting]);
+        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 
     public function privacy()

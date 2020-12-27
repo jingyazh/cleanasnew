@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\NewsEvent;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -159,8 +160,9 @@ class NewsEventController extends Controller
             $news = NewsEvent::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.news-and-events', ['news' => $news, 'siteSetting' => $siteSetting]);
+        return view('about-us.news-and-events', ['news' => $news, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
 
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\Models\WhatWeClean;
 use App\User;
 use Illuminate\Http\Request;
@@ -164,8 +165,9 @@ class WhatWeCleanController extends Controller
             $locale = 'en';
         $data = WhatWeClean::where('locale', $locale)->get();
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($data);
-        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting]);
+        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
     public function destroy(WhatWeClean $clean)
     {
