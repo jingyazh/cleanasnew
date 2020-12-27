@@ -139,7 +139,7 @@ class WhatWeCleanController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'type' => 'required',
+            // 'type' => 'required',
             'embed' => 'required',
         ])->validate();
 
