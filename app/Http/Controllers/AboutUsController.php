@@ -210,7 +210,7 @@ class AboutUsController extends Controller
         if ($locale == null)
             $locale = 'en';
         $abouts = AboutUs::where('locale', $locale)->get();
-        if (empty($esges)) {
+        if (empty($abouts)) {
             $abouts = AboutUs::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
