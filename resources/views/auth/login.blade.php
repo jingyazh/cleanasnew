@@ -6,15 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="text-align:center; background: none; padding: 0px">
-                    
-                    <img src="/img/logo.jpeg" width="176" height="152" />
+
+                    <img src="/img/logo.png" height="152" />
                     <!-- <h2 style="margin-top:10px">Imad Order Panel</h2> -->
                 </div>
 
                 <div class="card-body">
                     @if (session('message'))
-                        <div class="alert alert-danger">{{ session('message') }}</div>
-                    @endif                    
+                    <div class="alert alert-danger">{{ session('message') }}</div>
+                    @endif
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -25,9 +25,9 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
 
                             </div>
@@ -40,14 +40,14 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
 
-                     
+
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -68,8 +68,8 @@
 
                                 {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                {{ __('Forgot Your Password?') }}
+                                </a>
                                 @endif --}}
                             </div>
                         </div>
