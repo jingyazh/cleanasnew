@@ -27,7 +27,7 @@
     </div>
   </div>
 </main>
-@include('layout.footer')
+@include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 <!-- The Modal -->
 <div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog modal-lg">

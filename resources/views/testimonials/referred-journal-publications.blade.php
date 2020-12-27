@@ -214,7 +214,7 @@ alt="Compabloc exchanger before and after cleaning." class="img-fluid polaroid l
     </div>
   </div>
 </main>
-@include('layout.footer')
+@include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 @endsection
 
 @section('page-script')

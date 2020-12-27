@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\SiteSetting;
 use App\Models\Todo;
 use App\User;
-use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;

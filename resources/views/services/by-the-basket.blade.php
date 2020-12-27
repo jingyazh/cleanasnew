@@ -42,7 +42,7 @@
     </div>
   </div>
 </main>
-@include('layout.footer')
+@include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 @endsection
 
 @section('page-script')

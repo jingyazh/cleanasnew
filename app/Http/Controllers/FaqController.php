@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
-use App\Models\SiteSetting;
 use App\User;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;

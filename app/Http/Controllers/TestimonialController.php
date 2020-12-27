@@ -6,7 +6,6 @@ use App\Models\SiteSetting;
 use App\Models\Testimonial;
 use App\Models\Review;
 use App\User;
-use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
