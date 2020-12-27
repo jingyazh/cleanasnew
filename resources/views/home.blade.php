@@ -25,7 +25,7 @@
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                {{__($post->title)}} </a> </div>
+                                {{ $post->title }} </a> </div>
                     </div>
                 </div>
             </div>

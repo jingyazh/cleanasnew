@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,12 @@ Route::get('/posts/{id}', 'HomeController@postview')->name('postview');
 
 Route::get('/lang/{locale}', function ($locale) {
     if (array_key_exists($locale, config('app.locales'))) {
+        // echo "==========    Web lang locale =======";
+        // echo($locale);
+
         session(['locale' => $locale]);
+        // Session::put('locale', $locale);
+
     }
     return back()->withInput();
 
