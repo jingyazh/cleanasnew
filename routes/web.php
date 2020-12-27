@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +36,10 @@ Route::get('/lang/{locale}', function ($locale) {
 
 })->name('changelocale');
 
-Route::view('choose-language', 'choose-language')->name('choose-language');
+// Route::view('choose-language', 'choose-language')->name('choose-language');
+
+Route::get('choose-language', 'HomeController@chooselanguage')->name('choose-language');
+
 
 Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-clean');
 

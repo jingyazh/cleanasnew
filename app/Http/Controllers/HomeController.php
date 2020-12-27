@@ -20,6 +20,7 @@ class HomeController extends Controller
 
     protected $locale = "en";
     protected $siteSetting;
+    protected $menuSetting;
 
     /**
      * Create a new controller instance.
@@ -34,6 +35,7 @@ class HomeController extends Controller
             
             $this->locale = Session::get('locale', 'en');
             $this->siteSetting = SiteSetting::where('locale', $this->locale)->first();
+            $this->menuSetting = MainSetting::all();
             
             return $next($request);
         });
@@ -112,17 +114,21 @@ class HomeController extends Controller
     {
         $posts = Post::where('locale', $this->locale)->get();
 
-        $menuSetting = MainSetting::all();
-        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
+        
+        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
 
     }
 
     //... Post View
     public function postview($id) {
         $post = Post::where('id', $id)->first();
-        $menuSetting = MainSetting::all();
 
-        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
+        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
     }
+
+    //... Post View
+    public function chooselanguage() {
+        return view('choose-language', ['siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
+    }    
 
 }
