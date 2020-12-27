@@ -126,8 +126,10 @@ class ContactController extends Controller
 
     public function update(Request $request, Contact $contact)
     {
-        //
+
         $input = $request->all();
+
+    //    / print_r($contact);
 
         Validator::make($request->all(), [
             'offsite_cleaning_facility_address' => 'required',
@@ -148,9 +150,9 @@ class ContactController extends Controller
         if ($locale == null)
             $locale = 'en';
         $checking = Contact::where('locale', $locale)->get();
-        if (count($checking) != 0) {
-            return back();
-        }
+        // if (count($checking) != 0) {
+        //     return back();
+        // }
         $contact->save();
 
 
