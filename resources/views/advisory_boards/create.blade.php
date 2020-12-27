@@ -39,7 +39,7 @@
         <!-- /.card-header -->
         <div class="card-body">
 
-          @if(count($advisory_board) > 0)
+          <!-- @if(count($advisory_board) > 0)
           <div class="form-group col-md-12">
             <label>{{__('Update New Language Version')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row; width:100px;">
@@ -55,13 +55,13 @@
               <option value="{{ $item->memberid }}" label="{{ $item->name }}"></option>
               @endforeach
             </select>
-          </div>
+          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="locale" v-model="locale">
+            <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>>
               @foreach (Config::get('app.locales') as $key => $lang)
               @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" label="{{ $lang }}"></option>
+              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>></option>
               @endif
               @endforeach
             </select>
