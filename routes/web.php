@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@view')->name('landing');
 
+Route::get('/posts/{id}', 'HomeController@postview')->name('postview');
+
 Route::get('/lang/{locale}', function ($locale) {
     if (array_key_exists($locale, config('app.locales'))) {
         session(['locale' => $locale]);

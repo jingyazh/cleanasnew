@@ -23,7 +23,7 @@
       <li class="item"><a href="/lang/ml">Malay (ML)</a></li> -->
     </ul>
   </div>
-  <nav class="navbar navbar-expand-md"> <a class="navbar-brand" href="#"> <img src="/assets/img/Clean-As-New-logo.png" class="img-fluid lazyload" alt="Clean As New Powered By Tech Sonic®." /></a>
+  <nav class="navbar navbar-expand-md"> <a class="navbar-brand" href="/"> <img src="/assets/img/Clean-As-New-logo.png" class="img-fluid lazyload" alt="Clean As New Powered By Tech Sonic®." /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">

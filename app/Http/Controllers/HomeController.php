@@ -16,14 +16,22 @@ use Carbon\Carbon;
 
 class HomeController extends Controller
 {
+
+    protected $locale = "en";
+    protected $siteSetting;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
     public function __construct()
     {
         // // $this->middleware('auth');
+        if (session('locale') != null)
+            $this->locale = session('locale');
+        $this->siteSetting = SiteSetting::where('locale', $this->locale)->first();
     }
 
     /**
@@ -95,13 +103,20 @@ class HomeController extends Controller
     ////// For Front-end //////
     public function view()
     {
-        $locale = session('locale');
-        if ($locale == null)
-            $locale = 'en';
+        $locale = $this->locale;
+
         $posts = Post::where('locale', $locale)->get();
-        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
         $menuSetting = MainSetting::all();
-        // dd($menuSetting);
-        return view('home', ['posts' => $posts, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
+
     }
+
+    //... Post View
+    public function postview($id) {
+        $post = Post::where('id', $id)->first();
+        // dd($post);
+        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting]);
+    }
+
 }

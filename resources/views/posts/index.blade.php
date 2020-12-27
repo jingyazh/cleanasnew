@@ -49,7 +49,7 @@
             </small>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Landing Page Discountor')}} <code>*</code> </label>
+            <label>{{__('Water Saving Counter')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="home_discounter" class="form-control col-sm-12" required value="{{ $setting ? old('home_discounter', $setting->home_discounter) : '' }}" placeholder="{{__('Discountor')}}" />
             </div>
@@ -133,7 +133,7 @@
               <th></th>
               <th>{{__('Title')}}</th>
               <th>{{__('Image 1')}}</th>
-              <th>{{__('Image 2')}}</th>
+              <!-- <th>{{__('Image 2')}}</th> -->
               <th>{{__('Language')}}</th>
               <th>{{__('Action')}}</th>
             </tr>
@@ -191,10 +191,10 @@
           data: 'image1',
           name: 'image1'
         },
-        {
-          data: 'image2',
-          name: 'image2'
-        },
+        // {
+        //   data: 'image2',
+        //   name: 'image2'
+        // },
         {
           data: 'locale',
           name: 'locale'
