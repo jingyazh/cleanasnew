@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="our-services" itemprop="item"> <span itemprop="name">{{__("Our Services")}}</span></a>
+      <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/our-services" itemprop="item"> <span itemprop="name">{{__("Our Services")}}</span></a>
           <meta itemprop="position" content="1">
         </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{{ $service->title }}</span>
           <meta itemprop="position" content="2">
