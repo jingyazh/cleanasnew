@@ -190,7 +190,8 @@
     window.addEventListener("load", function() {
         "use strict";
         loader.style.display = 'block';
-        var val = localStorage.getItem("Odometer");
+        // var val = localStorage.getItem("Odometer");
+        var val = "{{ $siteSetting->home_discounter }}";
         if (val && parseInt(val) !== NaN) {
             Num = parseInt(val);
         } else {
