@@ -17,7 +17,7 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ route('todos.update', $todo->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('metadata.update', $metadata->id) }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
@@ -35,53 +35,45 @@
             </ul>
           </div>
           @endif
-          <div class="form-group col-md-12">
-            <label>{{__('Title')}} <code>*</code> </label>
-            <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $todo->title) }}" placeholder="{{__('Title')}}" />
-            </div>
+          @if(isset($message) && $message != null)
+          <div class="alert alert-danger">
+            {{ $message }}
           </div>
-          <div class="form-group col-md-12">
-            <label>{{__('Image')}}<code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
-                  file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
-            </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/todos.jpg" target="_blank">here</a> | Current Image <a href="/{{ $todo->image }}" target="_blank">here</a>
-            </small>
-          </div>
-
-          <div class="form-group col-md-12">
-            <label>{{__('Detail')}}<code>*</code> </label>
-            <div class="col-md-12 mb-4">
-              <div class="mx-auto col-md-12">
-                <textarea id="full-editor" name="embed">
-                @if($todo)
-                {!! $todo->embed !!}
-                @endif
-                </textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
-          @if (Auth::user()->roleno == $User::ROLE_MASTER)
-          <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
           @endif
-          <!-- <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button> -->
-        </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Language')}}<code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="name" disabled class="form-control col-sm-12" value="{{ Config::get('app.locales')[$metadata->locale]}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Name')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="name" class="form-control col-sm-12" value="{{$metadata->name}}" placeholder="{{__('Meta Name')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Content')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="content" class="form-control col-sm-12" value="{{$metadata->content}}" placeholder="{{__('Meta Content')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Property')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="property" class="form-control col-sm-12" value="{{$metadata->property}}" placeholder="{{__('Meta Property')}}" />
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+            @if (Auth::user()->roleno == $User::ROLE_MASTER)
+            <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
+            @endif
+            <!-- <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button> -->
+          </div>
 
-      </div>
+        </div>
     </form>
     <!-- /.card -->
   </div>
@@ -119,28 +111,10 @@
 @section('js')
 <script>
   function cancel() {
-    location.href = "{{ route('todos.index') }}";
+    location.href = "{{ route('metadata.index') }}";
     return false;
   }
 </script>
-<!-- tinymce editor -->
-<script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
-<script>
-  tinymce.init({
-    selector: '#full-editor',
-    plugins: ['table', 'code'],
-    width: "100%",
-    height: 500,
-  });
-</script>
-<!-- tinymce editor -->
-
-<!-- quill editor -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="{{asset('assets/js/vendor/quill.min.js')}}"></script>
-<script src="{{asset('assets/js/quill.script.js')}}"></script> -->
-<!-- quill editor -->
-
 <!-- dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script>
@@ -216,7 +190,7 @@
     if (confirm("{{__('Would you delete this Client ?')}}") == false)
       return false;
     $.ajax({
-      url: "{{ route('todos.destroy', $todo->id) }}",
+      url: "{{ route('metadata.destroy', $metadata->id) }}",
       headers: {
         'X-CSRF-TOKEN': '{{ csrf_token() }}'
       },
@@ -224,10 +198,10 @@
       dataType: "JSON",
       data: {
         "_token": "{{ csrf_token() }}",
-        "id": "{{$todo->id}}" // method and token not needed in data
+        "id": "{{$metadata->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('todos.index') }}";
+        location.href = "{{ route('settings.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

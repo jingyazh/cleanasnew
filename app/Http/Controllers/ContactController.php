@@ -44,7 +44,8 @@ class ContactController extends Controller
         // dd($locale);
         // dd($contact);
         // exit;
-        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact]);
+        $setting = SiteSetting::where('locale', $locale)->first();
+        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact, 'setting' => $setting]);
     }
 
     //... for DataTable Data
@@ -139,10 +140,18 @@ class ContactController extends Controller
             'embed' => 'required',
         ])->validate();
 
+
         $contact->fill($input);
-        $contact->save();
 
         $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $checking = Contact::where('locale', $locale)->get();
+        if (count($checking) != 0) {
+            return back();
+        }
+        $contact->save();
+
 
         return redirect()->route('contacts.index');
     }

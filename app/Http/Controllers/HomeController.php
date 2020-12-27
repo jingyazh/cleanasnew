@@ -44,33 +44,10 @@ class HomeController extends Controller
     {
         $user =  Auth::user();
         $roleno = $user->roleno;
-
-        $customeractive_count = ($roleno == User::ROLE_MASTER) ? Client::where('is_disabled', 0)->count() :
-            Client::where('resellerid', $user->id)->where('is_disabled', 0)->count();
-
-        $orderinprogress_count = ($roleno == User::ROLE_MASTER) ? Ticket::where('status', 0)->count()
-            : Ticket::where('resellerid', $user->id)->where('status', 0)->count();
-
-        $requestinprogress_count = ($roleno == User::ROLE_MASTER) ? Crequest::where('status', 0)->count()
-            : Crequest::where('resellerid', $user->id)->where('status', 0)->count();
-
-        // $customercancel_count = ($roleno == User::ROLE_MASTER) ? Client::where('is_disabled', 1)->count() :
-        //     Client::where('resellerid', $user->id)->where('is_disabled', 1)->count();
-        $customercancel_count = ($roleno == User::ROLE_MASTER) ?  Ticket::where('status', 2)->count()
-            : Ticket::where('resellerid', $user->id)->where('status', 2)->count();
-
-
         $master_messages = Message::all()->sortByDesc('created_at')->take(5);
-
-
-
 
         return view('dashboard.master', [
             'master_messages' => $master_messages,
-            'customeractive_count' => $customeractive_count,
-            'orderinprogress_count' => $orderinprogress_count,
-            'requestinprogress_count' => $requestinprogress_count,
-            'customercancel_count' => $customercancel_count
         ]);
     }
 

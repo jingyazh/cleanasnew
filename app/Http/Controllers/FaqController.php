@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\SiteSetting;
 use App\User;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
@@ -32,8 +33,11 @@ class FaqController extends Controller
     public function index()
     {
         //... At first , check expire clients and do process.
-
-        return view('faqs.index', ['listtype' => 'mine']);
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $setting = SiteSetting::where('locale', $locale)->first();
+        return view('faqs.index', ['listtype' => 'mine', 'setting' => $setting]);
     }
 
     //... for DataTable Data

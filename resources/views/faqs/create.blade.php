@@ -3,7 +3,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Add Todos')}}</h1>
+<h1 class="m-0 text-dark">{{__('Add FAQ')}}</h1>
 @stop
 
 @section('content')
@@ -31,7 +31,7 @@
       <input type="hidden" id="isautoplaceorder" name="isautoplaceorder" value="0" />
       <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">{{__('Add Todos')}} </h3>
+          <h3 class="card-title">{{__('Add FAQ')}} </h3>
           <div class="card-tools">
 
           </div>
@@ -90,7 +90,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
           <button type="submit" class="btn btn-info">{{__('Save')}}</button>
-          <button class="btn btn-secondary" onclick="cancel()">{{__('Cancel')}}</button>
+          <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button>
         </div>
 
       </div>
@@ -124,6 +124,7 @@
 <script>
   function cancel() {
     location.href = "{{ route('faqs.index') }}";
+    return false;
   }
   function handleChange() {
     var ele = document.getElementById('checkbox');

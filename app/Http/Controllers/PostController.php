@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -36,8 +37,14 @@ class PostController extends Controller
     public function index()
     {
         //... At first , check expire clients and do process.
+        $locale = session('locale');
+        // dd($locale);
+        if ($locale == null)
+            $locale = 'en';
+        $setting = SiteSetting::where('locale', $locale)->first();
 
-        return view('posts.index', ['listtype' => 'mine']);
+        // dd($setting);
+        return view('posts.index', ['listtype' => 'mine', 'setting' => $setting]);
     }
 
     //... for DataTable Data

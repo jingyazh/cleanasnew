@@ -104,7 +104,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
           <button type="submit" class="btn btn-info">{{__('Save')}}</button>
-          <button class="btn btn-secondary" onclick="cancel()">{{__('Cancel')}}</button>
+          <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button>
         </div>
 
       </div>
@@ -131,7 +131,8 @@
 </script>
 <script>
   function cancel() {
-    location.href = "{{ route('aboutcompany.index') }}";
+    location.href = "{{ route('aboutus.index') }}";
+    return false;
   }
   function handleChange() {
     var ele = document.getElementById('checkbox');

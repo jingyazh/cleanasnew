@@ -135,8 +135,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/comparisons/comparisons_data', 'ComparisonController@comparisons_data')->name('comparisons.comparisons_data');
     Route::resource('/admin/comparisons', 'ComparisonController');
 
-    //... ========= For Posts ========
+    //... ========= For Home Page ========
     Route::get('/admin/posts/data', 'PostController@data')->name('posts.data');
+    Route::get('/admin/posts/pageSetting', 'PostController@pageSetting')->name('posts.pageSetting');
     Route::resource('/admin/posts', 'PostController');
 
     //... ========= For Cleans ========
@@ -202,6 +203,12 @@ Route::group(['middleware' => 'auth'], function () {
     //... ========= For General Settings ========
     Route::get('/admin/settings/data', 'SiteSettingController@data')->name('settings.data');
     Route::resource('/admin/settings', 'SiteSettingController');
+    Route::get('/admin/error', 'SiteSettingController@error')->name('settings.error'); // For Error Pages
+    Route::post('/admin/updateErrorpage', 'SiteSettingController@updateErrorpage')->name('settings.updateErrorpage'); // For Error Pages
+
+    //... ========= For Metadata management ========
+    Route::get('/admin/metadata/data', 'MetadataController@data')->name('metadata.data');
+    Route::resource('/admin/metadata', 'MetadataController');
 
 
     //... ========= For Reseller ========

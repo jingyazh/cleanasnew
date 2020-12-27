@@ -57,6 +57,7 @@ class LoginController extends Controller
 
         $messages = Message::all()->sortByDesc('created_at')->take(5);        
         $request->session()->put('master_messages', $messages);
+        return redirect('/admin');
 
     }
 

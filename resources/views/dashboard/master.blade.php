@@ -34,10 +34,10 @@
 <div class="row" style="justify-content: space-around">
     <div class="col-lg-3 col-3">
         <!-- small box -->
-        <a href="{!! route('clients.index') !!}">
+        <a href="#">
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{$customeractive_count}}</h3>
+                    <h3>{{--$customeractive_count--}}</h3>
                     <p>{{__('Customer Active')}}</p>
                 </div>              
                 <div class="icon">
@@ -49,10 +49,10 @@
     <!-- ./col -->
     <div class="col-lg-3 col-3">
         <!-- small box -->
-        <a href="{!! route('tickets.index') !!}">
+        <a href="#">
             <div class="small-box bg-success">           
                 <div class="inner">
-                    <h3>{{ $orderinprogress_count }}</h3>
+                    <h3>{{--$orderinprogress_count--}}</h3>
                     <p>{{__('Order in Progress')}}</p>
                 </div>              
                 <div class="icon">
@@ -64,10 +64,10 @@
     <!-- ./col -->
     <div class="col-lg-3 col-3">
         <!-- small box -->
-        <a href="{!! route('crequests.index') !!}">
+        <a href="#">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $requestinprogress_count }}</h3>
+                    <h3>{{--$requestinprogress_count--}}</h3>
                     <p>{{__('Request in Progress')}}</p>
                 </div>              
                 <div class="icon">
@@ -79,10 +79,10 @@
     <!-- ./col -->
     <div class="col-lg-3 col-3">
         <!-- small box -->
-        <a href="{!! route('clients.index') !!}">
+        <a href="#">
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>{{ $customercancel_count }}</h3>
+                    <h3>{{--$customercancel_count--}}</h3>
                     <p>{{__('Customer Cancelled')}}</p>
                 </div>              
                 <div class="icon">
@@ -103,16 +103,6 @@
         {{__('Master Message')}}
         </h3>
       </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        @foreach ($master_messages as $message)
-        <div class="alert alert-{{$message->type==0?'secondary':'danger'}}  alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-          <h5><i class="icon fa fa-info"></i> {{$message->cont}}</h5>
-        </div>
-        @endforeach
-      </div>
-      <!-- /.card-body -->
     </div>
     <!-- /.card -->
   </div>

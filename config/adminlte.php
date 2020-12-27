@@ -198,25 +198,25 @@ return [
 
         ['header' => 'Content Management'],
         [
-            'text' => 'Posts',
+            'text' => 'Home',
             'route'  => 'posts.index',
             'icon' => 'fas fa-fw fa-mail-bulk',
             'active' => ['admin/posts', 'admin/posts/*'],
         ],
         [
-            'text' => 'Comparison List',
+            'text' => 'How We Compare',
             'route'  => 'comparisons.index',
             'icon' => 'fas fa-fw fa-greater-than-equal',
             'active' => ['admin/comparisons', 'admin/comparisons/*'],
         ],
         [
-            'text' => 'Cleans List',
+            'text' => 'What We Clean',
             'route'  => 'cleans.index',
             'icon' => 'fas fa-fw fa-snowplow',
             'active' => ['admin/cleans', 'admin/cleans/*'],
         ],
         [
-            'text' => 'Service List',
+            'text' => 'Our Services',
             'route'  => 'services.index',
             'icon' => 'fas fa-fw fa-taxi',
             'active' => ['admin/services', 'admin/services/*'],
@@ -243,26 +243,26 @@ return [
             'text' => 'Testimonials',
             'route'  => 'testimonials.index',
             'icon' => 'fas fa-fw fa-quote-right',
-            'active' => ['admin/testimonials', 'admin/testimonials/*'],
+            'active' => ['admin/testimonials', 'admin/testimonials/*', 'admin/casestudies/*', 'admin/feedbacks/*', 'admin/publications/*'],
         ],
-        [
-            'text' => 'Case Studies',
-            'route'  => 'casestudies.index',
-            'icon' => 'fas fa-fw fa-university',
-            'active' => ['admin/casestudies', 'admin/casestudies/*'],
-        ],
-        [
-            'text' => 'Feedbacks',
-            'route'  => 'feedbacks.index',
-            'icon' => 'fas fa-fw fa-comment-dots',
-            'active' => ['admin/feedbacks', 'admin/feedbacks/*'],
-        ],
-        [
-            'text' => 'Journal Publications',
-            'route'  => 'publications.index',
-            'icon' => 'fas fa-fw fa-dolly',
-            'active' => ['admin/publications', 'admin/publications/*'],
-        ],
+        // [
+        //     'text' => 'Case Studies',
+        //     'route'  => 'casestudies.index',
+        //     'icon' => 'fas fa-fw fa-university',
+        //     'active' => ['admin/casestudies', 'admin/casestudies/*'],
+        // ],
+        // [
+        //     'text' => 'Feedbacks',
+        //     'route'  => 'feedbacks.index',
+        //     'icon' => 'fas fa-fw fa-comment-dots',
+        //     'active' => ['admin/feedbacks', 'admin/feedbacks/*'],
+        // ],
+        // [
+        //     'text' => 'Journal Publications',
+        //     'route'  => 'publications.index',
+        //     'icon' => 'fas fa-fw fa-dolly',
+        //     'active' => ['admin/publications', 'admin/publications/*'],
+        // ],
         [
             'text' => 'ESG',
             'route'  => 'esgs.index',
@@ -273,26 +273,26 @@ return [
             'text' => 'About US',
             'route'  => 'aboutus.index',
             'icon' => 'fas fa-fw fa-info-circle',
-            'active' => ['admin/aboutus', 'admin/aboutus/*'],
+            'active' => ['admin/aboutus', 'admin/aboutus/*', 'admin/aboutcompany/*', 'admin/advisory_boards/*', 'admin/news_events/*'],
         ],
-        [
-            'text' => 'Company Information',
-            'route'  => 'aboutcompany.index',
-            'icon' => 'fas fa-fw fa-building',
-            'active' => ['admin/aboutcompany', 'admin/aboutcompany/*'],
-        ],
-        [
-            'text' => 'Advisory Board',
-            'route'  => 'advisory_boards.index',
-            'icon' => 'fas fa-fw fa-comment-medical',
-            'active' => ['admin/advisory_boards', 'admin/advisory_boards/*'],
-        ],
-        [
-            'text' => 'News & Events',
-            'route'  => 'news_events.index',
-            'icon' => 'fas fa-fw fa-calendar-plus',
-            'active' => ['admin/news_events', 'admin/news_events/*'],
-        ],
+        // [
+        //     'text' => 'Company Information',
+        //     'route'  => 'aboutcompany.index',
+        //     'icon' => 'fas fa-fw fa-building',
+        //     'active' => ['admin/aboutcompany', 'admin/aboutcompany/*'],
+        // ],
+        // [
+        //     'text' => 'Advisory Board',
+        //     'route'  => 'advisory_boards.index',
+        //     'icon' => 'fas fa-fw fa-comment-medical',
+        //     'active' => ['admin/advisory_boards', 'admin/advisory_boards/*'],
+        // ],
+        // [
+        //     'text' => 'News & Events',
+        //     'route'  => 'news_events.index',
+        //     'icon' => 'fas fa-fw fa-calendar-plus',
+        //     'active' => ['admin/news_events', 'admin/news_events/*'],
+        // ],
         [
             'text' => 'Contacts',
             'route'  => 'contacts.index',
@@ -303,9 +303,15 @@ return [
             'text' => 'General Settings',
             'route'  => 'settings.index',
             'icon' => 'fas fa-fw fa-cogs',
-            'active' => ['admin/settings', 'admin/settings/*'],
+            'active' => ['admin/settings', 'admin/settings/*', 'admin/metadata/*'],
         ],
-        ['header' => ''],
+        [
+            'text' => 'Error Pages',
+            'route'  => 'settings.error',
+            'icon' => 'fas fa-fw fa-exclamation-circle',
+            'active' => ['admin/error'],
+        ],
+        
         [
             'header' => 'User',
             'notrole' => User::ROLE_REGULAR,
@@ -322,6 +328,7 @@ return [
             'icon' => 'fas fa-fw fa-users',
             'notrole' => User::ROLE_REGULAR,
         ],
+        ['header' => ''],
 
     ],
 
