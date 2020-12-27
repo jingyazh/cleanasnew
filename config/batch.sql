@@ -26,3 +26,34 @@
 -- insert into what_we_cleans (locale, cleanid, title, image, embed, type, created_at, updated_at) select 'jp'   	, cleanid, title, image, embed, type, created_at, updated_at from what_we_cleans_copy1 where locale='en';
 -- insert into what_we_cleans (locale, cleanid, title, image, embed, type, created_at, updated_at) select 'th'   	, cleanid, title, image, embed, type, created_at, updated_at from what_we_cleans_copy1 where locale='en';
 -- insert into what_we_cleans (locale, cleanid, title, image, embed, type, created_at, updated_at) select 'ml'   	, cleanid, title, image, embed, type, created_at, updated_at from what_we_cleans_copy1 where locale='en';
+
+
+
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'es-us'	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'mx'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'es'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'fr'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'pt-br'	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'de'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'ru'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'hi-in'	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'pa-pk'	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'cn'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'jp'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'th'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+-- insert into faqs (locale, faqid, title, embed, created_at, updated_at) select 'ml'   	, faqid, title, embed, created_at, updated_at from faqs_copy1 where locale='en';
+
+
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'es-us', reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'mx'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'es'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'fr'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'pt-br', reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'de'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'ru'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'hi-in', reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'pa-pk', reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'cn'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'jp'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'th'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
+insert into reviews (locale, reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at) select 'ml'   , reviewid, testimonialid, title, embed, image, role, type, created_at, updated_at from reviews_copy1 where locale='en';
