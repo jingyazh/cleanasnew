@@ -168,7 +168,7 @@ class AboutCompanyController extends Controller
         if ($locale == null)
             $locale = 'en';
         $companies = AboutCompany::where('locale', $locale)->get();
-        if (empty($esges)) {
+        if (empty($companies)) {
             $companies = AboutCompany::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();

@@ -50,7 +50,7 @@
               <div class="card">
                 <div class="card-body padding15">
                   <h5 class="card-title"><span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup>
-                    - Offsite Cleaning Facilities</h5>
+                    - {{ __('Offsite Cleaning')}} {{ __('Facility') }}</h5>
                   <ul class="list-group  list-group-flush text-muted contactListing">
                     <li class="list-group-item"> {{ $contact->offsite_cleaning_facility_address }}</li>
                     <li class="list-group-item"> {{ $contact->offsite_cleaning_facility_town }} </li>
@@ -59,7 +59,7 @@
                   </ul>
                   <br>
                   <h5 class="card-title"><span class="cangc">C</span><span class="cangc2">LEAN</span> <span class="cangc">A</span><span class="cangc2">S</span> <span class="cangc">N</span><span class="cangc2">EW</span><sup>®</sup>
-                    - Offices </h5>
+                    - {{ __('Offices') }} </h5>
                   <ul class="list-group list-group-flush text-muted contactListing">
                     <li class="list-group-item">{{ $contact->offices_address }}</li>
                     <li class="list-group-item"> {{ $contact->offices_town }} </li>

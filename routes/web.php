@@ -141,6 +141,9 @@ Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydrobla
 Auth::routes();
 
 
+Route::bind('aboutu', function($id){    return \App\Models\AboutUs::find($id); });
+
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/dashboard', 'HomeController@home')->name('home');
@@ -196,6 +199,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //... ========= For About US ========
     Route::get('/admin/aboutus/data', 'AboutUsController@data')->name('aboutus.data');
+
+    
     Route::resource('/admin/aboutus', 'AboutUsController');
 
     //... ========= For About Company ========
