@@ -173,11 +173,29 @@ class ContactController extends Controller
         if ($locale == null)
             $locale = 'en';
         $contact = Contact::where('locale', $locale)->first();
-        if (empty($esges)) {
+        if (empty($contact)) {
             $contact = Contact::where('locale', 'en')->first();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);
         return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting]);
+    }
+
+    public function privacy()
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $setting = SiteSetting::where('locale', $locale)->first();
+        return view('privacy-policy', ['setting' => $setting]);
+    }
+
+    public function terms()
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $setting = SiteSetting::where('locale', $locale)->first();
+        return view('terms-of-use', ['setting' => $setting]);
     }
 }

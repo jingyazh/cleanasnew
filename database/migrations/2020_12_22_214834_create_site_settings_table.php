@@ -50,6 +50,8 @@ class CreateSiteSettingsTable extends Migration
             $table->longText('errorpage404');
             $table->longText('errorpage410');
             $table->longText('errorpage500');
+            $table->longText('privacy');
+            $table->longText('terms');
             $table->string('locale');
             $table->timestamps();
         });
