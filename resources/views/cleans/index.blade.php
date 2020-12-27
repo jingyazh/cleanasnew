@@ -26,6 +26,7 @@
   <div class="col-12">
     <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
+      @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Page Setting')}} </h3>

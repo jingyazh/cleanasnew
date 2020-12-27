@@ -222,7 +222,8 @@ class ComparisonController extends Controller
     public function detail(Request $request)
     {
         $comparison = Comparison::where('id', $request->id)->first();
-        return view('comparisons.index', ['comparison' => $comparison]);
+        $menuSetting = MainSetting::all();
+        return view('comparisons.index', ['comparison' => $comparison, 'menuSetting' => $menuSetting]);
     }
     /**
      * Remove the specified resource from storage.
