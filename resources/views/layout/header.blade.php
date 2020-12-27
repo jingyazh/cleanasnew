@@ -23,6 +23,10 @@
       <li class="item"><a href="/lang/ml">Malay (ML)</a></li> -->
     </ul>
   </div>
+  <style>
+    ul.menu li.item { padding: 0 !important}
+    ul.menu li.item a { display:block;width:100%; padding:.71428571rem; }
+  </style>
   <nav class="navbar navbar-expand-md"> <a class="navbar-brand" href="/"> <img src="/assets/img/Clean-As-New-logo.png" class="img-fluid lazyload" alt="Clean As New Powered By Tech Sonic®." /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
