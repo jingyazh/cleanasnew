@@ -25,9 +25,10 @@
 
 <!-- Main Tables -->
 <div class="row">
-<div class="col-12">
+  <div class="col-12">
     <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
+      @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Page Setting')}} </h3>
@@ -57,7 +58,7 @@
   </div>
   <div class="col-12">
     <form method="POST" action="{{ $contact ? route('contacts.update', $contact->id) : route('contacts.store') }}">
-        {{ method_field('PUT') }}
+      {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
         <div class="card-header">
