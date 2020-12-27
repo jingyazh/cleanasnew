@@ -40,6 +40,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="title" name="title">
+                    {!! $news_event->title !!}
                 </textarea>
               </div>
             </div>
@@ -49,6 +50,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
+                    {!! $news_event->embed !!}
                 </textarea>
               </div>
             </div>
@@ -112,56 +114,13 @@
     plugins: ['table', 'code'],
     width: "100%",
     height: 200,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $news_event->title }}");
-      });
-    }
   });
   tinymce.init({
     selector: '#embed',
     plugins: ['table', 'code'],
     width: "100%",
     height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $news_event->embed }}");
-      });
-    }
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$news_event->embed}}");
-  // tinymce.activeEditor.setContent("{{$news_event->embed}}");
 </script>
 <!-- tinymce editor -->
 

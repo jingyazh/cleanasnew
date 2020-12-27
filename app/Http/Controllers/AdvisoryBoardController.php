@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdvisoryBoard;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -19,13 +20,13 @@ class AdvisoryBoardController extends Controller
     public function __construct()
     {
         // // $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
+        // $this->middleware(function ($request, $next) {
+        //     $this->user = Auth::user();
 
-            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+        //     date_default_timezone_set('America/Toronto');        //..."Europe/London"
 
-            return $next($request);
-        });
+        //     return $next($request);
+        // });
     }
 
     public function index()
@@ -66,7 +67,7 @@ class AdvisoryBoardController extends Controller
     {
 
         $advisory_board = AdvisoryBoard::where('locale', 'en')->get();
-        
+
         foreach ($advisory_board as $key => $item) {
             $_advisory_board = AdvisoryBoard::where('memberid', $item->memberid)->get();
             if (count($_advisory_board) == 14)
@@ -160,4 +161,32 @@ class AdvisoryBoardController extends Controller
             'success' => __('Client deleted successfully!')
         ]);
     }
+
+    public function view()
+    {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $boards = AdvisoryBoard::where('locale', $locale)->get();
+        if (empty($boards)) {
+            $boards = AdvisoryBoard::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting]);
+    }
+
+    public function detail(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $board = AdvisoryBoard::where('id', $request->id)->first();
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('about-us.advisory-board-members.profile', ['board' => $board, 'siteSetting' => $siteSetting]);
+    }
+
+
 }

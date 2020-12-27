@@ -64,6 +64,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
+                {!!  $aboutcompany->embed !!}
                 </textarea>
               </div>
             </div>
@@ -126,46 +127,8 @@
     selector: '#full-editor',
     plugins: ['table', 'code'],
     width: "100%",
-    height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $aboutcompany->embed }}");
-      });
-    }
+    height: 500
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$aboutcompany->embed}}");
-  // tinymce.activeEditor.setContent("{{$aboutcompany->embed}}");
 </script>
 <!-- tinymce editor -->
 

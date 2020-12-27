@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -157,5 +158,20 @@ class AboutCompanyController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function view()
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $companies = AboutCompany::where('locale', $locale)->get();
+        if (empty($esges)) {
+            $companies = AboutCompany::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting]);
     }
 }

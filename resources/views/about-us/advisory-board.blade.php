@@ -22,18 +22,38 @@
       <div class="row">
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item" itemprop="name"> <a class="nav-link active" itemprop="url" id="james-tab" data-toggle="tab" href="#james" role="tab" aria-controls="james" aria-selected="false">James Griffin </a>
+          @if(isset($boards) && $boards != null)
+          @foreach($boards as $key => $value)
+          <li class="nav-item" itemprop="name"> <a class="nav-link {{ $key==0 ? 'active' : '' }}" itemprop="url" id="james-tab" data-toggle="tab" href="#james{{ $key+1 }}" role="tab" aria-controls="james{{ $key+1 }}" aria-selected="false"> {{ $value->name }} </a>
+              <hr>
+            </li>
+          @endforeach
+          @endif
+            <!-- <li class="nav-item" itemprop="name"> <a class="nav-link active" itemprop="url" id="james-tab" data-toggle="tab" href="#james" role="tab" aria-controls="james" aria-selected="false">James Griffin </a>
               <hr>
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" id="don-tab" data-toggle="tab" href="#don" role="tab" aria-controls="don" aria-selected="false">Don Empfield </a>
               <hr>
-            </li>
+            </li> -->
           </ul>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 scrollProfile float-left desktopNone">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="james" role="tabpanel" aria-labelledby="james-tab">
+          @if(isset($boards) && $boards != null)
+          @foreach($boards as $key => $value)
+          <div class="tab-pane fade {{ $key==0 ? ' show active' : '' }}" id="james{{$key+1}}" role="tabpanel" aria-labelledby="james-tab{{$key+1}}">
+              <div class="col-4 float-left"> <a href="/about-us/advisory-board/{{$value->id}}"> <img src="{{$value->image}}" data-src="/{{$value->image}}" class="img-fluid polaroid lazyload" alt="{{$value->name}}"/>
+                <p class="text-muted text-right namePosition">{{$value->name}} </p>
+                </a> </div>
+              <div class="col-8 float-left">
+                {!! $value->quote !!}
+                <p><a href="/about-us/advisory-board/{{$value->id}}">Read more &#8594;</a></p>
+              </div>
+            </div>
+          @endforeach
+          @endif
+            <!-- <div class="tab-pane fade show active" id="james" role="tabpanel" aria-labelledby="james-tab">
               <div class="col-4 float-left"> <a href="/about-us/advisory-board-members/james-griffin"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid polaroid lazyload" alt="James Griffin."/>
                 <p class="text-muted text-right namePosition">James Griffin </p>
                 </a> </div>
@@ -54,18 +74,39 @@
                 </blockquote>
                 <p><a href="/about-us/advisory-board-members/don-empfield">Read more  &#8594;</a></p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- /.col-md-8 -->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
-          <div class="card">
+        @if(isset($board) && $board != null)
+        @foreach($boards as $key => $value)
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo{{ $key+1 }}"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo{{ $key+1 }}"
+              aria-expanded="false" aria-controls="collapseTwo{{ $key+1 }}">
+              <h5 class="mb-0"> {{ $value->name }} </h5>
+              </a> </div>
+            <div id="collapseTwo{{ $key+1 }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo{{ $key+1 }}"
+             data-parent="#accordionEx">
+              <div class="card-body padding15"> <a href="/about-us/advisory-board/{{$value->id}}"> <img src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid largImg lazyload" alt="James Griffin."/>
+                <p  class="text-muted namePosition"> {{ $value->name }} </p>
+                </a>
+                <blockquote>
+                  <p class="quotation">{!! $value->quote !!}</p>
+                </blockquote>
+                <p><a href="/about-us/advisory-board/{{$value->id}}">Read more &#8594;</a></p>
+              </div>
+            </div>
+          </div>
+        @endforeach
+        @endif
+          <!-- <div class="card">
             <div class="card-header" role="tab" id="headingTwo2"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-        aria-expanded="false" aria-controls="collapseTwo2">
+              aria-expanded="false" aria-controls="collapseTwo2">
               <h5 class="mb-0"> James Griffin </h5>
               </a> </div>
             <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-      data-parent="#accordionEx">
+             data-parent="#accordionEx">
               <div class="card-body padding15"> <a href="https://cleanasnew.com/about-us/advisory-board-members/james-griffin"> <img src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid largImg lazyload" alt="James Griffin."/>
                 <p  class="text-muted namePosition">James Griffin </p>
                 </a>
@@ -76,15 +117,14 @@
               </div>
             </div>
           </div>
-          <!-- 3 -->
           
           <div class="card">
             <div class="card-header" role="tab" id="headingThree4"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
-        aria-expanded="false" aria-controls="collapseThree4">
+              aria-expanded="false" aria-controls="collapseThree4">
               <h5 class="mb-0">Don Empfield</h5>
               </a> </div>
             <div id="collapseThree4" class="collapse" role="tabpanel" aria-labelledby="headingThree4"
-      data-parent="#accordionEx">
+             data-parent="#accordionEx">
               <div class="card-body padding15"> <a href="https://cleanasnew.com/advisory-board-members/don-empfield"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/advisory-board-profiles/Don-Empfield.jpg" class="img-fluid largImg lazyload"  alt="Don Empfield."/>
                 <p class="text-muted namePosition">Don Empfield</p>
                 </a>
@@ -94,7 +134,7 @@
                 <p><a href="https://cleanasnew.com/advisory-board-members/don-empfield">Read more  &#8594;</a></p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <br>
         <br>

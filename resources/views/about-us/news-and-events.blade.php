@@ -20,7 +20,18 @@
       <div class="row">
         <div class="col-md-4 mb-4 desktopNone">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item" itemprop="name"> <a class="nav-link active" id="marvels-tab" data-toggle="tab" href="#marvels" role="tab" aria-controls="marvels" aria-selected="true"><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> &amp; Manufacturing Marvels<sup>®</sup></a>
+              @if (isset($news) && $news != null)
+                  @foreach ($news as $key => $value)
+                  <li class="nav-item" itemprop="name">
+                      <a class="nav-link {{ $key==0 ? 'active' : '' }}" id="marvels-tab" data-toggle="tab" href="#marvels{{ $key+1 }}" role="tab" aria-controls="marvels{{ $key+1 }}" aria-selected="true">
+                        {!! $value->title !!}
+                       </a>
+                    <hr>
+                  </li>
+
+                  @endforeach
+              @endif
+            {{-- <li class="nav-item" itemprop="name"> <a class="nav-link active" id="marvels-tab" data-toggle="tab" href="#marvels" role="tab" aria-controls="marvels" aria-selected="true"><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> &amp; Manufacturing Marvels<sup>®</sup></a>
               <hr>
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" id="event1-tab" data-toggle="tab" href="#event1" role="tab" aria-controls="event1" aria-selected="true">Join Us – Events</a>
@@ -37,13 +48,28 @@
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" id="news4-tab" data-toggle="tab" href="#news4" role="tab" aria-controls="news4" aria-selected="false"> <span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> Signs Exclusivity Agreement with Tech Sonic</a>
               <hr>
-            </li>
+            </li> --}}
           </ul>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 desktopNone">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="marvels" role="tabpanel" aria-labelledby="marvels-tab">
+              @if (isset($news) && $news != null)
+              @foreach ($news as $key => $value)
+              <div class="tab-pane fade {{ $key==0 ? 'show active' : '' }}" id="marvels{{ $key+1 }}" role="tabpanel" aria-labelledby="marvels-tab{{ $key+1 }}">
+                <div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      {!! $value->embed !!}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+
+              @endif
+            {{-- <div class="tab-pane fade show active" id="marvels" role="tabpanel" aria-labelledby="marvels-tab">
               <div>
                 <div class="card shadow-sm">
                   <div class="card-body">
@@ -129,13 +155,32 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
 
         <!--Accordion wrapper-->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
-          <div class="card">
+            @if (isset($news)  && $news != null)
+            @foreach ($news as $key => $value)
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne{{ $key+1 }}">
+                  <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{ $key+1 }}" aria-expanded="true" aria-controls="collapseOne{{ $key+1 }}">
+                    {!! $value->title !!}
+                  </a>
+                </div>
+                <div id="collapseOne{{ $key+1 }}" class="collapse {{ $key==0 ? 'show' : '' }}" role="tabpanel" aria-labelledby="headingOne{{ $key+1 }}" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <div class="col-md-12">
+                      {!! $value->embed !!}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+
+            @endif
+          {{-- <div class="card">
             <div class="card-header" role="tab" id="headingOne11"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne11" aria-expanded="true" aria-controls="collapseOne11">
                 <h5 class="mb-0"><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> & Manufacturing Marvels<sup>®</sup></h5>
               </a> </div>
@@ -233,7 +278,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
         <br>
         <br>

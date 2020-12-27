@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -195,5 +196,20 @@ class AboutUsController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function view(Request $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $abouts = AboutUs::where('locale', $locale)->get();
+        if (empty($esges)) {
+            $abouts = AboutUs::where('locale', 'en')->get();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('about-us', ['abouts' => $abouts, 'siteSetting' => $siteSetting]);
     }
 }

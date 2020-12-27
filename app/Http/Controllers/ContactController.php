@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\SiteSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -19,13 +20,13 @@ class ContactController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
+        // $this->middleware(function ($request, $next) {
+        //     $this->user = Auth::user();
 
-            date_default_timezone_set('America/Toronto');        //..."Europe/London"
+        //     date_default_timezone_set('America/Toronto');        //..."Europe/London"
 
-            return $next($request);
-        });
+        //     return $next($request);
+        // });
     }
 
     public function index(Request $request)
@@ -155,5 +156,20 @@ class ContactController extends Controller
         return response()->json([
             'success' => __('Client deleted successfully!')
         ]);
+    }
+
+    public function view(Request  $request)
+    {
+        # code...
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $contact = Contact::where('locale', $locale)->first();
+        if (empty($esges)) {
+            $contact = Contact::where('locale', 'en')->first();
+        }
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
+        // dd($locale);
+        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting]);
     }
 }

@@ -78,19 +78,25 @@ Route::get('esg', 'ESGController@view')->name('esg');
 
 Route::view('esg/how-better-cleaning-can-help', 'esg.how-better-cleaning-can-help')->name('how-better-cleaning-can-help');
 
-Route::view('about-us', 'about-us')->name('about-us');
+// Route::view('about-us', 'about-us')->name('about-us');
+Route::get('about-us', 'AboutUsController@view')->name('about-us');
 
-Route::view('about-us/index', 'about-us.index')->name('about-us');
+// Route::view('about-us/index', 'about-us.index')->name('about-us');
+Route::get('about-us/index', 'AboutCompanyController@view')->name('about-us-index');
 
-Route::view('about-us/news-and-events', 'about-us.news-and-events')->name('news-and-events');
+// Route::view('about-us/news-and-events', 'about-us.news-and-events')->name('news-and-events');
+Route::get('about-us/news-and-events', 'NewsEventController@view')->name('news-and-events');
 
-Route::view('about-us/advisory-board', 'about-us.advisory-board')->name('advisory-board');
+// Route::view('about-us/advisory-board', 'about-us.advisory-board')->name('advisory-board');
+Route::get('about-us/advisory-board', 'AdvisoryBoardController@view')->name('advisory-board');
+Route::get('about-us/advisory-board/{id}', 'AdvisoryBoardController@detail')->name('advisory-board-detail');
 
-Route::view('about-us/advisory-board-members/don-empfield', 'about-us.advisory-board-members.don-empfield')->name('don-empfield');
+// Route::view('about-us/advisory-board-members/don-empfield', 'about-us.advisory-board-members.don-empfield')->name('don-empfield');
 
-Route::view('about-us/advisory-board-members/james-griffin', 'about-us.advisory-board-members.james-griffin')->name('james-griffin');
+// Route::view('about-us/advisory-board-members/james-griffin', 'about-us.advisory-board-members.james-griffin')->name('james-griffin');
 
-Route::view('contact', 'contact')->name('contact');
+// Route::view('contact', 'contact')->name('contact');
+Route::get('contact', 'ContactController@view')->name('contact');
 
 Route::view('our-intro', 'our-intro')->name('our-intro');
 

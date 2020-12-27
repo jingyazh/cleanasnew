@@ -22,18 +22,36 @@
       <div class="row">
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="nav-item" itemprop="name"> <a class="nav-link active" itemprop="url" id="header5-tab" data-toggle="tab" href="#header5" role="tab" aria-controls="header5" aria-selected="false">Our Values </a>
+          @if(isset($companies) && $companies!= null)
+          @foreach($companies as $key => $value)
+          <li class="nav-item" itemprop="name"> <a class="nav-link {{ $key==0 ? 'active' : '' }}" itemprop="url" id="header-tab{{$key+1}}" data-toggle="tab" href="#header{{$key+1}}" role="tab" aria-controls="header{{$key+1}}" aria-selected="false">{{$value->title}} </a>
+              <hr>
+            </li>
+          @endforeach
+          @endif
+            <!-- <li class="nav-item" itemprop="name"> <a class="nav-link active" itemprop="url" id="header5-tab" data-toggle="tab" href="#header5" role="tab" aria-controls="header5" aria-selected="false">Our Values </a>
               <hr>
             </li>
             <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" id="header6-tab" data-toggle="tab" href="#header6" role="tab" aria-controls="header6" aria-selected="false">History </a>
               <hr>
-            </li>
+            </li> -->
           </ul>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 float-left desktopNone">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="header5" role="tabpanel" aria-labelledby="header5-tab">
+          @if(isset($companies) && $companies != null)
+          @foreach($companies as $key => $value)
+          <div class="tab-pane fade {{ $key==0 ?  ' show active'  : '' }}" id="header{{$key+1}}" role="tabpanel" aria-labelledby="header-tab{{$key+1}}">
+              <div class="col-4 float-left">
+                <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image}}" class="img-fluid polaroid lazyload" alt="Happy employees." /> </div>
+              <div class="col-8 float-left  scrollEsg">
+                 {!! $value->embed !!}
+              </div>
+            </div>
+          @endforeach
+          @endif
+            <!-- <div class="tab-pane fade show active" id="header5" role="tabpanel" aria-labelledby="header5-tab">
               <div class="col-4 float-left"><img src="https://cleanasnew.com/assets/img/1px.png" data-src=" https://cleanasnew.com/assets/img/team-building.jpg" class="img-fluid polaroid lazyload" alt="Happy employees." /> </div>
               <div class="col-8 float-left  scrollEsg">
                 <h2 class="text-capitalize"> Our Values As A Company Are</h2>
@@ -88,12 +106,31 @@
                 <p> We invented the technology to clean heat exchangers using ultrasonics and since 2009, our clients have cleaned thousands of exchangers and many other parts all over the world. </p>
                 <p><span class="cangc3">C</span><span class="cangc4">LEAN</span> <span class="cangc3">A</span><span class="cangc4">S</span> <span class="cangc3">N</span><span class="cangc4">EW</span><sup>®</sup> was formed to deliver the maximum advantages of Tech Sonic Cleaning directly to the oil, gas and petrochemical market, combining the latest Tech Sonic technology with 20 years of experience and the highest level of automation, safety and environmental stewardship.</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- /.col-md-8 -->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
+          @if(isset($companies) && $companies!= null)
+          @foreach($companies as $key => $value)
           <div class="card">
+            <div class="card-header" role="tab" id="headingThree{{$key+1}}"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree{{$key+1}}" aria-expanded="false" aria-controls="collapseThree{{$key+1}}">
+                <h5 class="mb-0">{{ $value->title }}</h5>
+              </a> </div>
+            <div id="collapseThree{{$key+1}}" class="collapse {{ $key==0 ? 'show' : '' }}" role="tabpanel" aria-labelledby="headingThree5" data-parent="#accordionEx">
+              <div class="card-body">
+                <div class="col-md-12">
+                 
+                  <img src="{{$value->image}}" data-src="$value->image" class="img-fluid polaroid lazyload" alt="Happy employees." />
+                  {!! $value->embed !!}
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+          @endif
+          
+          <!-- <div class="card">
             <div class="card-header" role="tab" id="headingThree5"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree5" aria-expanded="false" aria-controls="collapseThree5">
                 <h5 class="mb-0">Our Values</h5>
               </a> </div>
@@ -148,7 +185,7 @@
               </div>
             </div>
           </div>
-          <!-- 5 -->
+         
           <div class="card">
             <div class="card-header" role="tab" id="headingThree6"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree6" aria-expanded="false" aria-controls="collapseThree6">
                 <h5 class="mb-0">History</h5>
@@ -162,7 +199,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <br>
         <br>
