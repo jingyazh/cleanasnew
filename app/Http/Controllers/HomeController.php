@@ -11,6 +11,7 @@ use App\Ticket;
 use App\Crequest;
 use App\Models\Post;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -105,9 +106,10 @@ class HomeController extends Controller
         $locale = $this->locale;
 
         $posts = Post::where('locale', $locale)->get();
-        
         // dd($locale);
-        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting]);
+        $menuSetting = MainSetting::all();
+        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
+
     }
 
     //... Post View

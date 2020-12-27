@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -171,7 +172,8 @@ class AboutCompanyController extends Controller
             $companies = AboutCompany::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting]);
+        return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

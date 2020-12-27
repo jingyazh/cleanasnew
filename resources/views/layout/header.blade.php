@@ -28,59 +28,59 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
         @if (Request::path() == '/')
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
+        <li style="display: {{ $menuSetting[0]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
+        <li style="display: {{ $menuSetting[0]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/">{{ __('Home') }} <span class="sr-only">(current)</span></a> </li>
         @endif
         @if (strpos('/how-we-compare', Request::path()) != false || Request::is('comparisons/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
+        <li style="display: {{ $menuSetting[1]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
+        <li style="display: {{ $menuSetting[1]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-compare">{{ __('How We Compare') }}</a> </li>
         @endif
         @if (strpos('/what-we-clean', Request::path()) != false)
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
+        <li style="display: {{ $menuSetting[2]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
+        <li style="display: {{ $menuSetting[2]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/what-we-clean">{{__('What We Clean')}}</a> </li>
         @endif
         @if (strpos('/our-services', Request::path()) != false || Request::is('services/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
+        <li style="display: {{ $menuSetting[3]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
+        <li style="display: {{ $menuSetting[3]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-services">{{__('Our Services')}}</a> </li>
         @endif
         @if (strpos('/how-we-do-it', Request::path()) != false)
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
+        <li style="display: {{ $menuSetting[4]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
+        <li style="display: {{ $menuSetting[4]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/how-we-do-it">{{__("How We Do It")}} </a> </li>
         @endif
         @if (strpos('/our-value-to-you', Request::path()) != false)
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
+        <li style="display: {{ $menuSetting[5]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
+        <li style="display: {{ $menuSetting[5]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/our-value-to-you">{{__("Our Value To You")}}</a> </li>
         @endif
         @if (strpos('/faq', Request::path()) != false)
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
+        <li style="display: {{ $menuSetting[6]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
+        <li style="display: {{ $menuSetting[6]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/faq">{{__("FAQ")}}</a> </li>
         @endif
         @if (strpos('/testimonials', Request::path()) != false || Request::is('testimonials/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
+        <li style="display: {{ $menuSetting[7]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
+        <li style="display: {{ $menuSetting[7]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/testimonials">{{__("Testimonials")}}</a> </li>
         @endif
         @if (strpos('/esg', Request::path()) != false || Request::is('esg/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
+        <li style="display: {{ $menuSetting[8]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
+        <li style="display: {{ $menuSetting[8]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/esg">{{__("ESG")}}</a> </li>
         @endif
         @if (strpos('/about-us', Request::path()) != false || Request::is('about-us/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
+        <li style="display: {{ $menuSetting[9]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
+        <li style="display: {{ $menuSetting[9]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/about-us">{{__("About Us")}}</a> </li>
         @endif
         @if (strpos('/contact', Request::path()) != false || Request::is('contact/*'))
-        <li class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
+        <li style="display: {{ $menuSetting[10]->value == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
         @else
-        <li class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
+        <li style="display: {{ $menuSetting[10]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
         @endif
       </ul>
     </div>

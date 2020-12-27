@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMetadataTable extends Migration
+class CreateMainSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateMetadataTable extends Migration
      */
     public function up()
     {
-        Schema::create('metadata', function (Blueprint $table) {
+        Schema::create('main_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('content');
-            $table->string('property');
-            $table->string('locale')->nullable();
+            $table->string('key');
+            $table->string('value');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateMetadataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metadata');
+        Schema::dropIfExists('main_settings');
     }
 }

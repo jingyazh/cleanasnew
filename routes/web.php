@@ -78,7 +78,9 @@ Route::get('testimonials/{id}', 'testimonialController@detail')->name('testimoni
 // Route::view('esg', 'esg')->name('esg');
 Route::get('esg', 'ESGController@view')->name('esg');
 
-Route::view('esg/how-better-cleaning-can-help', 'esg.how-better-cleaning-can-help')->name('how-better-cleaning-can-help');
+Route::get('esg/how-better-cleaning-can-help', 'ESGController@esgHelp')->name('esgHelp');
+
+// Route::view('esg/how-better-cleaning-can-help', 'esg.how-better-cleaning-can-help')->name('how-better-cleaning-can-help');
 
 // Route::view('about-us', 'about-us')->name('about-us');
 Route::get('about-us', 'AboutUsController@view')->name('about-us');
@@ -214,6 +216,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/metadata/data', 'MetadataController@data')->name('metadata.data');
     Route::resource('/admin/metadata', 'MetadataController');
 
+    Route::post('/admin/pageVisibleSetting', 'MainSettingController@pageVisibleSetting')->name('mainSetting.pageVisibleSetting');
 
     //... ========= For Reseller ========
     Route::get('/admin/users/users_data', 'UsersController@users_data')->name('users.users_data');

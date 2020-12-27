@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Metadata;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -44,9 +45,10 @@ class SiteSettingController extends Controller
             $locale = 'en';
         $metadata = Metadata::where('locale', $locale)->get();
         $setting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($setting);
         // exit;
-        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting, 'metadata' => $metadata]);
+        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting, 'menuSetting' => $menuSetting, 'metadata' => $metadata]);
     }
 
     //... for DataTable Data

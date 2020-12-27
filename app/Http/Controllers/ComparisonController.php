@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comparison;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -213,8 +214,9 @@ class ComparisonController extends Controller
             $locale = 'en';
         $comparisons = Comparison::where('locale', $locale)->get();
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting]);
+        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 
     public function detail(Request $request)

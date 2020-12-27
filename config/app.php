@@ -101,6 +101,24 @@ return [
         'ml'    => 'Malay (ML)'
     ],
 
+    /// page menu ///
+
+    'pages' => [
+        'is_home' => 'Home',
+        'is_compare' => 'What We Compare',
+        'is_clean' => 'What We Clean',
+        'is_services' => 'Our Services',
+        'is_todos' => 'How We Do It',
+        'is_values' => 'Our Value To You',
+        'is_faq' => 'FAQ',
+        'is_testimonials' => 'Testimonials',
+        'is_esg' => 'ESG',
+        'is_aboutus' => 'About Us',
+        'is_contact' => 'Contact'
+    ],
+    /// page menu ///
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\Models\Testimonial;
 use App\Models\Review;
 use App\User;
-use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -233,8 +233,9 @@ class TestimonialController extends Controller
             $testimonials = Testimonial::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting]);
+        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 
     public function detail(Request $request)
@@ -248,7 +249,8 @@ class TestimonialController extends Controller
             $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

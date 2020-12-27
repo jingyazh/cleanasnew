@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('layout.header')
+@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null])
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
@@ -44,7 +44,7 @@
     </div>
   </div>
 </main>
-@include('layout.footer')
+@include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 @endsection
 
 @section('page-script')

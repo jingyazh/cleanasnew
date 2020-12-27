@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurValue;
-use App\Models\SiteSetting;
 use App\User;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -177,7 +177,8 @@ class OurValueController extends Controller
             $ourvalues = OurValue::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting]);
+        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

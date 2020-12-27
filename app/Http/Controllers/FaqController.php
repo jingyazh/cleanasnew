@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
-use App\Models\SiteSetting;
 use App\User;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -164,7 +164,8 @@ class FaqController extends Controller
             $faqs = Faq::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting]);
+        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -217,8 +218,9 @@ class ServiceController extends Controller
             $services = Service::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting]);
+        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
     /**
      * Remove the specified resource from storage.
@@ -243,7 +245,8 @@ class ServiceController extends Controller
         if ($locale == null)
             $locale = 'en';
         $siteSetting = SiteSetting::where('locale', $locale)->first();
-        return view('services.detail', ['service' => $service, 'siteSetting' => $siteSetting]);
+        $menuSetting = MainSetting::all();
+        return view('services.detail', ['service' => $service, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
         # code...
     }
 }

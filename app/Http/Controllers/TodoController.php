@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSetting;
+use App\Models\MainSetting;
 use App\Models\Todo;
 use App\User;
-use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -176,7 +176,8 @@ class TodoController extends Controller
             $todos = Todo::where('locale', 'en')->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
+        $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting]);
+        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
     }
 }
