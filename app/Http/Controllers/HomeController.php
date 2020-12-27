@@ -115,8 +115,9 @@ class HomeController extends Controller
     //... Post View
     public function postview($id) {
         $post = Post::where('id', $id)->first();
+        $menuSetting = MainSetting::all();
         // dd($post);
-        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting]);
+        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
     }
 
 }
