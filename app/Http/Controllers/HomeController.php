@@ -13,6 +13,7 @@ use App\Models\Post;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use Carbon\Carbon;
+use Session;
 
 class HomeController extends Controller
 {
@@ -29,9 +30,15 @@ class HomeController extends Controller
     public function __construct()
     {
         // // $this->middleware('auth');
-        if (session('locale') != null)
-            $this->locale = session('locale');
-        $this->siteSetting = SiteSetting::where('locale', $this->locale)->first();
+        $this->middleware(function ($request, $next) {
+            
+            $this->locale = Session::get('locale', 'en');
+            $this->siteSetting = SiteSetting::where('locale', $this->locale)->first();
+            
+            return $next($request);
+        });
+
+        
     }
 
     /**
@@ -103,10 +110,8 @@ class HomeController extends Controller
     ////// For Front-end //////
     public function view()
     {
-        $locale = $this->locale;
+        $posts = Post::where('locale', $this->locale)->get();
 
-        $posts = Post::where('locale', $locale)->get();
-        // dd($locale);
         $menuSetting = MainSetting::all();
         return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
 
@@ -116,7 +121,7 @@ class HomeController extends Controller
     public function postview($id) {
         $post = Post::where('id', $id)->first();
         $menuSetting = MainSetting::all();
-        // dd($post);
+
         return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
     }
     

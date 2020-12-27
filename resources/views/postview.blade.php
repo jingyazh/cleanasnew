@@ -7,24 +7,18 @@
 @section('content')
 @include('layout.header')
 
-<main>
-    <div class="jumbotron text-left">
-        <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-            <p>
-                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <a href="https://cleanasnew.com/" itemprop="item">
-                        <span itemprop="name">{{__("Home")}}</span></a>
-                    <meta itemprop="position" content="1">
-                </span> &#8250;
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span itemprop="name">{{__("$post->title")}}</span>
-                    <meta itemprop="position" content="2">
-                </span>
-            </p>
+    <main>
+        <div class="jumbotron text-left">
+            <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
+            <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="{{ route('landing') }}"  itemprop="item"> <span itemprop="name">{{ __('Home') }}</span></a>
+                <meta itemprop="position" content="1">
+                </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">{{ __($post->title ) }}</span>
+                <meta itemprop="position" content="2">
+                </span> </p>
+            </div>
         </div>
-    </div>
-    {!! $post->embed !!}
-</main>
+        {!! $post->embed !!}
+    </main>
 
 @include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 
