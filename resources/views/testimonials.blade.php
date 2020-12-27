@@ -22,14 +22,14 @@
       <div class="row">
       @if(isset($testimonials) && $testimonials != null)
       @foreach($testimonials as $key => $value)
-      <div class="col-md-4">
-          <div class="card mb-4 shadow-sm"> 
-            <a class="img-hover-zoom imgblur" href="testimonials/{{$value->testimonialid}}"> 
+      <div class="col-md-4" style="padding: 10px;">
+          <div class="card mb-4 shadow-sm">
+            <a class="img-hover-zoom imgblur" href="testimonials/{{$value->title}}">
             <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_1}}" class="img-fluid desktopNone  lazyload" alt=" An Exchanger is lowered into an ultrasonic bath by crane."/>
             <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_2}}" class="img-fluid mobileNone  lazyload" alt="An Exchanger is lowered into an ultrasonic bath by crane."/>
             </a>
             <div class="card-body">
-              <p class="text-center"><a href="testimonials/{{$value->testimonialid}}">{{ $value->title }}</a></p>
+              <p class="text-center"><a href="testimonials/{{$value->title}}">{{ $value->title }}</a></p>
             </div>
           </div>
         </div>
@@ -58,9 +58,9 @@
             </div>
           </div>
         </div> -->
-        
-        <!-- end--> 
-        
+
+        <!-- end-->
+
       </div>
     </div>
   </div>
@@ -71,18 +71,18 @@
 @section('page-script')
 <script>
  var giftofspeed2=document.createElement('link');giftofspeed2.rel='stylesheet';giftofspeed2.href='https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap';giftofspeed2.type='text/css';var godefer2=document.getElementsByTagName('link')[0];godefer2.parentNode.insertBefore(giftofspeed2,godefer2);var giftofspeed3=document.createElement('link');giftofspeed3.rel='stylesheet';giftofspeed3.href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';giftofspeed3.type='text/css';var godefer3=document.getElementsByTagName('link')[0];godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
-</script> 
-<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script> 
-<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
-<script>$('.dropdown').dropdown();</script> 
-<script src="/assets/js/vendor/popper.min.js" defer></script> <script src="/assets/js/bootstrap.min.js" defer></script> 
+</script>
+<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script>
+<script>$('.dropdown').dropdown();</script>
+<script src="/assets/js/vendor/popper.min.js" defer></script> <script src="/assets/js/bootstrap.min.js" defer></script>
 <script>
-  
+
         $(document).ready(function(e){
             $(".nav-item a").click(function() {
                 $(".nav-item a").removeClass('active');
             });
         });
-    </script> 
+    </script>
 <script src="https://cleanasnew.com/assets/js/lazysizes.min.js" async></script>
 @endsection

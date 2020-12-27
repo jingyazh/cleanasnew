@@ -113,9 +113,9 @@ class AboutUsController extends Controller
         }
 
         $input['compid'] = $compid;
-      
-        
-        $aboutus = AboutUs::create($input); 
+
+
+        $aboutus = AboutUs::create($input);
 
         $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         if (strpos($aboutus->image, 'upload') != false && is_file($aboutus->image))

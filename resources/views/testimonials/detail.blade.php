@@ -24,8 +24,8 @@
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
           @if(isset($reviews) && $reviews!=null)
           @foreach($reviews as $key => $value)
-            <li class="nav-item" itemprop="name"> 
-                <a class="nav-link {{$key==0 ? 'active' : ''}}" id="home-tab{{$key+1}}" data-toggle="tab" href="#home{{$key+1}}" role="tab" aria-controls="home{{$key+1}}" aria-selected="{{$key==0 ? 'true' : 'false'}}"> 
+            <li class="nav-item" itemprop="name">
+                <a class="nav-link {{$key==0 ? 'active' : ''}}" id="home-tab{{$key+1}}" data-toggle="tab" href="#home{{$key+1}}" role="tab" aria-controls="home{{$key+1}}" aria-selected="{{$key==0 ? 'true' : 'false'}}">
                   {{ $value->title }}
                 </a>
               <hr>
@@ -88,8 +88,8 @@
             </div> -->
           </div>
         </div>
-        <!-- /.col-md-8 --> 
-        
+        <!-- /.col-md-8 -->
+
         <!--Accordion wrapper-->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
           @if(isset($reviews) && $reviews!=null)
@@ -99,7 +99,7 @@
                      aria-controls="collapseOne{{$key+1}}">
               <h5 class="mb-0"> {{ $value->title }}</h5>
               </a> </div>
-            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+            <div id="collapseOne{{$key+1}}" class="collapse {{ $key==0 ? 'show' : '' }}" role="tabpanel" aria-labelledby="headingOne{{$key+1}}"
                     data-parent="#accordionEx">
               <div class="card-body col-md-12">
                 {!! $value->embed !!}
@@ -175,8 +175,8 @@
         </div>
         <br>
         <br>
-        <!-- Accordion wrapper --> 
-        
+        <!-- Accordion wrapper -->
+
       </div>
     </div>
   </div>
@@ -187,9 +187,9 @@
 @section('page-script')
 <script>
  var giftofspeed2=document.createElement('link');giftofspeed2.rel='stylesheet';giftofspeed2.href='https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap';giftofspeed2.type='text/css';var godefer2=document.getElementsByTagName('link')[0];godefer2.parentNode.insertBefore(giftofspeed2,godefer2);var giftofspeed3=document.createElement('link');giftofspeed3.rel='stylesheet';giftofspeed3.href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';giftofspeed3.type='text/css';var godefer3=document.getElementsByTagName('link')[0];godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
-</script> 
-<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script> 
-<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script> 
+</script>
+<script async src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script>window.jQuery || document.write('<script src="https://cleanasnew.com/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://cleanasnew.com/js/bootstrap.min2.js"></script>
 <script>$('.dropdown').dropdown();</script>
  <script>   {
       "@context": "https://schema.org",
@@ -219,10 +219,10 @@
         }
       },
       "url": "https://cleanasnew.com",
-	    "sameAs" : [ "https://www.linkedin.com/in/byron-kieser-2697b91/" 
+	    "sameAs" : [ "https://www.linkedin.com/in/byron-kieser-2697b91/"
     ]
     }
     </script>
- 
+
    <script src="https://cleanasnew.com/assets/js/lazysizes.min.js" async></script>
 @endsection

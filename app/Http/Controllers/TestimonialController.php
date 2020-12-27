@@ -118,9 +118,9 @@ class TestimonialController extends Controller
         }
 
         $input['serviceid'] = $serviceid;
-      
-        
-        $testimonial = Testimonial::create($input); 
+
+
+        $testimonial = Testimonial::create($input);
 
         $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
         if (strpos($testimonial->image_landing_1, 'upload') != false && is_file($testimonial->image_landing_1))
@@ -239,10 +239,10 @@ class TestimonialController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $reviews = Review::where('locale', $locale)->where('testimonialid', $request->id)->get();
-        if (empty($reviews)) {
-            $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
-        }
+        $reviews = Review::where('locale', $locale)->where('type', $request->id)->get();
+        // if (empty($reviews)) {
+        //     $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
+        // }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);s
         return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting]);

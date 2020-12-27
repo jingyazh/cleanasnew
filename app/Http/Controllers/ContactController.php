@@ -42,6 +42,7 @@ class ContactController extends Controller
         $locale = session('locale');
         $contact = Contact::where('locale', $locale)->first();
         // dd($locale);
+        dd($contact);
         // exit;
         return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact]);
     }
