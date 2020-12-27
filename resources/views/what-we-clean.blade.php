@@ -36,7 +36,7 @@
               <ul class="dropdown-menu">
                 @foreach($data as $key => $value)
                 @if($value->type == 'Heat Exchangers')
-                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ $value->title }} </a></li>
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ __($value->title) }} </a></li>
                 @endif
                 @endforeach
                 <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
@@ -52,7 +52,7 @@
               <ul class="dropdown-menu">
                 @foreach($data as $key => $value)
                 @if($value->type == 'Parts')
-                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ $value->title }} </a></li>
+                <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ __($value->title) }} </a></li>
                 @endif
                 @endforeach
                 <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
@@ -87,92 +87,12 @@
             @if(isset($data) && $data != null)
             @foreach($data as $key => $value)
             <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab">
-              <h2>{{ $value->title }}</h2>
+              <h2>{{ __($value->title) }}</h2>
               {!! $value->embed !!}
-              <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+              <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
             </div>
             @endforeach
             @endif
-            <!-- <div class="tab-pane fade show active" id="refinery" role="tabpanel" aria-labelledby="refinery-tab">
-              <h2>Refineries</h2>
-              <h4>Hydrocarbons and Inorganic Scale</h4>
-              <p>Distillation Condensers, Crude/Coker Preheat Trains, FC/Steam/Hydro-Crackers, Reforming, Hydrotreating, Water/Steam Scale, and much more.</p>
-              <img data-src="assets/img/petrochemical-plants.jpg?v=20200914" alt="Refineries: Hydrocarbons & Petrochemicals." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="petrochemical" role="tabpanel" aria-labelledby="petrochemical-tab">
-              <h2>Petrochemical Plants</h2>
-              <h4>Hydrocarbons and Fouling</h4>
-              <p>Crack Gas Quenching, Bottoms, Fractionation Train, Preheat Trains, Water/Steam Scale.</p>
-              <img data-src="assets/img/Petrochemical-plants2.jpg?v=20200914" src="https://cleanasnew.com/assets/img/1px.png" alt="Petrochemical Plants: Hydrocarbons and Fouling" class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="straight" role="tabpanel" aria-labelledby="straight-tab">
-              <h3>Straight Tube </h3>
-              <img data-src="assets/img/before-after/straight-tube-exchangers.jpg" src="https://cleanasnew.com/assets/img/1px.png" alt="Straight Tube Exchanger Before and After Cleaning." class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="utube" role="tabpanel" aria-labelledby="utube-tab">
-              <h3> U-Tube </h3>
-              <img data-src="assets/img/before-after/u-tube-heat-exchangers.jpg" src="https://cleanasnew.com/assets/img/1px.png" alt="U-tube Heat Exchanger Before and After Cleaning." class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="triangular" role="tabpanel" aria-labelledby="triangular-tab">
-              <h3>Triangular Pitch </h3>
-              <img data-src="assets/img/before-after/triangular-pitch-exchangers.jpg?v=20200915" src="https://cleanasnew.com/assets/img/1px.png" alt="Triangular Pitch Heat Exchanger Before and After Cleaning." class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="twisted" role="tabpanel" aria-labelledby="twisted-tab">
-              <h3>Twisted Tube </h3>
-              <img data-src="assets/img/before-after/twisted-tube-exchangers.jpg?v=20200915" src="https://cleanasnew.com/assets/img/1px.png" alt="Twisted Tube Heat Exchanger Before and After Cleaning." class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="exchanger" role="tabpanel" aria-labelledby="exchanger-tab">
-              <h3>Welded Plate-and-Frame </h3>
-              <img data-src="assets/img/before-after/welded-plat-frame-exchangers.jpg" src="https://cleanasnew.com/assets/img/1px.png" alt="Welded Plate-and-Frame Heat Exchanger Before and After Cleaning." class="img-fluid polaroid lazyload" />
-            </div>
-            <div class="tab-pane fade" id="parts" role="tabpanel">
-              <h2>Parts </h2>
-              <img data-src="assets/img/before-after/full-basket.jpg?v=20200807" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Parts after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="valves" role="tabpanel" aria-labelledby="valves-tab">
-              <h3>Valves </h3>
-              <p>Valves of all types.</p>
-              <img data-src="assets/img/before-after/4valves.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Valve before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="filters-tab">
-              <h3>Filters </h3>
-              <p>Wedge Wire, Screen Baskets, Oil/Gas, Mesh.</p>
-              <img data-src="assets/img/before-after/3filters.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Aqua Filters before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="structured" role="tabpanel" aria-labelledby="structured-tab">
-              <h3>Structured Packing </h3>
-              <p>Structured packing, Demister pads, preheater baskets, Yes We Can.</p>
-              <img data-src="assets/img/before-after/5structured-packing2.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Structured Packing before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="unstructured" role="tabpanel" aria-labelledby="unstructured-tab">
-              <h3>Unstructured Packing </h3>
-              <p>Unstructured Packing and other small, loose parts, We clean’em fast!</p>
-              <img data-src="assets/img/before-after/9unstructured-packing.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Unstructured Packing before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="rotating" role="tabpanel" aria-labelledby="rotating-tab">
-              <h3>Rotating Equipment</h3>
-              <p>Pump and Compressor Rotors.</p>
-              <img data-src="assets/img/before-after/6pump-rotors.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Rotating Equipment before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="scaffolding" role="tabpanel" aria-labelledby="scaffolding-tab">
-              <h3>Scaffolding</h3>
-              <p> All Scaffolding parts cleaned to like new!</p>
-              <img data-src="assets/img/before-after/7Scaffolding.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="caffolding before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="trays" role="tabpanel" aria-labelledby="trays-tab">
-              <h3>Column Trays</h3>
-              <p>Trays, Plates, Bubble Caps, Mesh.</p>
-              <img data-src="assets/img/before-after/8column-trays.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Column Trays before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="pots" role="tabpanel" aria-labelledby=" pots-tab">
-              <h3>Seal Pots</h3>
-              <p>Seal pots, Oil coolers, and many valve or pump related parts.</p>
-              <img data-src="assets/img/before-after/10sea-pod.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Seal Pots before and after cleaning." />
-            </div>
-            <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
-              <p>Our clients are finding new ways to use Tech Sonic Cleaning every day. </p>
-              <img data-src="assets/img/before-after/before-after-cleaning-collage.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Quick turnaround time. Safe, Effective cleaning." />
-            </div> -->
           </div>
         </div>
         <!-- /.col-md-8 -->
@@ -182,118 +102,29 @@
           @if(isset($data) && $data != null)
             @foreach($data as $key => $value)
             <!-- <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
-              <h2>{{ $value->title }}</h2>
+              <h2>{{ __($value->title) }}</h2>
               {!! $value->embed !!}
-              <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+              <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
             </div> -->
 
 
             <div class="card">
               <div class="card-header" role="tab" id="{{lcfirst(str_replace(' ', '-', $value->title))}}12"> 
                 <a data-toggle="collapse" data-parent="#accordionEx" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-expanded="{{ $key == 0 ? 'true' : 'false'}}" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="{{$key == 0 ? '' : 'collapsed'}}">
-                  <h5 class="mb-0">{{ $value->title }}</h5>
+                  <h5 class="mb-0">{{ __($value->title) }}</h5>
                 </a> </div>
               <div id="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="collapse {{ $key == 0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}12" data-parent="#accordionEx">
                 <div class="card-body">
                   <div class="col-md-12">
                   {!! $value->embed !!}
                     
-                  <img data-src="{{ $value->image }}" alt="{{ $value->title }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
+                  <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
                   </div>
                 </div>
               </div>
             </div>
             @endforeach
           @endif
-          
-          <!-- <div class="card">
-            <div class="card-header" role="tab" id="refineries12"> 
-              <a data-toggle="collapse" data-parent="#accordionEx" href="#refineries" aria-expanded="true" aria-controls="refineries">
-                <h5 class="mb-0">Refineries</h5>
-              </a> </div>
-            <div id="refineries" class="collapse show" role="tabpanel" aria-labelledby="refineries12" data-parent="#accordionEx">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4>Hydrocarbons and Inorganic Scale</h4>
-                  <p>Distillation Condensers, Crude/Coker Preheat Trains, FC/Steam/Hydro-Crackers, Reforming, Hydrotreating, Water/Steam Scale, and much more...</p>
-                  <img data-src="assets/img/petrochemical-plants.jpg" alt="Refineries: Hydrocarbons & Petrochemicals." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="card">
-            <div class="card-header" role="tab" id="headingOne15"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne15" aria-expanded="true" aria-controls="collapseOne15">
-                <h5 class="mb-0">Petrochemical Plants</h5>
-              </a> </div>
-            <div id="collapseOne15" class="collapse" role="tabpanel" aria-labelledby="headingOne15" data-parent="#accordionEx">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4>Hydrocarbons and Fouling</h4>
-                  <p>Crack Gas Quenching, Bottoms, Fractionation Train, Preheat Trains, Water/Steam Scale.</p>
-                  <img data-src="assets/img/Petrochemical-plants2.jpg?v=20200914" alt="Petrochemical Plants: Hydrocarbons and Fouling" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" role="tab" id="headingOne1"> <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                <h5 class="mb-0">Heat Exchangers</h5>
-              </a> </div>
-            <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4>Straight Tube </h4>
-                  <img data-src="assets/img/before-after/straight-tube-exchangers.jpg" alt="Straight Tube Exchanger Before and After Cleaning." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                  <h4> U-Tube </h4>
-                  <img data-src="assets/img/before-after/1heat-exchanger.jpg" alt="U-Tube Heat Exchanger before and after cleaning." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                  <h4> Triangular Pitch </h4>
-                  <img data-src="assets/img/before-after/triangular-pitch-exchangers.jpg" alt="Triangular Pitch Heat Exchanger Before and After Cleaning." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                  <h4>Twisted Tube </h4>
-                  <img data-src="assets/img/before-after/twisted-tube-exchangers.jpg?v=20200915" alt="Twisted Tube Heat Exchanger Before and After Cleaning." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                  <h4>Welded Plate-and-Frame </h4>
-                  <img data-src="assets/img/before-after/1heat-exchanger.jpg" alt="Welded Plate-and-Frame Heat Exchanger before and after cleaning." src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" role="tab" id="headingTwo2"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                <h5 class="mb-0"> Parts </h5>
-              </a> </div>
-            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4>Valves</h4>
-                  <p>Valves of all types</p>
-                  <img data-src="assets/img/before-after/4valves.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Valve before and after cleaning." />
-                  <h4>Filters </h4>
-                  <p>Wedge Wire, Screen Baskets, Oil/Gas, Mesh.</p>
-                  <img data-src="assets/img/before-after/3filters.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Aqua Filters before and after cleaning. " />
-                  <h4>Structured Packing</h4>
-                  <p>Structured packing, Demister pads, preheater baskets, Yes We Can.</p>
-                  <img data-src="assets/img/before-after/5structured-packing.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Structured Packing before and after cleaning." />
-                  <h4>Unstructured Packing </h4>
-                  <p>Unstructured Packing and other small, loose parts, We clean’em fast!</p>
-                  <img data-src="assets/img/before-after/9unstructured-packing.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Unstructured Packing before and after cleaning." />
-                  <h4>Rotating Equipment </h4>
-                  <p>Pump and Compressor Rotors.</p>
-                  <img data-src="assets/img/before-after/6pump-rotors.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Rotating Equipment before and after cleaning." />
-                  <h4 class="mb-0">Scaffolding</h4>
-                  <p>All Scaffolding parts cleaned to like new!</p>
-                  <img data-src="assets/img/before-after/7Scaffolding.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Scaffolding before and after cleaning." />
-                  <h4>Column Trays</h4>
-                  <p>Trays, Plates, Bubble Caps, Mesh.</p>
-                  <img data-src="assets/img/before-after/8column-trays.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Column Trays before and after cleaning. " />
-                  <h4>Seal Pots</h4>
-                  <p>Seal pots, Oil coolers, and many valve or pump related parts.</p>
-                  <img data-src="assets/img/before-after/10sea-pod.jpg" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" alt="Seal Pots before and after cleaning." />
-                  <h4>Many other parts... </h4>
-                  <p>Our clients are finding new ways to use Tech Sonic Cleaning every day. </p>
-                  <img data-src="assets/img/before-after/before-after-cleaning-collage.jpg" class="img-fluid polaroid lazyload" src="https://cleanasnew.com/assets/img/1px.png" alt="Quick turnaround time. Safe, Effective cleaning." />
-                </div>
-              </div>
-            </div>
-          </div> -->
           <h3 class="bigTitle text-center">If We Can’t Clean It, You Don’t Pay!</h3>
         </div>
         <!-- Accordion wrapper -->
