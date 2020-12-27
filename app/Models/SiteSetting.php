@@ -44,6 +44,8 @@ class SiteSetting extends Model
         'errorpage404', 
         'errorpage410', 
         'errorpage500', 
+        'privacy', 
+        'terms', 
         'locale',
     ];
 }

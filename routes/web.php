@@ -102,9 +102,11 @@ Route::get('contact', 'ContactController@view')->name('contact');
 
 Route::view('our-intro', 'our-intro')->name('our-intro');
 
-Route::view('privacy-policy', 'privacy-policy')->name('privacy-policy');
+// Route::view('privacy-policy', 'privacy-policy')->name('privacy-policy');
+Route::get('privacy-policy', 'ContactController@privacy')->name('privacy-policy');
 
-Route::view('terms-of-use', 'terms-of-use')->name('terms-of-use');
+// Route::view('terms-of-use', 'terms-of-use')->name('terms-of-use');
+Route::get('terms-of-use', 'ContactController@terms')->name('terms-of-use');
 
 Route::view('posts/basket-of-parts', 'posts.basket-of-parts')->name('basket-of-parts');
 
