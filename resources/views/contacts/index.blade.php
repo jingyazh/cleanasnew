@@ -18,6 +18,7 @@
 <div class="row">
   <div class="col-12">
     <form method="POST" action="{{ $contact ? route('contacts.update', $contact->id) : route('contacts.store') }}">
+        {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
         <div class="card-header">
@@ -47,25 +48,25 @@
           <div class="form-group col-md-12">
             <label>{{__('Street')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="offsite_cleaning_facility_address" class="form-control col-sm-12" required value="{{ $contact ? old('offsite_cleaning_facility_address', $contact->offsite_cleaning_facility_address) : '' }}" placeholder="{{__('Street')}}" />
+              <input type="text" name="offsite_cleaning_facility_address" class="form-control col-sm-12" required value="{{ $contact ? $contact->offsite_cleaning_facility_address : '' }}" placeholder="{{__('Street')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Town')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="offsite_cleaning_facility_town" class="form-control col-sm-12" required value="{{ $contact ? old('offsite_cleaning_facility_town', $contact->offsite_cleaning_facility_town) : '' }}" placeholder="{{__('Town')}}" />
+              <input type="text" name="offsite_cleaning_facility_town" class="form-control col-sm-12" required value="{{ $contact ?  $contact->offsite_cleaning_facility_town : '' }}" placeholder="{{__('Town')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Tel')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="tel" name="offsite_cleaning_facility_tel" class="form-control col-sm-12" required value="{{ $contact ? old('offsite_cleaning_facility_tel', $contact->offsite_cleaning_facility_tel) : '' }}" placeholder="{{__('Tel')}}" />
+              <input type="tel" name="offsite_cleaning_facility_tel" class="form-control col-sm-12" required value="{{ $contact ? $contact->offsite_cleaning_facility_tel : '' }}" placeholder="{{__('Tel')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Email')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="email" name="offsite_cleaning_facility_email" class="form-control col-sm-12" required value="{{ $contact ? old('offsite_cleaning_facility_email', $contact->offsite_cleaning_facility_email) : '' }}" placeholder="{{__('Email')}}" />
+              <input type="email" name="offsite_cleaning_facility_email" class="form-control col-sm-12" required value="{{ $contact ? $contact->offsite_cleaning_facility_email : '' }}" placeholder="{{__('Email')}}" />
             </div>
           </div>
 
@@ -73,34 +74,37 @@
           <div class="form-group col-md-12">
             <label>{{__('Street')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="offices_address" class="form-control col-sm-12" required value="{{ $contact ? old('offices_address', $contact->offices_address) : '' }}" placeholder="{{__('Street')}}" />
+              <input type="text" name="offices_address" class="form-control col-sm-12" required value="{{ $contact ? $contact->offices_address : '' }}" placeholder="{{__('Street')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Town')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="offices_town" class="form-control col-sm-12" required value="{{ $contact ? old('offices_town', $contact->offices_town) : '' }}" placeholder="{{__('Town')}}" />
+              <input type="text" name="offices_town" class="form-control col-sm-12" required value="{{ $contact ? $contact->offices_town : '' }}" placeholder="{{__('Town')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Tel')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="tel" name="offices_tel" class="form-control col-sm-12" required value="{{ $contact ? old('offices_tel', $contact->offices_tel) : '' }}" placeholder="{{__('Tel')}}" />
+              <input type="tel" name="offices_tel" class="form-control col-sm-12" required value="{{ $contact ?  $contact->offices_tel : '' }}" placeholder="{{__('Tel')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Email')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="email" name="offices_email" class="form-control col-sm-12" required value="{{ $contact ? old('offices_email', $contact->offices_email) : '' }}" placeholder="{{__('Email')}}" />
+              <input type="email" name="offices_email" class="form-control col-sm-12" required value="{{ $contact ? $contact->offices_email : '' }}" placeholder="{{__('Email')}}" />
             </div>
           </div>
-          
+
 
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" required name="embed">
+                     @if (isset($contact) && $contact != null)
+                     {!! $contact->embed !!}
+                     @endif
                 </textarea>
               </div>
             </div>

@@ -239,10 +239,10 @@ class TestimonialController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $reviews = Review::where('locale', $locale)->where('type', $request->id)->get();
-        // if (empty($reviews)) {
-        //     $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
-        // }
+        $reviews = Review::where('locale', $locale)->where('testimonialid', $request->id)->get();
+        if (empty($reviews)) {
+            $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
+        }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         // dd($locale);s
         return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting]);

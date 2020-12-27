@@ -42,7 +42,7 @@ class ContactController extends Controller
         $locale = session('locale');
         $contact = Contact::where('locale', $locale)->first();
         // dd($locale);
-        dd($contact);
+        // dd($contact);
         // exit;
         return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact]);
     }
@@ -138,8 +138,6 @@ class ContactController extends Controller
             'offices_email' => 'required',
             'embed' => 'required',
         ])->validate();
-        dd($input);
-        exit;
 
         $contact->fill($input);
         $contact->save();

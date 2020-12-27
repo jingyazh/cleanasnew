@@ -83,6 +83,8 @@ class StudyController extends Controller
             'embed' => 'required',
         ])->validate();
 
+
+
         if (isset($_POST['reviewid']) && $_POST['reviewid'] != NULL && trim($_POST['reviewid']) != "") {
             $checking = Review::where('reviewid', $request->reviewid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
@@ -98,6 +100,7 @@ class StudyController extends Controller
 
         $input['reviewid'] = $reviewid;
         $input['type'] = $type;
+        $input['testimonialid'] = 11111111;
 
         $casestudy = Review::create($input);
 
