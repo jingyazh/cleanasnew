@@ -35,14 +35,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="testimonials_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->testimonials_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="testimonials_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->testimonials_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
             </div>
           </div>
 
           <div class="form-group col-md-12">
             <label>{{__('Meta Description')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="testimonials_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->testimonials_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+              <input type="text" name="testimonials_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->testimonials_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
             </div>
           </div>
         </div>

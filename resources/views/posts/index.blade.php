@@ -24,8 +24,9 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('settings.update', $setting->id) }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
+      @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Page Setting')}} </h3>
@@ -91,14 +92,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="home_meta_title" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->home_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="home_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->home_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
             </div>
           </div>
 
           <div class="form-group col-md-12">
             <label>{{__('Meta Description')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="home_meta_description" class="form-control col-sm-12" value="{{isset($metadata) ? $metadata->home_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+              <input type="text" name="home_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->home_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
             </div>
           </div>
         </div>

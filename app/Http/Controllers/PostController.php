@@ -38,10 +38,12 @@ class PostController extends Controller
     {
         //... At first , check expire clients and do process.
         $locale = session('locale');
+        // dd($locale);
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
 
+        // dd($setting);
         return view('posts.index', ['listtype' => 'mine', 'setting' => $setting]);
     }
 

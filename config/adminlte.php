@@ -308,7 +308,7 @@ return [
         [
             'text' => 'Error Pages',
             'route'  => 'settings.error',
-            'icon' => 'fas fa-fw fa-cogs',
+            'icon' => 'fas fa-fw fa-exclamation-circle',
             'active' => ['admin/error'],
         ],
         
