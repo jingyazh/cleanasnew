@@ -2,6 +2,8 @@
 
 namespace App\Exceptions;
 
+use App\Models\MainSetting;
+use App\Models\SiteSetting;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -47,14 +49,18 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($this->isHttpException($exception)) {
+            $locale = session('locale');
+            if ($locale == null) $locale = 'en';
+            $siteSetting = SiteSetting::where('locale', $locale)->first();
+            $menuSetting = MainSetting::all();
             if ($exception->getStatusCode() == 404) {
-                return response()->view('404', [], 404);
+                return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting], 404);
             }
             if ($exception->getStatusCode() == 410) {
-                return response()->view('410', [], 410);
+                return response()->view('410', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting], 410);
             }
             if ($exception->getStatusCode() == 500) {
-                return response()->view('500', [], 500);
+                return response()->view('500', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting], 500);
             }
         }
         return parent::render($request, $exception);
