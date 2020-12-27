@@ -65,7 +65,7 @@
             </small>
           </div>
 
-          <div class="form-group col-md-12">
+          <!-- <div class="form-group col-md-12">
             <label>{{__('Image')}} 2 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
@@ -73,9 +73,6 @@
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
                   file</label>
               </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
             </div>
 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
@@ -84,7 +81,7 @@
               | Current Image <a href="/{{ $post->image_article }}" target="_blank">here</a>
               @endif
             </small>
-          </div>
+          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">

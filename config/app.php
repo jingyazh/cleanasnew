@@ -85,20 +85,20 @@ return [
     'locales' => [
         'en-ad' => 'English', 
         'fr-ad' => 'Français',
-        'en' => 'English', 
+        'en'    => 'English', 
         'es-us' => 'Español (US)', 
-        'mx' => 'Español (MX)', 
-        'es' => 'Español (ES)', 
-        'fr' => 'Français (FR)',
+        'mx'    => 'Español (MX)', 
+        'es'    => 'Español (ES)', 
+        'fr'    => 'Français (FR)',
         'pt-br' => 'Português (BR)',
-        'de' => 'Deutsch (DE)',
-        'ru' => 'Русский (RU)',
+        'de'    => 'Deutsch (DE)',
+        'ru'    => 'Русский (RU)',
         'hi-in' => 'Hindi (IN)',
         'pa-pk' => 'Punjabi (PK)',
-        'cn' => '中文 (CN)',
-        'jp' => '日本語 (JP)',
-        'th' => 'Thai (TH)',
-        'ml' => 'Malay (ML)'
+        'cn'    => '中文 (CN)',
+        'jp'    => '日本語 (JP)',
+        'th'    => 'Thai (TH)',
+        'ml'    => 'Malay (ML)'
     ],
 
     /*

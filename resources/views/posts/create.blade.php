@@ -91,23 +91,19 @@
             </small>
           </div>
 
-          <div class="form-group col-md-12">
+          <!-- <div class="form-group col-md-12">
             <label>{{__('Image')}} 2 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="image_article" class="custom-file-input" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
                   file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
-            </div>
-
+              </div>              
+            </div> 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
               View example <a href="/assets/examples/article_image.jpg" target="_blank">here</a>
             </small>
-          </div>
+          </div>-->
           
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>

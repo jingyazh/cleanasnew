@@ -21,7 +21,7 @@
             <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="Clean As New®, Baytown Texas." />
                 <div class="carousel-caption" style="position:absolute; z-index:10001">
                     <div class="hbuttons">
-                        <div class="hcontainer"> <a href="{{ $key == 0 ? 'our-intro' : 'posts/' . $post->title }}" class="hbtn hbtn-1">
+                        <div class="hcontainer"> <a href="{{ route('postview', $post->id) }}" class="hbtn hbtn-1">
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
