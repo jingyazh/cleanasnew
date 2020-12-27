@@ -305,6 +305,12 @@ return [
             'icon' => 'fas fa-fw fa-cogs',
             'active' => ['admin/settings', 'admin/settings/*', 'admin/metadata/*'],
         ],
+        [
+            'text' => 'Error Pages',
+            'route'  => 'settings.error',
+            'icon' => 'fas fa-fw fa-cogs',
+            'active' => ['admin/error'],
+        ],
         
         [
             'header' => 'User',

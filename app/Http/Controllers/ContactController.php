@@ -142,9 +142,16 @@ class ContactController extends Controller
         // exit;
 
         $contact->fill($input);
-        $contact->save();
 
         $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $checking = Contact::where('locale', $locale)->get();
+        if (count($checking) != 0) {
+            return back();
+        }
+        $contact->save();
+
 
         return redirect()->route('contacts.index');
     }

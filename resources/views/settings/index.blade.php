@@ -26,65 +26,59 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
-      @if($setting)
-      {{ method_field('PUT') }}
-      @endif
-      @csrf
-      <div class="card card-info">
-        <div class="card-header">
-          <h3 class="card-title">{{__('Meta Tags Setting')}} </h3>
-          <div class="card-tools">
-            <a href="{!! route('metadata.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
-          </div>
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">{{__('Meta Tags Setting')}} </h3>
+        <div class="card-tools">
+          <a href="{!! route('metadata.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          @if ($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
-
-          <div class="form-group col-md-12">
-            @if(isset($metadata) && $metadata != null)
-            @foreach($metadata as $key => $value)
-            <div style="display: flex; flex-direction: row; justify-content: space-between">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">{{ __('<meta name="') }}</span>
-                </div>
-                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->name ? $value->name : ''}}" aria-describedby="basic-addon3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">{{ __('" content="') }}</span>
-                </div>
-                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->content ? $value->content : ''}}" aria-describedby="basic-addon3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">{{ __('" property="') }}</span>
-                </div>
-                <input disabled type="text" class="form-control col-sm-2" value="{{ $value->property ? $value->property : ''}}" aria-describedby="basic-addon3">
-                <div class="input-group-append">
-                  <span class="input-group-text">"></span>
-                </div>
-                <a href="{{ route('metadata.edit', $value->id)}}">
-                  <div class="input-group-append edit-metatag">
-                    <span class="input-group-text">Detail</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            @endforeach
-            @endif
-          </div>
-
-        </div>
-        <!-- /.card-body -->
       </div>
-    </form>
+      <!-- /.card-header -->
+      <div class="card-body">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+
+        <div class="form-group col-md-12">
+          @if(isset($metadata) && $metadata != null)
+          @foreach($metadata as $key => $value)
+          <div style="display: flex; flex-direction: row; justify-content: space-between">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">{{ __('<meta name="') }}</span>
+              </div>
+              <input disabled type="text" class="form-control col-sm-2" value="{{ $value->name ? $value->name : ''}}" aria-describedby="basic-addon3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">{{ __('" content="') }}</span>
+              </div>
+              <input disabled type="text" class="form-control col-sm-2" value="{{ $value->content ? $value->content : ''}}" aria-describedby="basic-addon3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">{{ __('" property="') }}</span>
+              </div>
+              <input disabled type="text" class="form-control col-sm-2" value="{{ $value->property ? $value->property : ''}}" aria-describedby="basic-addon3">
+              <div class="input-group-append">
+                <span class="input-group-text">"></span>
+              </div>
+              <a href="{{ route('metadata.edit', $value->id)}}">
+                <div class="input-group-append edit-metatag">
+                  <span class="input-group-text">Detail</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          @endforeach
+          @endif
+        </div>
+
+      </div>
+      <!-- /.card-body -->
+    </div>
     <!-- /.card -->
   </div>
 </div>

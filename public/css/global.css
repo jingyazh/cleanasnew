@@ -1,7 +1,16 @@
 
 
 div.card-header {
-  background-color: #dc3545 !important;
+  background-color: #d85865ab !important;
+}
+div.card-header.error-404 {
+  background-color: #0a0906b8 !important
+}
+div.card-header.error-410 {
+  background-color: #7c429ad6 !important;
+}
+div.card-header.error-500 {
+  background-color: #ff0000c5 !important;
 }
 
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {

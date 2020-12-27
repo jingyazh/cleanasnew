@@ -186,6 +186,8 @@ Route::group(['middleware' => 'auth'], function () {
     //... ========= For General Settings ========
     Route::get('/admin/settings/data', 'SiteSettingController@data')->name('settings.data');
     Route::resource('/admin/settings', 'SiteSettingController');
+    Route::get('/admin/error', 'SiteSettingController@error')->name('settings.error'); // For Error Pages
+    Route::post('/admin/updateErrorpage', 'SiteSettingController@updateErrorpage')->name('settings.updateErrorpage'); // For Error Pages
 
     //... ========= For Metadata management ========
     Route::get('/admin/metadata/data', 'MetadataController@data')->name('metadata.data');
