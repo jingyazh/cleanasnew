@@ -139,39 +139,6 @@
     width: "100%",
     height: 500,
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$clean->embed}}");
-  // tinymce.activeEditor.setContent("{{$clean->embed}}");
 </script>
 <!-- tinymce editor -->
 
@@ -253,7 +220,7 @@
 
 
   $("#btnDeleteClient").click(function() {
-    if (confirm("{{__('Would you delete this Client ?')}}") == false)
+    if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
       url: "{{ route('cleans.destroy', $clean->id) }}",

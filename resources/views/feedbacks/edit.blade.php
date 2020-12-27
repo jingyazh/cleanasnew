@@ -46,6 +46,9 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
+                @if(isset($feedback) && $feedback != null)
+                {!! $feedback->embed !!}
+                @endif
                 </textarea>
               </div>
             </div>
@@ -110,45 +113,7 @@
     plugins: ['table', 'code'],
     width: "100%",
     height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $feedback->embed }}");
-      });
-    }
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$feedback->embed}}");
-  // tinymce.activeEditor.setContent("{{$feedback->embed}}");
 </script>
 <!-- tinymce editor -->
 
@@ -230,7 +195,7 @@
 
 
   $("#btnDeleteClient").click(function() {
-    if (confirm("{{__('Would you delete this Client ?')}}") == false)
+    if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
       url: "{{ route('feedbacks.destroy', $feedback->id) }}",
@@ -244,7 +209,7 @@
         "id": "{{$feedback->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('feedbacks.index') }}";
+        location.href = "{{ route('testimonials.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

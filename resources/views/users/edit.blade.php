@@ -87,7 +87,7 @@
 @section('js')
 <script>
 $("#btnDeleteUser").click(function(){
-  if(confirm("{{__('Would you delete this reseller ?')}}") == false)    
+  if(confirm("{{__('Would you delete this user ?')}}") == false)    
     return false;
   $.ajax({
     url: "{{ route('users.destroy', $user->id) }}",

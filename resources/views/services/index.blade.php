@@ -38,8 +38,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="service_image" class="custom-file-input" id="serviceImage">
-                <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">Choose
-                  file</label>
+                <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
             </div>
             <small class="ul-form__text form-text ">
@@ -69,8 +68,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="service_list_image" class="custom-file-input" id="serviceChecklistImage">
-                <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">Choose
-                  file</label>
+                <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
             </div>
             <small class="ul-form__text form-text ">

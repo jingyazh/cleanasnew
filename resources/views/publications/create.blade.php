@@ -39,7 +39,7 @@
         <!-- /.card-header -->
         <div class="card-body">
 
-          @if(count($publications) > 0)
+          <!-- @if(count($publications) > 0)
           <div class="form-group col-md-12">
             <label>{{__('Update New Language Version')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row; width:100px;">
@@ -55,7 +55,7 @@
               <option value="{{ $item->reviewid }}" label="{{ $item->title }}"></option>
               @endforeach
             </select>
-          </div>
+          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
             <select class="form-control col-sm-12" name="locale" v-model="locale">

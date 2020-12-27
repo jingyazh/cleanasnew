@@ -79,7 +79,11 @@
               <hr>
             </li> -->
           </ul>
-          <h3 class="bigTitle text-center">{{__("If We Can’t Clean It, You Don’t Pay!")}}</h3>
+          <h3 class="bigTitle text-center">
+            @if(isset($siteSetting) && $siteSetting != null)
+            {{ $siteSetting->clean_slogan }}
+            @endif
+          </h3>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 desktopNone">
@@ -100,32 +104,36 @@
         <!--Accordion wrapper-->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
           @if(isset($data) && $data != null)
-            @foreach($data as $key => $value)
-            <!-- <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
+          @foreach($data as $key => $value)
+          <!-- <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
               <h2>{{ __($value->title) }}</h2>
               {!! $value->embed !!}
               <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
             </div> -->
 
 
-            <div class="card">
-              <div class="card-header" role="tab" id="{{lcfirst(str_replace(' ', '-', $value->title))}}12"> 
-                <a data-toggle="collapse" data-parent="#accordionEx" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-expanded="{{ $key == 0 ? 'true' : 'false'}}" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="{{$key == 0 ? '' : 'collapsed'}}">
-                  <h5 class="mb-0">{{ __($value->title) }}</h5>
-                </a> </div>
-              <div id="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="collapse {{ $key == 0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}12" data-parent="#accordionEx">
-                <div class="card-body">
-                  <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" role="tab" id="{{lcfirst(str_replace(' ', '-', $value->title))}}12">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-expanded="{{ $key == 0 ? 'true' : 'false'}}" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="{{$key == 0 ? '' : 'collapsed'}}">
+                <h5 class="mb-0">{{ __($value->title) }}</h5>
+              </a> </div>
+            <div id="{{lcfirst(str_replace(' ', '-', $value->title))}}" class="collapse {{ $key == 0 ? 'show' : ''}}" role="tabpanel" aria-labelledby="{{lcfirst(str_replace(' ', '-', $value->title))}}12" data-parent="#accordionEx">
+              <div class="card-body">
+                <div class="col-md-12">
                   {!! $value->embed !!}
-                    
+
                   <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-                  </div>
                 </div>
               </div>
             </div>
-            @endforeach
+          </div>
+          @endforeach
           @endif
-          <h3 class="bigTitle text-center">If We Can’t Clean It, You Don’t Pay!</h3>
+          <h3 class="bigTitle text-center">
+            @if(isset($siteSetting) && $siteSetting != null)
+            {{ $siteSetting->clean_slogan }}
+            @endif
+          </h3>
         </div>
         <!-- Accordion wrapper -->
 

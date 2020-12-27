@@ -142,7 +142,7 @@
     "Request deleted successfully!":				"Requête supprimée avec succès!",
     "Successfully Done!":							"Terminé avec succès!",
     "Message was deleted successfully!":			"Le message a été supprimé avec succès!",
-    "Would you delete this Client ?":				"Voulez-vous supprimer ce client?",
+    "Would you like to delete this data?":				"Voulez-vous supprimer ce client?",
     "Would you delete this Request ?":				"Voulez-vous supprimer cette requête?",
     "Would you remove the message ?":				"Voulez-vous supprimer le message?",
     "Would you delete this Order ?":				"Voulez-vous supprimer cet ordre?",

@@ -104,7 +104,7 @@ class StudyController extends Controller
 
         $casestudy = Review::create($input);
 
-        return redirect()->route('casestudies.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function show(Review $casestudy)
@@ -131,7 +131,7 @@ class StudyController extends Controller
 
         $casestudy->save();
 
-        return redirect()->route('casestudies.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function destroy(Review $casestudy)

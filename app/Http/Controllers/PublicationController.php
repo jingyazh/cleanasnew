@@ -98,11 +98,11 @@ class PublicationController extends Controller
 
         $input['reviewid'] = $reviewid;
         $input['type'] = $type;
-        $input['testimonialid'] = 22222222;
+        $input['testimonialid'] = 33333333;
 
         $publication = Review::create($input);
 
-        return redirect()->route('publications.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function show(Review $publication)
@@ -129,7 +129,7 @@ class PublicationController extends Controller
 
         $publication->save();
 
-        return redirect()->route('publications.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function destroy(Review $publication)

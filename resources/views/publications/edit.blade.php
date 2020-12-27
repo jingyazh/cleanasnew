@@ -193,7 +193,7 @@
 
 
   $("#btnDeleteClient").click(function() {
-    if (confirm("{{__('Would you delete this Client ?')}}") == false)
+    if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
       url: "{{ route('publications.destroy', $publication->id) }}",
@@ -207,7 +207,7 @@
         "id": "{{$publication->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('publications.index') }}";
+        location.href = "{{ route('testimonials.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

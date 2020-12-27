@@ -241,11 +241,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/admin', function () {
-    return redirect()->route('home');
+    return redirect()->route('myprofile');
 });
 Route::get('/home', function () {
-    return redirect()->route('home');
+    return redirect()->route('myprofile');
 });
 Route::get('/admin/{any}', function () {
-    return redirect()->route('home');
+    return redirect()->route('myprofile');
 });

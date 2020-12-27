@@ -46,8 +46,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
-                  file</label>
+                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
                 <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
@@ -211,7 +210,7 @@
 
 
   $("#btnDeleteClient").click(function() {
-    if (confirm("{{__('Would you delete this Client ?')}}") == false)
+    if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
       url: "{{ route('aboutcompany.destroy', $aboutcompany->id) }}",

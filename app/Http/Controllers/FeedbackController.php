@@ -98,11 +98,11 @@ class FeedbackController extends Controller
 
         $input['reviewid'] = $reviewid;
         $input['type'] = $type;
-        $input['testimonialid'] = 33333333;
+        $input['testimonialid'] = 22222222;
 
         $feedback = Review::create($input);
 
-        return redirect()->route('feedbacks.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function show(Review $feedback)
@@ -129,7 +129,7 @@ class FeedbackController extends Controller
 
         $feedback->save();
 
-        return redirect()->route('feedbacks.index');
+        return redirect()->route('testimonials.index');
     }
 
     public function destroy(Review $feedback)

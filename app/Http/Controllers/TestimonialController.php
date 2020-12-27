@@ -250,7 +250,8 @@ class TestimonialController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $title = Testimonial::where('testimonialid', $request->id)->first();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'title' => $title->title]);
     }
 }

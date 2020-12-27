@@ -203,7 +203,7 @@
 
 
   $("#btnDeleteClient").click(function() {
-    if (confirm("{{__('Would you delete this Client ?')}}") == false)
+    if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
       url: "{{ route('news_events.destroy', $news_event->id) }}",

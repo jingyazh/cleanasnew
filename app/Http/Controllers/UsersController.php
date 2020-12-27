@@ -69,7 +69,7 @@ class UsersController extends Controller
                 $color1=$item->is_disabled === 1 ? 'black': 'gray';
                 $msg1 = $item->is_disabled === 1 ? 'Enable':'Disable';
 
-                $btn1 = "<a style='color:{$color1}' href='#' onclick='return makeStatus({$item->id}, \"status\" )'><i class='fa fa-power-off'> ".__($msg1)." </i></a>";
+                $btn1 = "<a style='color:{$color1}' href='#' onclick='return makeStatus({$item->id}, \"status\" )'>";//<i class='fa fa-power-off'> ".__($msg1)." </i></a>";
                 
               
                 return $addurl.$btn1;

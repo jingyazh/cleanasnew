@@ -122,7 +122,7 @@
   <div class="col-12 col-xl-6">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">{{__('Case Studies')}} </h3>
+        <h3 class="card-title">{{__('Feedback')}} </h3>
 
         <div class="card-tools">
           <a href="{!! route('feedbacks.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>

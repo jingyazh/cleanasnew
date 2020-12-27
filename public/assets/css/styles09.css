@@ -1991,9 +1991,9 @@ span.text-muted {
 .front-picture-esg a:hover {
 	color: limegreen;
 }
-#apple {
+/* #apple {
 	background: url(../img/apple-to-apple.jpg) no-repeat;
-}
+} */
 .front-picture-apple {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

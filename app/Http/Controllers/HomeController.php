@@ -50,7 +50,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        // return view('dashboard');
+        return redirect()->route('myprofile');
     }
 
 

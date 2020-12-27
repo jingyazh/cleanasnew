@@ -20,13 +20,9 @@
   <div class="album bg-light">
     <div class="container">
       <div class="row"> <a href="esg/how-better-cleaning-can-help">
-        <div class="front-picture-esg desktopNone clearfix" id="esg2">
-          <h2> <span>ESG</span> <br>
-            Sustainability</h2>
-          <div class="des">
-            <p> <i class="fa fa-newspaper-o padding15" aria-hidden="true"></i> ESG: How Better Cleaning Can Help</p>
-          </div>
-        </div>
+        @if(isset($siteSetting) && $siteSetting != null)
+        {!! $siteSetting->esg_banner_embed !!}
+        @endif
         </a>
         <div class="col-md-4 mb-4 desktopNone padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
