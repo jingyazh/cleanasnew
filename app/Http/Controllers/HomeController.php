@@ -119,5 +119,5 @@ class HomeController extends Controller
         // dd($post);
         return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $menuSetting]);
     }
-
+    
 }

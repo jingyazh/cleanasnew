@@ -186,10 +186,12 @@ class ContactController extends Controller
     public function privacy()
     {
         $locale = session('locale');
+        // dd($locale);
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('privacy-policy', ['setting' => $setting]);
+        $menuSetting = MainSetting::all();
+        return view('privacy-policy', ['setting' => $setting, 'menuSetting' => $menuSetting]);
     }
 
     public function terms()
@@ -198,6 +200,7 @@ class ContactController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('terms-of-use', ['setting' => $setting]);
+        $menuSetting = MainSetting::all();
+        return view('terms-of-use', ['setting' => $setting, 'menuSetting' => $menuSetting]);
     }
 }
