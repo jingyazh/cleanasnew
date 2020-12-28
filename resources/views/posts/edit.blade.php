@@ -52,7 +52,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="image_landing" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
               </div>
               <!-- <div class="input-group-append">
                 <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
@@ -69,7 +69,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="image_article" class="custom-file-input" id="inputGroupFile02">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
               </div>
             </div>
 
@@ -86,7 +86,7 @@
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
                 @if(isset($post) && $post != null)
-                  {!! $post->embed !!}
+                  {!! old('embed', $post->embed) !!}
                   @endif
                 </textarea>
               </div>

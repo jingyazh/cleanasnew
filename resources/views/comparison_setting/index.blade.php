@@ -38,7 +38,13 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="comparison_image" class="custom-file-input" id="comparisonImage">
-                <label class="custom-file-label" for="comparisonImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="comparisonImage" aria-describedby="inputGroupFileAddon01">
+                  @if($setting)
+                  {{'Modify Image'}}
+                  @else
+                  {{'Choose file'}}
+                  @endif
+                </label>
               </div>
             </div>
             <small class="ul-form__text form-text ">
@@ -55,7 +61,7 @@
               <div class="mx-auto col-md-12">
                 <textarea id="comparison_txt" required name="comparison_txt">
                 @if(isset($setting) && $setting != null)
-                  {!! $setting->comparison_txt !!}
+                  {!! old('comparison_txt', $setting->comparison_txt) !!}
                   @endif
                 </textarea>
               </div>
@@ -68,14 +74,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="comparison_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->comparison_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="comparison_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? old('comparison_meta_title', $setting->comparison_meta_title) : ''}}" required placeholder="{{__('Meta Title')}}" />
             </div>
           </div>
 
           <div class="form-group col-md-12">
             <label>{{__('Meta Description')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="comparison_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->comparison_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+              <input type="text" name="comparison_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? old('comparison_meta_description', $setting->comparison_meta_description) : ''}}" required placeholder="{{__('Meta Description')}}" />
             </div>
           </div>
         </div>

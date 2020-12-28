@@ -61,7 +61,7 @@
             <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>
               @foreach (Config::get('app.locales') as $key => $lang)
               @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>></option>
+              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
               @endif
               @endforeach
             </select>
@@ -70,14 +70,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required placeholder="{{__('Title')}}" />
+              <input type="text" name="title" class="form-control col-sm-12" value="{{ old('title') }}" required placeholder="{{__('Title')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Image')}} 1 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" name="image_landing_1" class="custom-file-input" id="inputGroupFile01">
+                <input type="file" name="image_landing_1" required class="custom-file-input" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
@@ -93,7 +93,7 @@
             <label>{{__('Image')}} 2 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" name="image_landing_2" class="custom-file-input" id="inputGroupFile02">
+                <input type="file" name="image_landing_2" required class="custom-file-input" id="inputGroupFile02">
                 <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
