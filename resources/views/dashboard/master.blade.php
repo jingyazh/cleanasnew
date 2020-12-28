@@ -38,7 +38,7 @@
             <div class="small-box bg-warning">
                 <div class="inner">
                     <h3>{{--$customeractive_count--}}</h3>
-                    <p>{{__('Customer Active')}}</p>
+                    <p>{{__('Users')}}</p>
                 </div>              
                 <div class="icon">
                     <i class="fas fa-fw fa-users"></i>
