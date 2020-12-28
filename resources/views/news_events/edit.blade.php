@@ -109,16 +109,33 @@
 </script>
 <!-- tinymce editor -->
 <script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
+<script src="{{asset('assets/js/tinymce_image_upload.js')}}"></script>
 <script>
   tinymce.init({
     selector: '#title',
-    plugins: ['table', 'code'],
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount'
+    ],
+    images_upload_credentials: true,
+    automatic_uploads: true,
+    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    images_upload_handler: example_image_upload_handler,
     width: "100%",
     height: 200,
   });
   tinymce.init({
     selector: '#embed',
-    plugins: ['table', 'code'],
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount'
+    ],
+    images_upload_credentials: true,
+    automatic_uploads: true,
+    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    images_upload_handler: example_image_upload_handler,
     width: "100%",
     height: 500,
   });
