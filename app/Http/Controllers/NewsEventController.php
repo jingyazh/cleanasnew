@@ -87,9 +87,13 @@ class NewsEventController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'locale' => 'required',
+            // 'locale' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['articleid']) && $_POST['articleid'] != NULL && trim($_POST['articleid']) != "") {
             $checking = NewsEvent::where('articleid', $request->articleid)->where('locale', $request->locale)->get();

@@ -87,10 +87,14 @@ class AdvisoryBoardController extends Controller
         Validator::make($request->all(), [
             'name' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required',
+            // 'locale' => 'required',
             'quote' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['memberid']) && $_POST['memberid'] != NULL && trim($_POST['memberid']) != "") {
             $checking = AdvisoryBoard::where('memberid', $request->memberid)->where('locale', $request->locale)->get();
@@ -109,7 +113,7 @@ class AdvisoryBoardController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $advisory_board->fill(['image' => '/images/upload/' . $image]);
+        $advisory_board->fill(['image' => 'images/upload/' . $image]);
 
         $advisory_board->save();
 
@@ -145,7 +149,7 @@ class AdvisoryBoardController extends Controller
             if (strpos($advisory_board->image, 'upload') != false && is_file($advisory_board->image))
                 unlink($advisory_board->image);
             $request->image->move(public_path('images/upload'), $image);
-            $advisory_board->fill(['image' => '/images/upload/' . $image]);
+            $advisory_board->fill(['image' => 'images/upload/' . $image]);
         }
 
         $advisory_board->save();

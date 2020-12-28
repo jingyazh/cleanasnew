@@ -59,9 +59,9 @@
       <div class="card-header">
         <h3 class="card-title">{{__('About Us')}} </h3>
 
-        <div class="card-tools">
+        <!-- <div class="card-tools">
           <a href="{!! route('aboutus.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
-        </div>
+        </div> -->
 
       </div>
       <!-- /.card-header -->

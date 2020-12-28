@@ -189,12 +189,12 @@ return [
             'route'  => 'myprofile',
             'icon' => 'fas fa-fw fa-user-cog',
         ],
-        // ['header' => 'Dashboard'],
-        // [
-        //     'text' => 'Dashboard',
-        //     'route'  => 'home',
-        //     'icon' => 'fas fa-fw fa-tachometer-alt',
-        // ],
+        ['header' => 'Dashboard'],
+        [
+            'text' => 'Dashboard',
+            'route'  => 'home',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
+        ],
 
         ['header' => 'Content Management'],
         [

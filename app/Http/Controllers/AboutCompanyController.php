@@ -50,7 +50,7 @@ class AboutCompanyController extends Controller
                 return $item->title;
             })
             ->addColumn('image', function ($item) {
-                return " <a href='{$item->image}' target='_blank'> " . "<img style='height: 50px;' src='{$item->image}' />" . " </a> ";
+                return " <a href='/{$item->image}' target='_blank'> " . "<img style='height: 50px;' src='/{$item->image}' />" . " </a> ";
             })
             ->addColumn('locale', function ($item) {
                 return Config::get('app.locales')[$item->locale];
@@ -113,7 +113,7 @@ class AboutCompanyController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $aboutcompany->fill(['image' => '/images/upload/' . $image]);
+        $aboutcompany->fill(['image' => 'images/upload/' . $image]);
 
         $aboutcompany->save();
 
@@ -148,7 +148,7 @@ class AboutCompanyController extends Controller
             if (strpos($aboutcompany->image, 'upload') != false && is_file($aboutcompany->image))
                 unlink($aboutcompany->image);
             $request->image->move(public_path('images/upload'), $image);
-            $aboutcompany->fill(['image' => '/images/upload/' . $image]);
+            $aboutcompany->fill(['image' => 'images/upload/' . $image]);
         }
 
         $aboutcompany->save();

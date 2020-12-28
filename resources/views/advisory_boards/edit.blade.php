@@ -241,7 +241,7 @@
         "id": "{{$advisory_board->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('advisory_boards.index') }}";
+        location.href = "{{ route('aboutus.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

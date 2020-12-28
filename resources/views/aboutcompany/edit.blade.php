@@ -54,7 +54,7 @@
             </div>
 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/aboutcompany.jpg" target="_blank">here</a> | Current Image <a href="{{ $aboutcompany->image }}" target="_blank">here</a>
+              View example <a href="/assets/examples/aboutcompany.jpg" target="_blank">here</a> | Current Image <a href="/{{ $aboutcompany->image }}" target="_blank">here</a>
             </small>
           </div>
 
@@ -224,7 +224,7 @@
         "id": "{{$aboutcompany->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('aboutcompany.index') }}";
+        location.href = "{{ route('aboutus.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

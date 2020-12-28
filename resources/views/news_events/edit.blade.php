@@ -217,7 +217,7 @@
         "id": "{{$news_event->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('news_events.index') }}";
+        location.href = "{{ route('aboutus.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);
