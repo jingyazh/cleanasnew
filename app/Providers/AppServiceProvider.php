@@ -33,9 +33,9 @@ class AppServiceProvider extends ServiceProvider
         $locale = session('locale');
         if ($locale == null)    $locale = 'en';
 
-        $metadata = DB::table('metadata')->where('locale', $locale)->get();
-
-        view()->share('metadata', $metadata);
-
+        view()->share([
+            'gmetadata' => DB::table('metadata')->where('locale', $locale)->get(),
+            'glocales' => config('app.locales')
+        ]);
     }
 }

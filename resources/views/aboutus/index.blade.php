@@ -5,9 +5,7 @@
   <h1 class="m-0 text-dark">{{__('About Us')}}</h1>
   <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
     @foreach (Config::get('app.locales') as $key => $lang)
-    @if($key != 'en-ad' && $key != 'fr-ad')
-    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-    @endif
+    <option style="color: red;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
     @endforeach
   </select>
 </div>

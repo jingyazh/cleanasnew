@@ -18,6 +18,14 @@ class MultiLang
      */
     public function handle($request, Closure $next)
     {
+        //...
+        if(isset($request->chlang)){
+            $locale = trim($request->chlang);
+            if (array_key_exists($locale, config('app.locales'))) {
+                session(['locale' => $locale]);
+            }
+        }
+
         if (Session::has('locale') && array_key_exists(Session::get('locale'), Config::get('app.locales'))) {
             App::setLocale(Session::get('locale'));
         } else {

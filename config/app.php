@@ -83,8 +83,6 @@ return [
     'locale' => 'en',
 
     'locales' => [
-        'en-ad' => 'English', 
-        'fr-ad' => 'Français',
         'en'    => 'English', 
         'es-us' => 'Español (US)', 
         'mx'    => 'Español (MX)', 

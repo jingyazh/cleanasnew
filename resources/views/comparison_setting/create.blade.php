@@ -60,9 +60,7 @@
             <label>{{__('Language')}}<code>*</code> </label>
             <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>
               @foreach (Config::get('app.locales') as $key => $lang)
-              @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>></option>
-              @endif
+              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
               @endforeach
             </select>
           </div>
