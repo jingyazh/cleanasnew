@@ -10,28 +10,20 @@
   <link href="{{ asset('assets/css/styles09.css?v=20201201') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/odometer-theme-car.css?v=20201030') }}" rel="stylesheet">
   <link href="https://cleanasnew.com/" rel="canonical">
-  @if(isset($metadata) && $metadata != null)
-  @foreach($metadata as $key => $r)
+  @foreach($gmetadata as $key => $r)
     <meta {!! ($r->name) ? 'name="'.$r->name.'"' : '' !!}  {!! 
       ($r->content) ? 'content="'.$r->content.'"' : '' !!} {!! 
       ($r->property) ? 'property="'.$r->property.'"' : '' !!} />
   @endforeach
+  @foreach ($glocales as $key => $lang)
+    <link rel="alternate" href="{{Request::url()}}?chlang={{$key}}" hreflang="{{$key}}" />
+  @endforeach
+  
+  @if($gcustomfont != "")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family={{$gcustomfont}}&display=swap" rel="stylesheet">  
   @endif
 
-  <!-- <link rel="alternate" href="https://cleanasnew.com/index.html" hreflang="en" />
-  <link rel="alternate" href="https://cleanasnew.com/mx/index.html" hreflang="es-mx" />
-  <link rel="alternate" href="https://cleanasnew.com/es/index.html" hreflang="es-es" />
-  <link rel="alternate" href="https://cleanasnew.com/es-us/index.html" hreflang="es-us" />
-  <link rel="alternate" href="https://cleanasnew.com/pt-br/index.html" hreflang="pt-br" />
-  <link rel="alternate" href="https://cleanasnew.com/de/index.html" hreflang="de-de" />
-  <link rel="alternate" href="https://cleanasnew.com/fr/index.html" hreflang="fr-fr" />
-  <link rel="alternate" href="https://cleanasnew.com/jp/index.html" hreflang="ja-jp" />
-  <link rel="alternate" href="https://cleanasnew.com/th/index.html" hreflang="th-th" />
-  <link rel="alternate" href="https://cleanasnew.com/ml/index.html" hreflang="ms-my" />
-  <link rel="alternate" href="https://cleanasnew.com/ru/index.html" hreflang="ru-ru" />
-  <link rel="alternate" href="https://cleanasnew.com/cn/index.html" hreflang="zh-cn" />
-  <link rel="alternate" href="https://cleanasnew.com/hi-in/index.html" hreflang="hi-in" />
-  <link rel="alternate" href="https://cleanasnew.com/pa-pk/index.html" hreflang="pa-pk" /> -->
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon" sizes="180x180">
   <link href="{{ asset('assets/img/android-icon-192x192.png') }}" rel="icon" sizes="192x192" type="image/png">
   <link href="{{ asset('assets/img/favicon-32x32.png') }}" rel="icon" sizes="32x32" type="image/png">

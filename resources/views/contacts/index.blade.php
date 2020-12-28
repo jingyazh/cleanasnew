@@ -7,9 +7,7 @@
   <h1 class="m-0 text-dark">{{__('Contact')}}</h1>
   <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
     @foreach (Config::get('app.locales') as $key => $lang)
-    @if($key != 'en-ad' && $key != 'fr-ad')
-    <option style="color: black;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
-    @endif
+    <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
     @endforeach
   </select>
 </div>
@@ -140,16 +138,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="form-group col-md-12">
-            <label>{{__('Language')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>
-              @foreach (Config::get('app.locales') as $key => $lang)
-              @if($key != 'en-ad' && $key != 'fr-ad')
-              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
-              @endif
-              @endforeach
-            </select>
-          </div> -->
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
