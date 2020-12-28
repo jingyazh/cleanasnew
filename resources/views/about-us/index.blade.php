@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>About Clean As New Powered By Tech Sonic®</title>
+<title>{{ $siteSetting->aboutus_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->aboutus_meta_description }}">
 @endsection
 
 @section('content')

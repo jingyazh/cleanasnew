@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>CLEANER, FASTER, SAFER & GREENER - Clean As New® | Baytown TX</title>
+<title>{{ $siteSetting->todos_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->todos_meta_description }}">
 @endsection
 
 @section('content')

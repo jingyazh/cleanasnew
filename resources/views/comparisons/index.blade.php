@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Cleaning Cost & Clean As New®</title>
+<title>{{ $siteSetting->comparison_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->comparison_meta_description }}">
 @endsection
 
 @section('content')

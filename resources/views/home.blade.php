@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Heat Exchanger Cleaning Services - Clean As New® (China)</title>
+<title>{{ $siteSetting->home_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->home_meta_description }}">
 @endsection
 
 @section('content')

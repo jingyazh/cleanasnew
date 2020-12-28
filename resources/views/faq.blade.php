@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Heat Exchanger Cleaning: Your Questions Answered - Clean As New®</title>
+<title>{{ $siteSetting->faq_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->faq_meta_description }}">
 @endsection
 
 @section('content')
