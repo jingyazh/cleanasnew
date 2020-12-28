@@ -114,7 +114,7 @@ class WhatWeCleanController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $clean->fill(['image' => 'images/upload/' . $image]);
+        $clean->fill(['image' => '/images/upload/' . $image]);
 
         $clean->save();
 
@@ -150,7 +150,7 @@ class WhatWeCleanController extends Controller
             if (strpos($clean->image, 'upload') != false && is_file($clean->image))
                 unlink($clean->image);
             $request->image->move(public_path('images/upload'), $image);
-            $clean->fill(['image' => 'images/upload/' . $image]);
+            $clean->fill(['image' => '/images/upload/' . $image]);
         }
 
         $clean->save();

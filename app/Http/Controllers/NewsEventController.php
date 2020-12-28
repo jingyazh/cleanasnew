@@ -109,7 +109,7 @@ class NewsEventController extends Controller
 
         $news_event = NewsEvent::create($input);
 
-        return redirect()->route('news_events.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function show(NewsEvent $news_event)
@@ -136,7 +136,7 @@ class NewsEventController extends Controller
 
         $news_event->save();
 
-        return redirect()->route('news_events.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function destroy(NewsEvent $news_event)

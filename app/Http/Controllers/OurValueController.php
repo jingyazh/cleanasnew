@@ -113,7 +113,7 @@ class OurValueController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $value->fill(['image' => 'images/upload/' . $image]);
+        $value->fill(['image' => '/images/upload/' . $image]);
 
         $value->save();
 
@@ -148,7 +148,7 @@ class OurValueController extends Controller
             if (strpos($value->image, 'upload') != false && is_file($value->image))
                 unlink($value->image);
             $request->image->move(public_path('images/upload'), $image);
-            $value->fill(['image' => 'images/upload/' . $image]);
+            $value->fill(['image' => '/images/upload/' . $image]);
         }
 
         $value->save();

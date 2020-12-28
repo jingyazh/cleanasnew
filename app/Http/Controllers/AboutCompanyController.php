@@ -84,12 +84,17 @@ class AboutCompanyController extends Controller
         //
         $input = $request->all();
 
+        // dd($input);
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required',
+            // 'locale' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['articleid']) && $_POST['articleid'] != NULL && trim($_POST['articleid']) != "") {
             $checking = AboutCompany::where('articleid', $request->articleid)->where('locale', $request->locale)->get();
@@ -108,11 +113,11 @@ class AboutCompanyController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $aboutcompany->fill(['image' => 'images/upload/' . $image]);
+        $aboutcompany->fill(['image' => '/images/upload/' . $image]);
 
         $aboutcompany->save();
 
-        return redirect()->route('aboutcompany.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function show(AboutCompany $aboutcompany)
@@ -143,12 +148,12 @@ class AboutCompanyController extends Controller
             if (strpos($aboutcompany->image, 'upload') != false && is_file($aboutcompany->image))
                 unlink($aboutcompany->image);
             $request->image->move(public_path('images/upload'), $image);
-            $aboutcompany->fill(['image' => 'images/upload/' . $image]);
+            $aboutcompany->fill(['image' => '/images/upload/' . $image]);
         }
 
         $aboutcompany->save();
 
-        return redirect()->route('aboutcompany.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function destroy(AboutCompany $aboutcompany)

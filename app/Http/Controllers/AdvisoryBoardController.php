@@ -109,11 +109,11 @@ class AdvisoryBoardController extends Controller
 
         $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
         $request->image->move(public_path('images/upload'), $image);
-        $advisory_board->fill(['image' => 'images/upload/' . $image]);
+        $advisory_board->fill(['image' => '/images/upload/' . $image]);
 
         $advisory_board->save();
 
-        return redirect()->route('advisory_boards.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function show(AdvisoryBoard $advisory_board)
@@ -145,12 +145,12 @@ class AdvisoryBoardController extends Controller
             if (strpos($advisory_board->image, 'upload') != false && is_file($advisory_board->image))
                 unlink($advisory_board->image);
             $request->image->move(public_path('images/upload'), $image);
-            $advisory_board->fill(['image' => 'images/upload/' . $image]);
+            $advisory_board->fill(['image' => '/images/upload/' . $image]);
         }
 
         $advisory_board->save();
 
-        return redirect()->route('advisory_boards.index');
+        return redirect()->route('aboutus.index');
     }
 
     public function destroy(AdvisoryBoard $advisory_board)

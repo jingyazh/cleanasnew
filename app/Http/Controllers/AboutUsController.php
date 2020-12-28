@@ -179,7 +179,7 @@ class AboutUsController extends Controller
             if (strpos($aboutus->image, 'upload') != false && is_file($aboutus->image))
                 unlink($aboutus->image);
             $request->image->move(public_path('images/upload'), $image1);
-            $aboutus->fill(['image' => 'images/upload/' . $image1]);
+            $aboutus->fill(['image' => '/images/upload/' . $image1]);
         }
 
         $aboutus->save();
