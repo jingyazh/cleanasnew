@@ -15,9 +15,14 @@
       ($r->content) ? 'content="'.$r->content.'"' : '' !!} {!! 
       ($r->property) ? 'property="'.$r->property.'"' : '' !!} />
   @endforeach
-  @foreach (Config::get('app.locales') as $key => $lang)
+  @foreach ($glocales as $key => $lang)
     <link rel="alternate" href="{{Request::url()}}?chlang={{$key}}" hreflang="{{$key}}" />
   @endforeach
+  
+  @if($gcustomfont != "")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family={{$gcustomfont}}&display=swap" rel="stylesheet">  
+  @endif
 
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon" sizes="180x180">
   <link href="{{ asset('assets/img/android-icon-192x192.png') }}" rel="icon" sizes="192x192" type="image/png">

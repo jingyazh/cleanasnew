@@ -30,6 +30,7 @@ class MultiLang
             App::setLocale(Session::get('locale'));
         } else {
             App::setLocale(Config::get('app.fallback_locale'));
+            session(['locale' => Config::get('app.fallback_locale')]);
         }
         return $next($request);
     }
