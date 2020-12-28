@@ -26,7 +26,7 @@
   <div class="album bg-light">
     <div class="container">
       <div class="row">
-        <div class="front-picture-apple clearfix" id="apple" style="background-image: url({{ isset($siteSetting) ? $siteSetting->comparison_image : 'assets/img/apple-to-apple.jpg'}}); background-size: contain; background-repeat: no-repeat">
+        <div class="front-picture-apple clearfix" id="apple" style="background : url({{ isset($siteSetting) ? $siteSetting->comparison_image : 'assets/img/apple-to-apple.jpg'}}) no-repeat">
           @if(isset($siteSetting) && $siteSetting != null)
           {!! $siteSetting->comparison_txt !!}
           @else
