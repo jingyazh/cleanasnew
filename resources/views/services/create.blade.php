@@ -68,14 +68,14 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required placeholder="{{__('Title')}}" />
+              <input type="text" name="title" class="form-control col-sm-12" value="{{ old('title') }}" required placeholder="{{__('Title')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
             <label>{{__('Image')}} 1 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" name="image_landing_1" class="custom-file-input" id="inputGroupFile01">
+                <input type="file" name="image_landing_1" required class="custom-file-input" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
@@ -91,7 +91,7 @@
             <label>{{__('Image')}} 2 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" name="image_landing_2" class="custom-file-input" id="inputGroupFile02">
+                <input type="file" name="image_landing_2" required class="custom-file-input" id="inputGroupFile02">
                 <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
@@ -108,6 +108,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
+                  {!! old('embed') !!}
                 </textarea>
               </div>
             </div>

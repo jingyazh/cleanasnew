@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Clean As New® delivers industrial cleaning services both onsite and offsite. We ensure 100% clean. If we can’t clean it, you don’t pay!">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('title')
   <link href="{{ asset('assets/css/bootstrap.min-cg.css?v=20201030') }}" rel="stylesheet">

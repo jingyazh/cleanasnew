@@ -24,12 +24,12 @@
         <div class="card-header">
           <h3 class="card-title">{{__('Modify Data')}} </h3>
           <div class="card-tools">
-          <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
-            @foreach (Config::get('app.locales') as $key => $lang)
-            <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
-            @endforeach
-          </select>
-        </div>
+            <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+              @foreach (Config::get('app.locales') as $key => $lang)
+              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
+              @endforeach
+            </select>
+          </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -53,7 +53,7 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
               </div>
               <!-- <div class="input-group-append">
                 <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
@@ -70,6 +70,9 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
+                @if($value)
+                {!! old('embed', $value->embed) !!}
+                @endif
                 </textarea>
               </div>
             </div>
@@ -134,45 +137,7 @@
     plugins: ['table', 'code'],
     width: "100%",
     height: 500,
-    setup: function(editor) {
-      editor.on('init', function(e) {
-        editor.setContent("{{ $value->embed }}");
-      });
-    }
   });
-  // var parser = new tinymce.html.SaxParser({
-  //   validate: true,
-
-  //   comment: function(text) {
-  //     console.log('Comment:', text);
-  //   },
-
-  //   cdata: function(text) {
-  //     console.log('CDATA:', text);
-  //   },
-
-  //   text: function(text, raw) {
-  //     console.log('Text:', text, 'Raw:', raw);
-  //   },
-
-  //   start: function(name, attrs, empty) {
-  //     console.log('Start:', name, attrs, empty);
-  //   },
-
-  //   end: function(name) {
-  //     console.log('End:', name);
-  //   },
-
-  //   pi: function(name, text) {
-  //     console.log('PI:', name, text);
-  //   },
-
-  //   doctype: function(text) {
-  //     console.log('DocType:', text);
-  //   }
-  // }, schema);
-  // parser.parse("{{$value->embed}}");
-  // tinymce.activeEditor.setContent("{{$value->embed}}");
 </script>
 <!-- tinymce editor -->
 

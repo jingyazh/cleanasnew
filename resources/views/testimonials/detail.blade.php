@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Ultrasonic Heat Exchanger Cleaning - Case Studies & Downloads</title>
+<title>{{ $siteSetting->testimonials_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->testimonials_meta_description }}">
 @endsection
 
 @section('content')

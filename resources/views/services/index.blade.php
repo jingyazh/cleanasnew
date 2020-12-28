@@ -22,7 +22,7 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-  <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ $setting ? route('settings.update', $setting->id) : route('settings.store') }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
@@ -31,12 +31,18 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        <div class="form-group col-md-12">
+          <div class="form-group col-md-12">
             <label>{{__('Service Page Image')}} <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="service_image" class="custom-file-input" id="serviceImage">
-                <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">
+                  @if($setting)
+                  {{'Modify Image'}}
+                  @else
+                  {{'Choose file'}}
+                  @endif
+                </label>
               </div>
             </div>
             <small class="ul-form__text form-text ">
@@ -52,7 +58,7 @@
               <div class="mx-auto col-md-12">
                 <textarea id="service_txt" required name="service_txt">
                 @if(isset($setting) && $setting != null)
-                  {!! $setting->service_txt !!}
+                  {!! old('service_txt', $setting->service_txt) !!}
                   @endif
                 </textarea>
               </div>
@@ -66,7 +72,13 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="service_list_image" class="custom-file-input" id="serviceChecklistImage">
-                <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">
+                  @if($setting)
+                  {{'Modify Image'}}
+                  @else
+                  {{'Choose file'}}
+                  @endif
+                </label>
               </div>
             </div>
             <small class="ul-form__text form-text ">
@@ -103,7 +115,7 @@
       <div class="card-header">
         <h3 class="card-title">{{__('Services List')}} </h3>
 
-        <div class="card-tools">          
+        <div class="card-tools">
           <a href="{!! route('services.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
         </div>
 

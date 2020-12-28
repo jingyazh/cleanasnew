@@ -60,7 +60,13 @@
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" name="home_esg_image" class="custom-file-input" id="esgImage">
-                <label class="custom-file-label" for="esgImage" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <label class="custom-file-label" for="esgImage" aria-describedby="inputGroupFileAddon01">
+                  @if($setting)
+                  {{'Modify Image'}}
+                  @else
+                  {{'Choose file'}}
+                  @endif
+                </label>
               </div>
             </div>
             <small class="ul-form__text form-text ">

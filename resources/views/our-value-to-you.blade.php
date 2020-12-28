@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Energy Saved, Shorter Shutdowns, Reduced Environmental Impact</title>
+<title>{{ $siteSetting->values_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->values_meta_description }}">
 @endsection
 
 @section('content')

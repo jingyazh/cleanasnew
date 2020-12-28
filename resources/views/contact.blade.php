@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Clean As New ® at 1.832.271.2666</title>
+<title>{{ $siteSetting->contact_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->contact_meta_description }}">
 @endsection
 
 @section('content')

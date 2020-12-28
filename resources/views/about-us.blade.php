@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>About Us - Clean As New®</title>
+<title>{{ $siteSetting->aboutus_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->aboutus_meta_description }}">
 @endsection
 
 @section('content')

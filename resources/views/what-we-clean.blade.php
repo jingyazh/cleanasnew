@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Heat Exchangers Cleaning [Straight Tube, Twisted Tube] - Clean As New®</title>
+<title>{{ $siteSetting->clean_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->clean_meta_description }}">
 @endsection
 
 @section('content')

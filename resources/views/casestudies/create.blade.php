@@ -68,15 +68,16 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required placeholder="{{__('Title')}}" />
+              <input type="text" name="title" value="{{ old('title') }}" class="form-control col-sm-12" required placeholder="{{__('Title')}}" />
             </div>
           </div>
-          
+
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
+                {!! old('embed') !!}
                 </textarea>
               </div>
             </div>
@@ -115,6 +116,7 @@
     location.href = "{{ route('testimonials.index') }}";
     return false;
   }
+
   function handleChange() {
     var ele = document.getElementById('checkbox');
     console.log(ele.checked);

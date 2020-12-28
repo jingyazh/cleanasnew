@@ -70,6 +70,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="title" name="title">
+                  {!! old('title') !!}
                 </textarea>
               </div>
             </div>
@@ -80,6 +81,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
+                  {!! old('embed') !!}
                 </textarea>
               </div>
             </div>

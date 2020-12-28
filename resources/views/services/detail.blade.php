@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>✔️ By The Basket - Clean As New®</title>
+<title>{{ $siteSetting->service_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->service_meta_description }}">
 @endsection
 
 @section('content')
