@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\Service;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
@@ -220,7 +221,8 @@ class ServiceController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
     /**
      * Remove the specified resource from storage.
@@ -246,7 +248,8 @@ class ServiceController extends Controller
             $locale = 'en';
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
-        return view('services.detail', ['service' => $service, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('services.detail', ['service' => $service, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
         # code...
     }
 }

@@ -303,7 +303,7 @@ return [
             'text' => 'General Settings',
             'route'  => 'settings.index',
             'icon' => 'fas fa-fw fa-cogs',
-            'active' => ['admin/settings', 'admin/settings/*', 'admin/metadata/*'],
+            'active' => ['admin/settings', 'admin/settings/*', 'admin/metadata/*', 'admin/extraPage', 'admin/extraPage/*'],
         ],
         [
             'text' => 'Error Pages',

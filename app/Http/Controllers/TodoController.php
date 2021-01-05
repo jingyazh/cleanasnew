@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\Models\Todo;
@@ -178,6 +179,7 @@ class TodoController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

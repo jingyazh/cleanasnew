@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdvisoryBoard;
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\User;
@@ -179,7 +180,8 @@ class AdvisoryBoardController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
     public function detail(Request $request)
@@ -192,7 +194,8 @@ class AdvisoryBoardController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('about-us.advisory-board-members.profile', ['board' => $board, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('about-us.advisory-board-members.profile', ['board' => $board, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
 

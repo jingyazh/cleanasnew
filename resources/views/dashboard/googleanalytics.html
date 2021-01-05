@@ -9,6 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        #auth-button div:nth-child(2) {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,8 +22,11 @@
 
 
     <div class="container">
-        <section id="auth-button"></section>
-        <section id="view-selector"></section>
+        <br><br>
+        <div class="text-center">
+            <section id="auth-button" class="text-center"></section>
+            <div id="view-selector" class="text-center"></div>
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <section id="timeline1"></section>

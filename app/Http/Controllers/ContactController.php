@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\User;
@@ -181,8 +182,9 @@ class ContactController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
     public function privacy()
@@ -193,7 +195,8 @@ class ContactController extends Controller
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
-        return view('privacy-policy', ['setting' => $setting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('privacy-policy', ['setting' => $setting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
     public function terms()
@@ -203,6 +206,7 @@ class ContactController extends Controller
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
-        return view('terms-of-use', ['setting' => $setting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('terms-of-use', ['setting' => $setting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

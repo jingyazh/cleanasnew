@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ESG;
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\User;
@@ -165,8 +166,9 @@ class ESGController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
 
     }
 
@@ -181,7 +183,8 @@ class ESGController extends Controller
         // }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('esg.how-better-cleaning-can-help', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('esg.how-better-cleaning-can-help', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

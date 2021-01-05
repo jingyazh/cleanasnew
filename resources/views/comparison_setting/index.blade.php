@@ -2,7 +2,7 @@
 
 @section('content_header')
 <div style="justify-content: space-between; display: flex">
-  <h1 class="m-0 text-dark">{{__('How We Clean')}}</h1>
+  <h1 class="m-0 text-dark">{{__('How We Compare')}}</h1>
   <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
     @foreach (Config::get('app.locales') as $key => $lang)
     <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>

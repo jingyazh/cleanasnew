@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\User;
@@ -178,7 +179,8 @@ class AboutCompanyController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

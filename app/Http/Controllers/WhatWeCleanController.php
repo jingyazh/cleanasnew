@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\Models\WhatWeClean;
@@ -167,7 +168,8 @@ class WhatWeCleanController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($data);
-        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
     public function destroy(WhatWeClean $clean)
     {

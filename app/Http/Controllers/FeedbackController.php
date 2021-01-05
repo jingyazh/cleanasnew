@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use App\Models\SiteSetting;
+use App\Models\Testimonial;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -39,8 +41,10 @@ class FeedbackController extends Controller
     public function data(Request $request)
     {
 
-        $locale = $request->locale;
-        $list = Review::where('locale', $locale)->where('type', 'Feedback')->get();
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $testimonialid = $request->testimonialid;
+        $list = Review::where('locale', $locale)->where('testimonialid', $testimonialid)->get();
 
         return Datatables::of($list)
 
@@ -59,50 +63,62 @@ class FeedbackController extends Controller
             ->make(true);
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        // dd($request->testimonialid);
+        // $feedbacks = Review::where('locale', 'en')->get();
+        // foreach ($feedbacks as $key => $item) {
+        //     $_feedbacks = Review::where('reviewid', $item->reviewid)->get();
+        //     if (count($_feedbacks) == 14)
+        //         unset($feedbacks[$key]);
+        // }
 
-        $feedbacks = Review::where('locale', 'en')->get();
-        foreach ($feedbacks as $key => $item) {
-            $_feedbacks = Review::where('reviewid', $item->reviewid)->get();
-            if (count($_feedbacks) == 14)
-                unset($feedbacks[$key]);
-        }
-
-        return view("feedbacks.create", ['feedbacks' => $feedbacks]);
+        return view("feedbacks.create", ['testimonialid' => $request->testimonialid]);
     }
 
     public function store(Request $request)
     {
         //
+        // dd($request->testimonialid);
         $input = $request->all();
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
 
-        if (isset($_POST['reviewid']) && $_POST['reviewid'] != NULL && trim($_POST['reviewid']) != "") {
-            $checking = Review::where('reviewid', $request->reviewid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('feedbacks.index', ['errors' => ['English version exists already.']]);
-            }
-            $reviewid = $request->input('reviewid');
-            $one = Review::where('reviewid', $reviewid)->where('locale', 'en')->first();
-            $type = $one->type;
-        } else {
-            $reviewid = substr(str_shuffle(self::$characters), 0, 10);
-            $type = 'Feedback';
-        }
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
+        $testimonial = Testimonial::where('testimonialid', $request->testimonialid)->where('locale', $locale)->first();
+        // dd($testimonial);
+        $type = $testimonial->title;
+        $input['type'] = $type;
+        $reviewid = substr(str_shuffle(self::$characters), 0, 10);
+        // if (isset($_POST['reviewid']) && $_POST['reviewid'] != NULL && trim($_POST['reviewid']) != "") {
+        //     $checking = Review::where('reviewid', $request->reviewid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('feedbacks.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $reviewid = $request->input('reviewid');
+        //     $one = Review::where('reviewid', $reviewid)->where('locale', 'en')->first();
+        //     $type = $one->type;
+        // } else {
+        //     $reviewid = substr(str_shuffle(self::$characters), 0, 10);
+        //     $type = 'Feedback';
+        // }
 
         $input['reviewid'] = $reviewid;
-        $input['type'] = $type;
-        $input['testimonialid'] = 22222222;
+        // $input['type'] = $type;
 
         $feedback = Review::create($input);
 
-        return redirect()->route('testimonials.index');
+        // dd($request->testimonialid);
+
+        $setting = SiteSetting::where('locale', $locale)->first();
+
+        return view('testimonials.edit', ['testimonial' => $testimonial]);
+        // return redirect()->route('testimonials.edit', $request->testimonial);
     }
 
     public function show(Review $feedback)
@@ -112,7 +128,10 @@ class FeedbackController extends Controller
 
     public function edit(Review $feedback)
     {
-        return view('feedbacks.edit', ['feedback' => $feedback]);
+        $locale = session('locale');
+        if($locale == null) $locale = 'en';
+        $testimonial = Testimonial::where('locale', $locale)->where('testimonialid', $feedback->testimonialid)->first();
+        return view('feedbacks.edit', ['feedback' => $feedback, 'testimonialid' => $testimonial->id]);
     }
 
     public function update(Request $request, Review $feedback)
@@ -129,16 +148,30 @@ class FeedbackController extends Controller
 
         $feedback->save();
 
-        return redirect()->route('testimonials.index');
+        $testimonialid = $feedback->testimonialid;
+
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $testimonial = Testimonial::where('testimonialid', $testimonialid)->where('locale', $locale)->first();
+        $id = $testimonial->id;
+
+        return redirect()->route('testimonials.edit', $id);
     }
 
     public function destroy(Review $feedback)
     {
         //
         Review::destroy($feedback->id);
+        $testimonialid = $feedback->testimonialid;
+        $locale = session('locale');
+        if($locale == null) $locale = 'en';
+        $testimonial = Testimonial::where('locale', $locale)->where('testimonialid', $testimonialid)->first();
 
+        // return redirect()->route('testimonials.edit', $testimonial->id);
         return response()->json([
-            'success' => __('Client deleted successfully!')
+            'success' => __('Client deleted successfully!'),
+            'testimonialid' => $testimonial->id
         ]);
     }
 }

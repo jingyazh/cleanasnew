@@ -3,7 +3,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Add Value')}}</h1>
+<h1 class="m-0 text-dark">{{__('Add Main Page')}}</h1>
 @stop
 
 @section('content')
@@ -26,36 +26,18 @@
       </ul>
     </div>
     @endif
-    <form method="POST" action="{{ route('values.store') }}" id="frmCreateClient" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('extraPage.store') }}" id="frmCreateClient" enctype="multipart/form-data">
       @csrf
       <input type="hidden" id="isautoplaceorder" name="isautoplaceorder" value="0" />
       <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">{{__('Add Value')}} </h3>
+          <h3 class="card-title">{{__('Add Main Page')}} </h3>
           <div class="card-tools">
 
           </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-
-          <!-- @if(count($values) > 0)
-          <div class="form-group col-md-12">
-            <label>{{__('Update New Language Version')}} <code>*</code> </label>
-            <div style="display: flex; flex-direction: row; width:100px;">
-              <input type="checkbox" id="checkbox" onchange="handleChange()" class="form-control col-sm-12" />
-            </div>
-          </div>
-          @endif
-          <div class="form-group col-md-12" id="valueid" style="display: none;">
-            <label>{{__('Select title')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="valueid" id="compareSelector" v-model="locale">
-              <option value="" label="Please select title" selected></option>
-              @foreach ($values as $key => $item)
-              <option value="{{ $item->valueid }}" label="{{ $item->title }}"></option>
-              @endforeach
-            </select>
-          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
             <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>
@@ -72,20 +54,16 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Image')}}<code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image" required class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{ old('meta_title') }}" required placeholder="{{__('Meta Title')}}" />
             </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/values.jpg" target="_blank">here</a>
-            </small>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{ old('meta_description') }}" required placeholder="{{__('Meta Description')}}" />
+            </div>
           </div>
 
           <div class="form-group col-md-12">
@@ -138,7 +116,7 @@
 </script>
 <script>
   function cancel() {
-    location.href = "{{ route('values.index') }}";
+    location.href = "{{ route('settings.index') }}";
     return false;
   }
   function handleChange() {

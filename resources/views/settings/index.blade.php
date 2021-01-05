@@ -13,6 +13,23 @@
 </div>
 @stop
 
+@section('css')
+<style>
+.editMark {
+  justify-content: flex-end;
+  z-index: 1;
+  color: gray;
+  float: right;
+  opacity: 0.2;
+}
+.editMark:hover {
+  color: black;
+  transform: scale(1.2);
+  opacity: 1;
+}
+</style>
+@stop
+
 @section('content')
 
 
@@ -24,11 +41,14 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <div class="card card-info">
-      <form method="POST" action="{{ route('mainSetting.pageVisibleSetting') }}" enctype="multipart/form-data">
-        @csrf
+    <form method="POST" action="{{ route('mainSetting.pageVisibleSetting') }}" enctype="multipart/form-data">
+      @csrf
+      <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">{{__('Page Visible Setting')}} </h3>
+          <h3 class="card-title">{{__('Top Menu Setting')}} </h3>
+          <div class="card-tools">
+            <a href="{!! route('settings.create') !!}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
+          </div>
         </div>
         <div class="card-body">
           @if(isset($menuSetting) && $menuSetting != null)
@@ -36,7 +56,19 @@
           <label class="checkbox checkbox-primary" style="width: 200px;">
             <input type="checkbox" name="{{ $value->key }}" value="{{ $value->value }}" {{ $value->value == '1' ? 'checked' : '' }}>
             <span>{{ Config::get('app.pages')[$value->key] }} Page</span>
-            <span class="checkmark"></span>
+            <span class="editMark"></span>
+          </label>
+          @endforeach
+          @endif
+          @if(isset($extraPages) && count($extraPages) > 0)
+          <p style="margin-top: 1rem; margin-bottom: 0.5rem">Extra Pages</p>
+          @endif
+          @if(isset($extraPages) && $extraPages != null)
+          @foreach($extraPages as $key => $value)
+          <label class="checkbox checkbox-primary" style="width: 200px;">
+            <input type="checkbox" name="{{ $value->title }}" value="{{ $value->is_visible }}" {{ $value->is_visible == '1' ? 'checked' : '' }}>
+            <span>{{ $value->title }}</span>
+            <a href="{{ route('extraPage.edit', $value->id) }}"><span class="editMark"><i class="fa fa-edit"></i></span></a>
           </label>
           @endforeach
           @endif
@@ -50,8 +82,8 @@
             </div>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
   <div class="col-12">
     <div class="card card-info">

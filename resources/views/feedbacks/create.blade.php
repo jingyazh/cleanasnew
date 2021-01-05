@@ -26,7 +26,7 @@
       </ul>
     </div>
     @endif
-    <form method="POST" action="{{ route('feedbacks.store') }}" id="frmCreateClient" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('feedbacks.store', ['testimonialid' => $testimonialid]) }}" id="frmCreateClient" enctype="multipart/form-data">
       @csrf
       <input type="hidden" id="isautoplaceorder" name="isautoplaceorder" value="0" />
       <div class="card card-info">
@@ -38,24 +38,6 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-
-          <!-- @if(count($feedbacks) > 0)
-          <div class="form-group col-md-12">
-            <label>{{__('Update New Language Version')}} <code>*</code> </label>
-            <div style="display: flex; flex-direction: row; width:100px;">
-              <input type="checkbox" id="checkbox" onchange="handleChange()" class="form-control col-sm-12" />
-            </div>
-          </div>
-          @endif
-          <div class="form-group col-md-12" id="reviewid" style="display: none;">
-            <label>{{__('Select title')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="reviewid" id="compareSelector" v-model="locale">
-              <option value="" label="Please select title" selected></option>
-              @foreach ($feedbacks as $key => $item)
-              <option value="{{ $item->reviewid }}" label="{{ $item->title }}"></option>
-              @endforeach
-            </select>
-          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
             <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>

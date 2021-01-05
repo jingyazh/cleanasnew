@@ -3,7 +3,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Add Service')}}</h1>
+<h1 class="m-0 text-dark">{{__('Add Case of Studies')}}</h1>
 @stop
 
 @section('content')
@@ -26,12 +26,12 @@
       </ul>
     </div>
     @endif
-    <form method="POST" action="{{ route('testimonials.store') }}" id="frmCreateClient" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('casestudies.store') }}" id="frmCreateClient" enctype="multipart/form-data">
       @csrf
       <input type="hidden" id="isautoplaceorder" name="isautoplaceorder" value="0" />
       <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">{{__('Add Testimonial')}} </h3>
+          <h3 class="card-title">{{__('Add Case of Studies')}} </h3>
           <div class="card-tools">
 
           </div>
@@ -39,7 +39,7 @@
         <!-- /.card-header -->
         <div class="card-body">
 
-          <!-- @if(count($testimonials) > 0)
+          <!-- @if(count($casestudies) > 0)
           <div class="form-group col-md-12">
             <label>{{__('Update New Language Version')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row; width:100px;">
@@ -47,12 +47,12 @@
             </div>
           </div>
           @endif
-          <div class="form-group col-md-12" id="testimonialid" style="display: none;">
+          <div class="form-group col-md-12" id="reviewid" style="display: none;">
             <label>{{__('Select title')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="testimonialid" id="compareSelector" v-model="locale">
+            <select class="form-control col-sm-12" name="reviewid" id="compareSelector" v-model="locale">
               <option value="" label="Please select title" selected></option>
-              @foreach ($testimonials as $key => $item)
-              <option value="{{ $item->testimonialid }}" label="{{ $item->title }}"></option>
+              @foreach ($casestudies as $key => $item)
+              <option value="{{ $item->reviewid }}" label="{{ $item->title }}"></option>
               @endforeach
             </select>
           </div> -->
@@ -68,40 +68,19 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" value="{{ old('title') }}" required placeholder="{{__('Title')}}" />
+              <input type="text" name="title" value="{{ old('title') }}" class="form-control col-sm-12" required placeholder="{{__('Title')}}" />
             </div>
           </div>
-          <div class="form-group col-md-12">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image_1" required class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
-            </div>
 
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/testimonial_1.jpg" target="_blank">here</a>
-            </small>
-          </div>
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 2 <code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image_2" required class="custom-file-input" id="inputGroupFile02">
-                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+            <label>{{__('Detail')}}<code>*</code> </label>
+            <div class="col-md-12 mb-4">
+              <div class="mx-auto col-md-12">
+                <textarea id="embed" name="embed">
+                {!! old('embed') !!}
+                </textarea>
               </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
             </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/testimonial_2.jpg" target="_blank">here</a>
-            </small>
           </div>
         </div>
         <!-- /.card-body -->
@@ -123,7 +102,24 @@
 @stop
 
 @section('js')
-
+<script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
+<script src="{{asset('assets/js/tinymce_image_upload.js')}}"></script>
+<script>
+  tinymce.init({
+    selector: '#embed',
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount'
+    ],
+    images_upload_credentials: true,
+    automatic_uploads: true,
+    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    images_upload_handler: example_image_upload_handler,
+    width: "100%",
+    height: 500,
+  });
+</script>
 <script>
   function cancel() {
     location.href = "{{ route('testimonials.index') }}";
@@ -134,9 +130,9 @@
     var ele = document.getElementById('checkbox');
     console.log(ele.checked);
     if (ele.checked) {
-      $('#testimonialid').show();
+      $('#reviewid').show();
     } else {
-      $('#testimonialid').hide();
+      $('#reviewid').hide();
     }
   }
 </script>

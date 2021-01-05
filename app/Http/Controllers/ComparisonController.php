@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comparison;
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\User;
@@ -215,15 +216,21 @@ class ComparisonController extends Controller
         $comparisons = Comparison::where('locale', $locale)->get();
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
     public function detail(Request $request)
     {
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
         $comparison = Comparison::where('id', $request->id)->first();
+        $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
-        return view('comparisons.index', ['comparison' => $comparison, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('comparisons.index', ['comparison' => $comparison, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
     /**
      * Remove the specified resource from storage.

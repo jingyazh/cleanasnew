@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\Metadata;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
@@ -46,9 +47,10 @@ class SiteSettingController extends Controller
         $metadata = Metadata::where('locale', $locale)->get();
         $setting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($setting);
         // exit;
-        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting, 'menuSetting' => $menuSetting, 'metadata' => $metadata]);
+        return view('settings.index', ['listtype' => 'mine', 'setting' => $setting, 'menuSetting' => $menuSetting, 'metadata' => $metadata, 'extraPages' => $extraPages]);
     }
 
     //... for DataTable Data
@@ -80,15 +82,7 @@ class SiteSettingController extends Controller
 
     public function create()
     {
-
-        $settings = SiteSetting::where('locale', 'en')->get();
-        foreach ($settings as $key => $item) {
-            $_settings = SiteSetting::where('id', $item->id)->get();
-            if (count($_settings) == 14)
-                unset($settings[$key]);
-        }
-
-        return view("settings.create", ['settings' => $settings]);
+        return view("settings.create");
     }
 
     public function store(Request $request)

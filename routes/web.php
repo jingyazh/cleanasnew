@@ -69,6 +69,8 @@ Route::view('posts/the-highest-performing-refineries', 'posts.the-highest-perfor
 Route::view('posts/ultrasonic-cleaning-webinar', 'posts.ultrasonic-cleaning-webinar')->name('ultrasonic-cleaning-webinar');
 Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydroblasting-vs-cleanasnew')->name('washpad-hydroblasting-vs-cleanasnew');
 
+Route::get('page/{id}', 'ExtraPageController@view')->name('extraPageView');
+
 
 
 Auth::routes();
@@ -112,6 +114,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     //... ========= For Faqs ========
     Route::get('/admin/testimonials/data', 'TestimonialController@data')->name('testimonials.data');
+    Route::get('/admin/testimonials/reviewData', 'TestimonialController@reviewData')->name('testimonials.reviewData');
+    Route::get('/admin/testimonials/reviewDataEdit', 'TestimonialController@reviewDataEdit')->name('testimonials.reviewDataEdit');
+    Route::get('/admin/testimonials/reviewDataUpdate', 'TestimonialController@reviewDataUpdate')->name('testimonials.reviewDataUpdate');
+    Route::get('/admin/testimonials/reviewDestroy', 'TestimonialController@reviewDestroy')->name('testimonials.reviewDestroy');
     Route::resource('/admin/testimonials', 'TestimonialController');
 
     //... ========= For Case Studies ========
@@ -168,6 +174,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/users/users_data', 'UsersController@users_data')->name('users.users_data');
     Route::post('/admin/users/change_status', 'UsersController@change_status')->name('users.change_status');
     Route::resource('/admin/users', 'UsersController');
+
+    //... ========= For Extra Page ==============
+    Route::resource('/admin/extraPage', 'ExtraPageController');
 
     Route::resource('/admin/messages', 'MessageController')->only([
         'index', 'store', 'destroy'

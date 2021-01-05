@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null])
+@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null, $extraPages])
 <main>
   <div class="jumbotron text-left">
 	  <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList">&nbsp;

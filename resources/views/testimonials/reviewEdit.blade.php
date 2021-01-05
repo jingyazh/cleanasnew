@@ -17,7 +17,7 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ route('feedbacks.update', $feedback->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('testimonials.reviewDataUpdate', $review->id) }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
@@ -38,7 +38,7 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $feedback->title) }}" placeholder="{{__('Title')}}" />
+              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $review->title) }}" placeholder="{{__('Title')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
@@ -46,8 +46,8 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="embed" name="embed">
-                @if(isset($feedback) && $feedback != null)
-                {!! $feedback->embed !!}
+                @if(isset($review) && $review!= null)
+                {!! $review->embed !!}
                 @endif
                 </textarea>
               </div>
@@ -101,7 +101,7 @@
 @section('js')
 <script>
   function cancel() {
-    location.href = "{{ route('feedbacks.index') }}";
+    location.href = "{{ route('casestudies.index') }}";
     return false;
   }
 </script>
@@ -135,79 +135,11 @@
 <!-- dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script>
-  // Dropzone.autoDiscover = false;
-  // $(document).ready(function() {
-  //   var dropzone = new Dropzone('#demo-upload', {
-  //     previewTemplate: document.querySelector('#preview-template').innerHTML,
-  //     parallelUploads: 1,
-  //     thumbnailHeight: 120,
-  //     thumbnailWidth: 120,
-  //     maxFilesize: 1,
-  //     filesizeBase: 1000,
-  //     // thumbnail: function(file, dataUrl) {
-  //     //   if (file.previewElement) {
-  //     //     file.previewElement.classList.remove("dz-file-preview");
-  //     //     var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-  //     //     for (var i = 0; i < images.length; i++) {
-  //     //       var thumbnailElement = images[i];
-  //     //       thumbnailElement.alt = file.name;
-  //     //       thumbnailElement.src = dataUrl;
-  //     //     }
-  //     //     setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-  //     //   }
-  //     // }
-
-  //   });
-
-
-  //   // Now fake the file upload, since GitHub does not handle file uploads
-  //   // and returns a 404
-
-  //   var minSteps = 6,
-  //     maxSteps = 60,
-  //     timeBetweenSteps = 100,
-  //     bytesPerStep = 100000;
-
-  //   dropzone.uploadFiles = function(files) {
-  //     var self = this;
-
-  //     for (var i = 0; i < files.length; i++) {
-
-  //       var file = files[i];
-  //       totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-  //       for (var step = 0; step < totalSteps; step++) {
-  //         var duration = timeBetweenSteps * (step + 1);
-  //         setTimeout(function(file, totalSteps, step) {
-  //           return function() {
-  //             file.upload = {
-  //               progress: 100 * (step + 1) / totalSteps,
-  //               total: file.size,
-  //               bytesSent: (step + 1) * file.size / totalSteps
-  //             };
-
-  //             self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-  //             if (file.upload.progress == 100) {
-  //               file.status = Dropzone.SUCCESS;
-  //               self.emit("success", file, 'success', null);
-  //               self.emit("complete", file);
-  //               self.processQueue();
-  //               //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-  //             }
-  //           };
-  //         }(file, totalSteps, step), duration);
-  //       }
-  //     }
-  //   }
-
-  // })
-
-
   $("#btnDeleteClient").click(function() {
     if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
-      url: "{{ route('feedbacks.destroy', $feedback->id) }}",
+      url: "{{ route('testimonials.reviewDestroy', $review->id) }}",
       headers: {
         'X-CSRF-TOKEN': '{{ csrf_token() }}'
       },
@@ -215,11 +147,10 @@
       dataType: "JSON",
       data: {
         "_token": "{{ csrf_token() }}",
-        "id": "{{$feedback->id}}" // method and token not needed in data
+        "id": "{{$review->id}}" // method and token not needed in data
       },
       success: function(response) {
-        console.log(response);
-        location.href = "{{ route('testimonials.edit', $testimonialid) }}";
+        location.href = "{{ route('testimonials.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);

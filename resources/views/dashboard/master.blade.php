@@ -22,12 +22,24 @@
 @stop
 @inject('User', 'App\User')
 
+@section('css')
+<style>
+    #auth-button div:nth-child(2) {
+        display: none !important;
+    }
+</style>
+@stop
+
 @section('content')
 
 <!-- Small boxes (Stat box) -->
 <div class="row" style="justify-content: space-around">
     <div class="container">
-        <section id="auth-button"></section>
+        <br><br>
+        <div class="text-center">
+            <section id="auth-button" class="text-center"></section>
+            <div id="view-selector" class="text-center"></div>
+        </div>
         <section id="view-selector"></section>
         <div class="row">
             <div class="col-md-6">

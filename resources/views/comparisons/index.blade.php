@@ -1,13 +1,13 @@
 @extends('app')
 
 @section('title')
-<title>{{ $siteSetting->comparison_meta_title }}</title>
-<meta name="description" content="{{ $siteSetting->comparison_meta_description }}">
+<title>{{ isset($siteSetting) ? $siteSetting->comparison_meta_title : 'How We Compare [Cleaning Cost, Heat Exchanger Performance]' }}</title>
+<meta name="description" content="{{ isset($siteSetting) ? $siteSetting->comparison_meta_description : 'Our combination of Tech Sonic ultrasonic technology and hydroblasting cleans compact exchanger designs on the shell side, where hydroblasting alone fails.' }}">
 @endsection
 
 @section('content')
 
-@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null])
+@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null, $extraPages])
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;

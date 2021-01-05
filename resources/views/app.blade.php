@@ -8,7 +8,9 @@
   <link href="{{ asset('assets/css/bootstrap.min-cg.css?v=20201030') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/styles09.css?v=20201201') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/odometer-theme-car.css?v=20201030') }}" rel="stylesheet">
-  <link href="https://cleanasnew.com/" rel="canonical">
+  
+  <link  href="{{Request::url()}}" rel="canonical">
+
   @foreach($gmetadata as $key => $r)
     <meta {!! ($r->name) ? 'name="'.$r->name.'"' : '' !!}  {!! 
       ($r->content) ? 'content="'.$r->content.'"' : '' !!} {!! 

@@ -112,11 +112,14 @@ class PostController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image_landing' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'image_article' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            // 'image_article' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
-            'locale' => 'required'
+            // 'locale' => 'required'
         ])->validate();
 
+        $locale = session('locale');
+        if ($locale != null) $locale = 'en';
+        $input['locale'] = $locale;
         if (isset($_POST['postid']) && $_POST['postid'] != NULL && trim($_POST['postid']) != "") {
             $checking = Post::where('postid', $request->postid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
@@ -137,11 +140,11 @@ class PostController extends Controller
             unlink($post->image_landing);
         $request->image_landing->move(public_path('images/upload'), $image1);
         $post->fill(['image_landing' => 'images/upload/' . $image1]);
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
-        if (strpos($post->image_article, 'upload') != false && is_file($post->image_article))
-            unlink($post->image_article);
-        $request->image_article->move(public_path('images/upload'), $image2);
-        $post->fill(['image_article' => 'images/upload/' . $image2]);
+        // $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
+        // if (strpos($post->image_article, 'upload') != false && is_file($post->image_article))
+        //     unlink($post->image_article);
+        // $request->image_article->move(public_path('images/upload'), $image2);
+        // $post->fill(['image_article' => 'images/upload/' . $image2]);
 
         $post->save();
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\Faq;
 use App\User;
 use App\Models\SiteSetting;
@@ -166,6 +167,7 @@ class FaqController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

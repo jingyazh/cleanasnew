@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\MainSetting;
 use Illuminate\Http\Request;
 
@@ -91,6 +92,18 @@ class MainSettingController extends Controller
             }
         }
         
+        $extraPages = ExtraPage::all();
+        foreach ($extraPages as $value) {
+            if (isset($input[str_replace(' ', '_', $value->title)])){
+                ExtraPage::where('id', $value->id)->update([
+                    'is_visible' => '1'
+                ]);
+            } else {
+                ExtraPage::where('id', $value->id)->update([
+                    'is_visible' => '0'
+                ]);
+            }
+        }
         return redirect()->route('settings.index');        
     }
 

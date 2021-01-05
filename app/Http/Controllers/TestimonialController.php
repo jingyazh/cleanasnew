@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
 use App\Models\Testimonial;
@@ -75,6 +76,68 @@ class TestimonialController extends Controller
             ->rawColumns(['action', 'image1', 'image2'])
             ->make(true);
     }
+
+    public function reviewData(Request $request)
+    {
+
+        $testimonialid = $request->testimonialid;
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $list = Review::where('testimonialid', $testimonialid)->where('locale', $locale)->get();
+
+        return Datatables::of($list)
+
+            ->addColumn('title', function ($item) {
+                return $item->title;
+            })  
+            ->addColumn('locale', function ($item) {
+                return Config::get('app.locales')[$item->locale];
+            })
+            ->addColumn('action', function ($item) {
+                $url1 = route('feedbacks.edit', $item->id);
+                $modifyurl = " <a href='{$url1}'> " . __('Detail') . " </a> ";
+                return $modifyurl;
+            })
+            ->rawColumns(['action', 'image'])
+            ->make(true);
+    }
+
+    public function reviewDataEdit(Review $review)
+    {
+        dd($review);
+        return view('testimonials.reviewEdit', ['review' => $review]);
+    }
+
+
+
+    public function reviewDataUpdate(Request $request, Review $review)
+    {
+        //
+        $input = $request->all();
+
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'embed' => 'required',
+        ])->validate();
+
+        $review->fill($input);
+
+        $review->save();
+
+        return redirect()->route('testimonials.index');
+    }
+
+    public function reviewDestroy(Review $review)
+    {
+        //
+        Review::destroy($review->id);
+
+        return response()->json([
+            'success' => __('Client deleted successfully!')
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -85,7 +148,7 @@ class TestimonialController extends Controller
 
         $testimonials = Testimonial::where('locale', 'en')->get();
         foreach ($testimonials as $key => $item) {
-            $_testimonials = Testimonial::where('serviceid', $item->serviceid)->get();
+            $_testimonials = Testimonial::where('testimonialid', $item->testimonialid)->get();
             if (count($_testimonials) == 14)
                 unset($testimonials[$key]);
         }
@@ -106,37 +169,42 @@ class TestimonialController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required'
+            'image_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'locale' => 'required'
         ])->validate();
 
-        if (isset($_POST['serviceid']) && $_POST['serviceid'] != NULL && trim($_POST['serviceid']) != "") {
-            $checking = Testimonial::where('serviceid', $request->serviceid)->where('locale', $request->locale)->get();
+        $locale = session('locale');
+        if ($locale == null)
+            $locale = 'en';
+        $input['locale'] = $locale;
+
+        if (isset($_POST['testimonialid']) && $_POST['testimonialid'] != NULL && trim($_POST['testimonialid']) != "") {
+            $checking = Testimonial::where('testimonialid', $request->testimonialid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
                 return redirect()->route('testimonials.index', ['errors' => ['English version exists already.']]);
             }
-            $serviceid = $request->input('serviceid');
-        }else {
-            $serviceid = substr(str_shuffle(self::$characters), 0, 10);
+            $testimonialid = $request->input('testimonialid');
+        } else {
+            $testimonialid = substr(str_shuffle(self::$characters), 0, 10);
         }
 
-        $input['serviceid'] = $serviceid;
+        $input['testimonialid'] = $testimonialid;
 
 
         $testimonial = Testimonial::create($input);
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
-        if (strpos($testimonial->image_landing_1, 'upload') != false && is_file($testimonial->image_landing_1))
-            unlink($testimonial->image_landing_1);
-        $request->image_landing_1->move(public_path('images/upload'), $image1);
-        $testimonial->fill(['image_landing_1' => 'images/upload/' . $image1]);
+        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_1->extension();
+        if (strpos($testimonial->image_1, 'upload') != false && is_file($testimonial->image_1))
+            unlink($testimonial->image_1);
+        $request->image_1->move(public_path('images/upload'), $image1);
+        $testimonial->fill(['image_1' => 'images/upload/' . $image1]);
 
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
-        if (strpos($testimonial->image_landing_2, 'upload') != false && is_file($testimonial->image_landing_2))
-            unlink($testimonial->image_landing_2);
-        $request->image_landing_2->move(public_path('images/upload'), $image2);
-        $testimonial->fill(['image_landing_2' => 'images/upload/' . $image2]);
+        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_2->extension();
+        if (strpos($testimonial->image_2, 'upload') != false && is_file($testimonial->image_2))
+            unlink($testimonial->image_2);
+        $request->image_2->move(public_path('images/upload'), $image2);
+        $testimonial->fill(['image_2' => 'images/upload/' . $image2]);
 
         $testimonial->save();
 
@@ -162,6 +230,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
+        // dd($testimonial);
         return view('testimonials.edit', ['testimonial' => $testimonial]);
     }
 
@@ -179,26 +248,26 @@ class TestimonialController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ])->validate();
 
         $testimonial->fill($input);
 
-        if ($request->image_landing_1 != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
-            if (strpos($testimonial->image_landing_1, 'upload') != false && is_file($testimonial->image_landing_1))
-                unlink($testimonial->image_landing_1);
-            $request->image_landing_1->move(public_path('images/upload'), $image1);
-            $testimonial->fill(['image_landing_1' => 'images/upload/' . $image1]);
+        if ($request->image_1 != null) {
+            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_1->extension();
+            if (strpos($testimonial->image_1, 'upload') != false && is_file($testimonial->image_1))
+                unlink($testimonial->image_1);
+            $request->image_1->move(public_path('images/upload'), $image1);
+            $testimonial->fill(['image_1' => 'images/upload/' . $image1]);
         }
 
-        if ($request->image_landing_2 != null) {
-            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
-            if (strpos($testimonial->image_landing_2, 'upload') != false && is_file($testimonial->image_landing_2))
-                unlink($testimonial->image_landing_2);
-            $request->image_landing_2->move(public_path('images/upload'), $image2);
-            $testimonial->fill(['image_landing_2' => 'images/upload/' . $image2]);
+        if ($request->image_2 != null) {
+            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_2->extension();
+            if (strpos($testimonial->image_2, 'upload') != false && is_file($testimonial->image_2))
+                unlink($testimonial->image_2);
+            $request->image_2->move(public_path('images/upload'), $image2);
+            $testimonial->fill(['image_2' => 'images/upload/' . $image2]);
         }
 
         $testimonial->save();
@@ -216,6 +285,7 @@ class TestimonialController extends Controller
     {
         //
         Testimonial::destroy($testimonial->id);
+        Review::where('testimonialid', $testimonial->testimonialid)->delete();
 
         return response()->json([
             'success' => __('Client deleted successfully!')
@@ -234,8 +304,9 @@ class TestimonialController extends Controller
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);
-        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 
     public function detail(Request $request)
@@ -251,7 +322,8 @@ class TestimonialController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $title = Testimonial::where('testimonialid', $request->id)->first();
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'title' => $title->title]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $title->title]);
     }
 }

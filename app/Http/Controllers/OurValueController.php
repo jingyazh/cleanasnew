@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExtraPage;
 use App\Models\OurValue;
 use App\User;
 use App\Models\SiteSetting;
@@ -179,6 +180,7 @@ class OurValueController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);
-        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting]);
+        $extraPages = ExtraPage::where('locale', $locale)->get();
+        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
     }
 }

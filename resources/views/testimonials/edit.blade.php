@@ -93,6 +93,41 @@
     </form>
     <!-- /.card -->
   </div>
+  <!-- Case Studies -->
+  <div class="col-12">
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">{{$testimonial->title}} </h3>
+
+        <div class="card-tools">
+          <a href="{{ route('feedbacks.create', ['testimonialid' => $testimonial->testimonialid]) }}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>
+        </div>
+
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        @if(session()->has('error'))
+        <div class="alert alert-danger">
+          {{ session()->get('error') }}
+        </div>
+        @endif
+        <table id="data" class="table table-bordered table-striped" style="width:100%">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{__('Title')}}</th>
+              <!-- <th>{{__('Description')}}</th> -->
+              <th>{{__('Language')}}</th>
+              <th>{{__('Action')}}</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- End Case Studies -->
 </div>
 
 <!-- /.row -->
@@ -145,74 +180,53 @@
 <!-- dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script>
-  // Dropzone.autoDiscover = false;
-  // $(document).ready(function() {
-  //   var dropzone = new Dropzone('#demo-upload', {
-  //     previewTemplate: document.querySelector('#preview-template').innerHTML,
-  //     parallelUploads: 1,
-  //     thumbnailHeight: 120,
-  //     thumbnailWidth: 120,
-  //     maxFilesize: 1,
-  //     filesizeBase: 1000,
-  //     // thumbnail: function(file, dataUrl) {
-  //     //   if (file.previewElement) {
-  //     //     file.previewElement.classList.remove("dz-file-preview");
-  //     //     var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-  //     //     for (var i = 0; i < images.length; i++) {
-  //     //       var thumbnailElement = images[i];
-  //     //       thumbnailElement.alt = file.name;
-  //     //       thumbnailElement.src = dataUrl;
-  //     //     }
-  //     //     setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-  //     //   }
-  //     // }
+  var oTable = null;
+  oTable = $("#data").DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "{{ route('testimonials.reviewData', ['testimonialid' => $testimonial->testimonialid] ) }}",
 
-  //   });
+    columnDefs: [{
+        className: "text-center valign-middle",
+        "targets": '_all'
+      },
+      {
+        "targets": [0],
+        "visible": false,
+        "searchable": false
+      },
+    ],
+    columns: [{
+        data: 'reviewid',
+        name: 'reviewid'
+      },
+      {
+        data: 'title',
+        name: 'title'
+      },
+      // {
+      //   data: 'description',
+      //   name: 'description'
+      // },
+      {
+        data: 'locale',
+        name: 'locale'
+      },
+      // { data: 'zipcode', name: 'zipcode' },
 
-
-  //   // Now fake the file upload, since GitHub does not handle file uploads
-  //   // and returns a 404
-
-  //   var minSteps = 6,
-  //     maxSteps = 60,
-  //     timeBetweenSteps = 100,
-  //     bytesPerStep = 100000;
-
-  //   dropzone.uploadFiles = function(files) {
-  //     var self = this;
-
-  //     for (var i = 0; i < files.length; i++) {
-
-  //       var file = files[i];
-  //       totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-  //       for (var step = 0; step < totalSteps; step++) {
-  //         var duration = timeBetweenSteps * (step + 1);
-  //         setTimeout(function(file, totalSteps, step) {
-  //           return function() {
-  //             file.upload = {
-  //               progress: 100 * (step + 1) / totalSteps,
-  //               total: file.size,
-  //               bytesSent: (step + 1) * file.size / totalSteps
-  //             };
-
-  //             self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-  //             if (file.upload.progress == 100) {
-  //               file.status = Dropzone.SUCCESS;
-  //               self.emit("success", file, 'success', null);
-  //               self.emit("complete", file);
-  //               self.processQueue();
-  //               //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-  //             }
-  //           };
-  //         }(file, totalSteps, step), duration);
-  //       }
-  //     }
-  //   }
-
-  // })
-
-
+      // { data: 'created_at', name: 'created_at' },
+      {
+        data: 'action',
+        name: 'action',
+        searchable: false,
+        sortable: false
+      },
+    ],
+    // "order": [[ 0, "asc" ]],
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+    }
+  });
   $("#btnDeleteClient").click(function() {
     if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;

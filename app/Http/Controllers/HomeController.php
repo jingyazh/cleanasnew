@@ -9,6 +9,7 @@ use Auth;
 use App\Message;
 use App\Ticket;
 use App\Crequest;
+use App\Models\ExtraPage;
 use App\Models\Post;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
@@ -114,17 +115,19 @@ class HomeController extends Controller
     public function view()
     {
         $posts = Post::where('locale', $this->locale)->get();
+        $extraPages = ExtraPage::where('locale', $this->locale)->get();
 
         
-        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
+        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages]);
 
     }
 
     //... Post View
     public function postview($id) {
         $post = Post::where('id', $id)->first();
+        $extraPages = ExtraPage::where('locale', $this->locale)->get();
 
-        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
+        return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages]);
     }
     //... Post View
     public function chooselanguage() {

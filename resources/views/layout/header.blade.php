@@ -86,6 +86,15 @@
         @else
         <li style="display: {{ $menuSetting[10]->value == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/contact">{{__('Contact')}}</a> </li>
         @endif
+        @if(isset($extraPages) && count($extraPages) > 0)
+        @foreach($extraPages as $page)
+        @if (strpos('/page', Request::path()) != false || Request::is('page/*'))
+        <li style="display: {{ $page->is_visible == '0' ? 'none' : '' }}" class="nav-item active" itemprop="name"> <a class="nav-link" itemprop="url" href="/page/{{ $page->id}}">{{ $page->title }}</a> </li>
+        @else
+        <li style="display: {{ $page->is_visible == '0' ? 'none' : '' }}" class="nav-item" itemprop="name"> <a class="nav-link" itemprop="url" href="/page/{{ $page->id}}">{{ $page->title }}</a> </li>
+        @endif
+        @endforeach
+        @endif
       </ul>
     </div>
   </nav>

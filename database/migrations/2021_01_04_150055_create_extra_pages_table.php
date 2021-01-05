@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMainSettingsTable extends Migration
+class CreateExtraPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateMainSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('main_settings', function (Blueprint $table) {
+        Schema::create('extra_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->string('value');
-            $table->string('type');
-            $table->string('name')->nullable();
-            $table->longText('embed')->nullable();
+            $table->string('title');
+            $table->string('meta_title');
+            $table->string('meta_description');
+            $table->longText('embed');
+            $table->string('is_visible');
             $table->string('locale');
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateMainSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('main_settings');
+        Schema::dropIfExists('extra_pages');
     }
 }

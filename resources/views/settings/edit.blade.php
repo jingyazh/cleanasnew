@@ -17,19 +17,12 @@
 <!-- Main Tables -->
 <div class="row">
   <div class="col-12">
-    <form method="POST" action="{{ route('contacts.update', $value->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('extraPage.update', $extraPage->id) }}" enctype="multipart/form-data">
       {{ method_field('PUT') }}
       @csrf
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">{{__('Modify Data')}} </h3>
-          <div class="card-tools">
-            <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
-              @foreach (Config::get('app.locales') as $key => $lang)
-              <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
-              @endforeach
-            </select>
-          </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -45,33 +38,31 @@
           <div class="form-group col-md-12">
             <label>{{__('Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $value->title) }}" placeholder="{{__('Title')}}" />
+              <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $extraPage->title) }}" placeholder="{{__('Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{ old('meta_title', $extraPage->meta_title) }}" required placeholder="{{__('Meta Title')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Image')}}<code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{ old('meta_description', $extraPage->meta_description) }}" required placeholder="{{__('Meta Description')}}" />
             </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/values.jpg" target="_blank">here</a> | Current Image <a href="/{{ $value->image }}" target="_blank">here</a>
-            </small>
           </div>
+
 
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
-                @if($value)
-                {!! old('embed', $value->embed) !!}
+                @if($extraPage)
+                {!! old('embed', $extraPage->embed) !!}
                 @endif
                 </textarea>
               </div>
@@ -84,7 +75,7 @@
           @if (Auth::user()->roleno == $User::ROLE_MASTER)
           <button type="button" id="btnDeleteClient" class="btn btn-info">{{__('Delete')}}</button>
           @endif
-          <!-- <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button> -->
+          <button class="btn btn-secondary" onclick="return cancel()">{{__('Cancel')}}</button>
         </div>
 
       </div>
@@ -125,7 +116,7 @@
 @section('js')
 <script>
   function cancel() {
-    location.href = "{{ route('values.index') }}";
+    location.href = "{{ route('settings.index') }}";
     return false;
   }
 </script>
@@ -159,79 +150,11 @@
 <!-- dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script>
-  // Dropzone.autoDiscover = false;
-  // $(document).ready(function() {
-  //   var dropzone = new Dropzone('#demo-upload', {
-  //     previewTemplate: document.querySelector('#preview-template').innerHTML,
-  //     parallelUploads: 1,
-  //     thumbnailHeight: 120,
-  //     thumbnailWidth: 120,
-  //     maxFilesize: 1,
-  //     filesizeBase: 1000,
-  //     // thumbnail: function(file, dataUrl) {
-  //     //   if (file.previewElement) {
-  //     //     file.previewElement.classList.remove("dz-file-preview");
-  //     //     var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-  //     //     for (var i = 0; i < images.length; i++) {
-  //     //       var thumbnailElement = images[i];
-  //     //       thumbnailElement.alt = file.name;
-  //     //       thumbnailElement.src = dataUrl;
-  //     //     }
-  //     //     setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-  //     //   }
-  //     // }
-
-  //   });
-
-
-  //   // Now fake the file upload, since GitHub does not handle file uploads
-  //   // and returns a 404
-
-  //   var minSteps = 6,
-  //     maxSteps = 60,
-  //     timeBetweenSteps = 100,
-  //     bytesPerStep = 100000;
-
-  //   dropzone.uploadFiles = function(files) {
-  //     var self = this;
-
-  //     for (var i = 0; i < files.length; i++) {
-
-  //       var file = files[i];
-  //       totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-  //       for (var step = 0; step < totalSteps; step++) {
-  //         var duration = timeBetweenSteps * (step + 1);
-  //         setTimeout(function(file, totalSteps, step) {
-  //           return function() {
-  //             file.upload = {
-  //               progress: 100 * (step + 1) / totalSteps,
-  //               total: file.size,
-  //               bytesSent: (step + 1) * file.size / totalSteps
-  //             };
-
-  //             self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-  //             if (file.upload.progress == 100) {
-  //               file.status = Dropzone.SUCCESS;
-  //               self.emit("success", file, 'success', null);
-  //               self.emit("complete", file);
-  //               self.processQueue();
-  //               //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-  //             }
-  //           };
-  //         }(file, totalSteps, step), duration);
-  //       }
-  //     }
-  //   }
-
-  // })
-
-
   $("#btnDeleteClient").click(function() {
     if (confirm("{{__('Would you like to delete this data?')}}") == false)
       return false;
     $.ajax({
-      url: "{{ route('values.destroy', $value->id) }}",
+      url: "{{ route('extraPage.destroy', $extraPage->id) }}",
       headers: {
         'X-CSRF-TOKEN': '{{ csrf_token() }}'
       },
@@ -239,10 +162,10 @@
       dataType: "JSON",
       data: {
         "_token": "{{ csrf_token() }}",
-        "id": "{{$value->id}}" // method and token not needed in data
+        "id": "{{$extraPage->id}}" // method and token not needed in data
       },
       success: function(response) {
-        location.href = "{{ route('values.index') }}";
+        location.href = "{{ route('settings.index') }}";
       },
       error: function(xhr) {
         console.log(xhr.responseText);
