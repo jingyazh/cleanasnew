@@ -92,7 +92,9 @@ class MainSettingController extends Controller
             }
         }
         
-        $extraPages = ExtraPage::all();
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $extraPages = ExtraPage::where('locale', $locale)->get();
         foreach ($extraPages as $value) {
             if (isset($input[str_replace(' ', '_', $value->title)])){
                 ExtraPage::where('id', $value->id)->update([

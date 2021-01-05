@@ -71,7 +71,18 @@ Route::view('posts/washpad-hydroblasting-vs-cleanasnew', 'posts.washpad-hydrobla
 
 Route::get('page/{id}', 'ExtraPageController@view')->name('extraPageView');
 
-
+Route::redirect('/news', '/about-us/news-and-events', 301);
+Route::redirect('/news/{any}', '/about-us/news-and-events', 301);
+Route::redirect('/performance', '/testimonials', 301);
+Route::redirect('/performance/{any}', '/testimonials', 301);
+Route::redirect('/careers', '/', 301);
+Route::redirect('/contact-us', '/contact', 301);
+Route::redirect('/value-to-you', '/our-value-to-you', 301);
+Route::redirect('/company/profiles/{any}', '/about-us/advisory-board', 301);
+Route::redirect('/company/news-and-events', '/about-us/advisory-board', 301);
+Route::redirect('/company/advisory-board-members/', '/about-us/advisory-board', 301);
+Route::redirect('/about-us/environmental-social-and-governance', '/esg', 301);
+Route::redirect('/about-us/esg', '/esg', 301);
 
 Auth::routes();
 
