@@ -67,7 +67,7 @@
           </div>
 
           <div class="form-group col-md-12">
-            <label>{{__('Detail')}}<code>*</code> </label>
+            <label>{{__('Detail')}}<code>*</code> </label>  <button class="btn btn-outline-success btn-sm"onclick="return copyTemplate()">Copy From Template..</button> 
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
@@ -98,6 +98,7 @@
 @section('js')
 <script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
 <script src="{{asset('assets/js/tinymce_image_upload.js')}}"></script>
+<script src="{{asset('assets/js/page_template.js')}}"></script>
 <script>
   tinymce.init({
     selector: '#full-editor',
@@ -127,6 +128,11 @@
     } else {
       $('#valueid').hide();
     }
+  }
+  function copyTemplate() {
+    navigator.clipboard.writeText(template);
+    alert('Copied from template!!! Go to View -> Source code, and then paste it.')
+    return false;
   }
 </script>
 @stop
