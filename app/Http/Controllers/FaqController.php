@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\User;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -38,7 +39,8 @@ class FaqController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('faqs.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'faq')->first();
+        return view('faqs.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -168,6 +170,7 @@ class FaqController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'faq')->first();
+        return view('faq', ['faqs' => $faqs, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 }

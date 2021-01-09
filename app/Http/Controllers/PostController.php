@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -43,9 +44,10 @@ class PostController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'home')->first();
 
         // dd($setting);
-        return view('posts.index', ['listtype' => 'mine', 'setting' => $setting]);
+        return view('posts.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -170,6 +172,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        // dd($post);
         return view('posts.edit', ['post' => $post]);
     }
 

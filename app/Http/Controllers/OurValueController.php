@@ -7,6 +7,7 @@ use App\Models\OurValue;
 use App\User;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use Illuminate\Http\Request;
 use Auth;
 use Datatables;
@@ -39,7 +40,8 @@ class OurValueController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('values.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'our_value_to_you')->first();
+        return view('values.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -181,6 +183,7 @@ class OurValueController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'our_value_to_you')->first();
+        return view('our-value-to-you', ['ourvalues' => $ourvalues, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 }

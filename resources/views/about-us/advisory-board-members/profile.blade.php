@@ -1,7 +1,16 @@
 @extends('app')
 
 @section('title')
-<title>{{ $board->name }} - Advisory Board Members - Clean As New®</title>
+<title>{{ isset($board) ? $board->name : '' }} - Advisory Board Members - Clean As New®</title>
+<meta content="{{ $board->og_locale != null ? $board->og_locale : ''}}" property="og:locale">
+<meta content="{{ $board->og_site_name != null ? $board->og_site_name : ''}}" property="og:site_name" />
+<meta content="{{ $board->og_type != null ? $board->og_type : ''}}" property="og:type">
+<meta content="{{ $board->og_url != null ? $board->og_url : ''}}" property="og:url">
+<meta content="{{ $board->og_title != null ? $board->og_title : ''}}" property="og:title">
+<meta content="{{ $board->og_description != null ? $board->og_description : ''}}" property="og:description">
+<meta content="{{ $board->og_image != null ? $board->og_image : ''}}" property="og:image" />
+<meta content="{{ $board->og_image_width != null ? $board->og_image_width : ''}}" property="og:image:width" />
+<meta content="{{ $board->og_image_height != null ? $board->og_image_height : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')
@@ -10,7 +19,7 @@
 <main>
   <div class="jumbotron text-left">
      <div class="headline"  itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-         <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/about-us" itemprop="item"> <span itemprop="name">About Us</span></a>  <meta itemprop="position" content="1"></span> &#8250; <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/about-us/advisory-board" itemprop="item"><span itemprop="name">Advisory Board</span></a> <meta itemprop="position" content="2"></span> &#8250;   <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">Don Empfield</span>     <meta itemprop="position" content="3"></span></p>
+         <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/about-us" itemprop="item"> <span itemprop="name">About Us</span></a>  <meta itemprop="position" content="1"></span> &#8250; <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/about-us/advisory-board" itemprop="item"><span itemprop="name">Advisory Board</span></a> <meta itemprop="position" content="2"></span> &#8250;   <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{{ isset($board) ? $board->name : '' }}</span>     <meta itemprop="position" content="3"></span></p>
     </div>
   </div>
   <div class="album bg-light">
@@ -21,9 +30,9 @@
             <div class="tab-pane fade show active">
               @if (isset($board) && $board != null)
               <div class="col-3 float-left">
-                <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{ $board->image }}?v=20200330" class="img-fluid lazyload" alt="{{ $board->name }}."/>
-                <p class="text-muted text-right namePosition2 desktopNone">{{ $board->name }}</p>
-                <p class="text-muted text-left namePosition2 mobileNone">{{ $board->name }}</p>
+                <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{ $board->image }}?v=20200330" class="img-fluid lazyload" alt="{{ isset($board) ? $board->name : '' }}."/>
+                <p class="text-muted text-right namePosition2 desktopNone">{{ isset($board) ? $board->name : '' }}</p>
+                <p class="text-muted text-left namePosition2 mobileNone">{{ isset($board) ? $board->name : '' }}</p>
             </div>
             <div class="col-md-9 float-left">
               <div class="scrollProfile45">

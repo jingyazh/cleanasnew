@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\Models\WhatWeClean;
 use App\User;
 use Illuminate\Http\Request;
@@ -39,8 +40,9 @@ class WhatWeCleanController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'what_we_clean')->first();
 
-        return view('cleans.index', ['listtype' => 'mine', 'setting' => $setting]);
+        return view('cleans.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -141,7 +143,7 @@ class WhatWeCleanController extends Controller
             'title' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // 'type' => 'required',
-            'embed' => 'required',
+            // 'embed' => 'required',
         ])->validate();
 
         $clean->fill($input);
@@ -169,7 +171,8 @@ class WhatWeCleanController extends Controller
         $menuSetting = MainSetting::all();
         // dd($data);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'what_we_clean')->first();
+        return view('what-we-clean', ['data' => $data, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
     public function destroy(WhatWeClean $clean)
     {

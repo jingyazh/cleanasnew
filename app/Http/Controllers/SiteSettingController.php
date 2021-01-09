@@ -6,6 +6,7 @@ use App\Models\ExtraPage;
 use App\Models\Metadata;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -152,7 +153,7 @@ class SiteSettingController extends Controller
         //
         $input = $request->all();
 
-        // dd($setting);
+        // dd($input);
         Validator::make($request->all(), [
             'home_esg_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'comparison_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -160,8 +161,8 @@ class SiteSettingController extends Controller
             'service_list_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ])->validate();
 
-        // $locale = session('locale');
-        // if ($locale == null) $locale = 'en';
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
         // $input['locale'] = $locale;
         $setting->fill($input);
 
@@ -174,21 +175,21 @@ class SiteSettingController extends Controller
             $setting->fill(['home_esg_image' => 'images/upload/' . $image1]);
         }
 
-        if ( isset($request) && $request->comparison_image != null) {
+        if (isset($request) && $request->comparison_image != null) {
             $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->comparison_image->extension();
             if (strpos($setting->comparison_image, 'upload') != false && is_file($setting->comparison_image))
                 unlink($setting->comparison_image);
             $request->comparison_image->move(public_path('images/upload'), $image2);
             $setting->fill(['comparison_image' => 'images/upload/' . $image2]);
         }
-        if ( isset($request) && $request->service_image != null) {
+        if (isset($request) && $request->service_image != null) {
             $image3 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->service_image->extension();
             if (strpos($setting->service_image, 'upload') != false && is_file($setting->service_image))
                 unlink($setting->service_image);
             $request->service_image->move(public_path('images/upload'), $image3);
             $setting->fill(['service_image' => 'images/upload/' . $image3]);
         }
-        if ( isset($request) && $request->service_list_image != null) {
+        if (isset($request) && $request->service_list_image != null) {
             $image4 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->service_list_image->extension();
             if (strpos($setting->service_list_image, 'upload') != false && is_file($setting->service_list_image))
                 unlink($setting->service_list_image);
@@ -199,6 +200,24 @@ class SiteSettingController extends Controller
 
         $setting->save();
 
+        if ($request->errorpage404 != null) {
+            $og_404 = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+            $og_404->fill($input);
+            $og_404->save();
+        }
+
+        if ($request->errorpage410 != null) {
+            $og_410 = OpenGraph::where('locale', $locale)->where('name', '410')->first();
+            $og_410->fill($input);
+            $og_410->save();    
+        }
+
+        if ($request->errorpage500 != null){
+            $og_500 = OpenGraph::where('locale', $locale)->where('name', '500')->first();
+            $og_500->fill($input);
+            $og_500->save();    
+        }
+
         return redirect()->back()->with('setting', $setting);
     }
 
@@ -208,8 +227,11 @@ class SiteSettingController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
+        $og_404 = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+        $og_410 = OpenGraph::where('locale', $locale)->where('name', '410')->first();
+        $og_500 = OpenGraph::where('locale', $locale)->where('name', '500')->first();
         // dd($setting);
-        return view('errors.index', ['setting' => $setting]);
+        return view('errors.index', ['setting' => $setting, 'og_404' => $og_404, 'og_410' => $og_410, 'og_500' => $og_500]);
     }
     public function updateErrorpage(Request $request, SiteSetting $setting)
     {
@@ -227,10 +249,21 @@ class SiteSettingController extends Controller
         if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
         $setting->fill($input);
-        
+
         $setting->save();
 
         return redirect()->route('settings.index', ['setting' => $setting]);
+    }
+
+    public function update_og(Request $request)
+    {
+        // dd($request->all());
+        $input = $request->all();
+        $openGraph = OpenGraph::where('id', $request->id)->first();
+        $openGraph->fill($input);
+        $openGraph->save();
+
+        return redirect()->back()->with('og', $openGraph);
     }
 
     public function destroy(SiteSetting $setting)

@@ -6,6 +6,7 @@ use App\Models\AboutUs;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -44,7 +45,8 @@ class AboutUsController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('aboutus.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'about_us')->first();
+        return view('aboutus.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -217,6 +219,7 @@ class AboutUsController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('about-us', ['abouts' => $abouts, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'about_us')->first();
+        return view('about-us', ['abouts' => $abouts, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 }

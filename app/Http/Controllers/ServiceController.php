@@ -6,6 +6,7 @@ use App\Models\ExtraPage;
 use App\Models\Service;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -44,7 +45,8 @@ class ServiceController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('services.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'our_services')->first();
+        return view('services.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -222,7 +224,8 @@ class ServiceController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'our_services')->first();
+        return view('our-services', ['services' => $services, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
     /**
      * Remove the specified resource from storage.

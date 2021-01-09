@@ -54,6 +54,60 @@
               </div>
             </div>
           </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_locale', $og_404->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_site_name', $og_404->og_site_name) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_type', $og_404->og_type) : ''}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_url', $og_404->og_url) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_title', $og_404->og_title) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_description', $og_404->og_description) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_image', $og_404->og_image) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_image_width', $og_404->og_image_width) : ''}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_image_height', $og_404->og_image_height) : ''}}" placeholder="{{__('630')}}" />
+            </div>
+          </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -95,6 +149,60 @@
               </div>
             </div>
           </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_locale', $og_410->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_site_name', $og_410->og_site_name) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_type', $og_410->og_type) : ''}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_url', $og_410->og_url) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_title', $og_410->og_title) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_description', $og_410->og_description) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_image', $og_410->og_image) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_image_width', $og_410->og_image_width) : ''}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_image_height', $og_410->og_image_height) : ''}}" placeholder="{{__('630')}}" />
+            </div>
+          </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -134,6 +242,60 @@
                 @endif
               </textarea>
               </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_locale', $og_500->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_site_name', $og_500->og_site_name) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_type', $og_500->og_type) : ''}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_url', $og_500->og_url) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_title', $og_500->og_title) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_description', $og_500->og_description) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_image', $og_500->og_image) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_image_width', $og_500->og_image_width) : ''}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($og_500) ? old('og_image_height', $og_500->og_image_height) : ''}}" placeholder="{{__('630')}}" />
             </div>
           </div>
         </div>

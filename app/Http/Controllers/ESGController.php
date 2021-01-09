@@ -6,6 +6,7 @@ use App\Models\ESG;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -38,7 +39,8 @@ class ESGController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('esgs.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'esg')->first();
+        return view('esgs.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -167,8 +169,9 @@ class ESGController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'esg')->first();
         // dd($locale);
-        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        return view('esg', ['esges' => $esges, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
 
     }
 

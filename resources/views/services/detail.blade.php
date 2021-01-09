@@ -3,6 +3,15 @@
 @section('title')
 <title>{{ $siteSetting->service_meta_title }}</title>
 <meta name="description" content="{{ $siteSetting->service_meta_description }}">
+<meta content="{{ $service->og_locale != null ? $service->og_locale : ''}}" property="og:locale">
+<meta content="{{ $service->og_site_name != null ? $service->og_site_name : ''}}" property="og:site_name" />
+<meta content="{{ $service->og_type != null ? $service->og_type : ''}}" property="og:type">
+<meta content="{{ $service->og_url != null ? $service->og_url : ''}}" property="og:url">
+<meta content="{{ $service->og_title != null ? $service->og_title : ''}}" property="og:title">
+<meta content="{{ $service->og_description != null ? $service->og_description : ''}}" property="og:description">
+<meta content="{{ $service->og_image != null ? $service->og_image : ''}}" property="og:image" />
+<meta content="{{ $service->og_image_width != null ? $service->og_image_width : ''}}" property="og:image:width" />
+<meta content="{{ $service->og_image_height != null ? $service->og_image_height : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')

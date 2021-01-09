@@ -13,6 +13,7 @@ use App\Models\ExtraPage;
 use App\Models\Post;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use Carbon\Carbon;
 use Session;
 
@@ -116,9 +117,10 @@ class HomeController extends Controller
     {
         $posts = Post::where('locale', $this->locale)->get();
         $extraPages = ExtraPage::where('locale', $this->locale)->get();
+        $og = OpenGraph::where('locale', $this->locale)->where('name', 'home')->first();
 
         
-        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages]);
+        return view('home', ['posts' => $posts, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
 
     }
 

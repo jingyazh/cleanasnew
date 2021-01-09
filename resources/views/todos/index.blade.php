@@ -53,6 +53,79 @@
     </form>
   </div>
   <div class="col-12">
+    <form method="POST" action="{{ route('settings.update_og', ['id' => $og->id]) }}" enctype="multipart/form-data">
+      {{ method_field('PUT') }}
+      @csrf
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Open Graph Meta Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og) ? old('og_locale', $og->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name" class="form-control col-sm-12" value="{{isset($og) ? old('og_site_name', $og->og_site_name) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type" class="form-control col-sm-12" value="{{isset($og) ? old('og_type', $og->og_type) : ''}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url" class="form-control col-sm-12" value="{{isset($og) ? old('og_url', $og->og_url) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title" class="form-control col-sm-12" value="{{isset($og) ? old('og_title', $og->og_title) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description" class="form-control col-sm-12" value="{{isset($og) ? old('og_description', $og->og_description) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image" class="form-control col-sm-12" value="{{isset($og) ? old('og_image', $og->og_image) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width" class="form-control col-sm-12" value="{{isset($og) ? old('og_image_width', $og->og_image_width) : ''}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($og) ? old('og_image_height', $og->og_image_height) : ''}}" placeholder="{{__('630')}}" />
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
         <h3 class="card-title">{{__('Todos List')}} </h3>

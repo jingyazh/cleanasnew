@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -43,11 +44,9 @@ class ContactController extends Controller
         //     $contact = Contact::where('locale', 'en')->first();
         $locale = session('locale');
         $contact = Contact::where('locale', $locale)->first();
-        // dd($locale);
-        // dd($contact);
-        // exit;
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact, 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'contact')->first();
+        return view('contacts.index', ['listtype' => 'mine', 'contact' => $contact, 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -183,8 +182,9 @@ class ContactController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'contact')->first();
         // dd($locale);
-        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        return view('contact', ['contact' => $contact, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 
     public function privacy()

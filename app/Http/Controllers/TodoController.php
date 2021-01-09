@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\Models\Todo;
 use App\User;
 use Illuminate\Http\Request;
@@ -38,7 +39,8 @@ class TodoController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('todos.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'how_we_do_it')->first();
+        return view('todos.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -180,6 +182,7 @@ class TodoController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'how_we_do_it')->first();
+        return view('how-we-do-it', ['todos' => $todos, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 }

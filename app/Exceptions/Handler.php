@@ -56,13 +56,16 @@ class Handler extends ExceptionHandler
             $menuSetting = MainSetting::all();
             $extraPages = ExtraPage::where('locale', $locale)->get();
             if ($exception->getStatusCode() == 404) {
-                return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages], 404);
+                $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+                return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
             }
             if ($exception->getStatusCode() == 410) {
-                return response()->view('410', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages], 410);
+                $og = OpenGraph::where('locale', $locale)->where('name', '410')->first();
+                return response()->view('410', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 410);
             }
             if ($exception->getStatusCode() == 500) {
-                return response()->view('500', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages], 500);
+                $og = OpenGraph::where('locale', $locale)->where('name', '500')->first();
+                return response()->view('500', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 500);
             }
         }
         return parent::render($request, $exception);

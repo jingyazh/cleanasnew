@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\AdvisoryBoard;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
@@ -181,7 +182,8 @@ class AdvisoryBoardController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        $og = AboutUs::where('locale', $locale)->where('compid', '33333333')->first();
+        return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 
     public function detail(Request $request)

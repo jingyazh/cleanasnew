@@ -59,3 +59,9 @@ sup {
 #locale {
   color: black;
 }
+.custom-file-label {
+  display: none;
+}
+input {
+  outline: none;
+}

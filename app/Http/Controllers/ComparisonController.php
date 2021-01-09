@@ -6,6 +6,7 @@ use App\Models\Comparison;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -43,8 +44,9 @@ class ComparisonController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'how_we_compare')->first();
 
-        return view('comparison_setting.index', ['listtype' => 'mine', 'setting' => $setting]);
+        return view('comparison_setting.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -109,8 +111,12 @@ class ComparisonController extends Controller
             'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'embed' => 'required',
-            'locale' => 'required'
+            // 'locale' => 'required'
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale;
+        $input['locale'] = $locale;
 
         if (isset($_POST['compareid']) && $_POST['compareid'] != NULL && trim($_POST['compareid']) != "") {
             $checking = Comparison::where('compareid', $request->compareid)->where('locale', $request->locale)->get();
@@ -217,8 +223,9 @@ class ComparisonController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'how_we_compare')->first();
         // dd($locale);
-        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        return view('how-we-compare', ['comparisons' => $comparisons, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 
     public function detail(Request $request)

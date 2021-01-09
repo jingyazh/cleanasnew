@@ -3,6 +3,15 @@
 @section('title')
 <title>{{ isset($siteSetting) ? $siteSetting->comparison_meta_title : 'How We Compare [Cleaning Cost, Heat Exchanger Performance]' }}</title>
 <meta name="description" content="{{ isset($siteSetting) ? $siteSetting->comparison_meta_description : 'Our combination of Tech Sonic ultrasonic technology and hydroblasting cleans compact exchanger designs on the shell side, where hydroblasting alone fails.' }}">
+<meta content="{{ $comparison->og_locale != null ? $comparison->og_locale : ''}}" property="og:locale">
+<meta content="{{ $comparison->og_site_name != null ? $comparison->og_site_name : ''}}" property="og:site_name" />
+<meta content="{{ $comparison->og_type != null ? $comparison->og_type : ''}}" property="og:type">
+<meta content="{{ $comparison->og_url != null ? $comparison->og_url : ''}}" property="og:url">
+<meta content="{{ $comparison->og_title != null ? $comparison->og_title : ''}}" property="og:title">
+<meta content="{{ $comparison->og_description != null ? $comparison->og_description : ''}}" property="og:description">
+<meta content="{{ $comparison->og_image != null ? $comparison->og_image : ''}}" property="og:image" />
+<meta content="{{ $comparison->og_image_width != null ? $comparison->og_image_width : ''}}" property="og:image:width" />
+<meta content="{{ $comparison->og_image_height != null ? $comparison->og_image_height : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')

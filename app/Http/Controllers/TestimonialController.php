@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\Models\Testimonial;
 use App\Models\Review;
 use App\User;
@@ -44,7 +45,8 @@ class TestimonialController extends Controller
         if ($locale == null)
             $locale = 'en';
         $setting = SiteSetting::where('locale', $locale)->first();
-        return view('testimonials.index', ['listtype' => 'mine', 'setting' => $setting]);
+        $og = OpenGraph::where('locale', $locale)->where('name', 'testimonials')->first();
+        return view('testimonials.index', ['listtype' => 'mine', 'setting' => $setting, 'og' => $og]);
     }
 
     //... for DataTable Data
@@ -305,8 +307,9 @@ class TestimonialController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
+        $og = OpenGraph::where('locale', $locale)->where('name', 'testimonials')->first();
         // dd($locale);
-        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages]);
+        return view('testimonials', ['testimonials' => $testimonials, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 
     public function detail(Request $request)
@@ -323,7 +326,8 @@ class TestimonialController extends Controller
         $menuSetting = MainSetting::all();
         $title = Testimonial::where('testimonialid', $request->id)->first();
         $extraPages = ExtraPage::where('locale', $locale)->get();
+        $og = Testimonial::where('locale', $locale)->where('testimonialid', $request->id)->first();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $title->title]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $title->title, 'og' => $og]);
     }
 }

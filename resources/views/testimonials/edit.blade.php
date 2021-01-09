@@ -79,6 +79,60 @@
               View example <a href="/assets/examples/testimonial_2.jpg" target="_blank">here</a> | Current Image <a href="/{{ $testimonial->image_2 }}" target="_blank">here</a>
             </small>
           </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_locale', $testimonial->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_site_name', $testimonial->og_site_name) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_type', $testimonial->og_type) : ''}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_url', $testimonial->og_url) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_title', $testimonial->og_title) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_description', $testimonial->og_description) : ''}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_image', $testimonial->og_image) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_image_width', $testimonial->og_image_width) : ''}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($testimonial) ? old('og_image_height', $testimonial->og_image_height) : ''}}" placeholder="{{__('630')}}" />
+            </div>
+          </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

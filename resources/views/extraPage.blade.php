@@ -2,6 +2,15 @@
 
 @section('title')
 <title>Heat Exchanger Cleaning Services - Clean As New® (China)</title>
+<meta content="{{ $extraPage->og_locale != null ? $extraPage->og_locale : ''}}" property="og:locale">
+<meta content="{{ $extraPage->og_site_name != null ? $extraPage->og_site_name : ''}}" property="og:site_name" />
+<meta content="{{ $extraPage->og_type != null ? $extraPage->og_type : ''}}" property="og:type">
+<meta content="{{ $extraPage->og_url != null ? $extraPage->og_url : ''}}" property="og:url">
+<meta content="{{ $extraPage->og_title != null ? $extraPage->og_title : ''}}" property="og:title">
+<meta content="{{ $extraPage->og_description != null ? $extraPage->og_description : ''}}" property="og:description">
+<meta content="{{ $extraPage->og_image != null ? $extraPage->og_image : ''}}" property="og:image" />
+<meta content="{{ $extraPage->og_image_width != null ? $extraPage->og_image_width : ''}}" property="og:image:width" />
+<meta content="{{ $extraPage->og_image_height != null ? $extraPage->og_image_height : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')
