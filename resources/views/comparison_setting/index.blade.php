@@ -34,8 +34,8 @@
         <div class="form-group col-md-12">
             <label>{{__('Comparison Image')}} <code>*</code> </label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="comparison_image" class="custom-file-input" id="comparisonImage">
+              <div class="">
+                <input type="file" name="comparison_image" class="custom-file-input-" id="comparisonImage">
                 <label class="custom-file-label" for="comparisonImage" aria-describedby="inputGroupFileAddon01">
                   @if($setting)
                   {{'Modify Image'}}

@@ -44,8 +44,8 @@
           <div class="form-group col-md-12">
             <label>{{__('Image')}}<code>*</code> </label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+              <div class="">
+                <input type="file" name="image" class="custom-file-input-" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
               </div>
               <!-- <div class="input-group-append">

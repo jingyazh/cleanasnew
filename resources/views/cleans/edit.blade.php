@@ -52,8 +52,8 @@
           <div class="form-group col-md-12">
             <label>{{__('Image')}}<code>*</code> </label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+              <div class="">
+                <input type="file" name="image" class="custom-file-input-" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose
                   file</label>
               </div>
@@ -68,7 +68,7 @@
           </div>
 
           <div class="form-group col-md-12">
-            <label>{{__('Detail')}}<code>*</code> </label>
+            <label>{{__('Detail')}} </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">

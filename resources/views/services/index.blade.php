@@ -34,8 +34,8 @@
           <div class="form-group col-md-12">
             <label>{{__('Service Page Image')}} <code>*</code> </label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="service_image" class="custom-file-input" id="serviceImage">
+              <div class="">
+                <input type="file" name="service_image" class="custom-file-input-" id="serviceImage">
                 <label class="custom-file-label" for="serviceImage" aria-describedby="inputGroupFileAddon01">
                   @if($setting)
                   {{'Modify Image'}}
@@ -70,8 +70,8 @@
           <div class="form-group col-md-12">
             <label>{{__('Service Checklist Image')}} <code>*</code> </label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input type="file" name="service_list_image" class="custom-file-input" id="serviceChecklistImage">
+              <div class="">
+                <input type="file" name="service_list_image" class="custom-file-input-" id="serviceChecklistImage">
                 <label class="custom-file-label" for="serviceChecklistImage" aria-describedby="inputGroupFileAddon01">
                   @if($setting)
                   {{'Modify Image'}}
