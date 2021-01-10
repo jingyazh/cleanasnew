@@ -320,7 +320,7 @@
       ],
       // "order": [[ 0, "asc" ]],
       "language": {
-        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json"
       }
     });
     oTable = $("#company_information").DataTable({
@@ -366,7 +366,7 @@
       ],
       // "order": [[ 0, "asc" ]],
       "language": {
-        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json"
       }
     });
     oTable = $("#advisory_board").DataTable({
@@ -412,7 +412,7 @@
       ],
       // "order": [[ 0, "asc" ]],
       "language": {
-        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json"
       }
     });
     oTable = $("#news_events").DataTable({
@@ -458,7 +458,7 @@
       ],
       // "order": [[ 0, "asc" ]],
       "language": {
-        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json"
       }
     });
   });

@@ -304,7 +304,7 @@
       ],
       "order": [],
       "language": {
-        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{('fr' == App::getLocale()) ? 'French' : 'English'}}.json"
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json"
       }
     });
   });

@@ -167,8 +167,6 @@
     "No matching records found "    :   "Aucun élément à afficher",
     "First"     :  "Premier",
     "Last"      :   "Dernier",
-    "Next"     :   "Suivant",
-	"Previous":   "Précédent",
 
 
     ": activate to sort column ascending"   :   ": activer pour trier la colonne par ordre croissant",
