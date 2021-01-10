@@ -93,9 +93,12 @@ class ESGController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['esgid']) && $_POST['esgid'] != NULL && trim($_POST['esgid']) != "") {
             $checking = ESG::where('esgid', $request->esgid)->where('locale', $request->locale)->get();

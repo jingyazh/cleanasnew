@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use App\Models\ExtraPage;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\Models\SiteSetting;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
@@ -51,8 +52,11 @@ class Handler extends ExceptionHandler
     {
         if ($this->isHttpException($exception)) {
             $locale = session('locale');
+            // $locale = app()->getLocale();
+            // dd($locale);
             if ($locale == null) $locale = 'en';
             $siteSetting = SiteSetting::where('locale', $locale)->first();
+            // dd($siteSetting);
             $menuSetting = MainSetting::all();
             $extraPages = ExtraPage::where('locale', $locale)->get();
             if ($exception->getStatusCode() == 404) {

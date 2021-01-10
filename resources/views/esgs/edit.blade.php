@@ -115,8 +115,9 @@
       'insertdatetime media table paste imagetools wordcount'
     ],
     images_upload_credentials: true,
+    menubar: false,
     automatic_uploads: true,
-    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
     width: "100%",
     height: 500

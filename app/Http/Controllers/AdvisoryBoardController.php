@@ -7,6 +7,7 @@ use App\Models\AdvisoryBoard;
 use App\Models\ExtraPage;
 use App\Models\SiteSetting;
 use App\Models\MainSetting;
+use App\Models\OpenGraph;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -89,7 +90,6 @@ class AdvisoryBoardController extends Controller
         Validator::make($request->all(), [
             'name' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'locale' => 'required',
             'quote' => 'required',
             'embed' => 'required',
         ])->validate();
@@ -193,6 +193,13 @@ class AdvisoryBoardController extends Controller
         if ($locale == null)
             $locale = 'en';
         $board = AdvisoryBoard::where('id', $request->id)->first();
+        if ($board == null) {
+            $siteSetting = SiteSetting::where('locale', $locale)->first();
+            $menuSetting = MainSetting::all();
+            $extraPages = ExtraPage::where('locale', $locale)->get();
+            $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+            return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+        }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         // dd($locale);

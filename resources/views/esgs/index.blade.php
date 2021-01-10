@@ -47,6 +47,18 @@
             </small>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('ESG Detail Page')}} <code>*</code> </label>
+            <div class="col-md-12 mb-4">
+              <div class="mx-auto col-md-12">
+                <textarea id="how_better_cleaning_can_help" required name="how_better_cleaning_can_help">
+                @if(isset($setting) && $setting != null)
+                  {!! $setting->how_better_cleaning_can_help !!}
+                  @endif
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="esg_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
@@ -189,8 +201,22 @@
       'insertdatetime media table paste imagetools wordcount'
     ],
     images_upload_credentials: true,
+    menubar: false,
     automatic_uploads: true,
-    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
+    images_upload_handler: example_image_upload_handler,
+  });
+  tinymce.init({
+    selector: '#how_better_cleaning_can_help',
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount'
+    ],
+    images_upload_credentials: true,
+    menubar: false,
+    automatic_uploads: true,
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
   });
 </script>

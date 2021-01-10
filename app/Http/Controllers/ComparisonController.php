@@ -234,6 +234,13 @@ class ComparisonController extends Controller
         if ($locale == null)
             $locale = 'en';
         $comparison = Comparison::where('id', $request->id)->first();
+        if ($comparison == null) {
+            $siteSetting = SiteSetting::where('locale', $locale)->first();
+            $menuSetting = MainSetting::all();
+            $extraPages = ExtraPage::where('locale', $locale)->get();
+            $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+            return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+        }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();

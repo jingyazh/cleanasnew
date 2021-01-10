@@ -98,7 +98,7 @@
           </div>
 
           <div class="form-group col-md-12">
-            <label>{{__('Detail')}}<code>*</code> </label>
+            <label>{{__('Detail')}} </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed">
@@ -138,8 +138,9 @@
       'insertdatetime media table paste imagetools wordcount'
     ],
     images_upload_credentials: true,
+    menubar: false,
     automatic_uploads: true,
-    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
     width: "100%",
     height: 500,

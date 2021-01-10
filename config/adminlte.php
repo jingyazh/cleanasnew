@@ -270,7 +270,7 @@ return [
             'active' => ['admin/esgs', 'admin/esgs/*'],
         ],
         [
-            'text' => 'About US',
+            'text' => 'About Us',
             'route'  => 'aboutus.index',
             'icon' => 'fas fa-fw fa-info-circle',
             'active' => ['admin/aboutus', 'admin/aboutus/*', 'admin/aboutcompany/*', 'admin/advisory_boards/*', 'admin/news_events/*'],
@@ -294,7 +294,7 @@ return [
         //     'active' => ['admin/news_events', 'admin/news_events/*'],
         // ],
         [
-            'text' => 'Contacts',
+            'text' => 'Contact',
             'route'  => 'contacts.index',
             'icon' => 'fas fa-fw fa-user-secret',
             'active' => ['admin/contacts', 'admin/contacts/*'],

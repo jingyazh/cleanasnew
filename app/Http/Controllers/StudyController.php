@@ -79,11 +79,12 @@ class StudyController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
 
-
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['reviewid']) && $_POST['reviewid'] != NULL && trim($_POST['reviewid']) != "") {
             $checking = Review::where('reviewid', $request->reviewid)->where('locale', $request->locale)->get();

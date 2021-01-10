@@ -91,9 +91,12 @@ class TodoController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['todoid']) && $_POST['todoid'] != NULL && trim($_POST['todoid']) != "") {
             $checking = Todo::where('todoid', $request->todoid)->where('locale', $request->locale)->get();

@@ -121,14 +121,14 @@ class ServiceController extends Controller
                 return redirect()->route('services.index', ['errors' => ['English version exists already.']]);
             }
             $serviceid = $request->input('serviceid');
-        }else {
+        } else {
             $serviceid = substr(str_shuffle(self::$characters), 0, 10);
         }
 
         $input['serviceid'] = $serviceid;
-      
-        
-        $service = Service::create($input); 
+
+
+        $service = Service::create($input);
 
         $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
         if (strpos($service->image_landing_1, 'upload') != false && is_file($service->image_landing_1))
@@ -249,6 +249,13 @@ class ServiceController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
+        if ($service == null) {
+            $siteSetting = SiteSetting::where('locale', $locale)->first();
+            $menuSetting = MainSetting::all();
+            $extraPages = ExtraPage::where('locale', $locale)->get();
+            $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+            return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+        }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();

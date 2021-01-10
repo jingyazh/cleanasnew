@@ -20,6 +20,7 @@ class SiteSetting extends Model
         'service_list_image', 
         'service_download_checklist', 
         'esg_banner_embed', 
+        'how_better_cleaning_can_help',
         'footer_txt', 
         'home_meta_title', 
         'home_meta_description', 

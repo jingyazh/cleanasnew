@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null, $extraPages])
+@include('layout.header', [$menuSetting, $extraPages])
 <main>
   <div class="jumbotron text-left">
     <div class="headline">

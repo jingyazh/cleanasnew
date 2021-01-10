@@ -90,7 +90,6 @@ class AboutCompanyController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'locale' => 'required',
             'embed' => 'required',
         ])->validate();
 

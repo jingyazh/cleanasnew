@@ -89,7 +89,6 @@ class NewsEventController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            // 'locale' => 'required',
             'embed' => 'required',
         ])->validate();
 

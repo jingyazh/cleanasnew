@@ -3,7 +3,14 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Modify')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('Modify')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -303,5 +310,9 @@
       }
     });
   });
+  $('#locale').change(() => {
+    const locale = $('#locale').val();
+    location.href = `{{ url('lang/${locale}') }}`;
+  })
 </script>
 @stop

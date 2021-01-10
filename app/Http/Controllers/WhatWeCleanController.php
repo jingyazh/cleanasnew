@@ -93,9 +93,12 @@ class WhatWeCleanController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required',
-            'embed' => 'required',
+            // 'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['cleanid']) && $_POST['cleanid'] != NULL && trim($_POST['cleanid']) != "") {
             $checking = WhatWeClean::where('cleanid', $request->cleanid)->where('locale', $request->locale)->get();

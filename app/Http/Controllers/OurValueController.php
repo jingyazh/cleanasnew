@@ -92,9 +92,12 @@ class OurValueController extends Controller
         Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
+
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
 
         if (isset($_POST['valueid']) && $_POST['valueid'] != NULL && trim($_POST['valueid']) != "") {
             $checking = OurValue::where('valueid', $request->valueid)->where('locale', $request->locale)->get();

@@ -133,6 +133,7 @@ class HomeController extends Controller
     }
     //... Post View
     public function chooselanguage() {
-        return view('choose-language', ['siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting]);
+        $extraPages = ExtraPage::where('locale', $this->locale)->get();
+        return view('choose-language', ['siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages]);
     } 
 }

@@ -93,10 +93,13 @@ class FaqController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'locale' => 'required',
             'embed' => 'required',
         ])->validate();
 
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
+        
         if (isset($_POST['faqid']) && $_POST['faqid'] != NULL && trim($_POST['faqid']) != "") {
             $checking = Faq::where('faqid', $request->faqid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {

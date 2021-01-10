@@ -92,7 +92,7 @@ class TestimonialController extends Controller
 
             ->addColumn('title', function ($item) {
                 return $item->title;
-            })  
+            })
             ->addColumn('locale', function ($item) {
                 return Config::get('app.locales')[$item->locale];
             })
@@ -315,19 +315,27 @@ class TestimonialController extends Controller
     public function detail(Request $request)
     {
         # code...
+        $id = $request->id;
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $reviews = Review::where('locale', $locale)->where('testimonialid', $request->id)->get();
+        $testimonial = Testimonial::where('testimonialid', $id)->first();
+        if ($testimonial == null) {
+            $siteSetting = SiteSetting::where('locale', $locale)->first();
+            $menuSetting = MainSetting::all();
+            $extraPages = ExtraPage::where('locale', $locale)->get();
+            $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
+            return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+        }
+        $reviews = Review::where('locale', $locale)->where('testimonialid', $id)->get();
         if (empty($reviews)) {
-            $reviews = Review::where('locale', 'en')->where('testimonialid', $request->id)->get();
+            $reviews = Review::where('locale', 'en')->where('testimonialid', $id)->get();
         }
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
-        $title = Testimonial::where('testimonialid', $request->id)->first();
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        $og = Testimonial::where('locale', $locale)->where('testimonialid', $request->id)->first();
+        $og = Testimonial::where('locale', $locale)->where('testimonialid', $id)->first();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $title->title, 'og' => $og]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $testimonial->title, 'og' => $og]);
     }
 }

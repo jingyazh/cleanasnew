@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-@include('layout.header', (isset($menuSetting) && $menuSetting != null) ? $menuSetting : ['menuSetting' => null, $extraPages])
+@include('layout.header', [$menuSetting, $extraPages])
 <section>
     <div id="carouselExampleIndicators" class="carousel slide img-fluid lazyload" data-ride="carousel" data-interval="5000">
         <!-- Indicators -->
