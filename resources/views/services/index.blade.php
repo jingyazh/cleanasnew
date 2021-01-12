@@ -230,13 +230,20 @@
     plugins: [
       'advlist autolink lists link image charmap print preview anchor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste imagetools wordcount'
+      'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
     menubar: false,
     automatic_uploads: true,
-    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
+    toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
+    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    external_filemanager_path: "/filemanager/",
+    filemanager_title: "Responsive Filemanager",
+    external_plugins: {
+      "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
+      "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
+    },
   });
 </script>
 <script>
