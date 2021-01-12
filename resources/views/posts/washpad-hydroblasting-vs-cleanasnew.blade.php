@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline">        &nbsp;
-      <p><a href="/">{{__("Home")}}</a> &#8250; {{__("Comparing An Apple To An Apple")}} </p>
+      <p><a href="https://cleanasnew.com/">{{__("Home")}}</a> &#8250; {{__("Comparing An Apple To An Apple")}} </p>
     </div>
   </div>
   <div class="album bg-light">

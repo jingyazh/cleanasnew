@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline">        &nbsp;
-      <p><a href="/">{{__("Home")}}</a> &#8250; {{__("Does combining ultrasound cleaning with hydroblasting really make a difference?")}}</p>
+      <p><a href="https://cleanasnew.com/">{{__("Home")}}</a> &#8250; {{__("Does combining ultrasound cleaning with hydroblasting really make a difference?")}}</p>
     </div>
   </div>
   <div class="album bg-light">

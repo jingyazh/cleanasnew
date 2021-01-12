@@ -28,7 +28,11 @@
         <div class="card-body">
           @if ($errors->any())
           <div class="alert alert-danger">
-            please complete all required fields.
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
           </div>
           @endif
           <div class="form-group col-md-12">
@@ -135,20 +139,13 @@
     plugins: [
       'advlist autolink lists link image charmap print preview anchor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste imagetools wordcount importcss'
+      'insertdatetime media table paste imagetools wordcount'
     ],
     images_upload_credentials: true,
     menubar: false,
     automatic_uploads: true,
-    toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
-    external_filemanager_path: "/filemanager/",
-    filemanager_title: "Responsive Filemanager",
-    external_plugins: {
-      "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
-      "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
-    },
     width: "100%",
     height: 500,
   });

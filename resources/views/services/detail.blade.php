@@ -35,7 +35,7 @@
               {!! $service->embed !!}
             @endif
         </div>
-        <div class="col-6 padding30"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{$service->image_article}}" class="img-fluid polaroid lazyload" alt="Clean As New® offers a Basket Rental and Bulk Parts Cleaning Service." /> </div>
+        <div class="col-6 padding30"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{$service->image_landing_2}}" class="img-fluid polaroid lazyload" alt="Clean As New® offers a Basket Rental and Bulk Parts Cleaning Service." /> </div>
       </div>
     </div>
   </div>

@@ -378,7 +378,7 @@ blockquote {
 	padding: 10px 0;
 }
 .quotation {
-	font-size: 20px;
+	font-size: 4em;
 	margin: 0 auto;
 	quotes: "\201C""\201D""\2018""\2019";
 	padding: 10px;

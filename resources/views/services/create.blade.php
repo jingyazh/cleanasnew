@@ -19,7 +19,11 @@
   <div class="col-12">
     @if ($errors->any())
     <div class="alert alert-danger">
-      please complete all required fields.
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
     </div>
     @endif
     <form method="POST" action="{{ route('services.store') }}" id="frmCreateClient" enctype="multipart/form-data">
@@ -71,8 +75,8 @@
             <label>{{__('Image')}} 1 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
-                <input type="file" name="image_landing_1" required class="custom-file-input-" id="image_landing_1">
-                <label class="custom-file-label" for="image_landing_1" aria-describedby="inputGroupFileAddon01">Choose file</label>
+                <input type="file" name="image_landing_1" required class="custom-file-input-" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
                 <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
@@ -87,24 +91,8 @@
             <label>{{__('Image')}} 2 <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
-                <input type="file" name="image_landing_2" required class="custom-file-input-" id="image_landing_2">
-                <label class="custom-file-label" for="image_landing_2" aria-describedby="inputGroupFileAddon02">Choose file</label>
-              </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
-            </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/service_image_2.jpg" target="_blank">here</a>
-            </small>
-          </div>
-          <div class="form-group col-md-12">
-            <label>{{__('Article Image')}}<code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="">
-                <input type="file" name="image_article" required class="custom-file-input-" id="image_article">
-                <label class="custom-file-label" for="image_article" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                <input type="file" name="image_landing_2" required class="custom-file-input-" id="inputGroupFile02">
+                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
               </div>
               <!-- <div class="input-group-append">
                 <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
@@ -207,20 +195,13 @@
     plugins: [
       'advlist autolink lists link image charmap print preview anchor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste imagetools wordcount importcss'
+      'insertdatetime media table paste imagetools wordcount'
     ],
     images_upload_credentials: true,
     menubar: false,
     automatic_uploads: true,
-    toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
-    external_filemanager_path: "/filemanager/",
-    filemanager_title: "Responsive Filemanager",
-    external_plugins: {
-      "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
-      "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
-    },
     width: "100%",
     height: 500,
   });

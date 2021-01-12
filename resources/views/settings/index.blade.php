@@ -20,7 +20,7 @@
   z-index: 1;
   color: gray;
   float: right;
-  opacity: 0.2;
+  opacity: 0.9;
 }
 .editMark:hover {
   color: black;

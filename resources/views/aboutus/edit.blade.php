@@ -28,7 +28,11 @@
         <div class="card-body">
           @if ($errors->any())
           <div class="alert alert-danger">
-            please complete all required fields.
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
           </div>
           @endif
           <div class="form-group col-md-12">

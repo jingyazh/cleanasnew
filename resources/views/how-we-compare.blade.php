@@ -22,7 +22,7 @@
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
       <p>
         <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="/" itemprop="item">
+          <a href="https://cleanasnew.com/" itemprop="item">
             <span itemprop="name">{{__('Home')}}</span></a>
           <meta itemprop="position" content="1">
         </span> &#8250;

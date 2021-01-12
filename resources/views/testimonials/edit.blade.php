@@ -3,7 +3,14 @@
 @extends('adminlte::page')
 
 @section('content_header')
-<h1 class="m-0 text-dark">{{__('Modify')}}</h1>
+<div style="justify-content: space-between; display: flex">
+  <h1 class="m-0 text-dark">{{__('Modify')}}</h1>
+  <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
+    @foreach (Config::get('app.locales') as $key => $lang)
+    <option value="{{ $key }}" label="{{ $lang }}" {{ $key == session('locale') ? 'selected' : '' }}></option>
+    @endforeach
+  </select>
+</div>
 @stop
 
 @section('content')
@@ -28,7 +35,11 @@
         <div class="card-body">
           @if ($errors->any())
           <div class="alert alert-danger">
-            please complete all required fields.
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
           </div>
           @endif
           <div class="form-group col-md-12">
@@ -147,8 +158,7 @@
   <div class="col-12">
     <div class="card card-info">
       <div class="card-header">
-        <!-- <h3 class="card-title">{{$testimonial->title}} </h3> -->
-        <h3 class="card-title">Detail </h3>
+        <h3 class="card-title">{{$testimonial->title}} </h3>
 
         <div class="card-tools">
           <a href="{{ route('feedbacks.create', ['testimonialid' => $testimonial->testimonialid]) }}" class="btn btn-tool">{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>

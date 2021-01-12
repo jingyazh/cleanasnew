@@ -11,7 +11,7 @@
   <div class="jumbotron text-left">
     <div class="headline">
       &nbsp;
-      <p><a href="/">{{__("Home")}}</a> &#8250; {{__("The Highest Performing Refineries")}} </p>
+      <p><a href="https://cleanasnew.com/">{{__("Home")}}</a> &#8250; {{__("The Highest Performing Refineries")}} </p>
     </div>
   </div>
   <div class="album bg-light">
