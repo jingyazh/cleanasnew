@@ -10,7 +10,7 @@
 <main>
   <div class="jumbotron text-left">
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
-      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="https://cleanasnew.com/" itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
+      <p> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a href="/" itemprop="item"> <span itemprop="name">{{__("Home")}}</span></a>
           <meta itemprop="position" content="1">
         </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span itemprop="name">{{__("Select Language")}} </span>
           <meta itemprop="position" content="2">
@@ -26,8 +26,8 @@
             <li class="item"><a href="/lang/en">English </a><hr></li>
             <li class="item"><a href="/lang/es-us">Español (US)</a><hr></li>
             <li class="item"><a href="/lang/mx">Español (MX)</a><hr></li>
+            <li class="item"><a href="/lang/fr">Français (FR)</a><hr></li>
             <li class="item"><a href="/lang/es">Español (ES)</a><hr></li>
-           <li class="item"><a href="/lang/fr">Français (FR)</a><hr></li>
             <li class="item"><a href="/lang/pt-br">Português (BR)</a><hr></li>
             <li class="item"><a href="/lang/de">Deutsch (DE)</a><hr></li>
             <li class="item"><a href="/lang/ru">Русский (RU)</a><hr></li>

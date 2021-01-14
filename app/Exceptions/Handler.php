@@ -8,6 +8,7 @@ use App\Models\OpenGraph;
 use App\Models\SiteSetting;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,8 +51,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($this->isHttpException($exception)) {
+        if ($exception instanceof NotFoundHttpException) {
+            // if ($this->isHttpException($exception)) {
             $locale = session('locale');
+            app()->setLocale($locale);
             // $locale = app()->getLocale();
             // dd($locale);
             if ($locale == null) $locale = 'en';
@@ -61,7 +64,7 @@ class Handler extends ExceptionHandler
             $extraPages = ExtraPage::where('locale', $locale)->get();
             if ($exception->getStatusCode() == 404) {
                 $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
-                return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+                return response()->view('errors.404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
             }
             if ($exception->getStatusCode() == 410) {
                 $og = OpenGraph::where('locale', $locale)->where('name', '410')->first();

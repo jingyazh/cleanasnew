@@ -8,22 +8,20 @@
     <i class="dropdown icon"></i>
     <ul class="menu">
       <li class="item"><a href="/lang/en">English </a></li>
+      <!-- <li class="item"><a href="/lang/fr">Français (FR)</a></li> -->
+      <!-- <li class="item"><a href="/lang/es">Español (ES)</a></li> -->
       <li class="item"><a href="/lang/es-us">Español (US)</a></li>
       <li class="item"><a href="/lang/mx">Español (MX)</a></li>
+      <!-- <li class="item"><a href="/lang/pt-br">Português (BR)</a></li> -->
+      <!-- <li class="item"><a href="/lang/de">Deutsch (DE)</a></li> -->
+      <!-- <li class="item"><a href="/lang/ru">Русский (RU)</a></li> -->
+      <!-- <li class="item"><a href="/lang/hi-in">Hindi (IN)</a></li> -->
+      <!-- <li class="item"><a href="/lang/pa-pk">Punjabi (PK)</a></li> -->
+      <!-- <li class="item"><a href="/lang/cn">中文 (CN)</a></li> -->
+      <!-- <li class="item"><a href="/lang/jp">日本語 (JP)</a></li> -->
+      <!-- <li class="item"><a href="/lang/th">Thai (TH)</a></li> -->
+      <!-- <li class="item"><a href="/lang/ml">Malay (ML)</a></li> -->
       <li class="item"><a href="/choose-language">Others...</a></li>
-         <!-- 
-      <li class="item"><a href="/lang/pt-br">Português (BR)</a></li>     
-      <li class="item"><a href="/lang/fr">Français (FR)</a></li>
-      <li class="item"><a href="/lang/es">Español (ES)</a></li>
-
-      <li class="item"><a href="/lang/de">Deutsch (DE)</a></li>
-      <li class="item"><a href="/lang/ru">Русский (RU)</a></li>
-      <li class="item"><a href="/lang/hi-in">Hindi (IN)</a></li>
-      <li class="item"><a href="/lang/pa-pk">Punjabi (PK)</a></li>
-      <li class="item"><a href="/lang/cn">中文 (CN)</a></li>
-      <li class="item"><a href="/lang/jp">日本語 (JP)</a></li>
-      <li class="item"><a href="/lang/th">Thai (TH)</a></li>
-      <li class="item"><a href="/lang/ml">Malay (ML)</a></li> -->
     </ul>
   </div>
   <style>

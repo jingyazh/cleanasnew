@@ -19,11 +19,7 @@
   <div class="col-12">
     @if ($errors->any())
     <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
+      please complete all required fields.
     </div>
     @endif
     <form method="POST" action="{{ route('testimonials.store') }}" id="frmCreateClient" enctype="multipart/form-data">
