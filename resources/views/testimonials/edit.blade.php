@@ -38,13 +38,26 @@
             </div>
           </div>
           <!-- <div class="form-group">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>Desktop Image <code>*</code> </label>
             <div style="display: flex; flex-direction: row" class="dropzone" id="image_1">
               <div id="preview-template" style="display: none;"></div>
             </div>
           </div> -->
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($testimonial) ? $testimonial->meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{isset($testimonial) ? $testimonial->meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>Desktop Image <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
                 <input type="file" name="image_1" class="custom-file-input-" id="inputGroupFile01">
@@ -60,7 +73,7 @@
             </small>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 2 <code>*</code> </label>
+            <label>Mobile Image <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
                 <input type="file" name="image_2" class="custom-file-input-" id="inputGroupFile02">

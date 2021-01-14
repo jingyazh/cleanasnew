@@ -64,7 +64,7 @@ class Handler extends ExceptionHandler
             $extraPages = ExtraPage::where('locale', $locale)->get();
             if ($exception->getStatusCode() == 404) {
                 $og = OpenGraph::where('locale', $locale)->where('name', '404')->first();
-                return response()->view('errors.404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+                return response()->view('404', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
             }
             if ($exception->getStatusCode() == 410) {
                 $og = OpenGraph::where('locale', $locale)->where('name', '410')->first();

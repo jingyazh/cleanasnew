@@ -120,7 +120,7 @@ class PostController extends Controller
         ])->validate();
 
         $locale = session('locale');
-        if ($locale != null) $locale = 'en';
+        if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
         if (isset($_POST['postid']) && $_POST['postid'] != NULL && trim($_POST['postid']) != "") {
             $checking = Post::where('postid', $request->postid)->where('locale', $request->locale)->get();

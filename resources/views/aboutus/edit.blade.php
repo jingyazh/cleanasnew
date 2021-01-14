@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>Desktop Image <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
                 <input type="file" name="image" class="custom-file-input-" id="inputGroupFile01">

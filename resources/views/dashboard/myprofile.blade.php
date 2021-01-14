@@ -28,7 +28,7 @@
                     <input type="text" class="form-control" disabled value="{{Auth::user()->name}}">
                     </div>
                     <div class="form-group">
-                      <label>{{__('Name')}} ({{__('displayed to your customers')}}) </label>
+                      <label>{{__('Name')}} </label>
                       <input type="text" class="form-control" disabled value="{{Auth::user()->username}}">
                     </div> 
                     <div class="form-group">

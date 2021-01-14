@@ -2,7 +2,7 @@
 
 @section('title')
 <title>Clean As New® Advisory Board Members</title>
-<meta content="{{ $og->og_locale != null ? $og->og_locale : ''}}" property="og:locale">
+<meta content="{{ $og->og_locale != null ? str_replace('-', '_', $og->og_locale) : ''}}" property="og:locale">
 <meta content="{{ $og->og_site_name != null ? $og->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $og->og_type != null ? $og->og_type : ''}}" property="og:type">
 <meta content="{{ $og->og_url != null ? $og->og_url : ''}}" property="og:url">

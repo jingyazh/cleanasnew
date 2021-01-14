@@ -24,10 +24,10 @@
         <div class="col-md-4 padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
             <li class="item"><a href="/lang/en">English </a><hr></li>
-            <li class="item"><a href="/lang/fr">Français (FR)</a><hr></li>
-            <li class="item"><a href="/lang/es">Español (ES)</a><hr></li>
             <li class="item"><a href="/lang/es-us">Español (US)</a><hr></li>
             <li class="item"><a href="/lang/mx">Español (MX)</a><hr></li>
+            <li class="item"><a href="/lang/fr">Français (FR)</a><hr></li>
+            <li class="item"><a href="/lang/es">Español (ES)</a><hr></li>
             <li class="item"><a href="/lang/pt-br">Português (BR)</a><hr></li>
             <li class="item"><a href="/lang/de">Deutsch (DE)</a><hr></li>
             <li class="item"><a href="/lang/ru">Русский (RU)</a><hr></li>

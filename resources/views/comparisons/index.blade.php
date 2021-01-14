@@ -22,7 +22,7 @@
     <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
       <p>
         <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="/comparisons" itemprop="item">
+          <a href="/how-we-compare" itemprop="item">
             <span itemprop="name">{{__('How We Compare')}}</span></a>
           <meta itemprop="position" content="1">
         </span> &#8250;

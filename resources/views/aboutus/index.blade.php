@@ -5,7 +5,7 @@
   <h1 class="m-0 text-dark">{{__('About Us')}}</h1>
   <select class="btn btn-tool" name="locale" id="locale" v-model="locale">
     @foreach (Config::get('app.locales') as $key => $lang)
-    <option style="color: red;" value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
+    <option value="{{ $key }}" label="{{ $lang }}" {{ $key == str_replace("_", '-', app()->getLocale()) ? "selected" : ''}}></option>
     @endforeach
   </select>
 </div>
@@ -276,6 +276,7 @@
     oTable = $("#aboutus").DataTable({
       processing: true,
       serverSide: true,
+      bPaginate: false,
       ajax: "{{ route('aboutus.data', ['locale' => str_replace('_', '-', app()->getLocale())]) }}",
 
       columnDefs: [{

@@ -16,7 +16,7 @@
         <div class="col-12">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">{{__('Reseller List')}} </h3>
+              <h3 class="card-title">{{__('Colleagues List')}} </h3>
               
               <div class="card-tools">
                 <a href="{!! route('users.create') !!}" class="btn btn-tool" >{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>                
@@ -31,7 +31,7 @@
                   <th>{{__('Name')}}</th>
                   <th>{{__('User')}}</th>                  
                   <th>{{__('Email')}}</th>
-                  <th>{{__('Clients')}}({{__('All')}}/{{__('Active')}})</th>
+                  <!-- <th>{{__('Clients')}}({{__('All')}}/{{__('Active')}})</th> -->
                   <th>{{__('Action')}}</th>
                 </tr>
                 </thead> 

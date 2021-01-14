@@ -96,13 +96,13 @@ class SiteSettingController extends Controller
         Validator::make($request->all(), [
             'home_embed' => 'required',
             'home_discounter' => 'required',
-            'home_esg_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'comparison_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'home_esg_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'comparison_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'comparison_txt' => 'required',
             'clean_slogan' => 'required',
-            'service_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'service_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'service_txt' => 'required',
-            'service_list_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'service_list_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'esg_banner_embed' => 'required',
             'footer_txt' => 'required',
         ])->validate();
@@ -155,10 +155,10 @@ class SiteSettingController extends Controller
 
         // dd($input);
         Validator::make($request->all(), [
-            'home_esg_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'comparison_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'service_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'service_list_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'home_esg_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'comparison_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'service_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'service_list_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ])->validate();
 
         $locale = session('locale');

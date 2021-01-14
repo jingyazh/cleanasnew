@@ -1,9 +1,9 @@
 @extends('app')
 
 @section('title')
-<title>{{ $siteSetting->testimonials_meta_title }}</title>
-<meta name="description" content="{{ $siteSetting->testimonials_meta_description }}">
-<meta content="{{ $og->og_locale != null ? $og->og_locale : ''}}" property="og:locale">
+<title>{{ $testimonial->meta_title }}</title>
+<meta name="description" content="{{ $testimonial->meta_description }}">
+<meta content="{{ $og->og_locale != null ? str_replace('-', '_', $og->og_locale) : ''}}" property="og:locale">
 <meta content="{{ $og->og_site_name != null ? $og->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $og->og_type != null ? $og->og_type : ''}}" property="og:type">
 <meta content="{{ $og->og_url != null ? $og->og_url : ''}}" property="og:url">
@@ -22,7 +22,7 @@
 <div class="headline" itemscope itemtype="http://schema.org/BreadcrumbList"> &nbsp;
       <p><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/testimonials" itemprop="item"><span itemprop="name">{{__("Testimonials")}}</span></a>
         <meta itemprop="position" content="1">
-        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{{ $title }}</span>
+        </span> &#8250; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">{{ $testimonial->title }}</span>
         <meta itemprop="position" content="2">
         </span></p>
     </div>

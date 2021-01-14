@@ -108,8 +108,8 @@ class ComparisonController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
             // 'locale' => 'required'
         ])->validate();
@@ -186,8 +186,8 @@ class ComparisonController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_landing_1' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image_landing_2' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
         ])->validate();
 

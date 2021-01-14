@@ -109,12 +109,17 @@ class ServiceController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_landing_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_landing_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_article' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
-            'locale' => 'required'
+            // 'locale' => 'required'
         ])->validate();
 
+        $locale = session('locale');
+        if ($locale == null) $locale = 'en';
+        $input['locale'] = $locale;
+        
         if (isset($_POST['serviceid']) && $_POST['serviceid'] != NULL && trim($_POST['serviceid']) != "") {
             $checking = Service::where('serviceid', $request->serviceid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
@@ -141,6 +146,12 @@ class ServiceController extends Controller
             unlink($service->image_landing_2);
         $request->image_landing_2->move(public_path('images/upload'), $image2);
         $service->fill(['image_landing_2' => 'images/upload/' . $image2]);
+
+        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
+        if (strpos($service->image_article, 'upload') != false && is_file($service->image_article))
+            unlink($service->image_article);
+        $request->image_article->move(public_path('images/upload'), $image2);
+        $service->fill(['image_article' => 'images/upload/' . $image2]);
 
         $service->save();
 
@@ -183,8 +194,9 @@ class ServiceController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_landing_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_landing_2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_landing_1' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image_landing_2' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image_article' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
         ])->validate();
 
@@ -204,6 +216,13 @@ class ServiceController extends Controller
                 unlink($service->image_landing_2);
             $request->image_landing_2->move(public_path('images/upload'), $image2);
             $service->fill(['image_landing_2' => 'images/upload/' . $image2]);
+        }
+        if ($request->image_article != null) {
+            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
+            if (strpos($service->image_article, 'upload') != false && is_file($service->image_article))
+                unlink($service->image_article);
+            $request->image_article->move(public_path('images/upload'), $image2);
+            $service->fill(['image_article' => 'images/upload/' . $image2]);
         }
 
         $service->save();

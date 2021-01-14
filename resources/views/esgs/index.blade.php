@@ -32,6 +32,19 @@
         <!-- /.card-header -->
         <div class="card-body">
           <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="esg_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="esg_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('ESG Page Banner')}} <code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
@@ -46,8 +59,9 @@
               View example <a href="/assets/examples/esg_banner_embed.jpg" target="_blank">here</a>
             </small>
           </div>
+          <h3 style="text-decoration: underline;">ESG Subpage Setting</h3>
           <div class="form-group col-md-12">
-            <label>{{__('ESG Detail Page')}} <code>*</code> </label>
+            <label>Detail<code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="how_better_cleaning_can_help" required name="how_better_cleaning_can_help">
@@ -59,16 +73,70 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <label>Meta Title <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="esg_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />
+              <input type="text" name="esg_sub_meta_title" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_sub_meta_title : ''}}" required placeholder="{{__('Subpage Meta Title')}}" />
             </div>
           </div>
 
           <div class="form-group col-md-12">
-            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <label>Meta Description<code>*</code> </label>
             <div style="display: flex; flex-direction: row">
-              <input type="text" name="esg_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_meta_description : ''}}" required placeholder="{{__('Meta Description')}}" />
+              <input type="text" name="esg_sub_meta_description" class="form-control col-sm-12" value="{{isset($setting) ? $setting->esg_sub_meta_description : ''}}" required placeholder="{{__('Subpage Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:locale')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_locale_esg" class="form-control col-sm-12" value="{{ old('og_locale_esg', $setting->og_locale_esg)}}" placeholder="{{__('en_US')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:site_name')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_site_name_esg" class="form-control col-sm-12" value="{{ old('og_site_name_esg', $setting->og_site_name_esg)}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:type')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_type_esg" class="form-control col-sm-12" value="{{ old('og_type_esg', $setting->og_type_esg)}}" placeholder="{{__('website')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:url')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_url_esg" class="form-control col-sm-12" value="{{ old('og_url_esg', $setting->og_url_esg)}}" placeholder="{{__('https://cleanasnew.com')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_title_esg" class="form-control col-sm-12" value="{{ old('og_title_esg', $setting->og_title_esg)}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_description_esg" class="form-control col-sm-12" value="{{ old('og_description_esg', $setting->og_description_esg)}}" placeholder="{{__('Clean As New')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_esg" class="form-control col-sm-12" value="{{ old('og_image_esg', $setting->og_image_esg)}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:width')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_width_esg" class="form-control col-sm-12" value="{{ old('og_image_width_esg', $setting->og_image_width_esg)}}" placeholder="{{__('1200')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('og:image:height')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="og_image_height_esg" class="form-control col-sm-12" value="{{ old('og_image_height_esg', $setting->og_image_height_esg)}}" placeholder="{{__('630')}}" />
             </div>
           </div>
         </div>
@@ -205,7 +273,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {
@@ -225,7 +293,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {

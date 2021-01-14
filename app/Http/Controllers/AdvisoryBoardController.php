@@ -89,7 +89,7 @@ class AdvisoryBoardController extends Controller
 
         Validator::make($request->all(), [
             'name' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'quote' => 'required',
             'embed' => 'required',
         ])->validate();
@@ -139,7 +139,7 @@ class AdvisoryBoardController extends Controller
 
         Validator::make($request->all(), [
             'name' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'quote' => 'required',
             'embed' => 'required',
         ])->validate();

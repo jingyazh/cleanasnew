@@ -106,7 +106,7 @@ class AboutUsController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'locale' => 'required'
         ])->validate();
 
@@ -172,7 +172,7 @@ class AboutUsController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ])->validate();
 
         $aboutus->fill($input);
