@@ -38,13 +38,13 @@
             </div>
           </div>
           <!-- <div class="form-group">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>Desktop Image <code>*</code> </label>
             <div style="display: flex; flex-direction: row" class="dropzone" id="image_landing_1">
               <div id="preview-template" style="display: none;"></div>
             </div>
           </div> -->
           <div class="form-group col-md-12">
-            <label>{{__('Image')}} 1 <code>*</code> </label>
+            <label>Image <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
                 <input type="file" name="image_landing" class="custom-file-input-" id="inputGroupFile01">
@@ -60,22 +60,6 @@
             </small>
           </div>
 
-          <!-- <div class="form-group col-md-12">
-            <label>{{__('Image')}} 2 <code>*</code> </label>
-            <div class="input-group mb-3">
-              <div class="">
-                <input type="file" name="image_article" class="custom-file-input-" id="inputGroupFile02">
-                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Modify Image</label>
-              </div>
-            </div>
-
-            <small id="passwordHelpBlock" class="ul-form__text form-text ">
-              View example <a href="/assets/examples/article_image.jpg" target="_blank">here</a>
-              @if($post->image_article != null && $post->image_article != '')
-              | Current Image <a href="/{{ $post->image_article }}" target="_blank">here</a>
-              @endif
-            </small>
-          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Detail')}}<code>*</code> </label>
             <div class="col-md-12 mb-4">
@@ -211,7 +195,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {

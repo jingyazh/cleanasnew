@@ -171,8 +171,8 @@ class TestimonialController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             // 'locale' => 'required'
         ])->validate();
 
@@ -250,8 +250,8 @@ class TestimonialController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image_1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image_2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_1' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image_2' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ])->validate();
 
         $testimonial->fill($input);
@@ -336,6 +336,6 @@ class TestimonialController extends Controller
         $extraPages = ExtraPage::where('locale', $locale)->get();
         $og = Testimonial::where('locale', $locale)->where('testimonialid', $id)->first();
         // dd($locale);s
-        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'title' => $testimonial->title, 'og' => $og]);
+        return view('testimonials/detail', ['reviews' => $reviews, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'testimonial' => $testimonial, 'og' => $og]);
     }
 }

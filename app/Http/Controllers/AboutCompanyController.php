@@ -89,7 +89,7 @@ class AboutCompanyController extends Controller
         // dd($input);
         Validator::make($request->all(), [
             'title' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
         ])->validate();
 
@@ -128,6 +128,7 @@ class AboutCompanyController extends Controller
 
     public function edit(AboutCompany $aboutcompany)
     {
+        // dd($aboutcompany);
         return view('aboutcompany.edit', ['aboutcompany' => $aboutcompany]);
     }
 
@@ -138,7 +139,7 @@ class AboutCompanyController extends Controller
 
         Validator::make($request->all(), [
             'title' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
         ])->validate();
 

@@ -59,7 +59,7 @@
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="full-editor" name="embed" value>
-                {!!  {{ old('embed', $aboutcompany->embed) }} !!}
+                {!!  old('embed', $aboutcompany->embed) !!}
                 </textarea>
               </div>
             </div>
@@ -132,7 +132,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {

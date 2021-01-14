@@ -1,8 +1,9 @@
 @extends('app')
 
 @section('title')
-<title>Page Not Found - Clean As New®</title>
-<meta content="{{ $og->og_locale != null ? $og->og_locale : ''}}" property="og:locale">
+<title>{{ $og->meta_title != null ? $og->meta_title : 'Page Not Found | Clean As New®' }}</title>
+<meta name="description" content="{{ $og->meta_description != null ? $og->meta_description : 'We\'re very sorry, but the page you requested cannot be found. It may have been moved or deleted.' }}">
+<meta content="{{ $og->og_locale != null ? str_replace('-', '_', $og->og_locale) : ''}}" property="og:locale">
 <meta content="{{ $og->og_site_name != null ? $og->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $og->og_type != null ? $og->og_type : ''}}" property="og:type">
 <meta content="{{ $og->og_url != null ? $og->og_url : ''}}" property="og:url">

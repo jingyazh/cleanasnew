@@ -1,7 +1,17 @@
 @extends('app')
 
 @section('title')
-<title>ESG: How Better Cleaning Can Help</title>
+<title>{{ $siteSetting->esg_sub_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->esg_sub_meta_description }}">
+<meta content="{{ $siteSetting->og_locale_esg != null ? str_replace('-', '_', $siteSetting->og_locale_esg) : ''}}" property="og:locale">
+<meta content="{{ $siteSetting->og_site_name_esg != null ? $siteSetting->og_site_name_esg : ''}}" property="og:site_name" />
+<meta content="{{ $siteSetting->og_type_esg != null ? $siteSetting->og_type_esg : ''}}" property="og:type">
+<meta content="{{ $siteSetting->og_url_esg != null ? $siteSetting->og_url_esg : ''}}" property="og:url">
+<meta content="{{ $siteSetting->og_title_esg != null ? $siteSetting->og_title_esg : ''}}" property="og:title">
+<meta content="{{ $siteSetting->og_description_esg != null ? $siteSetting->og_description_esg : ''}}" property="og:description">
+<meta content="{{ $siteSetting->og_image_esg != null ? $siteSetting->og_image_esg : ''}}" property="og:image" />
+<meta content="{{ $siteSetting->og_image_width_esg != null ? $siteSetting->og_image_width_esg : ''}}" property="og:image:width" />
+<meta content="{{ $siteSetting->og_image_height_esg != null ? $siteSetting->og_image_height_esg : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')

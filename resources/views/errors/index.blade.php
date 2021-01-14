@@ -51,6 +51,18 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($og_404) ? old('meta_title', $og_404->meta_title) : ''}}" placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{isset($og_404) ? old('meta_description', $og_404->meta_description) : ''}}" placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('og:locale')}} </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og_404) ? old('og_locale', $og_404->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
@@ -142,6 +154,18 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($og_410) ? old('meta_title', $og_410->meta_title) : ''}}" placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{isset($og_410) ? old('meta_description', $og_410->meta_description) : ''}}" placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('og:locale')}} </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($og_410) ? old('og_locale', $og_410->og_locale) : ''}}" placeholder="{{__('en_US')}}" />
@@ -230,6 +254,18 @@
                 @endif
               </textarea>
               </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($og_500) ? old('meta_title', $og_500->meta_title) : ''}}" placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{isset($og_500) ? old('meta_description', $og_500->meta_description) : ''}}" placeholder="{{__('Meta Description')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
@@ -328,7 +364,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {
@@ -350,7 +386,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {
@@ -372,7 +408,7 @@
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
-    content_css: ["{{ asset('assets/css/bootstrap.min-cg.css') }}", "{{ asset('assets/css/styles09.css') }}"],
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     external_plugins: {
