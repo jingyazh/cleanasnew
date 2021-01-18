@@ -3,7 +3,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">{{__('Resellers')}} </h1>
+    <h1 class="m-0 text-dark">{{__('Colleagues ')}} </h1>
 @stop
 
 @section('content')

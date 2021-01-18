@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>{{ $siteSetting->service_meta_title }}</title>
-<meta name="description" content="{{ $siteSetting->service_meta_description }}">
+<title>{{ $service->meta_title }}</title>
+<meta name="description" content="{{ $service->meta_description }}">
 <meta content="{{ $service->og_locale != null ? $service->og_locale : ''}}" property="og:locale">
 <meta content="{{ $service->og_site_name != null ? $service->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $service->og_type != null ? $service->og_type : ''}}" property="og:type">

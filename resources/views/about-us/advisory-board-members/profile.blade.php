@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('title')
-<title>{{ isset($board) ? $board->name : '' }} - Advisory Board Members - Clean As New®</title>
+<!-- <title>{{ isset($board) ? $board->name : '' }} - Advisory Board Members - Clean As New®</title> -->
+<title>{{ $board->meta_title != null ? $board->meta_title : 'Advisory Board Members - Clean As New®' }}</title>
+<meta name="description" content="{{ $board->meta_description != null ? $board->meta_description : ''}}">
 <meta content="{{ $board->og_locale != null ? $board->og_locale : ''}}" property="og:locale">
 <meta content="{{ $board->og_site_name != null ? $board->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $board->og_type != null ? $board->og_type : ''}}" property="og:type">

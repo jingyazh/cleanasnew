@@ -88,6 +88,19 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Meta Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($comparison) ? old('meta_title', $comparison->meta_title) : ''}}" required placeholder="{{__('Meta Title')}}" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label>{{__('Meta Description')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="meta_description" class="form-control col-sm-12" value="{{isset($comparison) ? old('meta_description', $comparison->meta_description) : ''}}" required placeholder="{{__('Meta Description')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('og:locale')}} </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="og_locale" class="form-control col-sm-12" value="{{isset($comparison) ? old('og_locale', $comparison->og_locale) : ''}}" placeholder="{{__('en_US')}}" />

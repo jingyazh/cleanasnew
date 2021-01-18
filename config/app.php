@@ -96,7 +96,8 @@ return [
         'cn'    => '中文 (CN)',
         'jp'    => '日本語 (JP)',
         'th'    => 'Thai (TH)',
-        'ml'    => 'Malay (ML)'
+        'ml'    => 'Malay (ML)',
+       /// 'sw'    => 'Swedish' ---> should be match with json file name.. resources/lang/sw.json ///
     ],
 
     /// page menu ///

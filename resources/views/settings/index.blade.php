@@ -58,6 +58,7 @@
             <span>{{ Config::get('app.pages')[$value->key] }} Page</span>
             <span class="editMark"></span>
           </label>
+          <!-- here is top menu -->
           @endforeach
           @endif
           @if(isset($extraPages) && count($extraPages) > 0)

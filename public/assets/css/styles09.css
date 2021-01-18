@@ -156,7 +156,7 @@ h1.tagyes2 {
 	margin: 0;
 	padding: 0;
 }
-.homecontainer p {
+.homecontainer p, .text-dark {
 	font-size: 19px;
 	margin: 0 0 .8em 0
 }/* linkedin button class*/
@@ -641,7 +641,7 @@ section {
 	-ms-flex: 0 0 48%;
 	flex: 0 0 48%;
 	max-width: 48%;
-	height: 0;
+	xheight: 0;
 }
 .col-6 {
 	-ms-flex: 0 0 98%;
@@ -1501,7 +1501,8 @@ a#banner-en {
 	padding-top: 1%;
 }
 .tabs {
-	margin-left: 16.8%;
+	xmargin-left: 16.8%;
+	margin-left:0;
 }
 .scroll {
 	width: 95%;

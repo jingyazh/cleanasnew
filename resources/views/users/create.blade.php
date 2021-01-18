@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">{{__('Add Reseller')}} </h1>
+    <h1 class="m-0 text-dark">{{__('Add Colleagues ')}} </h1>
 @stop
 @section('content')
       <!-- Alert Row  -->
@@ -14,7 +14,7 @@
           @csrf
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">{{__('New Reseller')}}</h3>
+              <h3 class="card-title">{{__('New Colleagues ')}}</h3>
               <div class="card-tools">
                 
               </div>

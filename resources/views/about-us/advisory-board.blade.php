@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('title')
-<title>Clean As New® Advisory Board Members</title>
+<!-- <title>Clean As New® Advisory Board Members</title> -->
+<title>{{ $siteSetting->aboutus_meta_title }}</title>
+<meta name="description" content="{{ $siteSetting->aboutus_meta_description }}">
 <meta content="{{ $og->og_locale != null ? str_replace('-', '_', $og->og_locale) : ''}}" property="og:locale">
 <meta content="{{ $og->og_site_name != null ? $og->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $og->og_type != null ? $og->og_type : ''}}" property="og:type">

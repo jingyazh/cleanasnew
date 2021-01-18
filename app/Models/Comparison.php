@@ -16,6 +16,8 @@ class Comparison extends Model
         'embed', 
         'image_article', 
         'locale', 
+        'meta_title', 
+        'meta_description', 
         'og_locale', 
         'og_site_name', 
         'og_type', 

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-<title>Clean As New® Intro Video & Services;</title>
+<title>Clean As New® - Choose Language</title>
 @endsection
 
 @section('content')
@@ -37,6 +37,9 @@
             <li class="item"><a href="/lang/jp">日本語 (JP)</a><hr></li>
             <li class="item"><a href="/lang/th">Thai (TH)</a><hr></li>
             <li class="item"><a href="/lang/ml">Malay (ML)</a><hr></li>
+            <!-- Add new language here like below -->
+            <!-- <li class="item"><a href="/lang/sw">Swedish</a><hr></li>  -->
+            <!-- You can add like this -->
           </ul>
         </div>
         <div class="col-2">&nbsp; </div>
