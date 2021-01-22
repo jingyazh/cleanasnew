@@ -27,26 +27,61 @@
         </span> </p>
     </div>
   </div>
+  <div class="album bg-light" style="padding-bottom: 2em;">
+    <div class="container">
+      <div class="row">
+        {!! $siteSetting->lang_detail !!}
+      </div>
+    </div>
+  </div>
   <div class="album bg-light">
     <div class="container">
       <div class="row">
         <div class="col-2">&nbsp; </div>
         <div class="col-md-4 padding15">
           <ul class="nav flex-column nav-pills brand-pills" id="myTab" role="tablist">
-            <li class="item"><a href="/lang/en">English </a><hr></li>
-            <li class="item"><a href="/lang/es-us">Español (US)</a><hr></li>
-            <li class="item"><a href="/lang/mx">Español (MX)</a><hr></li>
-            <li class="item"><a href="/lang/fr">Français (FR)</a><hr></li>
-            <li class="item"><a href="/lang/es">Español (ES)</a><hr></li>
-            <li class="item"><a href="/lang/pt-br">Português (BR)</a><hr></li>
-            <li class="item"><a href="/lang/de">Deutsch (DE)</a><hr></li>
-            <li class="item"><a href="/lang/ru">Русский (RU)</a><hr></li>
-            <li class="item"><a href="/lang/hi-in">Hindi (IN)</a><hr></li>
-            <li class="item"><a href="/lang/pa-pk">Punjabi (PK)</a><hr></li>
-            <li class="item"><a href="/lang/cn">中文 (CN)</a><hr></li>
-            <li class="item"><a href="/lang/jp">日本語 (JP)</a><hr></li>
-            <li class="item"><a href="/lang/th">Thai (TH)</a><hr></li>
-            <li class="item"><a href="/lang/ml">Malay (ML)</a><hr></li>
+            <li class="item"><a href="/lang/en">English </a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/es-us">Español (US)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/mx">Español (MX)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/fr">Français (FR)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/es">Español (ES)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/pt-br">Português (BR)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/de">Deutsch (DE)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/ru">Русский (RU)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/hi-in">Hindi (IN)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/pa-pk">Punjabi (PK)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/cn">中文 (CN)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/jp">日本語 (JP)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/th">Thai (TH)</a>
+              <hr>
+            </li>
+            <li class="item"><a href="/lang/ml">Malay (ML)</a>
+              <hr>
+            </li>
             <!-- Add new language here like below -->
             <!-- <li class="item"><a href="/lang/sw">Swedish</a><hr></li>  -->
             <!-- You can add like this -->

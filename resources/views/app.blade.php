@@ -11,7 +11,7 @@
   @if(Request::url() == 'http://localhost:8000' || Request::url() == 'https://cleanasnew.com')
   <link href="{{ asset('assets/css/odometer-theme-car.css?v=20201030') }}" rel="stylesheet">
   @endif
-  <link href="{{Request::url()}}/{{str_replace('-', '_', app()->getLocale())}}" rel="canonical">
+  <link href="{{str_replace('http://localhost:8000', 'http://localhost:8000/' . str_replace('-', '_', app()->getLocale()), Request::url())}}" rel="canonical">
 
   @foreach($gmetadata as $key => $r)
   <meta {!! ($r->name) ? 'name="'.$r->name.'"' : '' !!} {!!

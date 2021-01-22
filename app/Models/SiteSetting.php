@@ -62,6 +62,7 @@ class SiteSetting extends Model
         'terms', 
         'lang_meta_title', 
         'lang_meta_description', 
+        'lang_detail', 
         'og_locale_lang', 
         'og_site_name_lang', 
         'og_type_lang', 

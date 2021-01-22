@@ -236,21 +236,9 @@
     ],
     images_upload_credentials: true,
     extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
-    menubar: true,
+    menubar: false,
     automatic_uploads: true,
-    toolbar: '| responsivefilemanager | undo redo | styleselect | visualblocks | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
-    toolbar_groups: {
-        formatgroup: {
-            icon: 'format',
-            tooltip: 'Formatting',
-            items: 'bold italic underline strikethrough | forecolor backcolor | superscript subscript | removeformat'
-        },
-        paragraphgroup: {
-            icon: 'paragraph',
-            tooltip: 'Paragraph format',
-            items: 'h1 h2 h3 h4 h5 h6'
-        }
-    },
+    toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
     images_upload_handler: example_image_upload_handler,
     content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",

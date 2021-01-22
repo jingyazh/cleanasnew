@@ -166,7 +166,21 @@
                 <input type="text" name="lang_meta_description" class="form-control col-sm-12" value="{{ old('lang_meta_description', $setting->lang_meta_description) }}" required placeholder="{{__('Meta Description')}}" />
               </div>
             </div>
-
+            <div class="form-group col-md-12">
+              <label>{{__('Detail')}} <code>*</code> </label>
+              <div class="col-md-12 mb-4">
+                <div class="mx-auto col-md-12">
+                  <textarea id="lang_detail" required name="lang_detail">
+                @if(isset($setting) && $setting != null)
+                  {!! old('lang_detail', $setting->lang_detail) !!}
+                  @endif
+                </textarea>
+                </div>
+              </div>
+              <small class="ul-form__text form-text ">
+                View example <a href="/assets/examples/service_txt.jpg" target="_blank">here</a>
+              </small>
+            </div>
             <div class="form-group col-md-12">
               <label>{{__('og:locale')}} </label>
               <div style="display: flex; flex-direction: row">
@@ -264,6 +278,31 @@
 @stop
 
 @section('js')
+<script src="{{asset('assets/js/vendor/tinymce.min.js')}}"></script>
+<script src="{{asset('assets/js/tinymce_image_upload.js')}}"></script>
+<script>
+  tinymce.init({
+    selector: '#lang_detail',
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount importcss'
+    ],
+    images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
+    menubar: false,
+    automatic_uploads: true,
+    toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
+    images_upload_handler: example_image_upload_handler,
+    content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
+    external_filemanager_path: "/filemanager/",
+    filemanager_title: "Responsive Filemanager",
+    external_plugins: {
+      "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
+      "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
+    },
+  });
+</script>
 <script>
   function cancel() {
     location.href = "{{ route('settings.index') }}";
