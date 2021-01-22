@@ -1,7 +1,17 @@
 @extends('app')
 
 @section('title')
-<title>Clean As New® - Choose Language</title>
+<title>{{ isset($siteSetting) ? $siteSetting->lang_meta_title : 'Clean As New® - Choose Language'}}</title>
+<meta name="description" content="{{ $siteSetting->lang_meta_description }}">
+<meta content="{{ $siteSetting->og_locale_lang != null ? str_replace('-', '_', $siteSetting->og_locale_lang) : ''}}" property="og:locale">
+<meta content="{{ $siteSetting->og_site_name_lang != null ? $siteSetting->og_site_name_lang : ''}}" property="og:site_name" />
+<meta content="{{ $siteSetting->og_type_lang != null ? $siteSetting->og_type_lang : ''}}" property="og:type">
+<meta content="{{ $siteSetting->og_url_lang != null ? $siteSetting->og_url_lang : ''}}" property="og:url">
+<meta content="{{ $siteSetting->og_title_lang != null ? $siteSetting->og_title_lang : ''}}" property="og:title">
+<meta content="{{ $siteSetting->og_description_lang != null ? $siteSetting->og_description_lang : ''}}" property="og:description">
+<meta content="{{ $siteSetting->og_image_lang != null ? $siteSetting->og_image_lang : ''}}" property="og:image" />
+<meta content="{{ $siteSetting->og_image_width_lang != null ? $siteSetting->og_image_width_lang : ''}}" property="og:image:width" />
+<meta content="{{ $siteSetting->og_image_height_lang != null ? $siteSetting->og_image_height_lang : ''}}" property="og:image:height" />
 @endsection
 
 @section('content')

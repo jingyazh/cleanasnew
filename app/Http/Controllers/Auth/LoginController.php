@@ -23,7 +23,11 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers; -->
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
+    // <--
 
     //... for login with username instead of email
     public function username()
@@ -55,20 +59,24 @@ class LoginController extends Controller
             'lastip' => $request->getClientIp()
         ]);
 
-        $messages = Message::all()->sortByDesc('created_at')->take(5);        
+        $messages = Message::all()->sortByDesc('created_at')->take(5);
         $request->session()->put('master_messages', $messages);
         return redirect('/admin');
-
     }
 
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
-            $this->username() => 'required', 
+            $this->username() => 'required',
             'password' => 'required',
             // 'captcha' => 'required|captcha',
             // 'g-recaptcha-response' => 'required|captcha',
             // new rules here
         ]);
-    }    
+    }
+    public function logout(Request $request)
+    {
+        $this->performLogout($request);
+        return redirect('/admin');
+    }
 }

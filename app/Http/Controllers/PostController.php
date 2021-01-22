@@ -195,23 +195,23 @@ class PostController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $post->fill($input);
 
         if ($request->image_landing != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing->extension();
             if (strpos($post->image_landing, 'upload') != false && is_file($post->image_landing))
                 unlink($post->image_landing);
             $request->image_landing->move(public_path('images/upload'), $image1);
-            $post->fill(['image_landing' => 'images/upload/' . $image1]);
+            $input['image_landing'] = 'images/upload/' . $image1;
         }
         if ($request->image_article != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
             if (strpos($post->image_article, 'upload') != false && is_file($post->image_article))
                 unlink($post->image_article);
             $request->image_article->move(public_path('images/upload'), $image1);
-            $post->fill(['image_article' => 'images/upload/' . $image1]);
+            $input['image_article'] = 'images/upload/' . $image1;
         }
 
+        $post->fill($input);
         $post->save();
 
         return redirect()->route('posts.index');

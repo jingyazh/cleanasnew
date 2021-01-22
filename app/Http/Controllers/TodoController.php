@@ -146,16 +146,16 @@ class TodoController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $todo->fill($input);
 
         if ($request->image != null) {
             $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
             if (strpos($todo->image, 'upload') != false && is_file($todo->image))
                 unlink($todo->image);
             $request->image->move(public_path('images/upload'), $image);
-            $todo->fill(['image' => 'images/upload/' . $image]);
+            $input['image'] = 'images/upload/' . $image;
         }
 
+        $todo->fill($input);
         $todo->save();
 
         return redirect()->route('todos.index');

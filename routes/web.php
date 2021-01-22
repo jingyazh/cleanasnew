@@ -33,7 +33,7 @@ Route::get('/lang/{locale}', function ($locale) {
 
 
 Route::get('/', 'HomeController@view')->name('landing');
-Route::get('/posts/{id}', 'HomeController@postview')->name('postview');
+Route::get('/posts', 'HomeController@postview')->name('postview');
 // Route::view('choose-language', 'choose-language')->name('choose-language');
 Route::get('choose-language', 'HomeController@chooselanguage')->name('choose-language');
 Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-clean');

@@ -207,6 +207,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
@@ -229,6 +230,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
@@ -246,82 +248,10 @@
 </script>
 <!-- tinymce editor -->
 
-<!-- quill editor -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="{{asset('assets/js/vendor/quill.min.js')}}"></script>
-<script src="{{asset('assets/js/quill.script.js')}}"></script> -->
-<!-- quill editor -->
 
 <!-- dropzone -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 <script>
-  // Dropzone.autoDiscover = false;
-  // $(document).ready(function() {
-  //   var dropzone = new Dropzone('#demo-upload', {
-  //     previewTemplate: document.querySelector('#preview-template').innerHTML,
-  //     parallelUploads: 1,
-  //     thumbnailHeight: 120,
-  //     thumbnailWidth: 120,
-  //     maxFilesize: 1,
-  //     filesizeBase: 1000,
-  //     // thumbnail: function(file, dataUrl) {
-  //     //   if (file.previewElement) {
-  //     //     file.previewElement.classList.remove("dz-file-preview");
-  //     //     var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-  //     //     for (var i = 0; i < images.length; i++) {
-  //     //       var thumbnailElement = images[i];
-  //     //       thumbnailElement.alt = file.name;
-  //     //       thumbnailElement.src = dataUrl;
-  //     //     }
-  //     //     setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-  //     //   }
-  //     // }
-
-  //   });
-
-
-  //   // Now fake the file upload, since GitHub does not handle file uploads
-  //   // and returns a 404
-
-  //   var minSteps = 6,
-  //     maxSteps = 60,
-  //     timeBetweenSteps = 100,
-  //     bytesPerStep = 100000;
-
-  //   dropzone.uploadFiles = function(files) {
-  //     var self = this;
-
-  //     for (var i = 0; i < files.length; i++) {
-
-  //       var file = files[i];
-  //       totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-  //       for (var step = 0; step < totalSteps; step++) {
-  //         var duration = timeBetweenSteps * (step + 1);
-  //         setTimeout(function(file, totalSteps, step) {
-  //           return function() {
-  //             file.upload = {
-  //               progress: 100 * (step + 1) / totalSteps,
-  //               total: file.size,
-  //               bytesSent: (step + 1) * file.size / totalSteps
-  //             };
-
-  //             self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-  //             if (file.upload.progress == 100) {
-  //               file.status = Dropzone.SUCCESS;
-  //               self.emit("success", file, 'success', null);
-  //               self.emit("complete", file);
-  //               self.processQueue();
-  //               //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-  //             }
-  //           };
-  //         }(file, totalSteps, step), duration);
-  //       }
-  //     }
-  //   }
-
-  // })
-
 
   $("#btnDeleteClient").click(function() {
     if (confirm("{{__('Would you like to delete this data?')}}") == false)

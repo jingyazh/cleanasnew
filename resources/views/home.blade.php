@@ -31,7 +31,7 @@
             <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="Clean As New®, Baytown Texas." />
                 <div class="carousel-caption" style="position:absolute; z-index:10001">
                     <div class="hbuttons">
-                        <div class="hcontainer"> <a href="{{ route('postview', $post->id) }}" class="hbtn hbtn-1">
+                        <div class="hcontainer"> <a href="{{ route('postview', ['title' => str_replace(' ', '-', $post->title), 'page' => $post->id]) }}" class="hbtn hbtn-1">
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
@@ -191,47 +191,6 @@
         }],
         "sameAs": [" https://www.youtube.com/channel/UCcFZy-VYRn5Bl2urjVl5ZTA", " https://www.facebook.com/cangc01", " https://twitter.com/cleanasnew01", " https://www.linkedin.com/company/28654089 "]
     }
-</script>
-<script src="assets/js/odometer.js"></script>
-<script>
-    var odometer = document.getElementById("odometer");
-    var loader = document.getElementById("loader");
-    var Num;
-    window.addEventListener("load", function() {
-        "use strict";
-        loader.style.display = 'block';
-        // var val = localStorage.getItem("Odometer");
-        var val = "{{ $siteSetting->home_discounter }}";
-        if (val && parseInt(val) !== NaN) {
-            Num = parseInt(val);
-        } else {
-
-            //  current_date will return us today's time 
-            var current_date = new Date().getTime();
-
-            // prev_date will return us given date's time
-            var prev_date = new Date("May 1, 2020 00:00:01").getTime();
-
-            // Days will return us the difference of prev_date to current_date in days
-            //var Days = Math.round((current_date - prev_date) / (1000 * 3600 * 24)) * 172800;
-            var Gallons = Math.round((current_date - prev_date) / (1000)) * 13.888; // gallons per second
-
-            // saving these values to the local storage of the web	
-            // it will be better if you store it in database that you've own so that these values will remain the same for everyone
-            localStorage.setItem("Odometer", Gallons);
-
-            Num = Gallons;
-        }
-        if (parseInt(Num) !== NaN) {
-
-            setInterval(function() {
-                Num = parseInt(Num) + 2;
-                odometer.innerHTML = Num;
-                localStorage.setItem("Odometer", Num);
-                loader.style.display = 'none';
-            }, 2000); // increase every two second
-        }
-    });
 </script>
 <script src="https://cleanasnew.com/assets/js/lazysizes.min.js" async></script>
 @endsection

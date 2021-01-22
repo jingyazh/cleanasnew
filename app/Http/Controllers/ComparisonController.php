@@ -191,14 +191,13 @@ class ComparisonController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $comparison->fill($input);
 
         if ($request->image_landing_1 != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
             if (strpos($comparison->image_landing_1, 'upload') != false && is_file($comparison->image_landing_1))
                 unlink($comparison->image_landing_1);
             $request->image_landing_1->move(public_path('images/upload'), $image1);
-            $comparison->fill(['image_landing_1' => 'images/upload/' . $image1]);
+            $input['image_landing_1'] = 'images/upload/' . $image1;
         }
 
         if ($request->image_landing_2 != null) {
@@ -206,9 +205,10 @@ class ComparisonController extends Controller
             if (strpos($comparison->image_landing_2, 'upload') != false && is_file($comparison->image_landing_2))
                 unlink($comparison->image_landing_2);
             $request->image_landing_2->move(public_path('images/upload'), $image2);
-            $comparison->fill(['image_landing_2' => 'images/upload/' . $image2]);
+            $input['image_landing_2'] = 'images/upload/' . $image2;
         }
 
+        $comparison->fill($input);
         $comparison->save();
 
         return redirect()->route('comparisons.index');
@@ -233,7 +233,7 @@ class ComparisonController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $comparison = Comparison::where('id', $request->id)->first();
+        $comparison = Comparison::where('compareid', $request->id)->where('locale', $locale)->first();
         if ($comparison == null) {
             $siteSetting = SiteSetting::where('locale', $locale)->first();
             $menuSetting = MainSetting::all();

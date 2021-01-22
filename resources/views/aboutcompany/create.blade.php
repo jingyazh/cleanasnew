@@ -34,24 +34,6 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-
-          <!-- @if(count($aboutcompany) > 0)
-          <div class="form-group col-md-12">
-            <label>{{__('Update New Language Version')}} <code>*</code> </label>
-            <div style="display: flex; flex-direction: row; width:100px;">
-              <input type="checkbox" id="checkbox" onchange="handleChange()" class="form-control col-sm-12" />
-            </div>
-          </div>
-          @endif
-          <div class="form-group col-md-12" id="articleid" style="display: none;">
-            <label>{{__('Select title')}}<code>*</code> </label>
-            <select class="form-control col-sm-12" name="articleid" id="compareSelector" v-model="locale">
-              <option value="" label="Please select title" selected></option>
-              @foreach ($aboutcompany as $key => $item)
-              <option value="{{ $item->articleid }}" label="{{ $item->title }}"></option>
-              @endforeach
-            </select>
-          </div> -->
           <div class="form-group col-md-12">
             <label>{{__('Language')}}<code>*</code> </label>
             <select class="form-control col-sm-12" name="locale" v-model="locale" disabled>
@@ -74,9 +56,6 @@
                 <input type="file" required name="image" class="custom-file-input-" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
               </div>
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-              </div> -->
             </div>
 
             <small id="passwordHelpBlock" class="ul-form__text form-text ">
@@ -125,6 +104,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',

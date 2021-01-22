@@ -32,15 +32,9 @@
           </div>
           @endif
           <div class="form-group col-md-12">
-            <label>{{__('Title')}}<code>*</code> </label>
-            <div class="col-md-12 mb-4">
-              <div class="mx-auto col-md-12">
-                <textarea id="title" name="title">
-                @if($faq)
-                {!! $faq->title !!}
-                @endif
-                </textarea>
-              </div>
+            <label>{{__('Title')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="title" class="form-control col-sm-12" value="{{isset($faq) ? strip_tags($faq->title) : ''}}" required placeholder="{{__('Title')}}" />
             </div>
           </div>
           <div class="form-group col-md-12">
@@ -119,6 +113,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
@@ -141,6 +136,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',

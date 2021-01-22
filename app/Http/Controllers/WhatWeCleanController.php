@@ -149,16 +149,16 @@ class WhatWeCleanController extends Controller
             // 'embed' => 'required',
         ])->validate();
 
-        $clean->fill($input);
 
         if ($request->image != null) {
             $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
             if (strpos($clean->image, 'upload') != false && is_file($clean->image))
                 unlink($clean->image);
             $request->image->move(public_path('images/upload'), $image);
-            $clean->fill(['image' => 'images/upload/' . $image]);
+            $input['image'] = 'images/upload/' . $image;
         }
 
+        $clean->fill($input);
         $clean->save();
 
         return redirect()->route('cleans.index');

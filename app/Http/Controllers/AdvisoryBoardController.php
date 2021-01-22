@@ -144,16 +144,16 @@ class AdvisoryBoardController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $advisory_board->fill($input);
 
         if ($request->image != null) {
             $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
             if (strpos($advisory_board->image, 'upload') != false && is_file($advisory_board->image))
                 unlink($advisory_board->image);
             $request->image->move(public_path('images/upload'), $image);
-            $advisory_board->fill(['image' => 'images/upload/' . $image]);
+            $input['image'] = 'images/upload/' . $image;
         }
 
+        $advisory_board->fill($input);
         $advisory_board->save();
 
         return redirect()->route('aboutus.index');
@@ -192,7 +192,7 @@ class AdvisoryBoardController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $board = AdvisoryBoard::where('id', $request->id)->first();
+        $board = AdvisoryBoard::where('memberid', $request->id)->where('locale', $locale)->first();
         if ($board == null) {
             $siteSetting = SiteSetting::where('locale', $locale)->first();
             $menuSetting = MainSetting::all();

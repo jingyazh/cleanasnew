@@ -31,7 +31,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <div class="form-group col-md-12">
+          <!-- <div class="form-group col-md-12">
             <label>{{__('Service Page Image')}} <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
@@ -51,9 +51,9 @@
               | Current Image <a href="/{{ $setting->service_image }}" target="_blank">here</a>
               @endif
             </small>
-          </div>
+          </div> -->
           <div class="form-group col-md-12">
-            <label>{{__('Service Page Text')}} <code>*</code> </label>
+            <label>{{__('Service Page Banner')}} <code>*</code> </label>
             <div class="col-md-12 mb-4">
               <div class="mx-auto col-md-12">
                 <textarea id="service_txt" required name="service_txt">
@@ -233,6 +233,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
+    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',

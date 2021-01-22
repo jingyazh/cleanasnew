@@ -175,15 +175,15 @@ class AboutUsController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ])->validate();
 
-        $aboutus->fill($input);
 
         if ($request->image != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
             if (strpos($aboutus->image, 'upload') != false && is_file($aboutus->image))
                 unlink($aboutus->image);
             $request->image->move(public_path('images/upload'), $image1);
-            $aboutus->fill(['image' => 'images/upload/' . $image1]);
+            $input['image'] = 'images/upload/' . $image1;
         }
+        $aboutus->fill($input);
 
         $aboutus->save();
 

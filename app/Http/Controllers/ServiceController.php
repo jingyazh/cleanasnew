@@ -119,7 +119,7 @@ class ServiceController extends Controller
         $locale = session('locale');
         if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
-        
+
         if (isset($_POST['serviceid']) && $_POST['serviceid'] != NULL && trim($_POST['serviceid']) != "") {
             $checking = Service::where('serviceid', $request->serviceid)->where('locale', $request->locale)->get();
             if (count($checking) > 0) {
@@ -200,14 +200,13 @@ class ServiceController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $service->fill($input);
 
         if ($request->image_landing_1 != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
             if (strpos($service->image_landing_1, 'upload') != false && is_file($service->image_landing_1))
                 unlink($service->image_landing_1);
             $request->image_landing_1->move(public_path('images/upload'), $image1);
-            $service->fill(['image_landing_1' => 'images/upload/' . $image1]);
+            $input['image_landing_1'] = 'images/upload/' . $image1;
         }
 
         if ($request->image_landing_2 != null) {
@@ -215,15 +214,16 @@ class ServiceController extends Controller
             if (strpos($service->image_landing_2, 'upload') != false && is_file($service->image_landing_2))
                 unlink($service->image_landing_2);
             $request->image_landing_2->move(public_path('images/upload'), $image2);
-            $service->fill(['image_landing_2' => 'images/upload/' . $image2]);
+            $input['image_landing_2'] = 'images/upload/' . $image1;
         }
         if ($request->image_article != null) {
             $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
             if (strpos($service->image_article, 'upload') != false && is_file($service->image_article))
                 unlink($service->image_article);
             $request->image_article->move(public_path('images/upload'), $image2);
-            $service->fill(['image_article' => 'images/upload/' . $image2]);
+            $input['image_article'] = 'images/upload/' . $image1;
         }
+        $service->fill($input);
 
         $service->save();
 
@@ -264,10 +264,10 @@ class ServiceController extends Controller
 
     public function detail(Request $request)
     {
-        $service = Service::where('id', $request->id)->first();
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
+        $service = Service::where('serviceid', $request->id)->where('locale', $locale)->first();
         if ($service == null) {
             $siteSetting = SiteSetting::where('locale', $locale)->first();
             $menuSetting = MainSetting::all();

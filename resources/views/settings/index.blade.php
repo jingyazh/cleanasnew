@@ -15,18 +15,19 @@
 
 @section('css')
 <style>
-.editMark {
-  justify-content: flex-end;
-  z-index: 1;
-  color: gray;
-  float: right;
-  opacity: 0.8;
-}
-.editMark:hover {
-  color: black;
-  transform: scale(1.2);
-  opacity: 1;
-}
+  .editMark {
+    justify-content: flex-end;
+    z-index: 1;
+    color: gray;
+    float: right;
+    opacity: 0.8;
+  }
+
+  .editMark:hover {
+    color: black;
+    transform: scale(1.2);
+    opacity: 1;
+  }
 </style>
 @stop
 
@@ -140,6 +141,95 @@
       </div>
       <!-- /.card-body -->
     </div>
+    <!-- /.card -->
+  </div>
+  <div class="col-12">
+    <form action="{{route('settings.update', $setting->id)}}" method="POST">
+      {{ method_field('PUT') }}
+      @csrf
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">{{__('Choose Language Page Setting')}} </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="form-group col-md-12">
+            <div class="form-group col-md-12">
+              <label>{{__('Meta Title')}} <code>*</code> </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="lang_meta_title" class="form-control col-sm-12" value="{{ old('lang_meta_title', $setting->lang_meta_title) }}" required placeholder="{{__('Meta Title')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('Meta Description')}} <code>*</code> </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="lang_meta_description" class="form-control col-sm-12" value="{{ old('lang_meta_description', $setting->lang_meta_description) }}" required placeholder="{{__('Meta Description')}}" />
+              </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label>{{__('og:locale')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_locale_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_locale_lang', $setting->og_locale_lang) : ''}}" placeholder="{{__('en_US')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:site_name')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_site_name_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_site_name_lang', $setting->og_site_name_lang) : ''}}" placeholder="{{__('Clean As New Powered by Tech Sonic®')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:type')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_type_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_type_lang', $setting->og_type_lang) : ''}}" placeholder="{{__('website')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:url')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_url_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_url_lang', $setting->og_url_lang) : ''}}" placeholder="{{__('https://cleanasnew.com')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:title')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_title_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_title_lang', $setting->og_title_lang) : ''}}" placeholder="{{__('Clean As New')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:description')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_description_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_description_lang', $setting->og_description_lang) : ''}}" placeholder="{{__('Clean As New')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:image')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_image_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_image_lang', $setting->og_image_lang) : ''}}" placeholder="{{__('https://cleanasnew.com/assets/img/fb-clean-as-new-in-baytown.jpg')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:image:width')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_image_width_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_image_width_lang', $setting->og_image_width_lang) : ''}}" placeholder="{{__('1200')}}" />
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>{{__('og:image:height')}} </label>
+              <div style="display: flex; flex-direction: row">
+                <input type="text" name="og_image_height_lang" class="form-control col-sm-12" value="{{isset($setting) ? old('og_image_height_lang', $setting->og_image_height_lang) : ''}}" placeholder="{{__('630')}}" />
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">{{__('Apply')}}</button>
+          </div>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </form>
     <!-- /.card -->
   </div>
 </div>

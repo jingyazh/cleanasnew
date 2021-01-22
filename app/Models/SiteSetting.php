@@ -60,6 +60,17 @@ class SiteSetting extends Model
         'errorpage500', 
         'privacy', 
         'terms', 
+        'lang_meta_title', 
+        'lang_meta_description', 
+        'og_locale_lang', 
+        'og_site_name_lang', 
+        'og_type_lang', 
+        'og_url_lang', 
+        'og_title_lang', 
+        'og_description_lang', 
+        'og_image_lang', 
+        'og_image_width_lang', 
+        'og_image_height_lang',
         'locale',
     ];
 }

@@ -49,10 +49,6 @@
                 <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ __($value->title) }} </a></li>
                 @endif
                 @endforeach
-                <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">{{__("Triangular Pitch")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">{{__("Twisted Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li> -->
               </ul>
               <hr>
             </li>
@@ -65,29 +61,10 @@
                 <li class="nav-item"><a class="nav-link {{ $key == 0 ? 'active' : ''}}" id="{{lcfirst(str_replace(' ', '-', $value->title))}}-tab" data-toggle="tab" href="#{{lcfirst(str_replace(' ', '-', $value->title))}}" role="tab" aria-controls="{{lcfirst(str_replace(' ', '-', $value->title))}}" aria-selected="true">{{ __($value->title) }} </a></li>
                 @endif
                 @endforeach
-                <!-- <li class="nav-item"><a class="nav-link active" id="utube-tab" data-toggle="tab" href="#utube" role="tab" aria-controls="utube" aria-selected="true">{{__("U-Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link active" id="triangular-tab" data-toggle="tab" href="#triangular" role="tab" aria-controls="triangular" aria-selected="true">{{__("Triangular Pitch")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="twisted-tab" data-toggle="tab" href="#twisted" role="tab" aria-controls="twisted" aria-selected="true">{{__("Twisted Tube")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="exchanger-tab" data-toggle="tab" href="#exchanger" role="tab" aria-controls="exchanger" aria-selected="true">{{__("Welded Plate-and-Frame")}} </a></li> -->
               </ul>
               <hr>
             </li>
             @endif
-
-            <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{__("Parts")}} <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li class="nav-item"><a class="nav-link active" id="valves-tab" data-toggle="tab" href="#valves" role="tab" aria-controls="valves" aria-selected="true">{{__("Valves")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="filters-tab" data-toggle="tab" href="#filters" role="tab" aria-controls="filters" aria-selected="true">{{__("Filters")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="structured-tab" data-toggle="tab" href="#structured" role="tab" aria-controls="structured" aria-selected="true">{{__("Structured Packing")}}</a></li>
-                <li class="nav-item"><a class="nav-link" id="unstructured-tab" data-toggle="tab" href="#unstructured" role="tab" aria-controls="unstructured" aria-selected="true">{{__("Unstructured Packing")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="rotating-tab" data-toggle="tab" href="#rotating" role="tab" aria-controls="rotating" aria-selected="true">{{__("Rotating Equipment")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="scaffolding-tab" data-toggle="tab" href="#scaffolding" role="tab" aria-controls="scaffolding" aria-selected="true"> {{__("Scaffolding")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="trays-tab" data-toggle="tab" href="#trays" role="tab" aria-controls="trays" aria-selected="true"> {{__("Column Trays")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="pots-tab" data-toggle="tab" href="#pots" role="tab" aria-controls="pots" aria-selected="true"> {{__("Seal Pots")}} </a></li>
-                <li class="nav-item"><a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="parts" aria-selected="true"> {{__("Many other parts")}}</a></li>
-              </ul>
-              <hr>
-            </li> -->
           </ul>
           <h3 class="bigTitle text-center">
             @if(isset($siteSetting) && $siteSetting != null)
@@ -115,12 +92,6 @@
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
           @if(isset($data) && $data != null)
           @foreach($data as $key => $value)
-          <!-- <div class="tab-pane fade {{ $key == 0 ? 'show active' : ''}}" id="{{str_replace(' ', '-', $value->title)}}" role="tabpanel" aria-labelledby="{{str_replace(' ', '-', $value->title)}}">
-              <h2>{{ __($value->title) }}</h2>
-              {!! $value->embed !!}
-              <img data-src="{{ $value->image }}" alt="{{ __($value->title) }}" src="https://cleanasnew.com/assets/img/1px.png" class="img-fluid polaroid lazyload" />
-            </div> -->
-
 
           <div class="card">
             <div class="card-header" role="tab" id="{{lcfirst(str_replace(' ', '-', $value->title))}}12">

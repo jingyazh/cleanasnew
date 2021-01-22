@@ -254,14 +254,13 @@ class TestimonialController extends Controller
             'image_2' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ])->validate();
 
-        $testimonial->fill($input);
 
         if ($request->image_1 != null) {
             $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_1->extension();
             if (strpos($testimonial->image_1, 'upload') != false && is_file($testimonial->image_1))
                 unlink($testimonial->image_1);
             $request->image_1->move(public_path('images/upload'), $image1);
-            $testimonial->fill(['image_1' => 'images/upload/' . $image1]);
+            $input['image_1'] = 'images/upload/' . $image1;
         }
 
         if ($request->image_2 != null) {
@@ -270,8 +269,10 @@ class TestimonialController extends Controller
                 unlink($testimonial->image_2);
             $request->image_2->move(public_path('images/upload'), $image2);
             $testimonial->fill(['image_2' => 'images/upload/' . $image2]);
+            $input['image_2'] = 'images/upload/' . $image2;
         }
 
+        $testimonial->fill($input);
         $testimonial->save();
 
         return redirect()->route('testimonials.index');
@@ -319,7 +320,7 @@ class TestimonialController extends Controller
         $locale = session('locale');
         if ($locale == null)
             $locale = 'en';
-        $testimonial = Testimonial::where('testimonialid', $id)->first();
+        $testimonial = Testimonial::where('testimonialid', $id)->where('locale', $locale)->first();
         if ($testimonial == null) {
             $siteSetting = SiteSetting::where('locale', $locale)->first();
             $menuSetting = MainSetting::all();

@@ -125,9 +125,14 @@ class HomeController extends Controller
     }
 
     //... Post View
-    public function postview($id) {
-        $post = Post::where('id', $id)->first();
+    public function postview(Request $request) {
+        $id = $request->page;
         $extraPages = ExtraPage::where('locale', $this->locale)->get();
+        $post = Post::where('id', $id)->where('locale', $this->locale)->first();
+        if ($post == null){
+            $og = OpenGraph::where('locale', $this->locale)->where('name', '404')->first();
+            return response()->view('404', ['siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 404);
+        }
 
         return view('postview', ['post' => $post, 'siteSetting' => $this->siteSetting, 'menuSetting' => $this->menuSetting, 'extraPages' => $extraPages]);
     }

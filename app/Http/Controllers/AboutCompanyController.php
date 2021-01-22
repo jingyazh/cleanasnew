@@ -143,16 +143,16 @@ class AboutCompanyController extends Controller
             'embed' => 'required',
         ])->validate();
 
-        $aboutcompany->fill($input);
 
         if ($request->image != null) {
             $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
             if (strpos($aboutcompany->image, 'upload') != false && is_file($aboutcompany->image))
                 unlink($aboutcompany->image);
             $request->image->move(public_path('images/upload'), $image);
-            $aboutcompany->fill(['image' => 'images/upload/' . $image]);
+            $input['image'] = 'images/upload/' . $image;
         }
 
+        $aboutcompany->fill($input);
         $aboutcompany->save();
 
         return redirect()->route('aboutus.index');

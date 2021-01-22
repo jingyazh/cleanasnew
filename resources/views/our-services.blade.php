@@ -31,16 +31,12 @@
     <div class="container">
       <div class="row"> 
         <a href="#" data-toggle="modal" data-target="#myModal">
-          <div class="front-picture"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/calculating-profits.jpg" class="img-fluid desktopNone lazyload" alt="Calculating profits." /> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/clean-as-new-services.jpg?v=20200917" class="mobileNone img-fluid  lazyload" alt="Calculating profits." />
-            <div class="des">
-              <p><i class="fa fa-line-chart padding15" aria-hidden="true"></i>{{__(" Compare The Benefits Of Our Different Service Options With Traditional Wash Pad Hydroblasting ")}}</p>
-            </div>
-          </div>
+          {!! $siteSetting->service_txt !!}
         </a>
         @if(isset($services) && $services != null)
         @foreach($services as $key => $value)
         <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/{{ $value->id }}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_1}}" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_2}}" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
+          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/{{ $value->serviceid }}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_1}}" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_2}}" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
             <div class="card-body">
               <p class="text-center"><a href="services/{{ $value->id }}">{{__($value->title)}}</a></p>
             </div>
@@ -48,37 +44,6 @@
         </div>
         @endforeach
         @endif
-        <!-- <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/offsite-facility"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/baytown-cleaning-facility.jpg" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/services/baytown-cleaning-facility-sm.jpg" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
-            <div class="card-body">
-              <p class="text-center"><a href="services/offsite-facility">{{__("Offsite Cleaning")}}</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/by-the-basket"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/basket-of-parts.jpg?v=20201005" class="img-fluid desktopNone  lazyload" alt="Parts cleaning service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/basket-of-parts-sm.jpg?v=20201005" class="img-fluid mobileNone  lazyload" alt="Parts cleaning service." /></a>
-            <div class="card-body">
-              <p class="text-center"><a href="services/by-the-basket">{{__("By The Basket")}}</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/washpad-services"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/onsite-facility-service.jpg" class=" img-fluid desktopNone  lazyload" alt="On your wash pad service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/onsite-facility-service-sm.jpg" class="img-fluid mobileNone  lazyload" alt="On your wash pad service." /></a>
-            <div class="card-body">
-              <p class="text-center"><a href="services/washpad-services">{{__("Wash Pad Services")}}</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/replace-your-wash-pad"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="https://cleanasnew.com/assets/img/services/offsite-facility-drawing.jpg" class="img-fluid desktopNone lazyload" alt="Replace Your Wash Pad service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/comparison/clean-as-new-facility-drawing.jpg?v=20200928" class="mobileNone lazyload" alt="Facility drawing by Clean As New®!" /></a>
-            <div class="card-body">
-              <p class="text-center"><a href="services/replace-your-wash-pad">{{__("Replace Your Wash Pad")}}</a></p>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- end-->
-
       </div>
     </div>
   </div>

@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>Heat Exchanger Cleaning Services - Clean As New® (China)</title>
+<title>{{ $post->meta_title != null ? $post->meta_title : 'Heat Exchanger Cleaning Services - Clean As New®'}}</title>
+<meta name="description" content="{{ $post->meta_description }}">
 <meta content="{{ $post->og_locale != null ? $post->og_locale : ''}}" property="og:locale">
 <meta content="{{ $post->og_site_name != null ? $post->og_site_name : ''}}" property="og:site_name" />
 <meta content="{{ $post->og_type != null ? $post->og_type : ''}}" property="og:type">
@@ -26,7 +27,13 @@
                 </span> </p>
         </div>
     </div>
-    {!! $post->embed !!}
+    <div class="album bg-light">
+        <div class="container">
+            <div class="row">
+                {!! $post->embed !!}
+            </div>
+        </div>
+    </div>
 </main>
 
 @include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
@@ -65,65 +72,6 @@
         "url": "https://cleanasnew.com/",
         "name": "Clean As New®"
     }
-</script>
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@id": " https://cleanasnew.com/#organization",
-        "@type": "Organization",
-        "name": "Clean As New®",
-        "url": " https://cleanasnew.com/",
-        "logo": " https://cleanasnew.com/imgs/CLean-As-New-logo600.png",
-        "contactPoint": [{
-            "@type": "ContactPoint",
-            "telephone": " +1.832-271-2666 ",
-            "contactType": "customer support",
-            "contactOption": "TollFree",
-            "areaServed": "Worldwide",
-            "availableLanguage": ["English"]
-        }],
-        "sameAs": [" https://www.youtube.com/channel/UCcFZy-VYRn5Bl2urjVl5ZTA", " https://www.facebook.com/cangc01", " https://twitter.com/cleanasnew01", " https://www.linkedin.com/company/28654089 "]
-    }
-</script>
-<script src="assets/js/odometer.js"></script>
-<script>
-    var odometer = document.getElementById("odometer");
-    var loader = document.getElementById("loader");
-    var Num;
-    window.addEventListener("load", function() {
-        "use strict";
-        loader.style.display = 'block';
-        var val = localStorage.getItem("Odometer");
-        if (val && parseInt(val) !== NaN) {
-            Num = parseInt(val);
-        } else {
-
-            //  current_date will return us today's time 
-            var current_date = new Date().getTime();
-
-            // prev_date will return us given date's time
-            var prev_date = new Date("May 1, 2020 00:00:01").getTime();
-
-            // Days will return us the difference of prev_date to current_date in days
-            //var Days = Math.round((current_date - prev_date) / (1000 * 3600 * 24)) * 172800;
-            var Gallons = Math.round((current_date - prev_date) / (1000)) * 13.888; // gallons per second
-
-            // saving these values to the local storage of the web	
-            // it will be better if you store it in database that you've own so that these values will remain the same for everyone
-            localStorage.setItem("Odometer", Gallons);
-
-            Num = Gallons;
-        }
-        if (parseInt(Num) !== NaN) {
-
-            setInterval(function() {
-                Num = parseInt(Num) + 2;
-                odometer.innerHTML = Num;
-                localStorage.setItem("Odometer", Num);
-                loader.style.display = 'none';
-            }, 2000); // increase every two second
-        }
-    });
 </script>
 <script src="https://cleanasnew.com/assets/js/lazysizes.min.js" async></script>
 @endsection
