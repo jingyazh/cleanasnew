@@ -113,7 +113,7 @@ class AdvisoryBoardController extends Controller
 
         $advisory_board = AdvisoryBoard::create($input);
 
-        $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $image = $request->file('image')->getClientOriginalName();
         $request->image->move(public_path('images/upload'), $image);
         $advisory_board->fill(['image' => 'images/upload/' . $image]);
 
@@ -146,7 +146,7 @@ class AdvisoryBoardController extends Controller
 
 
         if ($request->image != null) {
-            $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            $image = $request->file('image')->getClientOriginalName();
             if (strpos($advisory_board->image, 'upload') != false && is_file($advisory_board->image))
                 unlink($advisory_board->image);
             $request->image->move(public_path('images/upload'), $image);

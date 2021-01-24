@@ -118,7 +118,7 @@ class WhatWeCleanController extends Controller
 
         $clean = WhatWeClean::create($input);
 
-        $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $image = $request->file('image')->getClientOriginalName();
         $request->image->move(public_path('images/upload'), $image);
         $clean->fill(['image' => 'images/upload/' . $image]);
 
@@ -151,7 +151,7 @@ class WhatWeCleanController extends Controller
 
 
         if ($request->image != null) {
-            $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            $image = $request->file('image')->getClientOriginalName();
             if (strpos($clean->image, 'upload') != false && is_file($clean->image))
                 unlink($clean->image);
             $request->image->move(public_path('images/upload'), $image);

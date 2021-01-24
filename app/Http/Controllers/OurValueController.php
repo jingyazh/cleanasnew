@@ -117,7 +117,7 @@ class OurValueController extends Controller
 
         $value = OurValue::create($input);
 
-        $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $image = $request->file('image')->getClientOriginalName();
         $request->image->move(public_path('images/upload'), $image);
         $value->fill(['image' => 'images/upload/' . $image]);
 
@@ -149,7 +149,7 @@ class OurValueController extends Controller
 
 
         if ($request->image != null) {
-            $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            $image = $request->file('image')->getClientOriginalName();
             if (strpos($value->image, 'upload') != false && is_file($value->image))
                 unlink($value->image);
             $request->image->move(public_path('images/upload'), $image);

@@ -133,13 +133,13 @@ class ComparisonController extends Controller
         
         $comparison = Comparison::create($input); 
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
+        $image1 = $request->file('image_landing_1')->getClientOriginalName();
         if (strpos($comparison->image_landing_1, 'upload') != false && is_file($comparison->image_landing_1))
             unlink($comparison->image_landing_1);
         $request->image_landing_1->move(public_path('images/upload'), $image1);
         $comparison->fill(['image_landing_1' => 'images/upload/' . $image1]);
 
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
+        $image2 = $request->file('image_landing_2')->getClientOriginalName();
         if (strpos($comparison->image_landing_2, 'upload') != false && is_file($comparison->image_landing_2))
             unlink($comparison->image_landing_2);
         $request->image_landing_2->move(public_path('images/upload'), $image2);
@@ -193,7 +193,7 @@ class ComparisonController extends Controller
 
 
         if ($request->image_landing_1 != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
+            $image1 = $request->file('image_landing_1')->getClientOriginalName();
             if (strpos($comparison->image_landing_1, 'upload') != false && is_file($comparison->image_landing_1))
                 unlink($comparison->image_landing_1);
             $request->image_landing_1->move(public_path('images/upload'), $image1);
@@ -201,7 +201,7 @@ class ComparisonController extends Controller
         }
 
         if ($request->image_landing_2 != null) {
-            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
+            $image2 = $request->file('image_landing_2')->getClientOriginalName();
             if (strpos($comparison->image_landing_2, 'upload') != false && is_file($comparison->image_landing_2))
                 unlink($comparison->image_landing_2);
             $request->image_landing_2->move(public_path('images/upload'), $image2);

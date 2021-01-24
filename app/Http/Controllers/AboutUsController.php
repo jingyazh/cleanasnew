@@ -125,7 +125,7 @@ class AboutUsController extends Controller
 
         $aboutus = AboutUs::create($input);
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $image1 = $request->file('image')->getClientOriginalName();
         if (strpos($aboutus->image, 'upload') != false && is_file($aboutus->image))
             unlink($aboutus->image);
         $request->image->move(public_path('images/upload'), $image1);
@@ -177,7 +177,7 @@ class AboutUsController extends Controller
 
 
         if ($request->image != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            $image1 = $request->file('image')->getClientOriginalName();
             if (strpos($aboutus->image, 'upload') != false && is_file($aboutus->image))
                 unlink($aboutus->image);
             $request->image->move(public_path('images/upload'), $image1);

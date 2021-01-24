@@ -135,19 +135,19 @@ class ServiceController extends Controller
 
         $service = Service::create($input);
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
+        $image1 = $request->file('image_landing_1')->getClientOriginalName();
         if (strpos($service->image_landing_1, 'upload') != false && is_file($service->image_landing_1))
             unlink($service->image_landing_1);
         $request->image_landing_1->move(public_path('images/upload'), $image1);
         $service->fill(['image_landing_1' => 'images/upload/' . $image1]);
 
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
+        $image2 = $request->file('image_landing_2')->getClientOriginalName();
         if (strpos($service->image_landing_2, 'upload') != false && is_file($service->image_landing_2))
             unlink($service->image_landing_2);
         $request->image_landing_2->move(public_path('images/upload'), $image2);
         $service->fill(['image_landing_2' => 'images/upload/' . $image2]);
 
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
+        $image2 = $request->file('image_article')->getClientOriginalName();
         if (strpos($service->image_article, 'upload') != false && is_file($service->image_article))
             unlink($service->image_article);
         $request->image_article->move(public_path('images/upload'), $image2);
@@ -202,7 +202,7 @@ class ServiceController extends Controller
 
 
         if ($request->image_landing_1 != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_1->extension();
+            $image1 = $request->file('image_landing_1')->getClientOriginalName();
             if (strpos($service->image_landing_1, 'upload') != false && is_file($service->image_landing_1))
                 unlink($service->image_landing_1);
             $request->image_landing_1->move(public_path('images/upload'), $image1);
@@ -210,18 +210,18 @@ class ServiceController extends Controller
         }
 
         if ($request->image_landing_2 != null) {
-            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing_2->extension();
+            $image2 = $request->file('image_landing_2')->getClientOriginalName();
             if (strpos($service->image_landing_2, 'upload') != false && is_file($service->image_landing_2))
                 unlink($service->image_landing_2);
             $request->image_landing_2->move(public_path('images/upload'), $image2);
-            $input['image_landing_2'] = 'images/upload/' . $image1;
+            $input['image_landing_2'] = 'images/upload/' . $image2;
         }
         if ($request->image_article != null) {
-            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_article->extension();
+            $image3 = $request->file('image_article')->getClientOriginalName();
             if (strpos($service->image_article, 'upload') != false && is_file($service->image_article))
                 unlink($service->image_article);
-            $request->image_article->move(public_path('images/upload'), $image2);
-            $input['image_article'] = 'images/upload/' . $image1;
+            $request->image_article->move(public_path('images/upload'), $image3);
+            $input['image_article'] = 'images/upload/' . $image3;
         }
         $service->fill($input);
 

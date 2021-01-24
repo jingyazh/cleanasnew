@@ -137,7 +137,7 @@ class PostController extends Controller
 
         $post = Post::create($input);
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing->extension();
+        $image1 = $request->file('image_landing')->getClientOriginalName();
         if (strpos($post->image_landing, 'upload') != false && is_file($post->image_landing))
             unlink($post->image_landing);
         $request->image_landing->move(public_path('images/upload'), $image1);
@@ -197,7 +197,7 @@ class PostController extends Controller
 
 
         if ($request->image_landing != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_landing->extension();
+            $image1 = $request->file('image_landing')->getClientOriginalName();
             if (strpos($post->image_landing, 'upload') != false && is_file($post->image_landing))
                 unlink($post->image_landing);
             $request->image_landing->move(public_path('images/upload'), $image1);

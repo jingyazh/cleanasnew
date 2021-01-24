@@ -196,13 +196,13 @@ class TestimonialController extends Controller
 
         $testimonial = Testimonial::create($input);
 
-        $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_1->extension();
+        $image1 = $request->file('image_1')->getClientOriginalName();
         if (strpos($testimonial->image_1, 'upload') != false && is_file($testimonial->image_1))
             unlink($testimonial->image_1);
         $request->image_1->move(public_path('images/upload'), $image1);
         $testimonial->fill(['image_1' => 'images/upload/' . $image1]);
 
-        $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_2->extension();
+        $image2 = $request->file('image_2')->getClientOriginalName();
         if (strpos($testimonial->image_2, 'upload') != false && is_file($testimonial->image_2))
             unlink($testimonial->image_2);
         $request->image_2->move(public_path('images/upload'), $image2);
@@ -256,7 +256,7 @@ class TestimonialController extends Controller
 
 
         if ($request->image_1 != null) {
-            $image1 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_1->extension();
+            $image1 = $request->file('image_1')->getClientOriginalName();
             if (strpos($testimonial->image_1, 'upload') != false && is_file($testimonial->image_1))
                 unlink($testimonial->image_1);
             $request->image_1->move(public_path('images/upload'), $image1);
@@ -264,11 +264,10 @@ class TestimonialController extends Controller
         }
 
         if ($request->image_2 != null) {
-            $image2 = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image_2->extension();
+            $image2 = $request->file('image_2')->getClientOriginalName();
             if (strpos($testimonial->image_2, 'upload') != false && is_file($testimonial->image_2))
                 unlink($testimonial->image_2);
             $request->image_2->move(public_path('images/upload'), $image2);
-            $testimonial->fill(['image_2' => 'images/upload/' . $image2]);
             $input['image_2'] = 'images/upload/' . $image2;
         }
 

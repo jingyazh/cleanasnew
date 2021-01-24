@@ -116,7 +116,7 @@ class TodoController extends Controller
 
         $todo = Todo::create($input);
 
-        $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+        $image = $request->file('image')->getClientOriginalName();
         $request->image->move(public_path('images/upload'), $image);
         $todo->fill(['image' => 'images/upload/' . $image]);
 
@@ -148,7 +148,7 @@ class TodoController extends Controller
 
 
         if ($request->image != null) {
-            $image = substr(str_shuffle(self::$characters), 0, 10) . '.' . $request->image->extension();
+            $image = $request->file('image')->getClientOriginalName();
             if (strpos($todo->image, 'upload') != false && is_file($todo->image))
                 unlink($todo->image);
             $request->image->move(public_path('images/upload'), $image);
