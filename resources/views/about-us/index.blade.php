@@ -54,7 +54,7 @@
           @foreach($companies as $key => $value)
           <div class="tab-pane fade {{ $key==0 ?  ' show active'  : '' }}" id="header{{$key+1}}" role="tabpanel" aria-labelledby="header-tab{{$key+1}}">
               <div class="col-4 float-left">
-                <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{$value->image}}" class="img-fluid polaroid lazyload" alt="Happy employees." /> </div>
+                <img src="https://cleanasnew.com/assets/img/1px.png" data-src="/{{$value->image}}" class="img-fluid polaroid lazyload" alt="{{$value->title}}" /> </div>
               <div class="col-8 float-left  scrollEsg">
                  {!! $value->embed !!}
               </div>
@@ -75,7 +75,7 @@
               <div class="card-body">
                 <div class="col-md-12">
                  
-                  <img src="{{$value->image}}" data-src="$value->image" class="img-fluid polaroid lazyload" alt="Happy employees." />
+                  <img src="{{$value->image}}" data-src="/{{$value->image}}" class="img-fluid polaroid lazyload" alt="Happy employees." />
                   {!! $value->embed !!}
                 </div>
               </div>
