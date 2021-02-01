@@ -53,7 +53,7 @@
                 </a> </div>
               <div class="col-8 float-left">
                 {!! $value->quote !!}
-                <p><a href="/about-us/advisory-board/{{$value->id}}">Read more &#8594;</a></p>
+                <p><a href="/about-us/advisory-board/{{$value->memberid}}">Read more &#8594;</a></p>
               </div>
             </div>
           @endforeach
@@ -62,7 +62,7 @@
         </div>
         <!-- /.col-md-8 -->
         <div class="accordion md-accordion mobileNone" id="accordionEx" role="tablist" aria-multiselectable="true">
-        @if(isset($board) && $board != null)
+        @if(isset($boards) && $boards != null)
         @foreach($boards as $key => $value)
         <div class="card">
             <div class="card-header" role="tab" id="headingTwo{{ $key+1 }}"> <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo{{ $key+1 }}"
@@ -71,13 +71,13 @@
               </a> </div>
             <div id="collapseTwo{{ $key+1 }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo{{ $key+1 }}"
              data-parent="#accordionEx">
-              <div class="card-body padding15"> <a href="/about-us/advisory-board/{{$value->id}}"> <img src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid largImg lazyload" alt="James Griffin."/>
+              <div class="card-body padding15"> <a href="/about-us/advisory-board/{{$value->memberid}}"> <img src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid largImg lazyload" alt="James Griffin."/>
                 <p  class="text-muted namePosition"> {{ $value->name }} </p>
                 </a>
                 <blockquote>
                   <p class="quotation">{!! $value->quote !!}</p>
                 </blockquote>
-                <p><a href="/about-us/advisory-board/{{$value->id}}">Read more &#8594;</a></p>
+                <p><a href="/about-us/advisory-board/{{$value->memberid}}">Read more &#8594;</a></p>
               </div>
             </div>
           </div>
