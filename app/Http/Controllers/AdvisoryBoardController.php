@@ -98,18 +98,18 @@ class AdvisoryBoardController extends Controller
         if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
 
-        if (isset($_POST['memberid']) && $_POST['memberid'] != NULL && trim($_POST['memberid']) != "") {
-            $checking = AdvisoryBoard::where('memberid', $request->memberid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('advisory_boards.index', ['errors' => ['English version exists already.']]);
-            }
-            $memberid = $request->input('memberid');
-            $one = AdvisoryBoard::where('memberid', $memberid)->where('locale', 'en')->first();
-        }else {
-            $memberid = substr(str_shuffle(self::$characters), 0, 10);
-        }
+        // if (isset($_POST['memberid']) && $_POST['memberid'] != NULL && trim($_POST['memberid']) != "") {
+        //     $checking = AdvisoryBoard::where('memberid', $request->memberid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('advisory_boards.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $memberid = $request->input('memberid');
+        //     $one = AdvisoryBoard::where('memberid', $memberid)->where('locale', 'en')->first();
+        // }else {
+        //     $memberid = substr(str_shuffle(self::$characters), 0, 10);
+        // }
 
-        $input['memberid'] = $memberid;
+        // $input['memberid'] = $memberid;
 
         $advisory_board = AdvisoryBoard::create($input);
 
@@ -182,7 +182,7 @@ class AdvisoryBoardController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        $og = AboutUs::where('locale', $locale)->where('compid', '33333333')->first();
+        $og = AboutUs::where('locale', $locale)->where('compid', 'advisory-board')->first();
         return view('about-us.advisory-board', ['boards' => $boards, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }
 

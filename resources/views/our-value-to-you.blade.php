@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 float-left margin"> <img src="{{ $value->image }}" loading="lazy" alt="If we can’t clean it, you don’t pay!" /> </div>
+            <div class="col-md-3 float-left margin lazyload"> <img src="{{ $value->image }}" loading="lazy" alt="{{'Our Value To You - ' . strtolower($value->title)}}" /> </div>
           </div>
           @endforeach
           @endif
@@ -81,7 +81,7 @@
               <div class="card-body">
                 <div class="col-md-12">
                 {!! $value->embed !!}
-                  <img src="{{ $value->image }}" data-src="https://cleanasnew.com/assets/img/values/cleaner1.jpg" class="img-fluid  lazyload" alt="If we can’t clean it, you don’t pay!"/> </div>
+                  <img src="{{ $value->image }}" data-src="{{ $value->image }}" class="img-fluid  lazyload" alt="{{'Our Value To You - ' . strtolower($value->title)}}"/> </div>
               </div>
             </div>
           </div>

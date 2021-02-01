@@ -47,9 +47,9 @@
         @if(isset($comparisons) && $comparisons != null)
         @foreach($comparisons as $key => $comparison)
         <div class="columns">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/{{$comparison->compareid}}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{ $comparison->image_landing_1 }}" class="img-fluid desktopNone lazyload" alt="Understanding the Cleaning Cost." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{ $comparison->image_landing_2 }}" class="lazyload img-fluid mobileNone" alt="Understanding the Cleaning Cost." /></a>
+          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="/comparisons/{{$comparison->compareid}}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{ $comparison->image_landing_1 }}" class="img-fluid desktopNone lazyload" alt="{{$comparison->title}}" /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{ $comparison->image_landing_2 }}" class="lazyload img-fluid mobileNone" alt="{{$comparison->title}}" /></a>
             <div class="card-body">
-              <p class="text-center"><a href="/comparisons/{{$comparison->id}}">{{__($comparison->title)}}</a></p>
+              <p class="text-center"><a href="/comparisons/{{$comparison->compareid}}">{{__($comparison->title)}}</a></p>
             </div>
           </div>
         </div>

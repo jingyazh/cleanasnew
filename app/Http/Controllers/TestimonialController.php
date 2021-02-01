@@ -181,17 +181,17 @@ class TestimonialController extends Controller
             $locale = 'en';
         $input['locale'] = $locale;
 
-        if (isset($_POST['testimonialid']) && $_POST['testimonialid'] != NULL && trim($_POST['testimonialid']) != "") {
-            $checking = Testimonial::where('testimonialid', $request->testimonialid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('testimonials.index', ['errors' => ['English version exists already.']]);
-            }
-            $testimonialid = $request->input('testimonialid');
-        } else {
-            $testimonialid = substr(str_shuffle(self::$characters), 0, 10);
-        }
+        // if (isset($_POST['testimonialid']) && $_POST['testimonialid'] != NULL && trim($_POST['testimonialid']) != "") {
+        //     $checking = Testimonial::where('testimonialid', $request->testimonialid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('testimonials.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $testimonialid = $request->input('testimonialid');
+        // } else {
+        //     $testimonialid = substr(str_shuffle(self::$characters), 0, 10);
+        // }
 
-        $input['testimonialid'] = $testimonialid;
+        // $input['testimonialid'] = $testimonialid;
 
 
         $testimonial = Testimonial::create($input);

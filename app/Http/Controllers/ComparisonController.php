@@ -118,17 +118,17 @@ class ComparisonController extends Controller
         if ($locale == null) $locale;
         $input['locale'] = $locale;
 
-        if (isset($_POST['compareid']) && $_POST['compareid'] != NULL && trim($_POST['compareid']) != "") {
-            $checking = Comparison::where('compareid', $request->compareid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('comparisons.index', ['errors' => ['English version exists already.']]);
-            }
-            $compareid = $request->input('compareid');
-        }else {
-            $compareid = substr(str_shuffle(self::$characters), 0, 10);
-        }
+        // if (isset($_POST['compareid']) && $_POST['compareid'] != NULL && trim($_POST['compareid']) != "") {
+        //     $checking = Comparison::where('compareid', $request->compareid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('comparisons.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $compareid = $request->input('compareid');
+        // }else {
+        //     $compareid = str_replace(' ', '-', strtolower($request->title));///substr(str_shuffle(self::$characters), 0, 10);
+        // }
 
-        $input['compareid'] = $compareid;
+        // $input['compareid'] = $compareid;
       
         
         $comparison = Comparison::create($input); 

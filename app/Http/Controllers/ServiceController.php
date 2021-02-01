@@ -120,17 +120,17 @@ class ServiceController extends Controller
         if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
 
-        if (isset($_POST['serviceid']) && $_POST['serviceid'] != NULL && trim($_POST['serviceid']) != "") {
-            $checking = Service::where('serviceid', $request->serviceid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('services.index', ['errors' => ['English version exists already.']]);
-            }
-            $serviceid = $request->input('serviceid');
-        } else {
-            $serviceid = substr(str_shuffle(self::$characters), 0, 10);
-        }
+        // if (isset($_POST['serviceid']) && $_POST['serviceid'] != NULL && trim($_POST['serviceid']) != "") {
+        //     $checking = Service::where('serviceid', $request->serviceid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('services.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $serviceid = $request->input('serviceid');
+        // } else {
+        //     $serviceid = substr(str_shuffle(self::$characters), 0, 10);
+        // }
 
-        $input['serviceid'] = $serviceid;
+        // $input['serviceid'] = $serviceid;
 
 
         $service = Service::create($input);

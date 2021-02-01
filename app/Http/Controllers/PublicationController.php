@@ -101,7 +101,7 @@ class PublicationController extends Controller
 
         $input['reviewid'] = $reviewid;
         $input['type'] = $type;
-        $input['testimonialid'] = 33333333;
+        $input['testimonialid'] = 'referred-journal-publications';
 
         $publication = Review::create($input);
 

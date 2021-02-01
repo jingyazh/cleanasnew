@@ -181,7 +181,7 @@ class AboutCompanyController extends Controller
         $siteSetting = SiteSetting::where('locale', $locale)->first();
         $menuSetting = MainSetting::all();
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        $og = AboutUs::where('locale', $locale)->where('compid', '22222222')->first();
+        $og = AboutUs::where('locale', $locale)->where('compid', 'company')->first();
         // dd($locale);
         return view('about-us.index', ['companies' => $companies, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
     }

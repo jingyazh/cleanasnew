@@ -1,3 +1,4 @@
+<!-- skip.minification -->
 @extends('app')
 
 @section('title')
@@ -33,9 +34,18 @@
       </p>
     </div>
   </div>
-  @if(isset($comparison) && $comparison != null)
-  {!! $comparison->embed !!}
-  @endif
+  <div class="album bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-2">&nbsp;</div>
+        @if(isset($comparison) && $comparison != null)
+        {!! $comparison->embed !!}
+        @endif
+        <div class="col-1">&nbsp;</div>
+        <div class="col-1">&nbsp;</div>
+      </div>
+    </div>
+  </div>
 </main>
 @include('layout.footer', (isset($siteSetting) && $siteSetting != null) ? $siteSetting : ['siteSetting' => null])
 @endsection

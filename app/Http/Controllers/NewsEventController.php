@@ -168,7 +168,7 @@ class NewsEventController extends Controller
         $menuSetting = MainSetting::all();
         // dd($locale);
         $extraPages = ExtraPage::where('locale', $locale)->get();
-        $og = AboutUs::where('locale', $locale)->where('compid', '44444444')->first();
+        $og = AboutUs::where('locale', $locale)->where('compid', 'news-and-events')->first();
         return view('about-us.news-and-events', ['news' => $news, 'siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' => $og]);
 
     }

@@ -68,6 +68,12 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Slug')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="memberid" class="form-control col-sm-12" value="{{ old('memberid') }}" required placeholder="{{__('Slug')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('Image')}}<code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">
@@ -203,7 +209,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
-    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
+    extended_valid_elements: "-em[class|style],#i[class|style], svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',
@@ -226,7 +232,7 @@
       'insertdatetime media table paste imagetools wordcount importcss'
     ],
     images_upload_credentials: true,
-    extended_valid_elements: "svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
+    extended_valid_elements: "-em[class|style],#i[class|style], svg[*],defs[*],pattern[*],desc[*],metadata[*],g[*],mask[*],path[*],line[*],marker[*],rect[*],circle[*],ellipse[*],polygon[*],polyline[*],linearGradient[*],radialGradient[*],stop[*],image[*],view[*],text[*],textPath[*],title[*],tspan[*],glyph[*],symbol[*],switch[*],use[*]",
     menubar: false,
     automatic_uploads: true,
     toolbar: '| responsivefilemanager | undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | table | code preview',

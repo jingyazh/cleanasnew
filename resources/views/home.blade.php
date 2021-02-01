@@ -28,7 +28,7 @@
         </ol>
         <div class="carousel-inner">
             @foreach($posts as $key => $post)
-            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="Clean As New®, Baytown Texas." />
+            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="{{ $post->title }}" />
                 <div class="carousel-caption" style="position:absolute; z-index:10001">
                     <div class="hbuttons">
                         <div class="hcontainer"> <a href="{{ route('postview', ['title' => str_replace(' ', '-', $post->title), 'page' => $post->id]) }}" class="hbtn hbtn-1">
@@ -40,72 +40,6 @@
                 </div>
             </div>
             @endforeach
-        </div>
-        @else
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active"> <img src="assets/img/1px.png" data-src="assets/img/2020-clean-as-new-facility-baytown.jpg" class="img-fluid lazyload" alt="Clean As New®, Baytown Texas." />
-                <div class="carousel-caption" style="position:absolute; z-index:10001">
-                    <div class="hbuttons">
-                        <div class="hcontainer"> <a href="our-intro" class="hbtn hbtn-1">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                {{__("Watch Our Intro Video")}} </a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <img src="assets/img/1px.png" data-src="assets/img/2020-petrochemical-plant-oil-refinery.jpg" class="img-fluid lazyload" alt="Petroleum refining - Refinery plant and facilities." />
-                <div class="carousel-caption">
-                    <div class="hbuttons">
-                        <div class="hcontainer"> <a href="posts/book-your-free-measured-cleaning-trial-today" class="hbtn hbtn-1">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                <span>{{__("Book Your Free Measured Cleaning Trial")}}</span> </a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/2020-cleaning-parts.gif?v=20201027" class="img-fluid lazyload" alt="Washpad Hydroblasting VS. Clean As New®." />
-                <div class="carousel-caption">
-                    <div class="hbuttons">
-                        <div class="hcontainer"> <a href="posts/washpad-hydroblasting-vs-cleanasnew" class="hbtn hbtn-1">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                <span>{{__("Comparing An Apple To An Apple")}}</span> </a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <img src="assets/img/1px.png" data-src="assets/img/2020-heat-exchanger-cleaning.jpg" class="img-fluid lazyload" alt="Improve Your ESG Performance with Clean As New®.">
-                <div class="carousel-caption">
-                    <div class="hbuttons">
-                        <div class="hcontainer"> <a href="posts/improve-your-esg-score" class="hbtn hbtn-1">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                <span>{{__("Improve Your ESG Score")}}</span> </a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <img src="assets/img/1px.png" data-src="assets/img/2020-clean-u-tube-heat-exchangers.gif" class="img-fluid lazyload" alt="The Highest Performing Oil & Gas Refineries!">
-                <div class="carousel-caption">
-                    <div class="hbuttons">
-                        <div class="hcontainer"> <a href="posts/the-highest-performing-refineries" class="hbtn hbtn-1">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                <span>{{__("The Highest Performing Refineries")}}</span> </a> </div>
-                    </div>
-                </div>
-            </div>
         </div>
         @endif
 

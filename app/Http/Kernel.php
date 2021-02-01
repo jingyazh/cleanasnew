@@ -24,6 +24,7 @@ class Kernel extends HttpKernel
 
         \App\Http\Middleware\MultiLang::class,
         \Illuminate\Session\Middleware\StartSession::class,
+        // \HTMLMin\HTMLMin\Http\Middleware\MinifyMiddleware::class
     ];
 
     /**
@@ -40,6 +41,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\MultiLang::class,
+            // \HTMLMin\HTMLMin\Http\Middleware\MinifyMiddleware::class
         ],
 
         'api' => [

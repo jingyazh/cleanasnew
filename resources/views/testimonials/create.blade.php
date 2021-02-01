@@ -68,6 +68,12 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Slug')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="testimonialid" class="form-control col-sm-12" value="{{ old('testimonialid') }}" required placeholder="{{__('Slug')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="meta_title" class="form-control col-sm-12" value="{{isset($testimonial) ? $testimonial->meta_title : ''}}" required placeholder="{{__('Meta Title')}}" />

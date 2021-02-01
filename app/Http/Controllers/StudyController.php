@@ -101,7 +101,7 @@ class StudyController extends Controller
 
         $input['reviewid'] = $reviewid;
         $input['type'] = $type;
-        $input['testimonialid'] = 11111111;
+        $input['testimonialid'] = 'case-studies';
 
         $casestudy = Review::create($input);
 

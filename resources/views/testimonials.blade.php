@@ -35,8 +35,8 @@
       <div class="col-md-4" style="padding: 10px;">
           <div class="card mb-4 shadow-sm">
             <a class="img-hover-zoom imgblur" href="testimonials/{{$value->testimonialid}}">
-            <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_1}}" class="img-fluid desktopNone  lazyload" alt=" An Exchanger is lowered into an ultrasonic bath by crane."/>
-            <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_2}}" class="img-fluid mobileNone  lazyload" alt="An Exchanger is lowered into an ultrasonic bath by crane."/>
+            <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_1}}" class="img-fluid desktopNone  lazyload" alt="{{ $value->title }}"/>
+            <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_2}}" class="img-fluid mobileNone  lazyload" alt="{{ $value->title }}"/>
             </a>
             <div class="card-body">
               <p class="text-center"><a href="testimonials/{{$value->testimonialid}}">{{ $value->title }}</a></p>

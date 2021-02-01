@@ -36,9 +36,9 @@
         @if(isset($services) && $services != null)
         @foreach($services as $key => $value)
         <div class="col-3">
-          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/{{ $value->serviceid }}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_1}}" class="img-fluid desktopNone  lazyload" alt="Offsite facility service." /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_2}}" class="img-fluid mobileNone lazyload" alt="Offsite facility service." /></a>
+          <div class="card mb-3 shadow-sm"> <a class="img-hover-zoom imgblur" href="services/{{ $value->serviceid }}"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_1}}" class="img-fluid desktopNone  lazyload" alt="{{$value->title}}" /><img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$value->image_landing_2}}" class="img-fluid mobileNone lazyload" alt="{{$value->title}}" /></a>
             <div class="card-body">
-              <p class="text-center"><a href="services/{{ $value->id }}">{{__($value->title)}}</a></p>
+              <p class="text-center"><a href="services/{{ $value->serviceid }}">{{__($value->title)}}</a></p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
-      <div class="modal-body"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="assets/img/cangc-checklist.jpg?20201005" class="img-fluid lazyload" alt="Clean As New® Benifits Checklist." /> <a href="https://cleanasnew.com/pdf/cangc-checklist.pdf?v=20201005" target="_blank" class="btn btn-default">{{__("Download This Checklist")}} <i class="fa fa-file-pdf-o fa-1g" aria-hidden="true"></i></a> </div>
+      <div class="modal-body"> <img src="https://cleanasnew.com/assets/img/1px.png" data-src="{{$siteSetting ? $siteSetting->service_list_image : 'assets/img/cangc-checklist.jpg?20201005'}}" class="img-fluid lazyload" alt="Clean As New® Benifits Checklist." /> <a href="https://cleanasnew.com/pdf/cangc-checklist.pdf?v=20201005" target="_blank" class="btn btn-default">{{__("Download This Checklist")}} <i class="fa fa-file-pdf-o fa-1g" aria-hidden="true"></i></a> </div>
     </div>
   </div>
 </div>

@@ -33,7 +33,7 @@
       @if(isset($abouts) && $abouts != null)
       @foreach($abouts as $key => $value)
       <div class="col-6 desktopNone">
-          <div class="card mb-6 shadow-sm"> <a href="{{ $value->link }}"><img src="{{ $value->image }}" data-src="{{ $value->image }}?v=20200928" class="img-fluid lazyload" alt="ESG concept of environmental, social and governance in sustainable and ethical business"/></a>
+          <div class="card mb-6 shadow-sm"> <a href="{{ $value->link }}"><img src="{{ $value->image }}" data-src="{{ $value->image }}?v=20200928" class="img-fluid lazyload" alt="{{$value->title}}"/></a>
             <div class="card-body">
               <p class="text-center"><a href="{{ $value->link }}">{{ $value->title }}</a></p>
             </div>
@@ -53,7 +53,7 @@
               data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                <a href="{{ $value->link }}"><img src="{{$value->image}}" data-src="{{$value->image}}?v=20200928" class="img-fluid lazyload" alt="ESG concept of environmental, social and governance in sustainable and ethical business"/></a>
+                <a href="{{ $value->link }}"><img src="{{$value->image}}" data-src="{{$value->image}}?v=20200928" class="img-fluid lazyload" alt="{{$value->title}}"/></a>
                   <p class="text-center"><a href="{{$value->link}}">{{$value->title}}</a></p>
                 </div>
               </div>
