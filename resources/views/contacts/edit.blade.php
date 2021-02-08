@@ -145,6 +145,7 @@
     content_css: ["{{ asset('assets/css/custom_tinymce.css') }}"],
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
+    contextmenu: false,
     external_plugins: {
       "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
       "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
