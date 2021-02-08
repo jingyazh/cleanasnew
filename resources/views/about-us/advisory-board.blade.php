@@ -71,11 +71,11 @@
               </a> </div>
             <div id="collapseTwo{{ $key+1 }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo{{ $key+1 }}"
              data-parent="#accordionEx">
-              <div class="card-body padding15"> <a href="/about-us/advisory-board/{{$value->memberid}}"> <img src="https://cleanasnew.com/assets/img/advisory-board-profiles/James-Griffin.jpg" class="img-fluid largImg lazyload" alt="James Griffin."/>
+              <div class="card-body padding15"> <a href="/about-us/advisory-board/{{$value->memberid}}"> <img src="{{$value->image}}" data-src="/{{$value->image}}"  class="img-fluid largImg lazyload" alt="James Griffin."/>
                 <p  class="text-muted namePosition"> {{ $value->name }} </p>
                 </a>
                 <blockquote>
-                  <p class="quotation">{!! $value->quote !!}</p>
+                {!! $value->quote !!}
                 </blockquote>
                 <p><a href="/about-us/advisory-board/{{$value->memberid}}">Read more &#8594;</a></p>
               </div>
