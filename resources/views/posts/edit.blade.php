@@ -37,6 +37,12 @@
               <input type="text" name="title" class="form-control col-sm-12" required value="{{ old('title', $post->title) }}" placeholder="{{__('Title')}}" />
             </div>
           </div>
+          <div class="form-group col-md-12">
+            <label>{{__('Slug')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="postid" class="form-control col-sm-12" required value="{{ old('postid', $post->postid) }}" placeholder="{{__('Slug')}}" />
+            </div>
+          </div>
           <!-- <div class="form-group">
             <label>Desktop Image <code>*</code> </label>
             <div style="display: flex; flex-direction: row" class="dropzone" id="image_landing_1">

@@ -31,7 +31,7 @@
             <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="{{ $post->title }}" />
                 <div class="carousel-caption" style="position:absolute; z-index:10001">
                     <div class="hbuttons">
-                        <div class="hcontainer"> <a href="{{ route('postview', ['title' => str_replace(' ', '-', $post->title), 'page' => $post->id]) }}" class="hbtn hbtn-1">
+                        <div class="hcontainer"> <a href="{{ route('postview', $post->postid) }}" class="hbtn hbtn-1">
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>

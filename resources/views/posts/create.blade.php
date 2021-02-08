@@ -68,6 +68,12 @@
             </div>
           </div>
           <div class="form-group col-md-12">
+            <label>{{__('Slug')}} <code>*</code> </label>
+            <div style="display: flex; flex-direction: row">
+              <input type="text" name="postid" class="form-control col-sm-12" value="{{ old('postid') }}" required placeholder="{{__('Slug')}}" />
+            </div>
+          </div>
+          <div class="form-group col-md-12">
             <label>Image <code>*</code> </label>
             <div class="input-group mb-3">
               <div class="">

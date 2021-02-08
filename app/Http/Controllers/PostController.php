@@ -116,23 +116,23 @@ class PostController extends Controller
             'image_landing' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             // 'image_article' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'embed' => 'required',
-            // 'locale' => 'required'
+            'postid' => 'required'
         ])->validate();
 
         $locale = session('locale');
         if ($locale == null) $locale = 'en';
         $input['locale'] = $locale;
-        if (isset($_POST['postid']) && $_POST['postid'] != NULL && trim($_POST['postid']) != "") {
-            $checking = Post::where('postid', $request->postid)->where('locale', $request->locale)->get();
-            if (count($checking) > 0) {
-                return redirect()->route('posts.index', ['errors' => ['English version exists already.']]);
-            }
-            $postid = $request->input('postid');
-        } else {
-            $postid = substr(str_shuffle(self::$characters), 0, 10);
-        }
+        // if (isset($_POST['postid']) && $_POST['postid'] != NULL && trim($_POST['postid']) != "") {
+        //     $checking = Post::where('postid', $request->postid)->where('locale', $request->locale)->get();
+        //     if (count($checking) > 0) {
+        //         return redirect()->route('posts.index', ['errors' => ['English version exists already.']]);
+        //     }
+        //     $postid = $request->input('postid');
+        // } else {
+        //     $postid = substr(str_shuffle(self::$characters), 0, 10);
+        // }
 
-        $input['postid'] = $postid;
+        // $input['postid'] = $postid;
 
 
         $post = Post::create($input);
