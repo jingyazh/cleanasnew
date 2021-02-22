@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-<!-- <title>Heat Exchanger Cleaning: Your Questions Answered - Clean As New®</title> -->
+<!-- <title>Heat Exchanger Cleaning: Your Questions Answered - Clean As New速</title> -->
 <title>{{ $siteSetting->esg_meta_title }}</title>
 <meta name="description" content="{{ $siteSetting->esg_meta_description }}">
 <meta content="{{ $og->og_locale != null ? str_replace('-', '_', $og->og_locale) : ''}}" property="og:locale">
@@ -75,9 +75,11 @@
             <div role="tabpanel" data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
-                  @if(isset($siteSetting) && $siteSetting != null)
-                  {!! $siteSetting->esg_banner_embed !!}
-                  @endif
+                  <a href='esg/how-better-cleaning-can-help'>
+                      @if(isset($siteSetting) && $siteSetting != null)
+                      {!! $siteSetting->esg_banner_embed !!}
+                      @endif
+                  </a>
                 </div>
               </div>
             </div>

@@ -47,8 +47,8 @@ Route::get('how-we-do-it', 'TodoController@view')->name('how-we-do-it');
 Route::get('our-value-to-you', 'OurValueController@view')->name('our-value-to-you');
 Route::get('comparisons/{id}', 'ComparisonController@detail')->name('comparisonDetail');
 Route::get('faq', 'FaqController@view')->name('faq');
-Route::get('testimonials', 'testimonialController@view')->name('testimonials');
-Route::get('testimonials/{id}', 'testimonialController@detail')->name('testimonialsDetail'); //////////////////// in here working.
+Route::get('testimonials', 'TestimonialController@view')->name('testimonials');
+Route::get('testimonials/{id}', 'TestimonialController@detail')->name('testimonialsDetail'); //////////////////// in here working.
 Route::get('esg', 'ESGController@view')->name('esg');
 Route::get('esg/how-better-cleaning-can-help', 'ESGController@esgHelp')->name('esgHelp');
 Route::get('about-us', 'AboutUsController@view')->name('about-us');

@@ -28,7 +28,7 @@
         </ol>
         <div class="carousel-inner">
             @foreach($posts as $key => $post)
-            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="{{ $post->image_landing }}" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="{{ $post->title }}" />
+            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}"> <img src="/assets/img/1px.png" data-src="{{ $post->image_landing }}" class="img-fluid lazyload" alt="{{ $post->title }}" />
                 <div class="carousel-caption" style="position:absolute; z-index:10001">
                     <div class="hbuttons">
                         <div class="hcontainer"> <a href="{{ route('postview', $post->postid) }}" class="hbtn hbtn-1">

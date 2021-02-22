@@ -96,11 +96,11 @@
           @if($value->type == null)
           <div class="card">
             <div class="card-header" role="tab" id="headingTwo{{$key}}">
-              <a data-toggle="collapse" data-parent="#accordionEx" href="#headingTwo{{$key}}1}}" aria-expanded="true" aria-controls="headingTwo{{$key}}1}}">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#headingTwo{{$key}}1" aria-expanded="true" aria-controls="headingTwo{{$key}}1">
                 <h5 class="mb-0">{{ __($value->title) }}</h5>
               </a>
             </div>
-            <div id="headingTwo{{$key}}1}}" class="collapse" role="tabpanel" aria-labelledby="headingTwo{{$key}}" data-parent="#accordionEx">
+            <div id="headingTwo{{$key}}1" class="collapse" role="tabpanel" aria-labelledby="headingTwo{{$key}}" data-parent="#accordionEx">
               <div class="card-body">
                 <div class="col-md-12">
                   {!! $value->embed !!}
