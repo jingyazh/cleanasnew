@@ -116,6 +116,20 @@
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     contextmenu: false,
+    setup: function(editor) {
+      editor.on('init', function(args) {
+        editor = args.target;
+
+        editor.on('NodeChange', function(e) {
+          if (e && e.element.nodeName.toLowerCase() == 'img') {
+            tinyMCE.DOM.setAttribs(e.element, {
+              'width': null,
+              'height': null
+            });
+          }
+        });
+      });
+    },
     external_plugins: {
       "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
       "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
@@ -140,6 +154,20 @@
     external_filemanager_path: "/filemanager/",
     filemanager_title: "Responsive Filemanager",
     contextmenu: false,
+    setup: function(editor) {
+      editor.on('init', function(args) {
+        editor = args.target;
+
+        editor.on('NodeChange', function(e) {
+          if (e && e.element.nodeName.toLowerCase() == 'img') {
+            tinyMCE.DOM.setAttribs(e.element, {
+              'width': null,
+              'height': null
+            });
+          }
+        });
+      });
+    },
     external_plugins: {
       "responsivefilemanager": "{{ asset('tinymce/plugins/responsivefilemanager/plugin.min.js')}}",
       "filemanager": "{{ asset('filemanager/plugin.min.js')}}"
