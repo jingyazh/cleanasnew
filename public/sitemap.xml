@@ -1,525 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
--<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-
--<url>
-
-<loc>https://cleanasnew.com/</loc>
-
-<lastmod>2020-10-30T18:07:46+00:00</lastmod>
-
-<priority>1.00</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/how-we-compare.html</loc>
-
-<lastmod>2020-10-27T03:57:05+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/what-we-clean.html</loc>
-
-<lastmod>2020-10-30T18:12:50+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/our-services.html</loc>
-
-<lastmod>2020-11-04T03:54:47+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/how-we-do-it.html</loc>
-
-<lastmod>2020-10-27T03:56:45+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/our-value-to-you.html</loc>
-
-<lastmod>2020-10-27T03:57:05+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/faq.html</loc>
-
-<lastmod>2020-10-27T03:57:04+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/testimonials.html</loc>
-
-<lastmod>2020-10-27T03:57:06+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/esg.html</loc>
-
-<lastmod>2020-10-27T03:57:04+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us.html</loc>
-
-<lastmod>2020-10-27T03:57:04+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/contact.html</loc>
-
-<lastmod>2020-10-30T18:13:14+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/book-your-free-measured-cleaning-trial-today.html</loc>
-
-<lastmod>2020-10-27T03:54:15+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us/news-and-events.html</loc>
-
-<lastmod>2020-10-27T03:54:31+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/improve-your-esg-score.html</loc>
-
-<lastmod>2020-10-27T03:54:16+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/hydroblasting-your-exchangers.html</loc>
-
-<lastmod>2020-10-27T03:54:16+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/ultrasonic-cleaning-webinar.html</loc>
-
-<lastmod>2020-10-27T03:54:17+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/more-than-just-heat-exchangers.html</loc>
-
-<lastmod>2020-10-27T03:54:16+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/the-highest-performing-refineries.html</loc>
-
-<lastmod>2020-10-27T03:54:16+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/washpad-hydroblasting-vs-cleanasnew.html</loc>
-
-<lastmod>2020-10-27T03:54:17+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/privacy-policy.html</loc>
-
-<lastmod>2020-10-27T03:57:06+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/terms-of-use.html</loc>
-
-<lastmod>2020-10-27T03:57:06+00:00</lastmod>
-
-<priority>0.80</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/comparisons/cleaning-cost.html</loc>
-
-<lastmod>2020-11-04T03:46:29+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/comparisons/heat-exchanger-performance.html</loc>
-
-<lastmod>2020-10-30T17:37:14+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/comparisons/parts-cleaning.html</loc>
-
-<lastmod>2020-10-30T15:16:56+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/comparisons/facility.html</loc>
-
-<lastmod>2020-10-27T03:54:26+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/comparisons/esg-sustainability.html</loc>
-
-<lastmod>2020-10-27T03:54:25+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/services/offsite-facility.html</loc>
-
-<lastmod>2020-10-27T03:54:12+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/services/by-the-basket.html</loc>
-
-<lastmod>2020-10-27T03:54:12+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/services/washpad-services.html</loc>
-
-<lastmod>2020-10-27T03:54:12+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/services/replace-your-wash-pad.html</loc>
-
-<lastmod>2020-10-30T17:51:12+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/pdf/cangc-checklist.pdf?v=20201005</loc>
-
-<lastmod>2020-10-06T00:25:43+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/testimonials/case-studies.html</loc>
-
-<lastmod>2020-10-27T04:01:29+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/testimonials/feedback.html</loc>
-
-<lastmod>2020-10-27T04:05:21+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/testimonials/referred-journal-publications.html</loc>
-
-<lastmod>2020-10-27T04:01:29+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/esg/how-better-cleaning-can-help.html</loc>
-
-<lastmod>2020-10-27T03:54:36+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us/index.html</loc>
-
-<lastmod>2020-10-27T03:54:30+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us/advisory-board.html</loc>
-
-<lastmod>2020-10-27T03:54:30+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/pdf/industrial-cleaning-requests-form.pdf</loc>
-
-<lastmod>2020-10-06T00:25:43+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/form/ultrasonic-cleaning-trial-opportunity.pdf?v=20200716</loc>
-
-<lastmod>2020-07-17T20:15:51+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/case-studies/Shell-Moerdijk-20130TA.pdf</loc>
-
-<lastmod>2020-10-06T00:25:40+00:00</lastmod>
-
-<priority>0.64</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/posts/basket-of-parts.html</loc>
-
-<lastmod>2020-10-30T17:20:45+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/case-studies/CF-Industries-FeCO3-Fouling-Removal-2011NR.pdf</loc>
-
-<lastmod>2020-10-06T00:25:37+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/case-studies/ConocoPhllips-Valve-Service.pdf</loc>
-
-<lastmod>2020-10-06T00:25:36+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/case-studies/Scotford-Upgrader-Turnaround.pdf</loc>
-
-<lastmod>2020-10-06T00:25:38+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/case-studies/ESG-How-Better-Cleaning-Can-Help.pdf</loc>
-
-<lastmod>2020-10-06T00:25:38+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us/advisory-board-members/james-griffin.html</loc>
-
-<lastmod>2020-10-30T17:39:06+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
-
--<url>
-
-<loc>https://cleanasnew.com/about-us/advisory-board-members/don-empfield.html</loc>
-
-<lastmod>2020-10-30T17:39:46+00:00</lastmod>
-
-<priority>0.51</priority>
-
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://cleanasnew.com</loc>
+        <lastmod>2021-02-21T22:23:26-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/</loc>
+        <lastmod>2021-02-21T22:23:19-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us</loc>
+        <lastmod>2021-02-21T22:23:23-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us/advisory-board</loc>
+        <lastmod>2021-02-21T22:23:32-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us/advisory-board/don-empfield</loc>
+        <lastmod>2021-02-21T22:23:33-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us/advisory-board/james-griffin</loc>
+        <lastmod>2021-02-21T22:23:33-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us/index</loc>
+        <lastmod>2021-02-21T22:23:32-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/about-us/news-and-events</loc>
+        <lastmod>2021-02-21T22:23:33-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/choose-language</loc>
+        <lastmod>2021-02-21T22:23:20-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/comparisons/cleaning-cost</loc>
+        <lastmod>2021-02-21T22:23:28-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/comparisons/esg</loc>
+        <lastmod>2021-02-21T22:23:29-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/comparisons/facility</loc>
+        <lastmod>2021-02-21T22:23:29-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/comparisons/heat-exchanger-performance</loc>
+        <lastmod>2021-02-21T22:23:29-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/comparisons/parts-cleaning</loc>
+        <lastmod>2021-02-21T22:23:29-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/contact</loc>
+        <lastmod>2021-02-21T22:23:23-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/esg</loc>
+        <lastmod>2021-02-21T22:23:22-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/esg/how-better-cleaning-can-help</loc>
+        <lastmod>2021-02-21T22:23:32-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/faq</loc>
+        <lastmod>2021-02-21T22:23:22-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/how-we-compare</loc>
+        <lastmod>2021-02-21T22:23:20-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/how-we-do-it</loc>
+        <lastmod>2021-02-21T22:23:21-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/cn</loc>
+        <lastmod>2021-02-21T22:23:28-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/de</loc>
+        <lastmod>2021-02-21T22:23:27-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/en</loc>
+        <lastmod>2021-02-21T22:23:19-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/es</loc>
+        <lastmod>2021-02-21T22:23:26-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/es-us</loc>
+        <lastmod>2021-02-21T22:23:19-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/fr</loc>
+        <lastmod>2021-02-21T22:23:26-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/hi-in</loc>
+        <lastmod>2021-02-21T22:23:27-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/jp</loc>
+        <lastmod>2021-02-21T22:23:28-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/ml</loc>
+        <lastmod>2021-02-21T22:23:28-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/mx</loc>
+        <lastmod>2021-02-21T22:23:20-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/pa-pk</loc>
+        <lastmod>2021-02-21T22:23:27-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/pt-br</loc>
+        <lastmod>2021-02-21T22:23:27-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/ru</loc>
+        <lastmod>2021-02-21T22:23:27-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/lang/th</loc>
+        <lastmod>2021-02-21T22:23:28-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/our-services</loc>
+        <lastmod>2021-02-21T22:23:21-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/our-value-to-you</loc>
+        <lastmod>2021-02-21T22:23:21-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/page/8</loc>
+        <lastmod>2021-02-21T22:23:23-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/clean-parts-by-the-basket</loc>
+        <lastmod>2021-02-21T22:23:25-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/comparing-an-apple-to-an-apple</loc>
+        <lastmod>2021-02-21T22:23:24-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/improve-your-esg-score</loc>
+        <lastmod>2021-02-21T22:23:24-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/the-highest-performing-refineries</loc>
+        <lastmod>2021-02-21T22:23:24-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/ultrasonic-cleaning-trial-opportunity</loc>
+        <lastmod>2021-02-21T22:23:24-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/posts/watch-our-intro-video</loc>
+        <lastmod>2021-02-21T22:23:24-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/privacy-policy</loc>
+        <lastmod>2021-02-21T22:23:25-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/services/by-the-basket</loc>
+        <lastmod>2021-02-21T22:23:30-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/services/offsite-cleaning</loc>
+        <lastmod>2021-02-21T22:23:30-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/services/replace-your-wash-pad</loc>
+        <lastmod>2021-02-21T22:23:30-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/services/wash-pad-services</loc>
+        <lastmod>2021-02-21T22:23:30-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/terms-of-use</loc>
+        <lastmod>2021-02-21T22:23:26-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/testimonials</loc>
+        <lastmod>2021-02-21T22:23:22-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/testimonials/case-studies</loc>
+        <lastmod>2021-02-21T22:23:31-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/testimonials/feedback</loc>
+        <lastmod>2021-02-21T22:23:31-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/testimonials/referred-journal-publications</loc>
+        <lastmod>2021-02-21T22:23:31-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cleanasnew.com/what-we-clean</loc>
+        <lastmod>2021-02-21T22:23:21-05:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

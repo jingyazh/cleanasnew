@@ -33,10 +33,10 @@
   <link href="{{ asset('assets/img/favicon-16x16.png') }}" rel="icon" sizes="16x16" type="image/png">
   <link href="{{ asset('assets/img/manifest.json') }}" rel="manifest">
 
-  <link rel="preconnect" href="//code.jquery.com" />
-  <link rel="preconnect" href="//maxcdn.bootstrapcdn.com">
+  <!-- <link rel="preconnect" href="//code.jquery.com" /> -->
+  <!-- <link rel="preconnect" href="//maxcdn.bootstrapcdn.com"> -->
   <link rel="preconnect" href="//www.fonts.googleapis.com" />
-  <script src="//assets.adobedtm.com/175f7caa2b90/68e4c3a097bc/launch-be14a33fe327.min.js" async></script>
+  <!-- <script src="//assets.adobedtm.com/175f7caa2b90/68e4c3a097bc/launch-be14a33fe327.min.js" async></script> -->
   @yield('before-css')
   @yield('page-css')
   <!-- Google Tag Manager -->

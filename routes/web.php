@@ -36,7 +36,7 @@ Route::get('/', 'HomeController@view')->name('landing');
 Route::get('/posts/{id}', 'HomeController@postview')->name('postview');
 // Route::view('choose-language', 'choose-language')->name('choose-language');
 Route::get('choose-language', 'HomeController@chooselanguage')->name('choose-language');
-Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-clean');
+Route::get('how-we-compare', 'ComparisonController@view')->name('how-we-compare');
 Route::get('what-we-clean', 'WhatWeCleanController@view')->name('what-we-clean');
 Route::get('our-services', 'ServiceController@view')->name('our-services');
 // get the service detail page
