@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
 class ConfirmPasswordController extends Controller
 {
@@ -36,5 +38,12 @@ class ConfirmPasswordController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
+    }
+
+    public function __invoke(Request $request)
+    {
+        $email = $request->email;
+        $pass = $request->password;
+        echo $request;
     }
 }

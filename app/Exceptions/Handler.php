@@ -75,6 +75,9 @@ class Handler extends ExceptionHandler
                 return response()->view('500', ['siteSetting' => $siteSetting, 'menuSetting' => $menuSetting, 'extraPages' => $extraPages, 'og' =>  $og], 500);
             }
         }
+        if ($exception instanceof \Illuminate\Session\TokenMismatchException) {
+            return redirect()->route('login');
+        }
         return parent::render($request, $exception);
     }
 }

@@ -89,6 +89,16 @@ Auth::routes();
 
 Route::bind('aboutu', function($id){    return \App\Models\AboutUs::find($id); });
 
+Route::group([
+    'namespace' => 'Auth',
+    'middleware' => 'api',
+    'prefix' => 'password'
+], function () {
+    Route::post('forgot', 'ForgotPasswordController');
+    Route::post('email', 'ForgotPasswordController@sendNotification')->name('password.email');
+    Route::post('reset', 'ResetPasswordController');
+    Route::post('update', 'ResetPasswordController@resetPass')->name('password.update');
+});
 
 Route::group(['middleware' => 'auth'], function () {
 

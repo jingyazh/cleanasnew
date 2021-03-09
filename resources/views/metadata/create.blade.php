@@ -73,7 +73,7 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label>{{__('Meta Property')}} <code>*</code> </label>
+            <label>{{__('Meta Property')}} </label>
             <div style="display: flex; flex-direction: row">
               <input type="text" name="property" class="form-control col-sm-12" placeholder="{{__('Meta Property')}}" />
             </div>

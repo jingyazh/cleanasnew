@@ -18,9 +18,9 @@
             <div class="card-header">
               <h3 class="card-title">{{__('Colleagues List')}} </h3>
               
-              <div class="card-tools">
+              <!-- <div class="card-tools">
                 <a href="{!! route('users.create') !!}" class="btn btn-tool" >{{__('Add')}} &nbsp; <i class="fa fa-plus"></i></a>                
-              </div>
+              </div> -->
               
             </div>
             <!-- /.card-header -->

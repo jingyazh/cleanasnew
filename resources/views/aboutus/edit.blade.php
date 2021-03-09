@@ -59,6 +59,7 @@
               View example <a href="/assets/examples/aboutus.jpg" target="_blank">here</a> | Current Image <a href="/{{ $aboutus->image }}" target="_blank">here</a>
             </small>
           </div>
+          @if($aboutus->link != 'esg')
           <div class="form-group col-md-12">
             <label>{{__('Meta Title')}} <code>*</code> </label>
             <div style="display: flex; flex-direction: row">
@@ -126,6 +127,7 @@
               <input type="text" name="og_image_height" class="form-control col-sm-12" value="{{isset($aboutus) ? old('og_image_height', $aboutus->og_image_height) : ''}}" placeholder="{{__('630')}}" />
             </div>
           </div>
+          @endif          
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

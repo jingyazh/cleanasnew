@@ -10,6 +10,7 @@ use Datatables;
 use Message;
 use App\Codelog;
 
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -194,10 +195,10 @@ class UsersController extends Controller
         if( array_key_exists('password', $input) &&             
             $request->password != null && trim($request->password) !== ""){
             
-            $curuser->password = $request->password;
+            $curuser->password = Hash::make($request->password);
             $curuser->save();
         }        
-        return redirect()->route('home');
+        return redirect()->route('myprofile');
     }
 
 

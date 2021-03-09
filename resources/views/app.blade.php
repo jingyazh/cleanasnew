@@ -36,7 +36,11 @@
   <!-- <link rel="preconnect" href="//code.jquery.com" /> -->
   <!-- <link rel="preconnect" href="//maxcdn.bootstrapcdn.com"> -->
   <link rel="preconnect" href="//www.fonts.googleapis.com" />
-  <!-- <script src="//assets.adobedtm.com/175f7caa2b90/68e4c3a097bc/launch-be14a33fe327.min.js" async></script> -->
+  <script src="//assets.adobedtm.com/175f7caa2b90/68e4c3a097bc/launch-be14a33fe327.min.js" async></script>
+  <link rel="preload" as="script" href=" https://cleanasnew.com/js/bootstrap.min2.js" />
+  <link rel="preload" as="style" href=" https://cleanasnew.com/assets/css/styles09.css" />
+  <link rel="preload" as="image" href=" https://cleanasnew.com/images/upload/2020-clean-as-new-facility-baytown.jpg" />
+
   @yield('before-css')
   @yield('page-css')
   <!-- Google Tag Manager -->

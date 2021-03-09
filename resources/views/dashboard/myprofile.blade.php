@@ -24,7 +24,7 @@
                   <div class="col-sm-6">
                     <!-- select -->
                     <div class="form-group">
-                      <label>{{__('Name')}} </label>
+                      <label>{{__('ID')}} </label>
                     <input type="text" class="form-control" disabled value="{{Auth::user()->name}}">
                     </div>
                     <div class="form-group">
